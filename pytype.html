@@ -1,1 +1,757 @@
-../pytype/pytype.html
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-04-23 Thu 11:11 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Python's Type theory</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Vaibhav Karve" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Python's Type theory
+<br />
+<span class="subtitle"><code>Python -&gt; Tuple[TypeTheory, typing]</code></span>
+</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org7ece6ef">1. Context</a>
+<ul>
+<li><a href="#org7e4de93">1.1. Opening remarks</a></li>
+<li><a href="#org22680dc">1.2. Types vs Types</a></li>
+<li><a href="#org295b1d9">1.3. So, what is type theory?</a></li>
+</ul>
+</li>
+<li><a href="#org81a4c93">2. Types that are in-built in python</a>
+<ul>
+<li><a href="#org345ab32">2.1. Subtypes and NewType</a></li>
+<li><a href="#org4c69d5e">2.2. Why use <code>NewType</code>?</a></li>
+<li><a href="#org3a069c0">2.3. Type coercion</a></li>
+</ul>
+</li>
+<li><a href="#orgac4e024">3. Importing more Types</a>
+<ul>
+<li><a href="#org9d424df">3.1. Basic data-structures</a></li>
+<li><a href="#orgab86f52">3.2. Understanding <code>Any</code></a></li>
+<li><a href="#orgd444fe0">3.3. Optional and Union</a></li>
+<li><a href="#org26709b9">3.4. The <code>cast</code> function</a></li>
+</ul>
+</li>
+<li><a href="#org804945c">4. Function types</a>
+<ul>
+<li><a href="#org2da5bfe">4.1. <span class="todo TODO">TODO</span> Call signatures for functions</a></li>
+<li><a href="#org749a07d">4.2. <span class="todo TODO">TODO</span> Callable</a></li>
+<li><a href="#orga893542">4.3. <span class="todo TODO">TODO</span> Map, reduce, filter</a></li>
+<li><a href="#orgcb7a689">4.4. <span class="todo TODO">TODO</span> Polymosphism via single-dispatch a.k.a. overloaded functions</a></li>
+</ul>
+</li>
+<li><a href="#orgad27385">5. Other special types</a>
+<ul>
+<li><a href="#org3092667">5.1. <span class="todo TODO">TODO</span> Literal</a></li>
+<li><a href="#org6925fbe">5.2. <span class="todo TODO">TODO</span> Final</a></li>
+<li><a href="#org73e9b8a">5.3. <span class="todo TODO">TODO</span> NamedTuple</a></li>
+<li><a href="#org0de7b3d">5.4. <span class="todo TODO">TODO</span> Counter</a></li>
+<li><a href="#org27e2a53">5.5. <span class="todo TODO">TODO</span> IO</a></li>
+</ul>
+</li>
+<li><a href="#org4ecd3ec">6. Type classes</a>
+<ul>
+<li><a href="#org788869c">6.1. <span class="todo TODO">TODO</span> Iterator</a></li>
+<li><a href="#orgea65357">6.2. <span class="todo TODO">TODO</span> Sized</a></li>
+<li><a href="#org7b622fd">6.3. <span class="todo TODO">TODO</span> Generator</a></li>
+<li><a href="#org04f3fb3">6.4. <span class="todo TODO">TODO</span> Iterable</a></li>
+<li><a href="#org076af11">6.5. <span class="todo TODO">TODO</span> Collection</a></li>
+<li><a href="#org93e9824">6.6. <span class="todo TODO">TODO</span> AbstractSet</a></li>
+</ul>
+</li>
+<li><a href="#orgf1e0e56">7. Generic Types</a>
+<ul>
+<li><a href="#org5159f16">7.1. <span class="todo TODO">TODO</span> Covariant and contravariant types</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7ece6ef" class="outline-2">
+<h2 id="org7ece6ef"><span class="section-number-2">1</span> Context</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org7e4de93" class="outline-3">
+<h3 id="org7e4de93"><span class="section-number-3">1.1</span> Opening remarks</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Python added support for type hints in the <code>typing</code> module in Python
+version 3.5.  Use this for:
+</p>
+<ul class="org-ul">
+<li>adding type hints (think of these as a <b>very</b> powerful form of
+adding comments to your code).</li>
+<li>static typechecking (by an external tool like <code>mypy</code>).</li>
+<li>typechecking within an IDE (many editors and IDEs do this on the fly).</li>
+<li>a sanity check (to ensure that the code you are writing makes
+sense even without running it).</li>
+</ul>
+
+<p>
+Two key points to remember:
+</p>
+<ul class="org-ul">
+<li>type hints are an optional feature of python. So, it is not
+necessary that we add type hints to every single line of code.</li>
+<li>type hints are ignored during runtime and do not affect
+performance of the code.</li>
+</ul>
+
+<p>
+Using type hints is optional. But I have found it to be an extremely
+useful feature. I frequently find myself wishing for more features
+in the typing module &#x2013; not less.
+</p>
+
+<p>
+These are just my notes on Python's type thoery. Do not use it as a
+fool-proof reference. For proper documentation, one can refer to
+<a href="https://docs.python.org/3/library/typing.html">typing module docs</a> or <a href="https://www.python.org/dev/peps/pep-0483/">PEP 483</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org22680dc" class="outline-3">
+<h3 id="org22680dc"><span class="section-number-3">1.2</span> Types vs Types</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+There are two meanings for types in python now.  One is the type of
+an object that is returned by calling the in-built <code>type()</code>
+function.  The other is the type inferred by an external typechecker
+like <code>mypy</code>, and which can be displayed using the <code>reveal_type</code>
+function and then running the script through <code>mypy</code>.
+</p>
+
+<p>
+We will always refer to the second interpretation when we refer to
+the type of an object.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org295b1d9" class="outline-3">
+<h3 id="org295b1d9"><span class="section-number-3">1.3</span> So, what is type theory?</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Think of it as the math/rules that govern these types.  A basic fact
+to understand it that <i>every</i> python object has a type, whether we
+specify it to the type-checker or not.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org81a4c93" class="outline-2">
+<h2 id="org81a4c93"><span class="section-number-2">2</span> Types that are in-built in python</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Python comes with some in-built types.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python" id="org25ef1b4">a: <span style="color: #483d8b;">int</span>   = 1
+b: <span style="color: #483d8b;">float</span> = 1.0
+c: <span style="color: #483d8b;">str</span>   = <span style="color: #8b2252;">'one'</span>
+d: <span style="color: #483d8b;">bool</span>  = <span style="color: #008b8b;">True</span>
+e: <span style="color: #008b8b;">None</span>  = <span style="color: #008b8b;">None</span>
+</pre>
+</div>
+
+
+<p>
+In addition, for every class that we define, we can refer to the
+type of its instances using the name of the class itself.
+</p>
+<div class="org-src-container">
+<pre class="src src-python" id="org93a2177"><span style="color: #a020f0;">class</span> <span style="color: #228b22;">MyClass</span>:
+    <span style="color: #a020f0;">pass</span>
+m: <span style="color: #a0522d;">MyClass</span> = MyClass()
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org345ab32" class="outline-3">
+<h3 id="org345ab32"><span class="section-number-3">2.1</span> Subtypes and NewType</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+So far, we have talked about types without specifically defining
+what a type is. We will continue to <b>not</b> define them. However, we
+will say that one way to think about a type is simply as a set of
+values (sometimes these values are called terms, or even
+instances). So, <code>bool</code> can be thought of as the set <code>{True,
+   False}</code>, and <code>int</code> can be thought of as <code>{1, 2, 3, ...}</code>, and so
+on.
+</p>
+
+<p>
+This analogy is also handy when trying to understand Subtypes. A
+type <code>A</code> is a subtype of a type <code>B</code> if the set of values
+corresponding to <code>A</code> is a subset of the set of values corresponding
+to <code>B</code>. This is often written (in type-theory texts, but not in
+python itself) as <code>A &lt;: B</code>.
+</p>
+
+<p>
+For example, <code>int &lt;: float</code>. In other words, every <code>int</code> is also a
+<code>float</code>.  It may come as a surprise to some python users that in
+python, the following is also true: <code>bool &lt;: int</code>.  This is because
+<code>bool</code> inherits from <code>int</code> and <code>False</code>, <code>True</code> are just aliases of
+<code>0</code> and <code>1</code> respectively.
+</p>
+
+<p>
+The <code>typing</code> library lets us define subtypes using the <code>NewType</code>
+function as follows:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python" id="org0154b0a"><span style="color: #b22222;"># </span><span style="color: #b22222;">define a new type</span>
+<span style="color: #a0522d;">PositiveInt</span> = NewType(<span style="color: #8b2252;">'PositiveInt'</span>, <span style="color: #483d8b;">int</span>)  <span style="color: #b22222;"># </span><span style="color: #b22222;">This is the same as declaring PositiveInt &lt;: int</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">define a constructor function for the new type</span>
+<span style="color: #a020f0;">def</span> <span style="color: #0000ff;">make_positive_int</span>(a: <span style="color: #483d8b;">int</span>) -&gt; PositiveInt:
+    <span style="color: #a020f0;">if</span> a &gt; 0:
+        <span style="color: #a020f0;">return</span> PositiveInt(a)
+    <span style="color: #a020f0;">raise</span> <span style="color: #228b22;">ValueError</span>, <span style="color: #8b2252;">'arg was not positive.'</span>
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org4c69d5e" class="outline-3">
+<h3 id="org4c69d5e"><span class="section-number-3">2.2</span> Why use <code>NewType</code>?</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+<code>NewType</code> offers a way to restrict the type of argument supplied
+to a function. Looking at the example above, we can see that
+<code>PositiveInt</code> is a subtype of <code>int</code>. This means that a function
+that accepts an <code>int</code> argument will also accept an argument of
+type <code>PositiveInt</code> without any hiccups. However, a function that
+accepts <code>PositiveInt</code> as an argument will not accept any
+run-of-the-mill <code>int</code> as its input (here, by "would not accept" we
+mean that such an argument will not pass through the typechecker
+without an error).
+</p>
+
+<p>
+Our constructor function <code>make_positive_int</code> ensures that the only
+way to create a <code>PositiveInt</code> is to pass it through this
+function.
+</p>
+
+<p>
+This subtype and its constructor can then be used to create safer
+functions that only accept the restricted type. For example, we
+can have:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python" id="org133b0cb"><span style="color: #b22222;"># </span><span style="color: #b22222;">define a new type</span>
+<span style="color: #a020f0;">from</span> math <span style="color: #a020f0;">import</span> log
+
+<span style="color: #a020f0;">def</span> <span style="color: #0000ff;">safe_logarithm</span>(p: PositiveInt) -&gt; <span style="color: #483d8b;">float</span>:
+    <span style="color: #a020f0;">return</span> math.log(p)
+
+safe_log(-5)  <span style="color: #b22222;"># </span><span style="color: #b22222;">Fails in typechecking as well as in runtime</span>
+safe_log(5)   <span style="color: #b22222;"># </span><span style="color: #b22222;">Fails in typechecking only. Computes correctly at runtime.</span>
+
+safe_log(make_positive_int(-5))  <span style="color: #b22222;"># </span><span style="color: #b22222;">Passes typecking. Raises ValueError and meaningful error message at runtime.</span>
+safe_log(make_positive_int(5))   <span style="color: #b22222;"># </span><span style="color: #b22222;">Passes typechecking. Computes correctly at runtime.</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3a069c0" class="outline-3">
+<h3 id="org3a069c0"><span class="section-number-3">2.3</span> Type coercion</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Type coercion refers to the process by which the typechecker
+changes the type of some of the variables to match function call
+signatures.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python" id="org76388a4">a: <span style="color: #483d8b;">int</span>   = 2
+b: <span style="color: #483d8b;">float</span> = 3.0
+<span style="color: #a0522d;">c</span> = a + b
+</pre>
+</div>
+
+<p>
+In the above code example, if we ask the typechecker for the type of
+<code>c</code>, then it will correctly guess that <code>c</code> is a <code>float</code>. How did it
+reach that conclusion? The answer is that the <code>+</code> operator is
+overloaded (details on how to write overloaded functions are given
+in a later section). Since one of the arguments is a <code>float</code>, python
+<i>coerces</i> <code>a</code> from an <code>int</code> into a <code>float</code> and then computes the sum
+of two <code>float</code>'s (which is also obviously a <code>float</code>).
+</p>
+
+<p>
+In general, typecheckers coerce type <code>A</code> into type <code>B</code> (if required)
+whenever they know that <code>A</code> is a subtype of <code>B</code>.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgac4e024" class="outline-2">
+<h2 id="orgac4e024"><span class="section-number-2">3</span> Importing more Types</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+By importing from <code>typing</code>, we get access to some more types.
+</p>
+</div>
+
+<div id="outline-container-org9d424df" class="outline-3">
+<h3 id="org9d424df"><span class="section-number-3">3.1</span> Basic data-structures</h3>
+<div class="outline-text-3" id="text-3-1">
+<div class="org-src-container">
+<pre class="src src-python" id="orga80c7d9"><span style="color: #a020f0;">from</span> typing <span style="color: #a020f0;">import</span> (Any, Dict, FrozenSet, List, Set, Tuple)
+
+a:  <span style="color: #a0522d;">List</span>[<span style="color: #483d8b;">int</span>]      = [1, 2]
+b:  <span style="color: #a0522d;">List</span>[<span style="color: #483d8b;">str</span>]      = [<span style="color: #8b2252;">'one'</span>, <span style="color: #8b2252;">'two'</span>]
+c:  <span style="color: #a0522d;">Dict</span>[<span style="color: #483d8b;">int</span>, <span style="color: #483d8b;">str</span>] = {1: <span style="color: #8b2252;">'a'</span>, 2: <span style="color: #8b2252;">'b'</span>}
+d:  <span style="color: #a0522d;">Set</span>[<span style="color: #483d8b;">str</span>]       = {<span style="color: #8b2252;">'a'</span>, <span style="color: #8b2252;">'b'</span>, <span style="color: #8b2252;">'c'</span>}
+e:  <span style="color: #a0522d;">FrozenSet</span>[<span style="color: #483d8b;">str</span>] = <span style="color: #483d8b;">frozenset</span>({<span style="color: #8b2252;">'a'</span>, <span style="color: #8b2252;">'b'</span>, <span style="color: #8b2252;">'c'</span>})
+
+f1: <span style="color: #a0522d;">Tuple</span>[<span style="color: #483d8b;">str</span>]           = (<span style="color: #8b2252;">'a'</span>,)
+f2: <span style="color: #a0522d;">Tuple</span>[<span style="color: #483d8b;">str</span>, <span style="color: #483d8b;">str</span>]      = (<span style="color: #8b2252;">'a'</span>, <span style="color: #8b2252;">'b'</span>)
+f3: <span style="color: #a0522d;">Tuple</span>[<span style="color: #483d8b;">str</span>, <span style="color: #483d8b;">str</span>, <span style="color: #483d8b;">str</span>] = (<span style="color: #8b2252;">'a'</span>, <span style="color: #8b2252;">'b'</span>, <span style="color: #8b2252;">'c'</span>)
+f4: <span style="color: #a0522d;">Tuple</span>[<span style="color: #483d8b;">str</span>, ...]      = (<span style="color: #8b2252;">'a'</span>, <span style="color: #8b2252;">'b'</span>, <span style="color: #8b2252;">'c'</span>)
+
+g1: <span style="color: #a0522d;">Any</span>       = 1
+g2: <span style="color: #a0522d;">Any</span>       = {<span style="color: #8b2252;">'a'</span>, <span style="color: #8b2252;">'b'</span>}
+g3: <span style="color: #a0522d;">Any</span>       = {1 : <span style="color: #8b2252;">'a'</span>, 2 : <span style="color: #8b2252;">'b'</span>}
+g4: <span style="color: #a0522d;">List</span>[Any] = [1, 2, <span style="color: #8b2252;">'a'</span>, <span style="color: #8b2252;">'b'</span>]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgab86f52" class="outline-3">
+<h3 id="orgab86f52"><span class="section-number-3">3.2</span> Understanding <code>Any</code></h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+<code>Any</code> is a sort of magic type. I like to think of <code>Any</code> as the
+type-theoretic counterpart of <code>object</code> in python's class
+hierarchy.
+</p>
+
+<p>
+Every object in python belongs to a class. And every class inherits
+methods from other classes. But what happens when we define a base
+class (a class that doesn't inherit from other classes)? Even in
+that case, python defaults to inheriting from a class called
+<code>object</code>. <code>Any</code> is similar. Every type is a subtype of <code>Any</code>, just
+as every class inherits from <code>object</code>. (I will have more to say
+about subtypes in the later sections).
+</p>
+
+<p>
+<code>Any</code> is the precise reason why type hints are optional in
+python. When the type-checker can't figure out the type of a
+variable on its own (and when no type hints are provided by the
+user), python simply defaults to usign <code>Any</code> as the variable's type.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd444fe0" class="outline-3">
+<h3 id="orgd444fe0"><span class="section-number-3">3.3</span> Optional and Union</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+<code>Union</code> represents what in type-theory jargon are called sum-types.
+</p>
+
+<p>
+One freqently needs the union of a given type with
+<code>None</code>. Python's <code>typing</code> module therefore comes with the handy
+<code>Optional</code> type-constructor. The following code block illustrates
+the use of both of these.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python" id="org8b55127"><span style="color: #a020f0;">from</span> typing <span style="color: #a020f0;">import</span> List, Optional, Union
+
+a: List[Union[<span style="color: #483d8b;">int</span>, <span style="color: #483d8b;">str</span>]] = [1, 2, <span style="color: #8b2252;">'a'</span>, 3, <span style="color: #8b2252;">'b'</span>]
+
+<span style="color: #a020f0;">def</span> <span style="color: #0000ff;">unsafe_division</span>(a: <span style="color: #483d8b;">int</span>, b: <span style="color: #483d8b;">int</span>) -&gt; Union[<span style="color: #483d8b;">float</span>, <span style="color: #228b22;">Exception</span>]:
+   <span style="color: #8b2252;">"""Divide in an unsafe manner."""</span>
+   <span style="color: #a020f0;">if</span> <span style="color: #a020f0;">not</span> b:
+       <span style="color: #a020f0;">raise</span> <span style="color: #228b22;">ValueError</span>, <span style="color: #8b2252;">'Field axioms do not allow this.'</span>
+   <span style="color: #a020f0;">return</span> a/b
+
+<span style="color: #a020f0;">def</span> <span style="color: #0000ff;">optional_division</span>(a: <span style="color: #483d8b;">int</span>, b: <span style="color: #483d8b;">int</span>) -&gt; Optional[<span style="color: #483d8b;">float</span>]:
+   <span style="color: #8b2252;">"""Return quotient is b is nonzero, else return None."""</span>
+   <span style="color: #a020f0;">return</span> a/b <span style="color: #a020f0;">if</span> b <span style="color: #a020f0;">else</span> <span style="color: #008b8b;">None</span>
+</pre>
+</div>
+
+<p>
+Note that one might want to use either the unsafe or the optional
+variant of division (depending on the context). Each approach has
+its own way of handling the exceptional case. The advantage of using
+type hints is that we get a good idea of how the function behaves
+just by looking at the call signature of the function!
+</p>
+
+<p>
+<b>Side note:</b> <code>Exception</code> is an in-built class in python. Almost all
+exceptions and errors are inherited from the base class <code>Exception</code>.
+(The ones that aren't are inherited from <code>BaseException</code>).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org26709b9" class="outline-3">
+<h3 id="org26709b9"><span class="section-number-3">3.4</span> The <code>cast</code> function</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+This is a function that lets you do two things:
+</p>
+<ul class="org-ul">
+<li>with <code>cast</code>, you can resolve ambiguities in the type (in case the typechecker needs some help).</li>
+<li>you can cheat the typechecker.</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-python" id="org58c009a"><span style="color: #a020f0;">from</span> typing <span style="color: #a020f0;">import</span> cast, Union
+
+<span style="color: #a020f0;">def</span> <span style="color: #0000ff;">madeup_example</span>(a: Union[<span style="color: #483d8b;">int</span>, <span style="color: #483d8b;">str</span>]) -&gt; <span style="color: #483d8b;">int</span>:
+    <span style="color: #a020f0;">if</span> <span style="color: #483d8b;">hasattr</span>(a, <span style="color: #8b2252;">'split'</span>):
+        <span style="color: #b22222;"># </span><span style="color: #b22222;">must be a string</span>
+        <span style="color: #a0522d;">a_str</span> = cast(<span style="color: #483d8b;">str</span>, a)
+        <span style="color: #a020f0;">return</span> <span style="color: #483d8b;">ord</span>(a_str[0])
+    <span style="color: #b22222;"># </span><span style="color: #b22222;">must be an integer</span>
+    <span style="color: #a0522d;">a_int</span> = cast(<span style="color: #483d8b;">int</span>, a)
+    <span style="color: #a020f0;">return</span> a_int + 1
+
+<span style="color: #a020f0;">print</span>(madeup_example(<span style="color: #8b2252;">'abc'</span>))
+<span style="color: #a020f0;">print</span>(madeup_example(5))
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org804945c" class="outline-2">
+<h2 id="org804945c"><span class="section-number-2">4</span> Function types</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org2da5bfe" class="outline-3">
+<h3 id="org2da5bfe"><span class="section-number-3">4.1</span> <span class="todo TODO">TODO</span> Call signatures for functions</h3>
+</div>
+<div id="outline-container-org749a07d" class="outline-3">
+<h3 id="org749a07d"><span class="section-number-3">4.2</span> <span class="todo TODO">TODO</span> Callable</h3>
+</div>
+<div id="outline-container-orga893542" class="outline-3">
+<h3 id="orga893542"><span class="section-number-3">4.3</span> <span class="todo TODO">TODO</span> Map, reduce, filter</h3>
+</div>
+<div id="outline-container-orgcb7a689" class="outline-3">
+<h3 id="orgcb7a689"><span class="section-number-3">4.4</span> <span class="todo TODO">TODO</span> Polymosphism via single-dispatch a.k.a. overloaded functions</h3>
+</div>
+</div>
+<div id="outline-container-orgad27385" class="outline-2">
+<h2 id="orgad27385"><span class="section-number-2">5</span> Other special types</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-org3092667" class="outline-3">
+<h3 id="org3092667"><span class="section-number-3">5.1</span> <span class="todo TODO">TODO</span> Literal</h3>
+</div>
+<div id="outline-container-org6925fbe" class="outline-3">
+<h3 id="org6925fbe"><span class="section-number-3">5.2</span> <span class="todo TODO">TODO</span> Final</h3>
+</div>
+<div id="outline-container-org73e9b8a" class="outline-3">
+<h3 id="org73e9b8a"><span class="section-number-3">5.3</span> <span class="todo TODO">TODO</span> NamedTuple</h3>
+</div>
+<div id="outline-container-org0de7b3d" class="outline-3">
+<h3 id="org0de7b3d"><span class="section-number-3">5.4</span> <span class="todo TODO">TODO</span> Counter</h3>
+</div>
+<div id="outline-container-org27e2a53" class="outline-3">
+<h3 id="org27e2a53"><span class="section-number-3">5.5</span> <span class="todo TODO">TODO</span> IO</h3>
+</div>
+</div>
+<div id="outline-container-org4ecd3ec" class="outline-2">
+<h2 id="org4ecd3ec"><span class="section-number-2">6</span> Type classes</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-org788869c" class="outline-3">
+<h3 id="org788869c"><span class="section-number-3">6.1</span> <span class="todo TODO">TODO</span> Iterator</h3>
+</div>
+<div id="outline-container-orgea65357" class="outline-3">
+<h3 id="orgea65357"><span class="section-number-3">6.2</span> <span class="todo TODO">TODO</span> Sized</h3>
+</div>
+<div id="outline-container-org7b622fd" class="outline-3">
+<h3 id="org7b622fd"><span class="section-number-3">6.3</span> <span class="todo TODO">TODO</span> Generator</h3>
+</div>
+<div id="outline-container-org04f3fb3" class="outline-3">
+<h3 id="org04f3fb3"><span class="section-number-3">6.4</span> <span class="todo TODO">TODO</span> Iterable</h3>
+</div>
+<div id="outline-container-org076af11" class="outline-3">
+<h3 id="org076af11"><span class="section-number-3">6.5</span> <span class="todo TODO">TODO</span> Collection</h3>
+</div>
+<div id="outline-container-org93e9824" class="outline-3">
+<h3 id="org93e9824"><span class="section-number-3">6.6</span> <span class="todo TODO">TODO</span> AbstractSet</h3>
+</div>
+</div>
+<div id="outline-container-orgf1e0e56" class="outline-2">
+<h2 id="orgf1e0e56"><span class="section-number-2">7</span> Generic Types</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-org5159f16" class="outline-3">
+<h3 id="org5159f16"><span class="section-number-3">7.1</span> <span class="todo TODO">TODO</span> Covariant and contravariant types</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Vaibhav Karve</p>
+<p class="date">Created: 2020-04-23 Thu 11:11</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
