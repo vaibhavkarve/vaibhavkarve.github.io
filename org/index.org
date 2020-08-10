@@ -3,7 +3,7 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 #+subtitle: [[file:Vaibhav Karve CV.pdf][CV]]\nbsp{}\nbsp{}\nbsp{}\nbsp{} [[https://github.com/vaibhavkarve][GitHub]] \nbsp{}\nbsp{}\nbsp{}\nbsp{} [[https://www.linkedin.com/in/vaibhav-karve/][LinkedIn]] \nbsp{}\nbsp{}\nbsp{}\nbsp{} [[https://git.math.illinois.edu/vkarve2][GitLab]]
 
-I am a PhD student at the [[https://math.illinois.edu/academics/graduate-program/funding/graduate-awards-and-fellowships/david-g-bourgin-mathematics][Department of Mathematics]] at the University
+I am a PhD student at the [[https://math.illinois.edu][Department of Mathematics]] at the University
 of Illinois at Urbana-Champaign.
 
 My research interests lie in graph theory, logic, algorithms and
