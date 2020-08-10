@@ -2,12 +2,12 @@
 #+author: [[file:../index.html][Vaibhav Karve]]
 #+options: toc:1
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
-#+subtitle: [[file:~/org/website/public_html/index.html][Home]]
+#+subtitle: [[file:~/org/website/index.html][Home]]
 
 This is the subject of my PhD research --- a new type of
 satisfiability problem.
 
-- Dissertation summary (work in progress) :: [[file:~/org/website/org/dissertation_summary.pdf][pdf]]
+- Dissertation summary (work in progress) :: [[file:~/org/website/dissertation_summary.pdf][pdf]]
 - 2sat result publication :: [[https://doi.org/10.1016/j.dam.2019.12.017][https://doi.org/10.1016/j.dam.2019.12.017]]
 - 2sat result arXiv version :: https://arxiv.org/abs/1812.10849
 - GitLab :: [[https://git.math.illinois.edu/hirani_group/home/-/tree/master/projects/sat][private repository]]
