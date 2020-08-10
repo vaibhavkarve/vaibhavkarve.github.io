@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-08-09 Sun 15:15 -->
+<!-- 2020-08-09 Sun 20:52 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
+<title>Graph Satisfiability</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="Vaibhav Karve" />
+<meta name="author" content="[[file:../index.html][Vaibhav Karve]]" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -193,6 +193,7 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
+<link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -239,13 +240,187 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
+<h1 class="title">Graph Satisfiability
+<br />
+<span class="subtitle"><a href="file:///home/vaibhav/org/website/public_html/index.html">Home</a></span>
+</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org4de280c">1. Definitions</a></li>
+<li><a href="#org79bb55c">2. In Lean</a></li>
+<li><a href="#org83f1729">3. In Python</a></li>
+<li><a href="#orgf5993c6">4. In Haskell</a></li>
+</ul>
+</div>
+</div>
+<p>
+This is the subject of my PhD research &#x2014; a new type of
+satisfiability problem.
+</p>
+
+<dl class="org-dl">
+<dt>Dissertation summary (work in progress)</dt><dd><a href="dissertation_summary.pdf">pdf</a></dd>
+<dt>2sat result publication</dt><dd><a href="https://doi.org/10.1016/j.dam.2019.12.017">https://doi.org/10.1016/j.dam.2019.12.017</a></dd>
+<dt>2sat result arXiv version</dt><dd><a href="https://arxiv.org/abs/1812.10849">https://arxiv.org/abs/1812.10849</a></dd>
+<dt>GitLab</dt><dd><a href="https://git.math.illinois.edu/hirani_group/home/-/tree/master/projects/sat">private repository</a></dd>
+</dl>
+
+<div id="outline-container-org4de280c" class="outline-2">
+<h2 id="org4de280c"><span class="section-number-2">1</span> Definitions</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgfb311e0" class="outline-3">
+<h3 id="orgfb311e0"><span class="section-number-3">1.1</span> SAT</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+We pick a countable set and call it our set of variables.
+</p>
+
+<p>
+A boolean <b>literal</b> is a variable or its negation such that we can
+assign boolean values to it each variable.
+</p>
+
+<p>
+A boolean formula is said to be in Conjunctive Normal Form (CNF)
+if it is the conjunction of disjunctions of boolean literals.
+</p>
+
+<p>
+A CNF is <i>satisfiable</i> if there exists a truth assignment that
+satisfies it.  Otherwise it is <i>unsatisfiable</i>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7ef55dc" class="outline-3">
+<h3 id="org7ef55dc"><span class="section-number-3">1.2</span> \(\pi: CNFs \rightarrow Graphs\)</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+For every CNF we define a multi-hypergraph by erasing all negating
+and then treating clauses as hyperedges and conjunctions as the
+graph join operation. We denote this projection map by \(\pi\).
+</p>
+
+<p>
+Example:
+\[(a\vee \neg b) \wedge (b \vee \neg c)
+     \wedge (\neg a \vee \neg c)\wedge d \longmapsto (ab),(bc),(ac),(d)\]
+</p>
+
+<p>
+Here, \((d)\) should be interpreted as a loop at the vertex d.
+</p>
+
+<p>
+Table summarizing the effect of \(\pi\):
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Concepts in the CNF world</th>
+<th scope="col" class="org-left">Concepts in the Graph world</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Variables</td>
+<td class="org-left">Vertices</td>
+</tr>
+
+<tr>
+<td class="org-left">Literals</td>
+<td class="org-left">Vertices</td>
+</tr>
+
+<tr>
+<td class="org-left">Clauses</td>
+<td class="org-left">(hyper)Edges</td>
+</tr>
+
+<tr>
+<td class="org-left">1-SAT clause</td>
+<td class="org-left">Loop</td>
+</tr>
+
+<tr>
+<td class="org-left">2-SAT clause</td>
+<td class="org-left">Simple edge</td>
+</tr>
+
+<tr>
+<td class="org-left">3-SAT clause</td>
+<td class="org-left">Hyperedge</td>
+</tr>
+
+<tr>
+<td class="org-left">CNF</td>
+<td class="org-left">Multi-hypergraph</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgda1b813" class="outline-3">
+<h3 id="orgda1b813"><span class="section-number-3">1.3</span> Graphsat</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+A multi-hypergraph \(G\) is <i>satisfiable</i> if the set \(\pi^{-1}(G)\)
+is nonempty and every element of \(\pi^{-1}(G)\) is
+satisfiable. Otherwise it is unsatisfiable.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org79bb55c" class="outline-2">
+<h2 id="org79bb55c"><span class="section-number-2">2</span> In Lean</h2>
+</div>
+<div id="outline-container-org83f1729" class="outline-2">
+<h2 id="org83f1729"><span class="section-number-2">3</span> In Python</h2>
+</div>
+<div id="outline-container-orgf5993c6" class="outline-2">
+<h2 id="orgf5993c6"><span class="section-number-2">4</span> In Haskell</h2>
+</div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2020-08-09 Sun 15:15</p>
+<p class="author">Author: <a href="../index.html">Vaibhav Karve</a></p>
+<p class="date">Created: 2020-08-09 Sun 20:52</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
