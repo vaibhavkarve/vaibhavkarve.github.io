@@ -1,0 +1,58 @@
+#+title: Graph Satisfiability
+#+author: [[file:../index.html][Vaibhav Karve]]
+#+options: toc:1
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
+#+subtitle: [[file:~/org/website/public_html/index.html][Home]]
+
+This is the subject of my PhD research --- a new type of
+satisfiability problem.
+
+- Dissertation summary (work in progress) :: [[file:~/org/website/org/dissertation_summary.pdf][pdf]]
+- 2sat result publication :: [[https://doi.org/10.1016/j.dam.2019.12.017][https://doi.org/10.1016/j.dam.2019.12.017]]
+- 2sat result arXiv version :: https://arxiv.org/abs/1812.10849
+- GitLab :: [[https://git.math.illinois.edu/hirani_group/home/-/tree/master/projects/sat][private repository]]
+
+* Definitions
+
+** SAT
+   We pick a countable set and call it our set of variables.
+
+   A boolean *literal* is a variable or its negation such that we can
+   assign boolean values to it each variable.
+
+   A boolean formula is said to be in Conjunctive Normal Form (CNF)
+   if it is the conjunction of disjunctions of boolean literals.
+
+   A CNF is /satisfiable/ if there exists a truth assignment that
+   satisfies it.  Otherwise it is /unsatisfiable/.
+
+** $\pi: CNFs \rightarrow Graphs$
+   For every CNF we define a multi-hypergraph by erasing all negating
+   and then treating clauses as hyperedges and conjunctions as the
+   graph join operation. We denote this projection map by $\pi$.
+
+   Example:
+   \[(a\vee \neg b) \wedge (b \vee \neg c)
+     \wedge (\neg a \vee \neg c)\wedge d \longmapsto (ab),(bc),(ac),(d)\]
+   
+   Here, $(d)$ should be interpreted as a loop at the vertex d.
+ 
+   Table summarizing the effect of $\pi$:
+   | Concepts in the CNF world | Concepts in the Graph world |
+   |---------------------------+-----------------------------|
+   | Variables                 | Vertices                    |
+   | Literals                  | Vertices                    |
+   | Clauses                   | (hyper)Edges                |
+   | 1-SAT clause              | Loop                        |
+   | 2-SAT clause              | Simple edge                 |
+   | 3-SAT clause              | Hyperedge                   |
+   | CNF                       | Multi-hypergraph            |
+
+** Graphsat
+   A multi-hypergraph $G$ is /satisfiable/ if the set $\pi^{-1}(G)$
+   is nonempty and every element of $\pi^{-1}(G)$ is
+   satisfiable. Otherwise it is unsatisfiable.
+
+* In Lean
+* In Python
+* In Haskell

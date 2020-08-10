@@ -1,0 +1,56 @@
+#+title: Vaibhav Karve
+#+options: toc:0 H:2 num:0
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+#+subtitle: [[file:Vaibhav Karve CV.pdf][CV]]\nbsp{}\nbsp{}\nbsp{}\nbsp{} [[https://github.com/vaibhavkarve][GitHub]] \nbsp{}\nbsp{}\nbsp{}\nbsp{} [[https://www.linkedin.com/in/vaibhav-karve/][LinkedIn]] \nbsp{}\nbsp{}\nbsp{}\nbsp{} [[https://git.math.illinois.edu/vkarve2][GitLab]]
+
+I am a PhD student at the [[https://math.illinois.edu/academics/graduate-program/funding/graduate-awards-and-fellowships/david-g-bourgin-mathematics][Department of Mathematics]] at the University
+of Illinois at Urbana-Champaign.
+
+My research interests lie in graph theory, logic, algorithms and
+computational topology. I am currently writing my doctoral thesis,
+titled /Graphical structure of unsatisfiable boolean formulas/ which
+combines the tools of graph theory and topology to analyze boolean
+satisfiability -- a classic problem in logic and computer science that
+asks if there exists an interpretation that satisfies a boolean
+formula.
+
+I am also looking to extend my doctoral work towards the upcoming and
+adjacent field of formalized mathematics (a computer-assisted
+approach) and interactive theorem proving.
+
+* Research
+** [[file:satisfiability/index.html][Satisfiability]][fn:1]
+** Manhattan traffic
+** Geometry in Lean
+** Past projects
+
+* Teaching
+  My ever-evolving [[file:Teaching_Philosophy_Statement.pdf][teaching philosophy]].
+** LeanTeach 2020
+** Computational mathematics
+** Classical constructions
+** Past courses
+
+* Notes
+** How to
+   - ... set up this website
+     - I followed the steps [[https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html][here]].
+     - Also set up the sitemap.
+
+* Currently Reading
+** Geometry
+** Logic
+** Functional programming
+* Everything else
+** Kaprekar's constant visualized
+** Plots and graphs I generated
+** First attempt at publishing package : multihypergraph on PyPI
+** Recognizing patterns in New York traffic : 4 min video
+** Slides from my talks
+** Photos from conferences
+** My Klein bottle
+** 
+
+* Footnotes
+
+[fn:1] this work is currently funded by the [[https://math.illinois.edu/academics/graduate-program/funding/graduate-awards-and-fellowships/david-g-bourgin-mathematics][David G. Bourgin Mathematics Fellowship]].
