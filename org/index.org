@@ -19,7 +19,7 @@ adjacent field of formalized mathematics (a computer-assisted
 approach) and interactive theorem proving.
 
 * Research
-** [[file:satisfiability/index.html][Satisfiability]][fn:1]
+** [[file:satisfiability/index.org][Satisfiability]]  [fn:1]
 ** Manhattan traffic
 ** Geometry in Lean
 ** Past projects
