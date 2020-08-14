@@ -3,3 +3,23 @@
 #+options: toc:1
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
 #+subtitle: [[../index.html][Home]]
+
+
+In this project, we analyze Manhattan taxi-traffic using a constrained
+nonnegative matrix factorization algorithm that promotes sparsity and
+allows us to decompose traffic into a linear combination of 50
+distinct /traffic signatures/.
+
+- GitLab code repository :: [[https://gitlab-beta.engr.illinois.edu/TrafficPatterns/CSNMF][gitlab-beta.engr.illinois.edu/TrafficPatterns/CSNMF]]
+- Original data files :: [[https://doi.org/10.13012/B2IDB-4900670_V1][doi.org/10.13012/B2IDB-4900670_V1]]
+
+A manuscript for this project has been submitted for publication and
+is pending review.
+
+The [[file:congestion_barcodes.org][congestion barcodes project]] was an offshoot of this work.
+
+* Collaborators
+- Richard Sowers
+- Daniel B.\nbsp{} Work
+- Derrek Yager
+- Marzieh Abolhelm

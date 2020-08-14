@@ -2,7 +2,7 @@
 #+author: [[file:../index.html][Vaibhav Karve]]
 #+options: toc:1
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
-#+subtitle: [[https://vaibhavkarve.github.io/][Home]]
+#+subtitle: [[../index.html][Home]]
 
 This is the subject of my PhD research --- a new type of
 satisfiability problem.

@@ -22,6 +22,7 @@ interactive theorem proving (in particular, with the Lean theorem prover).
   - Geometry in Lean
   - Past projects
     - On the pullback of real exterior forms
+    - [[file:congestion_barcodes.html][Congestion barcodes]]
 * Teaching
   My ever-evolving [[file:Teaching_Philosophy_Statement.pdf][teaching philosophy]].
   - LeanTeach 2020
