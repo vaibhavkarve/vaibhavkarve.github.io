@@ -53,14 +53,20 @@ satisfiability problem.
    satisfiable. Otherwise it is unsatisfiable.
 
 * In Lean
-  I have formalized the definition of graph satisfiability in Lean.
+  I have formalized the definition of graph satisfiability in Lean.  I
+  am working on project called ~leansat~ formalizing some of my 2-sat
+  results in Lean.
   
   #+CAPTION: The definition of a satisfiable graph in Lean.
   #+NAME: fig:graphsat_in_lean.png
   [[../img/graphsat_in_lean.png]]
 
-
-
-  I am working on formalizing some of my results too.
 * In Python
+  I have created a python3.8 package called ~graphsat~ that can perform computations on
+  graphs, multi-graphs, hypergraphs and multi-hypergraphs as well as
+  on CNFs.  The package is unpublished as of now.  I use it for all my
+  experimentation and computation.
+
 * In Haskell
+  I am attempting to translate ~graphsat~ in Haskell as well. This is
+  still a work in progress.
