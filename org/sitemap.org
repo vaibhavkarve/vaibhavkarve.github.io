@@ -1,5 +1,6 @@
 #+TITLE: Sitemap
 
+- [[file:satisfiability_notes.org][Notes on Boolean Satisfiability]]
 - [[file:index.org][Vaibhav Karve]]
 - satisfiability
   - [[file:satisfiability/index.org][Satisfiability]]
