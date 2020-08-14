@@ -54,7 +54,12 @@ satisfiability problem.
 
 * In Lean
   I have formalized the definition of graph satisfiability in Lean.
-  [[file:~/org/website/org/img/graphsat_in_lean.png][Graphsat in Lean]]
+  
+  #+CAPTION: The definition of a satisfiable graph in Lean.
+  #+NAME: fig:graphsat_in_lean.png
+  [[../img/graphsat_in_lean.png]]
+
+
 
   I am working on formalizing some of my results too.
 * In Python
