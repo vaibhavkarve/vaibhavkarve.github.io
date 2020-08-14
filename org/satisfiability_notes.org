@@ -1,0 +1,32 @@
+#+title: Notes on Boolean Satisfiability
+#+options: toc:0 H:2 num:0
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+#+subtitle: [[file:~/org/website/index.html][Home]]
+
+These are my notes from Donald Knuth's The Art of Computer Programming:
+Satisfiability, Volume 4, Fascicle 6.
+
+
+* Introduction
+A efficient algorithm for SAT would involve deciding a CNF on $N$
+variables in $N^{O(1)}$ steps. It is possible (and D.K. believes so)
+that SAT is in $P$ but the algorithm is "unknowable", meaning we might
+get an existence proof of such an algorithm.
+
+D.K. defines a literal to be either a variable or its complement.  Two
+literals are /distinct/ if $l_1 \neq l_2$. They are /strictly
+distinct/ if $|l_1| \neq |l_2|$.
+
+** SAT is equivalent to a covering problem
+#+begin_src
+def Tₙ (n : ℕ) : CNF := {{1, ¬1}, {2, ¬ 2}, ..., {n, ¬n}}
+variable (S : Cnf)
+
+def is_sat S : Prop :=
+  let n := number_of_variables S in
+  ∃ L : set (Literals),
+  -- (1) L has size n
+  L.size = n
+  -- (2) every clause had a literal that is in L.
+  ∧ ∀ (c : Clause) ∈ S, ∃ l ∈ L, l ∈ c
+#+end_src
