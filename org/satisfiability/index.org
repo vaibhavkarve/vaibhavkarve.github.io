@@ -54,7 +54,7 @@ satisfiability problem.
 
 * In Lean
   I have formalized the definition of graph satisfiability in Lean.  I
-  am working on project called ~leansat~ formalizing some of my 2-sat
+  am working on project called =leansat= formalizing some of my 2-sat
   results in Lean.
   
   #+CAPTION: The definition of a satisfiable graph in Lean.
