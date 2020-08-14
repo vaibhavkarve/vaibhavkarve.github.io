@@ -18,7 +18,7 @@ interactive theorem proving (in particular, with the Lean theorem prover).
 
 * Research
   - [[file:satisfiability/index.org][Graph satisfiability]] [fn:1]
-  - Manhattan traffic
+  - [[file:manhattan_traffic.org][Manhattan traffic]]
   - Geometry in Lean
   - Past projects
     - On the pullback of real exterior forms
