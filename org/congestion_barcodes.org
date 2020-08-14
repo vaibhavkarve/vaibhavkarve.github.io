@@ -1,0 +1,21 @@
+#+title: Congestion Barcodes
+#+author: [[file:../index.html][Vaibhav Karve]]
+#+options: toc:1
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
+#+subtitle: [[../index.html][Home]]
+
+This work presents a new method to quantify connectivity in
+transportation networks. Inspired by the field of topological data
+analysis, we propose a novel approach to explore the robustness of
+road network connectivity in the presence of congestion on the
+roadway. The robustness of the pattern is summarized in a congestion
+barcode, which can be constructed directly from traffic datasets
+commonly used for navigation. As an initial demonstration, we
+illustrate the main technique on a publicly available traffic dataset
+in a neighborhood in New York City.
+
+- Paper on arXiv :: [[https://arxiv.org/abs/1707.08557][arxiv.org/abs/1707.08557]]
+- Original data files :: [[https://doi.org/10.13012/B2IDB-4900670_V1][doi.org/10.13012/B2IDB-4900670_V1]]
+
+This research was conducted as part of the Illinois Geometry
+Laboratory's 2017 program.
