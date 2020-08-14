@@ -13,7 +13,6 @@ satisfiability problem.
 - GitLab :: [[https://git.math.illinois.edu/hirani_group/home/-/tree/master/projects/sat][private repository]]
 
 * Definitions
-
 ** SAT
    We pick a countable set and call it our set of variables.
 
