@@ -31,12 +31,13 @@ interactive theorem proving (in particular, with the Lean theorem prover).
   - Past courses
 
 * Notes
-  -  How I set up this website
-     - followed the steps [[https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html][here]],
-     - also set up the sitemap.
-  - [[file:geometry.org][Geometry]]
-  - Logic
+  - [[file:boolean_satisfiability.org][Boolean satisfiability]]
   - Functional programming
+  - [[file:geometry.org][Geometry]]
+  - How I set up this website
+    - followed the steps [[https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html][here]],
+    - also set up the sitemap.
+  - Logic
 * Everything else
 - Kaprekar's constant visualized
 - Plots and graphs I generated

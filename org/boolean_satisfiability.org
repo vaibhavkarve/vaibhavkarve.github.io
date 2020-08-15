@@ -1,7 +1,7 @@
-#+title: Notes on Boolean Satisfiability
+#+title: Boolean Satisfiability notes
 #+options: toc:0 H:2 num:0
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
-#+subtitle: [[file:~/org/website/index.html][Home]]
+#+subtitle: [[file:index.org][Home]]
 
 These are my notes from Donald Knuth's The Art of Computer Programming:
 Satisfiability, Volume 4, Fascicle 6.

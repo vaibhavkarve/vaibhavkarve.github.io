@@ -6,7 +6,7 @@
 <!-- 2020-08-15 Sat 10:24 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sitemap</title>
+<title>Boolean Satisfiability notes</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="Vaibhav Karve" />
 <style type="text/css">
@@ -193,6 +193,7 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -239,21 +240,76 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
-<h1 class="title">Sitemap</h1>
-<ul class="org-ul">
-<li><a href="boolean_satisfiability.html">Boolean Satisfiability notes</a></li>
-<li><a href="congestion_barcodes.html">Congestion Barcodes</a></li>
-<li><a href="geometry.html">Geometry self-study</a></li>
-<li><a href="manhattan_traffic.html">Manhattan Traffic</a></li>
-<li><a href="index.html">Vaibhav Karve</a></li>
-<li>satisfiability
-<ul class="org-ul">
-<li><a href="satisfiability/index.html">Satisfiability</a></li>
-</ul></li>
-</ul>
+<h1 class="title">Boolean Satisfiability notes
+<br />
+<span class="subtitle"><a href="index.html">Home</a></span>
+</h1>
+<p>
+These are my notes from Donald Knuth's The Art of Computer Programming:
+Satisfiability, Volume 4, Fascicle 6.
+</p>
+
+
+<div id="outline-container-org34a0a0e" class="outline-2">
+<h2 id="org34a0a0e">Introduction</h2>
+<div class="outline-text-2" id="text-org34a0a0e">
+<p>
+A efficient algorithm for SAT would involve deciding a CNF on \(N\)
+variables in \(N^{O(1)}\) steps. It is possible (and D.K. believes so)
+that SAT is in \(P\) but the algorithm is "unknowable", meaning we might
+get an existence proof of such an algorithm.
+</p>
+
+<p>
+D.K. defines a literal to be either a variable or its complement.  Two
+literals are <i>distinct</i> if \(l_1 \neq l_2\). They are <i>strictly
+distinct</i> if \(|l_1| \neq |l_2|\).
+</p>
+</div>
+
+<div id="outline-container-org4c14323" class="outline-3">
+<h3 id="org4c14323">SAT is equivalent to a covering problem</h3>
+<div class="outline-text-3" id="text-org4c14323">
+<pre class="example">
+def Tₙ (n : ℕ) : CNF := {{1, ¬1}, {2, ¬ 2}, ..., {n, ¬n}}
+variable (S : Cnf)
+
+def is_sat S : Prop :=
+  let n := number_of_variables S in
+  ∃ L : set (Literals),
+  -- (1) L has size n
+  L.size = n
+  -- (2) every clause had a literal that is in L.
+  ∧ ∀ (c : Clause) ∈ S, ∃ l ∈ L, l ∈ c
+</pre>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>

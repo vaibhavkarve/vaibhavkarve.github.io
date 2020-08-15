@@ -108,5 +108,13 @@ Starting with Michèle Audin's book /Geometry/.
     maps. Equivalently, any transversal cutting accross three fixed
     parallel lines will have "segements" cut by the parallel lines
     in a fixed ratio.
+*** Others
+    Other notable (classical) geometry theorems include:
+    - Pappus' theorem
+    - Desargues' theorem
+    - Menela\"{u}s' theorem
+    - Ceva's theorem
+    - (not so clasiscal) The fundamental theorem of affine geometry
+
 
 * TODO Euclidean geometry, generalities
