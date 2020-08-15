@@ -32,6 +32,10 @@ interactive theorem proving (in particular, with the Lean theorem prover).
   - Past courses
 
 * Notes
+  These are mostly notes I have taken as part of self-studying various
+  things. They are note meant to be comprehensive notes -- just a
+  collection of things I found interesting at different times and
+  wished to keep a record of.
   - [[file:algebraic_geometry.pdf][Algebraic geometry]]
   - [[file:algebraic_topology.pdf][Algebraic topology]]
   - [[file:boolean_satisfiability.org][Boolean satisfiability]]
@@ -54,7 +58,7 @@ interactive theorem proving (in particular, with the Lean theorem prover).
 
 
 * Everything else
-- Kaprekar's constant visualized
+- [[file:6174.org][6174 : Kaprekar's constant visualized]]
 - Plots and graphs I generated
 - First attempt at publishing package : multihypergraph on PyPI
 - Recognizing patterns in New York traffic : 4 min video

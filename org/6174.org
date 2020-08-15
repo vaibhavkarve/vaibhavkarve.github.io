@@ -1,0 +1,32 @@
+#+title: 6174 : Visualizing Kaprekar's process
+#+author: [[file:../index.html][Vaibhav Karve]]
+#+options: toc:0
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+#+subtitle: [[file:index.org][Home]]
+
+- Instagram post :: https://www.instagram.com/p/BvAT8ayH74L/
+- GitHub :: https://github.com/vaibhavkarve/kaprekar
+
+
+* Kaprekar's Process
+1. Pick a 4-digit number, using at least two different digits.
+2. Arrange the digits in descending and then in ascending order to get
+   two four-digit numbers, adding leading zeros if
+   necessary. 
+3. Subtract the smaller #number from the bigger number. 
+4. Go back to
+   step 2. and repeat.
+
+The above process will always reach its fixed point, 6174. Thus spake
+D.R.Kaprekar (1905-1986) -- school teacher, recreational number
+theorist and Indian mathematician.
+
+I have created a visual graph of this process. Every four-digit number
+is a point on one of the circles. Every iteration outlined by Kaprekar
+is a path. His algorithm might be mechanical but the patterns emerging
+from it are anything but. At the center is the number =6174=
+(indicated by the red dot) to which all others are inexorably
+drawn. This plot itself was generated algorithmically using a
+combination of Python, TikZ, and $\LaTeX$.
+
+* TODO Port code from TikZ to Lua
