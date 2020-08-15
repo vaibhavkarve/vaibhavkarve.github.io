@@ -12,21 +12,21 @@ Starting with Michèle Audin's book /Geometry/.
 * Affine spaces
 ** Definition
    An /affine space/ is:
-   - a set $\Epsilon$
+   - a set $\mathcal{E}$
    - with the data of a vector space $E$(over a field of
      characteristic $0$)
-   - and a mapping $\Theta : \Epsilon\times\Epsilon \longrightarrow$.
+   - and a mapping $\Theta : \mathcal{E}\times\mathcal{E} \longrightarrow$.
    - Furthermore, if $\Theta: (A, B)\mapsto\vec{AB}$, then we need the
      partial map $\Theta_A : B \mapsto \vec{AB}$ to be a bijection
-     from $\Epsilon$ to $E$.
-   - Also (Chasles' relation), $\forall A B C \in\Epsilon, \vec{AB} =
+     from $\mathcal{E}$ to $E$.
+   - Also (Chasles' relation), $\forall A B C \in\mathcal{E}, \vec{AB} =
      \vec{AC} + \vec{CB}$.  This is essentially the law of vector
      addition.
 
    $\Theta$ identifies vectors in $E$ with orderd pairs of points in
-   the affine space $\Epsilon$.
+   the affine space $\mathcal{E}$.
 
-   Dimension of $\Epsilon$ is the dimension of $E$.
+   Dimension of $\mathcal{E}$ is the dimension of $E$.
 
    *Instance:* Every vector space is canonically an affine space by
    choosing $\Theta: (u, v) \mapsto v - u$.  Every affine space can be
@@ -37,28 +37,28 @@ Starting with Michèle Audin's book /Geometry/.
    -\vec{BA}$.  It also implies that parallelogram rule of vector
    addition: \[\vec{AB} = \vec{A'B'} \iff \vec{AA'} = \vec{BB'}.\]
 
-   An /affine subspace/ is a subset of an affine space $\Epsilon$ such
+   An /affine subspace/ is a subset of an affine space $\mathcal{E}$ such
    that image of subset under partial map $\Theta_A$ (for some
-   $A\in\Epsilon$) is a vector subspace of $E$.  Then we can define
+   $A\in\mathcal{E}$) is a vector subspace of $E$.  Then we can define
    /points/, /lines/ and /planes/ to just be affine subspaces of
    dimension 0, 1, and 2 respectively.
 
    Point $A_0, A_1, \ldots, A_k$ are /affinely independent/ if the
    dimension of the affine space they span is $k$.  If $k =
-   dim(\Epsilon)$, then it is said that $(A_0, \ldots, A_k)$ is an
-   /affine frame/ of $\Epsilon$.  For example, an affine frame on a
+   dim(\mathcal{E})$, then it is said that $(A_0, \ldots, A_k)$ is an
+   /affine frame/ of $\mathcal{E}$.  For example, an affine frame on a
    line has two distinct points.
 
-   An /affine map/ is a map $\phi: \Epsilon_1 \rightarrow \Epsilon_2$
+   An /affine map/ is a map $\phi: \mathcal{E}_1 \rightarrow \mathcal{E}_2$
    if there exists a point $O$ (which we can call the origin) and a
-   linear map $f: E \rightarrow F$ such that $\forall A\in\Epsilon$,
+   linear map $f: E \rightarrow F$ such that $\forall A\in\mathcal{E}$,
    \[f(\vec{OA}) = \vec{\phi(O)\phi(A)}.\]
 
-   The affine bijections from $\Epsilon$ to itself form a group under
-   composition called the /affine group/ $GA(\Epsilon)$.
+   The affine bijections from $\mathcal{E}$ to itself form a group under
+   composition called the /affine group/ $GA(\mathcal{E})$.
 
 ** Facts 
- Any affine subspace of $\Epsilon$ can be written as $V + \vec{v}$,
+ Any affine subspace of $\mathcal{E}$ can be written as $V + \vec{v}$,
  where $V$ is a vector subspace of $E$ and $\vec{v}\in E$.  The vector
  subspaces are precisely the affine subspaces with $\vec{v}=0$. (See
  also analogous result for affine maps).
@@ -74,7 +74,7 @@ Starting with Michèle Audin's book /Geometry/.
  $Ker(f)$ as its underlying vector space. Moreover, $f^{-1}(v)$ is
  parallel to every other $f^{-1}(v')$.
 
- If $\Epsilon_1, \Epsilon_2$ are parallel, they are either equal or
+ If $\mathcal{E}_1, \mathcal{E}_2$ are parallel, they are either equal or
  disjoint.
 
  *Surprisingly:* the parallel axiom (there exists a line parallel to a
