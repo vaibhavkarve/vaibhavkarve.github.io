@@ -1,5 +1,5 @@
 #+TITLE: Python's Type theory
-#+options: toc:1 H:2
+#+options: toc:2 H:2
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 #+subtitle: =Python -> Tuple[TypeTheory, typing]=
 #+subtitle: [[file:index.org][Home]]
@@ -265,23 +265,23 @@
   : 6
 
 
-* Function types
-** TODO Call signatures for functions
-** TODO Callable
-** TODO Map, reduce, filter
-** TODO Polymosphism via single-dispatch a.k.a. overloaded functions
-* Other special types
-** TODO Literal
-** TODO Final
-** TODO NamedTuple
-** TODO Counter
-** TODO IO
-* Type classes
-** TODO Iterator
-** TODO Sized
-** TODO Generator
-** TODO Iterable
-** TODO Collection
-** TODO AbstractSet
-* Generic Types
-** TODO Covariant and contravariant types
+* TODO Function types
+** Call signatures for functions
+** Callable
+** Map, reduce, filter
+** Polymosphism via single-dispatch a.k.a. overloaded functions
+* TODO Other special types
+** Literal
+** Final
+** NamedTuple
+** Counter
+** IO
+* TODO Type classes
+** Iterator
+** Sized
+** Generator
+** Iterable
+** Collection
+** AbstractSet
+* TODO Generic Types
+** Covariant and contravariant types
