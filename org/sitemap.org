@@ -4,6 +4,7 @@
 - [[file:congestion_barcodes.org][Congestion Barcodes]]
 - [[file:geometry.org][Geometry self-study]]
 - [[file:manhattan_traffic.org][Manhattan Traffic]]
+- [[file:pytype.org][Python's Type theory]]
 - [[file:index.org][Vaibhav Karve]]
 - satisfiability
   - [[file:satisfiability/index.org][Satisfiability]]

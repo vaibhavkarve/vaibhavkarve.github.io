@@ -32,13 +32,24 @@ interactive theorem proving (in particular, with the Lean theorem prover).
 
 * Notes
   - [[file:algebraic_geometry.pdf][Algebraic geometry]]
+  - [[file:algebraic_topology.pdf][Algebraic topology]]
   - [[file:boolean_satisfiability.org][Boolean satisfiability]]
-  - Functional programming
+  - [[file:category_theory_and_haskell.pdf][Category theory and haskell]]
+  - [[file:combinatorial_vector_fields.pdf][Combinatorial vector fields]]
+  - [[file:coq.pdf][Coq]]
+  - [[file:esperanto.pdf][Esperanto]]
   - [[file:geometry.org][Geometry]]
+  - [[file:haskell.pdf][Haskell]]
+  - [[file:homology.pdf][Homology]]
   - How I set up this website
     - followed the steps [[https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html][here]],
     - also set up the sitemap.
+  - [[file:lambda_calculus.pdf][Lambda calculus]]
   - Logic
+  - [[file:lua.pdf][Lua]]
+  - [[file:persistent_homology.pdf][Persistent homology]]
+  - [[file:philosophy.pdf][Philosophy]]
+
 * Everything else
 - Kaprekar's constant visualized
 - Plots and graphs I generated
