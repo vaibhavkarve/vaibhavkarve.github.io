@@ -7,6 +7,8 @@
 - Instagram post :: https://www.instagram.com/p/BvAT8ayH74L/
 - GitHub :: https://github.com/vaibhavkarve/kaprekar
 
+[[./img/kaprekar_process.jpg]]
+
 
 * Kaprekar's Process
 1. Pick a 4-digit number, using at least two different digits.
@@ -28,5 +30,6 @@ from it are anything but. At the center is the number =6174=
 (indicated by the red dot) to which all others are inexorably
 drawn. This plot itself was generated algorithmically using a
 combination of Python, TikZ, and $\LaTeX$.
+
 
 * TODO Port code from TikZ to Lua
