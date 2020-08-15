@@ -61,7 +61,8 @@ interactive theorem proving (in particular, with the Lean theorem prover).
 - [[file:6174.org][6174 : Kaprekar's constant visualized]]
 - Plots and graphs I generated
 - First attempt at publishing package : multihypergraph on PyPI
-- Recognizing patterns in New York traffic : 4 min video
+- [[https://mediaspace.illinois.edu/media/t/1_6n9da3ph/10797641][Recognizing patterns in New York traffic : 4 min video]]
+  as part of UIUC Graduate College's Research Live! 2016 competition.
 - Slides from my talks
 - Photos from conferences
 - My Klein bottle
