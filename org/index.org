@@ -23,6 +23,7 @@ interactive theorem proving (in particular, with the Lean theorem prover).
   - Past projects
     - On the pullback of real exterior forms
     - [[file:congestion_barcodes.org][Congestion barcodes]]
+
 * Teaching
   My ever-evolving [[file:Teaching_Philosophy_Statement.pdf][teaching philosophy]].
   - LeanTeach 2020
@@ -49,6 +50,8 @@ interactive theorem proving (in particular, with the Lean theorem prover).
   - [[file:lua.pdf][Lua]]
   - [[file:persistent_homology.pdf][Persistent homology]]
   - [[file:philosophy.pdf][Philosophy]]
+  - [[file:pytype.org][Python's type theory]]
+
 
 * Everything else
 - Kaprekar's constant visualized
