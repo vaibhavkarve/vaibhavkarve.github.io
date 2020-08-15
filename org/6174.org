@@ -9,9 +9,7 @@
 
 
 
-#+CAPTION: A visual graph of the Kaprekar process. Every four-digit number
-is a point on one of the circles. Every iteration outlined by Kaprekar
-is a path. At the center is the number =6174= (indicated by the red dot).
+#+CAPTION: A visual graph of the Kaprekar process. Every four-digit number is a point on one of the circles. Every iteration outlined by Kaprekar is a path. At the center is the number =6174= (indicated by the red dot).
 #+NAME: fig:kaprepar_process.jpg
 [[./img/kaprekar_process.jpg]]
 
