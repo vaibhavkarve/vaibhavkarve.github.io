@@ -1,6 +1,6 @@
 #+title: Geometry self-study notes
 #+author: [[file:../index.html][Vaibhav Karve]]
-#+options: toc:1
+#+options: toc:2
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 #+subtitle: [[file:index.org][Home]]
 
@@ -15,7 +15,7 @@ Starting with Michèle Audin's book /Geometry/.
    - a set $\mathcal{E}$
    - with the data of a vector space $E$(over a field of
      characteristic $0$)
-   - and a mapping $\Theta : \mathcal{E}\times\mathcal{E} \longrightarrow$.
+   - and a mapping $\Theta : \mathcal{E}\times\mathcal{E} \longrightarrow E$.
    - Furthermore, if $\Theta: (A, B)\mapsto\overrightarrow{AB}$, then we need the
      partial map $\Theta_A : B \mapsto \overrightarrow{AB}$ to be a bijection
      from $\mathcal{E}$ to $E$.
@@ -65,7 +65,7 @@ Starting with Michèle Audin's book /Geometry/.
 
  An intersection of affine subspaces is an affine subspace.
 
- The underlying vector space gives the ``direction'' to an affine
+ The underlying vector space gives the "direction" to an affine
  space. This lets us also talk about parallel affine spaces (they have
  the same direction).
 
@@ -85,7 +85,7 @@ Starting with Michèle Audin's book /Geometry/.
  As a result of this definition of affine maps, given an affine map,
  we can always define a canonical linear map. For example, the linear
  map associated to the affine map $x\mapsto ax+b$ is $x\mapsto ax$.
- Every affine map $phi$ can be written as $\phi(v) = f(v) + v_0$ for
+ Every affine map $\phi$ can be written as $\phi(v) = f(v) + v_0$ for
  some linear map $f$ and some vector $v_0$. (See analogous result for
  affine subspaces).
 
@@ -106,7 +106,7 @@ Starting with Michèle Audin's book /Geometry/.
 *** Thales' theorem
     This theorem states that projections are affine
     maps. Equivalently, any transversal cutting accross three fixed
-    parallel lines will have ``segements'' cut by the parallel lines
+    parallel lines will have "segements" cut by the parallel lines
     in a fixed ratio.
 
 * TODO Euclidean geometry, generalities
