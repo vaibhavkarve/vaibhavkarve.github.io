@@ -1,0 +1,107 @@
+#+title: Geometry self-study
+
+- study plan :: [[https://math.stackexchange.com/q/285201/165632][Link to math stackexchange question]]
+
+Starting with Michèle Audin's book /Geometry/.
+
+* Affine spaces
+** Definition
+   An /affine space/ is:
+   - a set $\Epsilon$
+   - with the data of a vector space $E$(over a field of
+     characteristic $0$)
+   - and a mapping $\Theta : \Epsilon\times\Epsilon \longrightarrow$.
+   - Furthermore, if $\Theta: (A, B)\mapsto\vec{AB}$, then we need the
+     partial map $\Theta_A : B \mapsto \vec{AB}$ to be a bijection
+     from $\Epsilon$ to $E$.
+   - Also (Chasles' relation), $\forall A B C \in\Epsilon, \vec{AB} =
+     \vec{AC} + \vec{CB}$.  This is essentially the law of vector
+     addition.
+
+   $\Theta$ identifies vectors in $E$ with orderd pairs of points in
+   the affine space $\Epsilon$.
+
+   Dimension of $\Epsilon$ is the dimension of $E$.
+
+   *Instance:* Every vector space is canonically an affine space by
+   choosing $\Theta: (u, v) \mapsto v - u$.  Every affine space can be
+   made a vector space by picking an origin point, but this is
+   non-canonical since it depends on the choice of point.
+
+   Chasles' relation implies $\vec{AA} = 0$ and $\vec{AB} =
+   -\vec{BA}$.  It also implies that parallelogram rule of vector
+   addition: \[\vec{AB} = \vec{A'B'} \iff \vec{AA'} = \vec{BB'}.\]
+
+   An /affine subspace/ is a subset of an affine space $\Epsilon$ such
+   that image of subset under partial map $\Theta_A$ (for some
+   $A\in\Epsilon$) is a vector subspace of $E$.  Then we can define
+   /points/, /lines/ and /planes/ to just be affine subspaces of
+   dimension 0, 1, and 2 respectively.
+
+   Point $A_0, A_1, \ldots, A_k$ are /affinely independent/ if the
+   dimension of the affine space they span is $k$.  If $k =
+   dim(\Epsilon)$, then it is said that $(A_0, \ldots, A_k)$ is an
+   /affine frame/ of $\Epsilon$.  For example, an affine frame on a
+   line has two distinct points.
+
+   An /affine map/ is a map $\phi: \Epsilon_1 \rightarrow \Epsilon_2$
+   if there exists a point $O$ (which we can call the origin) and a
+   linear map $f: E \rightarrow F$ such that $\forall A\in\Epsilon$,
+   \[f(\vec{OA}) = \vec{\phi(O)\phi(A)}.\]
+
+   The affine bijections from $\Epsilon$ to itself form a group under
+   composition called the /affine group/ $GA(\Epsilon)$.
+
+** Facts 
+ Any affine subspace of $\Epsilon$ can be written as $V + \vec{v}$,
+ where $V$ is a vector subspace of $E$ and $\vec{v}\in E$.  The vector
+ subspaces are precisely the affine subspaces with $\vec{v}=0$. (See
+ also analogous result for affine maps).
+
+ An intersection of affine subspaces is an affine subspace.
+
+ The underlying vector space gives the ``direction'' to an affine
+ space. This lets us also talk about parallel affine spaces (they have
+ the same direction).
+
+ If $f : E \rightarrow V$ is a _linear_ map then $f^{-1}(v)$ for any
+ $v\in F$ is an affine subspace of the affine space $E$ having
+ $Ker(f)$ as its underlying vector space. Moreover, $f^{-1}(v)$ is
+ parallel to every other $f^{-1}(v')$.
+
+ If $\Epsilon_1, \Epsilon_2$ are parallel, they are either equal or
+ disjoint.
+
+ *Surprisingly:* the parallel axiom (there exists a line parallel to a
+ given line through a point not on the line) is true in any affine
+ space (because it is actually a consequence of vector space axioms
+ and hence of the definition of parallelism).
+
+ As a result of this definition of affine maps, given an affine map,
+ we can always define a canonical linear map. For example, the linear
+ map associated to the affine map $x\mapsto ax+b$ is $x\mapsto ax$.
+ Every affine map $phi$ can be written as $\phi(v) = f(v) + v_0$ for
+ some linear map $f$ and some vector $v_0$. (See analogous result for
+ affine subspaces).
+
+ The forward as well as inverse image of an affine space by an affine
+ map is an affine space.  The composition of two affine mappings is an
+ affine mapping.
+
+ *Surprisingly:* The fact that the three medians of a triangle meet at
+ a single point is a consequence of the _associativity_ of computing
+ barycenters (centers of gravity) of a system of masses.
+
+ Any intersection of convex subsets is convex.
+
+ The forward and inverse image of a convex subset by an affine mapping
+ is convex.
+
+** Theorems
+*** Thales' theorem
+    This theorem states that projections are affine
+    maps. Equivalently, any transversal cutting accross three fixed
+    parallel lines will have ``segements'' cut by the parallel lines
+    in a fixed ratio.
+
+* TODO Euclidean geometry, generalities

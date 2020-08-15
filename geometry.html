@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-08-15 Sat 09:57 -->
+<!-- 2020-08-15 Sat 09:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Congestion Barcodes</title>
+<title>Geometry self-study</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="[[file:../index.html][Vaibhav Karve]]" />
+<meta name="author" content="Vaibhav Karve" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -193,7 +193,6 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -240,39 +239,230 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
-<h1 class="title">Congestion Barcodes
-<br />
-<span class="subtitle"><a href="../index.html">Home</a></span>
-</h1>
-<p>
-This work presents a new method to quantify connectivity in
-transportation networks. Inspired by the field of topological data
-analysis, we propose a novel approach to explore the robustness of
-road network connectivity in the presence of congestion on the
-roadway. The robustness of the pattern is summarized in a congestion
-barcode, which can be constructed directly from traffic datasets
-commonly used for navigation. As an initial demonstration, we
-illustrate the main technique on a publicly available traffic dataset
-in a neighborhood in New York City.
-</p>
-
+<h1 class="title">Geometry self-study</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgc502b23">1. Affine spaces</a>
+<ul>
+<li><a href="#org0a70720">1.1. Definition</a></li>
+<li><a href="#org128a8b5">1.2. Facts</a></li>
+<li><a href="#org458da25">1.3. Theorems</a>
+<ul>
+<li><a href="#orga9e6aa3">1.3.1. Thales' theorem</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org9832dfd">2. <span class="todo TODO">TODO</span> Euclidean geometry, generalities</a></li>
+</ul>
+</div>
+</div>
 <dl class="org-dl">
-<dt>Paper on arXiv</dt><dd><a href="https://arxiv.org/abs/1707.08557">arxiv.org/abs/1707.08557</a></dd>
-<dt>Original data files</dt><dd><a href="https://doi.org/10.13012/B2IDB-4900670_V1">doi.org/10.13012/B2IDB-4900670<sub>V1</sub></a></dd>
+<dt>study plan</dt><dd><a href="https://math.stackexchange.com/q/285201/165632">Link to math stackexchange question</a></dd>
 </dl>
 
 <p>
-This research was conducted as part of the Illinois Geometry
-Laboratory's 2017 program.  It was an offshoot of the much larger
-<a href="manhattan_traffic.html">Manhattan traffic</a> project.
+Starting with Michèle Audin's book <i>Geometry</i>.
+</p>
+
+<div id="outline-container-orgc502b23" class="outline-2">
+<h2 id="orgc502b23"><span class="section-number-2">1</span> Affine spaces</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org0a70720" class="outline-3">
+<h3 id="org0a70720"><span class="section-number-3">1.1</span> Definition</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+An <i>affine space</i> is:
+</p>
+<ul class="org-ul">
+<li>a set \(\Epsilon\)</li>
+<li>with the data of a vector space \(E\)(over a field of
+     characteristic \(0\))</li>
+<li>and a mapping \(\Theta : \Epsilon\times\Epsilon \longrightarrow\).</li>
+<li>Furthermore, if \(\Theta: (A, B)\mapsto\vec{AB}\), then we need the
+     partial map \(\Theta_A : B \mapsto \vec{AB}\) to be a bijection
+     from \(\Epsilon\) to \(E\).</li>
+<li>Also (Chasles' relation), \(\forall A B C \in\Epsilon, \vec{AB} =
+     \vec{AC} + \vec{CB}\).  This is essentially the law of vector
+     addition.</li>
+</ul>
+
+<p>
+\(\Theta\) identifies vectors in \(E\) with orderd pairs of points in
+the affine space \(\Epsilon\).
+</p>
+
+<p>
+Dimension of \(\Epsilon\) is the dimension of \(E\).
+</p>
+
+<p>
+<b>Instance:</b> Every vector space is canonically an affine space by
+choosing \(\Theta: (u, v) \mapsto v - u\).  Every affine space can be
+made a vector space by picking an origin point, but this is
+non-canonical since it depends on the choice of point.
+</p>
+
+<p>
+Chasles' relation implies \(\vec{AA} = 0\) and \(\vec{AB} =
+   -\vec{BA}\).  It also implies that parallelogram rule of vector
+addition: \[\vec{AB} = \vec{A'B'} \iff \vec{AA'} = \vec{BB'}.\]
+</p>
+
+<p>
+An <i>affine subspace</i> is a subset of an affine space \(\Epsilon\) such
+that image of subset under partial map \(\Theta_A\) (for some
+\(A\in\Epsilon\)) is a vector subspace of \(E\).  Then we can define
+<i>points</i>, <i>lines</i> and <i>planes</i> to just be affine subspaces of
+dimension 0, 1, and 2 respectively.
+</p>
+
+<p>
+Point \(A_0, A_1, \ldots, A_k\) are <i>affinely independent</i> if the
+dimension of the affine space they span is \(k\).  If \(k =
+   dim(\Epsilon)\), then it is said that \((A_0, \ldots, A_k)\) is an
+<i>affine frame</i> of \(\Epsilon\).  For example, an affine frame on a
+line has two distinct points.
+</p>
+
+<p>
+An <i>affine map</i> is a map \(\phi: \Epsilon_1 \rightarrow \Epsilon_2\)
+if there exists a point \(O\) (which we can call the origin) and a
+linear map \(f: E \rightarrow F\) such that \(\forall A\in\Epsilon\),
+\[f(\vec{OA}) = \vec{\phi(O)\phi(A)}.\]
+</p>
+
+<p>
+The affine bijections from \(\Epsilon\) to itself form a group under
+composition called the <i>affine group</i> \(GA(\Epsilon)\).
 </p>
 </div>
+</div>
+
+<div id="outline-container-org128a8b5" class="outline-3">
+<h3 id="org128a8b5"><span class="section-number-3">1.2</span> Facts</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Any affine subspace of \(\Epsilon\) can be written as \(V + \vec{v}\),
+where \(V\) is a vector subspace of \(E\) and \(\vec{v}\in E\).  The vector
+subspaces are precisely the affine subspaces with \(\vec{v}=0\). (See
+also analogous result for affine maps).
+</p>
+
+<p>
+An intersection of affine subspaces is an affine subspace.
+</p>
+
+<p>
+The underlying vector space gives the ``direction'' to an affine
+space. This lets us also talk about parallel affine spaces (they have
+the same direction).
+</p>
+
+<p>
+If \(f : E \rightarrow V\) is a <span class="underline">linear</span> map then \(f^{-1}(v)\) for any
+\(v\in F\) is an affine subspace of the affine space \(E\) having
+\(Ker(f)\) as its underlying vector space. Moreover, \(f^{-1}(v)\) is
+parallel to every other \(f^{-1}(v')\).
+</p>
+
+<p>
+If \(\Epsilon_1, \Epsilon_2\) are parallel, they are either equal or
+disjoint.
+</p>
+
+<p>
+<b>Surprisingly:</b> the parallel axiom (there exists a line parallel to a
+given line through a point not on the line) is true in any affine
+space (because it is actually a consequence of vector space axioms
+and hence of the definition of parallelism).
+</p>
+
+<p>
+As a result of this definition of affine maps, given an affine map,
+we can always define a canonical linear map. For example, the linear
+map associated to the affine map \(x\mapsto ax+b\) is \(x\mapsto ax\).
+Every affine map \(phi\) can be written as \(\phi(v) = f(v) + v_0\) for
+some linear map \(f\) and some vector \(v_0\). (See analogous result for
+affine subspaces).
+</p>
+
+<p>
+The forward as well as inverse image of an affine space by an affine
+map is an affine space.  The composition of two affine mappings is an
+affine mapping.
+</p>
+
+<p>
+<b>Surprisingly:</b> The fact that the three medians of a triangle meet at
+a single point is a consequence of the <span class="underline">associativity</span> of computing
+barycenters (centers of gravity) of a system of masses.
+</p>
+
+<p>
+Any intersection of convex subsets is convex.
+</p>
+
+<p>
+The forward and inverse image of a convex subset by an affine mapping
+is convex.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org458da25" class="outline-3">
+<h3 id="org458da25"><span class="section-number-3">1.3</span> Theorems</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-orga9e6aa3" class="outline-4">
+<h4 id="orga9e6aa3"><span class="section-number-4">1.3.1</span> Thales' theorem</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<p>
+This theorem states that projections are affine
+maps. Equivalently, any transversal cutting accross three fixed
+parallel lines will have ``segements'' cut by the parallel lines
+in a fixed ratio.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9832dfd" class="outline-2">
+<h2 id="org9832dfd"><span class="section-number-2">2</span> <span class="todo TODO">TODO</span> Euclidean geometry, generalities</h2>
+</div>
+</div>
 <div id="postamble" class="status">
-<p class="author">Author: <a href="../index.html">Vaibhav Karve</a></p>
-<p class="date">Created: 2020-08-15 Sat 09:57</p>
+<p class="author">Author: Vaibhav Karve</p>
+<p class="date">Created: 2020-08-15 Sat 09:54</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

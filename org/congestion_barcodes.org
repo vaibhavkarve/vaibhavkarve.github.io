@@ -18,4 +18,5 @@ in a neighborhood in New York City.
 - Original data files :: [[https://doi.org/10.13012/B2IDB-4900670_V1][doi.org/10.13012/B2IDB-4900670_V1]]
 
 This research was conducted as part of the Illinois Geometry
-Laboratory's 2017 program.
+Laboratory's 2017 program.  It was an offshoot of the much larger
+[[file:manhattan_traffic.html][Manhattan traffic]] project.

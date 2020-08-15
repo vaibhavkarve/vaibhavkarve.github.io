@@ -1,6 +1,7 @@
 #+TITLE: Sitemap
 
 - [[file:congestion_barcodes.org][Congestion Barcodes]]
+- [[file:geometry.org][Geometry self-study]]
 - [[file:manhattan_traffic.org][Manhattan Traffic]]
 - [[file:satisfiability_notes.org][Notes on Boolean Satisfiability]]
 - [[file:index.org][Vaibhav Karve]]
