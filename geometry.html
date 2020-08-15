@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-08-15 Sat 10:06 -->
+<!-- 2020-08-15 Sat 10:11 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Geometry self-study notes</title>
@@ -301,11 +301,11 @@ An <i>affine space</i> is:
 <li>with the data of a vector space \(E\)(over a field of
      characteristic \(0\))</li>
 <li>and a mapping \(\Theta : \mathcal{E}\times\mathcal{E} \longrightarrow\).</li>
-<li>Furthermore, if \(\Theta: (A, B)\mapsto\vec{AB}\), then we need the
-     partial map \(\Theta_A : B \mapsto \vec{AB}\) to be a bijection
+<li>Furthermore, if \(\Theta: (A, B)\mapsto\overrightarrow{AB}\), then we need the
+     partial map \(\Theta_A : B \mapsto \overrightarrow{AB}\) to be a bijection
      from \(\mathcal{E}\) to \(E\).</li>
-<li>Also (Chasles' relation), \(\forall A B C \in\mathcal{E}, \vec{AB} =
-     \vec{AC} + \vec{CB}\).  This is essentially the law of vector
+<li>Also (Chasles' relation), \(\forall A, B, C \in\mathcal{E}, \overrightarrow{AB} =
+     \overrightarrow{AC} + \overrightarrow{CB}\).  This is essentially the law of vector
      addition.</li>
 </ul>
 
@@ -326,9 +326,9 @@ non-canonical since it depends on the choice of point.
 </p>
 
 <p>
-Chasles' relation implies \(\vec{AA} = 0\) and \(\vec{AB} =
-   -\vec{BA}\).  It also implies that parallelogram rule of vector
-addition: \[\vec{AB} = \vec{A'B'} \iff \vec{AA'} = \vec{BB'}.\]
+Chasles' relation implies \(\overrightarrow{AA} = 0\) and \(\overrightarrow{AB} =
+   -\overrightarrow{BA}\).  It also implies that parallelogram rule of vector
+addition: \[\overrightarrow{AB} = \overrightarrow{A'B'} \iff \overrightarrow{AA'} = \overrightarrow{BB'}.\]
 </p>
 
 <p>
@@ -351,7 +351,7 @@ line has two distinct points.
 An <i>affine map</i> is a map \(\phi: \mathcal{E}_1 \rightarrow \mathcal{E}_2\)
 if there exists a point \(O\) (which we can call the origin) and a
 linear map \(f: E \rightarrow F\) such that \(\forall A\in\mathcal{E}\),
-\[f(\vec{OA}) = \vec{\phi(O)\phi(A)}.\]
+\[f(\overrightarrow{OA}) = \overrightarrow{\phi(O)\phi(A)}.\]
 </p>
 
 <p>
@@ -365,9 +365,9 @@ composition called the <i>affine group</i> \(GA(\mathcal{E})\).
 <h3 id="org128a8b5"><span class="section-number-3">1.2</span> Facts</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
-Any affine subspace of \(\mathcal{E}\) can be written as \(V + \vec{v}\),
-where \(V\) is a vector subspace of \(E\) and \(\vec{v}\in E\).  The vector
-subspaces are precisely the affine subspaces with \(\vec{v}=0\). (See
+Any affine subspace of \(\mathcal{E}\) can be written as \(V + \overrightarrow{v}\),
+where \(V\) is a vector subspace of \(E\) and \(\overrightarrow{v}\in E\).  The vector
+subspaces are precisely the affine subspaces with \(\overrightarrow{v}=0\). (See
 also analogous result for affine maps).
 </p>
 
@@ -456,7 +456,7 @@ in a fixed ratio.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: <a href="../index.html">Vaibhav Karve</a></p>
-<p class="date">Created: 2020-08-15 Sat 10:06</p>
+<p class="date">Created: 2020-08-15 Sat 10:11</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

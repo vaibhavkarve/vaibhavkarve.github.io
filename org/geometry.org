@@ -16,11 +16,11 @@ Starting with Michèle Audin's book /Geometry/.
    - with the data of a vector space $E$(over a field of
      characteristic $0$)
    - and a mapping $\Theta : \mathcal{E}\times\mathcal{E} \longrightarrow$.
-   - Furthermore, if $\Theta: (A, B)\mapsto\vec{AB}$, then we need the
-     partial map $\Theta_A : B \mapsto \vec{AB}$ to be a bijection
+   - Furthermore, if $\Theta: (A, B)\mapsto\overrightarrow{AB}$, then we need the
+     partial map $\Theta_A : B \mapsto \overrightarrow{AB}$ to be a bijection
      from $\mathcal{E}$ to $E$.
-   - Also (Chasles' relation), $\forall A B C \in\mathcal{E}, \vec{AB} =
-     \vec{AC} + \vec{CB}$.  This is essentially the law of vector
+   - Also (Chasles' relation), $\forall A, B, C \in\mathcal{E}, \overrightarrow{AB} =
+     \overrightarrow{AC} + \overrightarrow{CB}$.  This is essentially the law of vector
      addition.
 
    $\Theta$ identifies vectors in $E$ with orderd pairs of points in
@@ -33,9 +33,9 @@ Starting with Michèle Audin's book /Geometry/.
    made a vector space by picking an origin point, but this is
    non-canonical since it depends on the choice of point.
 
-   Chasles' relation implies $\vec{AA} = 0$ and $\vec{AB} =
-   -\vec{BA}$.  It also implies that parallelogram rule of vector
-   addition: \[\vec{AB} = \vec{A'B'} \iff \vec{AA'} = \vec{BB'}.\]
+   Chasles' relation implies $\overrightarrow{AA} = 0$ and $\overrightarrow{AB} =
+   -\overrightarrow{BA}$.  It also implies that parallelogram rule of vector
+   addition: \[\overrightarrow{AB} = \overrightarrow{A'B'} \iff \overrightarrow{AA'} = \overrightarrow{BB'}.\]
 
    An /affine subspace/ is a subset of an affine space $\mathcal{E}$ such
    that image of subset under partial map $\Theta_A$ (for some
@@ -52,15 +52,15 @@ Starting with Michèle Audin's book /Geometry/.
    An /affine map/ is a map $\phi: \mathcal{E}_1 \rightarrow \mathcal{E}_2$
    if there exists a point $O$ (which we can call the origin) and a
    linear map $f: E \rightarrow F$ such that $\forall A\in\mathcal{E}$,
-   \[f(\vec{OA}) = \vec{\phi(O)\phi(A)}.\]
+   \[f(\overrightarrow{OA}) = \overrightarrow{\phi(O)\phi(A)}.\]
 
    The affine bijections from $\mathcal{E}$ to itself form a group under
    composition called the /affine group/ $GA(\mathcal{E})$.
 
 ** Facts 
- Any affine subspace of $\mathcal{E}$ can be written as $V + \vec{v}$,
- where $V$ is a vector subspace of $E$ and $\vec{v}\in E$.  The vector
- subspaces are precisely the affine subspaces with $\vec{v}=0$. (See
+ Any affine subspace of $\mathcal{E}$ can be written as $V + \overrightarrow{v}$,
+ where $V$ is a vector subspace of $E$ and $\overrightarrow{v}\in E$.  The vector
+ subspaces are precisely the affine subspaces with $\overrightarrow{v}=0$. (See
  also analogous result for affine maps).
 
  An intersection of affine subspaces is an affine subspace.
