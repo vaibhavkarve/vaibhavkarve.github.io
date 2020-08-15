@@ -1,5 +1,5 @@
 #+title: Boolean Satisfiability notes
-#+options: toc:0 H:2 num:0
+#+options: toc:1 H:2
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 #+subtitle: [[file:index.org][Home]]
 
