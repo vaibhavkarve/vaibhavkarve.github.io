@@ -26,14 +26,16 @@ interactive theorem proving (in particular, with the Lean theorem prover).
 
 * Teaching
   My ever-evolving [[file:Teaching_Philosophy_Statement.pdf][teaching philosophy]].
-  - LeanTeach 2020
+  - LeanTeach 2020 @ Illinois Geometry Lab + UniHigh Summer program
   - Computational mathematics
-  - Classical constructions
+  - Classical constructions @ Summer Illinois Math Camp, UIUC
+  - Merit program @ Math UIUC
   - Past courses
+    
 
 * Notes
   These are mostly notes I have taken as part of self-studying various
-  things. They are note meant to be comprehensive notes -- just a
+  things. They are not meant to be comprehensive notes -- just a
   collection of things I found interesting at different times and
   wished to keep a record of.
   - [[file:algebraic_geometry.pdf][Algebraic geometry]]
@@ -70,3 +72,4 @@ interactive theorem proving (in particular, with the Lean theorem prover).
 * Footnotes
 
 [fn:1] this work is currently funded by the [[https://math.illinois.edu/academics/graduate-program/funding/graduate-awards-and-fellowships/david-g-bourgin-mathematics][David G. Bourgin Mathematics Fellowship]].
+
