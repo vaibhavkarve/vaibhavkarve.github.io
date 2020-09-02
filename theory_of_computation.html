@@ -6,7 +6,7 @@
 <!-- 2020-09-02 Wed 16:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Vaibhav Karve</title>
+<title>Theory of Computation</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="Vaibhav Karve" />
 <style type="text/css">
@@ -180,7 +180,6 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -230,125 +229,107 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Vaibhav Karve
-<br />
-<span class="subtitle"><a href="CV.pdf">CV</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://github.com/vaibhavkarve">GitHub</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.linkedin.com/in/vaibhav-karve/">LinkedIn</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="https://git.math.illinois.edu/vkarve2">GitLab</a></span>
-</h1>
-<p>
-I am a PhD student at the <a href="https://math.illinois.edu">Department of Mathematics</a> at the University
-of Illinois at Urbana-Champaign.  My PhD advisor is <a href="https://faculty.math.illinois.edu/~hirani/">Anil Hirani</a>.
-</p>
-
-<p>
-My research interests lie in graph theory, logic, algorithms and
-computational topology.  I am currently writing my doctoral thesis,
-titled <i>Graphical structure of unsatisfiable boolean formulas</i> which
-combines the tools of graph theory and topology to analyze boolean
-satisfiability &#x2013; a classic problem in logic and computer science.
-</p>
-
-<p>
-I am also looking to extend my doctoral work towards the upcoming and
-adjacent field of computer-assisted formalized mathematics and
-interactive theorem proving (in particular, with the Lean theorem prover).
-</p>
-
-<div id="outline-container-orgb4548de" class="outline-2">
-<h2 id="orgb4548de">Research</h2>
-<div class="outline-text-2" id="text-orgb4548de">
-<ul class="org-ul">
-<li><a href="satisfiability/index.html">Graph satisfiability</a> <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></li>
-<li><a href="manhattan_traffic.html">Manhattan traffic</a></li>
-<li>Geometry in Lean</li>
-<li>Past projects
-<ul class="org-ul">
-<li>On the pullback of real exterior forms</li>
-<li><a href="congestion_barcodes.html">Congestion barcodes</a></li>
-</ul></li>
+<h1 class="title">Theory of Computation</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org207b025">1. Finite automata</a></li>
+<li><a href="#org0cb4a37">2. Next time</a></li>
 </ul>
 </div>
 </div>
-
-<div id="outline-container-orge4f8dd6" class="outline-2">
-<h2 id="orge4f8dd6">Teaching</h2>
-<div class="outline-text-2" id="text-orge4f8dd6">
 <p>
-My ever-evolving <a href="Teaching_Philosophy_Statement.pdf">teaching philosophy</a>.
+Notes taken from Reading Group
+</p>
+
+<dl class="org-dl">
+<dt>Reference</dt><dd>Book by Michael Sipser &#x2013; Introduction to theory of
+computation</dd>
+</dl>
+
+<div id="outline-container-org207b025" class="outline-2">
+<h2 id="org207b025"><span class="section-number-2">1</span> Finite automata</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Part 1 will be Computability. Part 2 will be Complexity.
+</p>
+
+<p>
+Finite state machine (Q, Σ, δ, q₀, F) a.k.a deterministic automaton
+Q = finite set of states
+Σ = finite alphabet
+δ : Q × Σ → Q
+q₀ = start state
+F = final state
+</p>
+
+
+<p>
+A subset X ⊆ Σ* which has an automata M that accepts X is called a
+<span class="underline">regular language</span>.
+</p>
+
+<dl class="org-dl">
+<dt>HW</dt><dd>construct automata that accepts Σ = {a, b} and X = all strings
+that start and end with different letters.</dd>
+</dl>
+
+<p>
+Regular languages are closed under:
 </p>
 <ul class="org-ul">
-<li>LeanTeach 2020 @ Illinois Geometry Lab + UniHigh Summer program</li>
-<li>Computational mathematics</li>
-<li>Classical constructions @ Summer Illinois Math Camp, UIUC</li>
-<li>Merit program @ Math UIUC</li>
-<li>Past courses</li>
+<li>Complementation (under Σ*)</li>
+<li>Union and Intersection</li>
+<li>Concatenation</li>
+<li>Kleene Star (i.e. unbounded concatenation)</li>
 </ul>
-</div>
-</div>
 
-
-<div id="outline-container-org83491f3" class="outline-2">
-<h2 id="org83491f3">Notes</h2>
-<div class="outline-text-2" id="text-org83491f3">
 <p>
-These are mostly notes I have taken as part of self-studying various
-things. They are not meant to be comprehensive notes &#x2013; just a
-collection of things I found interesting at different times and
-wished to keep a record of.
+Philosophically, DFAs are "memoryless".
+</p>
+
+<p>
+<span class="underline">Nondeterministic automaton</span> (Q, Σ, δ, q₀, F)
 </p>
 <ul class="org-ul">
-<li><a href="algebraic_geometry.pdf">Algebraic geometry</a></li>
-<li><a href="algebraic_topology.pdf">Algebraic topology</a></li>
-<li><a href="boolean_satisfiability.html">Boolean satisfiability</a></li>
-<li><a href="category_theory_and_haskell.pdf">Category theory and haskell</a></li>
-<li><a href="combinatorial_vector_fields.pdf">Combinatorial vector fields</a></li>
-<li><a href="coq.pdf">Coq</a></li>
-<li><a href="esperanto.pdf">Esperanto</a></li>
-<li><a href="geometry.html">Geometry</a></li>
-<li><a href="haskell.pdf">Haskell</a></li>
-<li><a href="homology.pdf">Homology</a></li>
-<li>How I set up this website
-<ul class="org-ul">
-<li>followed the steps <a href="https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html">here</a>,</li>
-<li>also set up the sitemap.</li>
-</ul></li>
-<li><a href="lambda_calculus.pdf">Lambda calculus</a></li>
-<li>Logic</li>
-<li><a href="lua.pdf">Lua</a></li>
-<li><a href="persistent_homology.pdf">Persistent homology</a></li>
-<li><a href="philosophy.pdf">Philosophy</a></li>
-<li><a href="pytype.html">Python's type theory</a></li>
+<li>δ : Q × Σ<sub>ε</sub> → P(Q)</li>
 </ul>
-</div>
-</div>
-
-
-<div id="outline-container-org29b8925" class="outline-2">
-<h2 id="org29b8925">Everything else</h2>
-<div class="outline-text-2" id="text-org29b8925">
+<p>
+where,
+</p>
 <ul class="org-ul">
-<li><a href="6174.html">6174 : Kaprekar's constant visualized</a></li>
-<li>Plots and graphs I generated</li>
-<li>First attempt at publishing package : multihypergraph on PyPI</li>
-<li><a href="https://mediaspace.illinois.edu/media/t/1_6n9da3ph/10797641">Recognizing patterns in New York traffic : 4 min video</a>
-as part of UIUC Graduate College's Research Live! 2016 competition.</li>
-<li>Slides from my talks</li>
-<li>Photos from conferences</li>
-<li>My Klein bottle</li>
-<li><a href="https://goodreads.com/vaibhavkarve">My Goodreads profile</a></li>
+<li>ε = empty string</li>
+<li>Σ<sub>ε</sub> = Σ ∪ ε</li>
+<li>P(Q) = power set of Q</li>
 </ul>
+
+<p>
+In a "run" pick some possible paths that can be taken. Accept if any
+run with a given input ends in an accept state.
+</p>
+
+<dl class="org-dl">
+<dt>Theorem</dt><dd>For every NFA, there is an equivalent DFA. Equivalent
+means they accept the same</dd>
+<dt>Proof idea</dt><dd>Given δ : Q × Σ<sub>ε</sub> → P(Q), construct δ' : P(Q) × Σ<sub>ε</sub> →
+P(Q).  Then δ' is a transition function for a
+DFA. Need to show that δ' being partial function on
+P(Q) is not going to be an issue.</dd>
+</dl>
 </div>
 </div>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
 
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-this work is currently funded by the <a href="https://math.illinois.edu/academics/graduate-program/funding/graduate-awards-and-fellowships/david-g-bourgin-mathematics">David G. Bourgin Mathematics Fellowship</a>.
-</p></div></div>
-
-
+<div id="outline-container-org0cb4a37" class="outline-2">
+<h2 id="org0cb4a37"><span class="section-number-2">2</span> Next time</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+What about memory? Pumping lemma and/or push-down automata and/or
+Turing machines.
+</p>
 </div>
-</div></div>
+</div>
+</div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
 <p class="date">Created: 2020-09-02 Wed 16:54</p>

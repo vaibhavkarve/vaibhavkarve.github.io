@@ -6,6 +6,7 @@
 - [[file:geometry.org][Geometry self-study notes]]
 - [[file:manhattan_traffic.org][Manhattan Traffic]]
 - [[file:pytype.org][Python's Type theory]]
+- [[file:theory_of_computation.org][Theory of Computation]]
 - [[file:index.org][Vaibhav Karve]]
 - satisfiability
   - [[file:satisfiability/index.org][Graph Satisfiability]]
