@@ -1,7 +1,4 @@
 #+title: Theory of Computation
-#+options: toc:2 H:2
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
-#+subtitle: =Python -> Tuple[TypeTheory, typing]=
 #+subtitle: [[file:index.org][Home]]
 
 Notes taken from Reading Group
@@ -13,11 +10,11 @@ Notes taken from Reading Group
   Part 1 will be Computability. Part 2 will be Complexity.
 
 Finite state machine (Q, Σ, δ, q₀, F) a.k.a deterministic automaton
-Q = finite set of states
-Σ = finite alphabet
-δ : Q × Σ → Q
-q₀ = start state
-F = final state
+- Q = finite set of states
+- Σ = finite alphabet
+- δ : Q × Σ → Q
+- q₀ = start state
+- F = final state
 
 
 A subset X ⊆ Σ* which has an automata M that accepts X is called a
