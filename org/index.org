@@ -1,7 +1,7 @@
 #+title: Vaibhav Karve
-#+options: toc:0 H:2 num:0
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
-#+subtitle: [[file:Vaibhav Karve CV.pdf][CV]]\nbsp{}\nbsp{}\nbsp{}\nbsp{} [[https://github.com/vaibhavkarve][GitHub]] \nbsp{}\nbsp{}\nbsp{}\nbsp{} [[https://www.linkedin.com/in/vaibhav-karve/][LinkedIn]] \nbsp{}\nbsp{}\nbsp{}\nbsp{} [[https://git.math.illinois.edu/vkarve2][GitLab]]
+# #+options: toc:0 H:2 num:0
+# #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+# #+subtitle: [[file:CV.pdf][CV]]\nbsp{}\nbsp{}\nbsp{}\nbsp{} [[https://github.com/vaibhavkarve][GitHub]] \nbsp{}\nbsp{}\nbsp{}\nbsp{} [[https://www.linkedin.com/in/vaibhav-karve/][LinkedIn]] \nbsp{}\nbsp{}\nbsp{}\nbsp{} [[https://git.math.illinois.edu/vkarve2][GitLab]]
 
 I am a PhD student at the [[https://math.illinois.edu][Department of Mathematics]] at the University
 of Illinois at Urbana-Champaign.  My PhD advisor is [[https://faculty.math.illinois.edu/~hirani/][Anil Hirani]].

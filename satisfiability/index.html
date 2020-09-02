@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-08-14 Fri 13:53 -->
+<!-- 2020-09-01 Tue 12:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Graph Satisfiability</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="[[file:../index.html][Vaibhav Karve]]" />
+<meta name="author" content="[[file:../index.html][Vaibhav Karve]]Vaibhav Karve" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -161,19 +161,6 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -199,7 +186,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -273,10 +260,10 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4de280c">1. Definitions</a></li>
-<li><a href="#org79bb55c">2. In Lean</a></li>
-<li><a href="#org83f1729">3. In Python</a></li>
-<li><a href="#orgf5993c6">4. In Haskell</a></li>
+<li><a href="#org7f5a7ce">1. Definitions</a></li>
+<li><a href="#org07b0eb8">2. In Lean</a></li>
+<li><a href="#org9904570">3. In Python</a></li>
+<li><a href="#orgf3198cd">4. In Haskell</a></li>
 </ul>
 </div>
 </div>
@@ -292,12 +279,12 @@ satisfiability problem.
 <dt>GitLab</dt><dd><a href="https://git.math.illinois.edu/hirani_group/home/-/tree/master/projects/sat">private repository</a></dd>
 </dl>
 
-<div id="outline-container-org4de280c" class="outline-2">
-<h2 id="org4de280c"><span class="section-number-2">1</span> Definitions</h2>
+<div id="outline-container-org7f5a7ce" class="outline-2">
+<h2 id="org7f5a7ce"><span class="section-number-2">1</span> Definitions</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgfb311e0" class="outline-3">
-<h3 id="orgfb311e0"><span class="section-number-3">1.1</span> SAT</h3>
+<div id="outline-container-org46afddc" class="outline-3">
+<h3 id="org46afddc"><span class="section-number-3">1.1</span> SAT</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 We pick a countable set and call it our set of variables.
@@ -320,8 +307,8 @@ satisfies it.  Otherwise it is <i>unsatisfiable</i>.
 </div>
 </div>
 
-<div id="outline-container-org7ef55dc" class="outline-3">
-<h3 id="org7ef55dc"><span class="section-number-3">1.2</span> \(\pi: CNFs \rightarrow Graphs\)</h3>
+<div id="outline-container-org0721aa8" class="outline-3">
+<h3 id="org0721aa8"><span class="section-number-3">1.2</span> \(\pi: CNFs \rightarrow Graphs\)</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 For every CNF we define a multi-hypergraph by erasing all negating
@@ -396,8 +383,8 @@ Table summarizing the effect of \(\pi\):
 </div>
 </div>
 
-<div id="outline-container-orgda1b813" class="outline-3">
-<h3 id="orgda1b813"><span class="section-number-3">1.3</span> Graphsat</h3>
+<div id="outline-container-orgc68f60f" class="outline-3">
+<h3 id="orgc68f60f"><span class="section-number-3">1.3</span> Graphsat</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 A multi-hypergraph \(G\) is <i>satisfiable</i> if the set \(\pi^{-1}(G)\)
@@ -408,8 +395,8 @@ satisfiable. Otherwise it is unsatisfiable.
 </div>
 </div>
 
-<div id="outline-container-org79bb55c" class="outline-2">
-<h2 id="org79bb55c"><span class="section-number-2">2</span> In Lean</h2>
+<div id="outline-container-org07b0eb8" class="outline-2">
+<h2 id="org07b0eb8"><span class="section-number-2">2</span> In Lean</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 I have formalized the definition of graph satisfiability in Lean.  I
@@ -418,7 +405,7 @@ results in Lean.
 </p>
 
 
-<div id="org3e0aa6f" class="figure">
+<div id="org76dded2" class="figure">
 <p><img src="../img/graphsat_in_lean.png" alt="graphsat_in_lean.png" />
 </p>
 <p><span class="figure-number">Figure 1: </span>The definition of a satisfiable graph in Lean.</p>
@@ -426,8 +413,8 @@ results in Lean.
 </div>
 </div>
 
-<div id="outline-container-org83f1729" class="outline-2">
-<h2 id="org83f1729"><span class="section-number-2">3</span> In Python</h2>
+<div id="outline-container-org9904570" class="outline-2">
+<h2 id="org9904570"><span class="section-number-2">3</span> In Python</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 I have created a python3.8 package called <code>graphsat</code> that can perform computations on
@@ -438,8 +425,8 @@ experimentation and computation.
 </div>
 </div>
 
-<div id="outline-container-orgf5993c6" class="outline-2">
-<h2 id="orgf5993c6"><span class="section-number-2">4</span> In Haskell</h2>
+<div id="outline-container-orgf3198cd" class="outline-2">
+<h2 id="orgf3198cd"><span class="section-number-2">4</span> In Haskell</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 I am attempting to translate <code>graphsat</code> in Haskell as well. This is
@@ -450,7 +437,7 @@ still a work in progress.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: <a href="../index.html">Vaibhav Karve</a></p>
-<p class="date">Created: 2020-08-14 Fri 13:53</p>
+<p class="date">Created: 2020-09-01 Tue 12:08</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

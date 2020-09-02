@@ -1,0 +1,51 @@
+#+title: Theory of Computation
+Notes taken from Reading Group
+
+- Reference :: Book by Michael Sipser -- Introduction to theory of
+               computation
+
+* Finite automata
+  Part 1 will be Computability. Part 2 will be Complexity.
+
+Finite state machine (Q, Σ, δ, q₀, F) a.k.a deterministic automaton
+Q = finite set of states
+Σ = finite alphabet
+δ : Q × Σ → Q
+q₀ = start state
+F = final state
+
+
+A subset X ⊆ Σ* which has an automata M that accepts X is called a
+_regular language_.
+
+- HW :: construct automata that accepts Σ = {a, b} and X = all strings
+        that start and end with different letters.
+
+Regular languages are closed under:
+- Complementation (under Σ*)
+- Union and Intersection
+- Concatenation
+- Kleene Star (i.e. unbounded concatenation)
+
+Philosophically, DFAs are "memoryless".
+
+_Nondeterministic automaton_ (Q, Σ, δ, q₀, F)
+- δ : Q × Σ_ε → P(Q)
+where,
+- ε = empty string
+- Σ_ε = Σ ∪ ε
+- P(Q) = power set of Q
+
+In a "run" pick some possible paths that can be taken. Accept if any
+run with a given input ends in an accept state.
+
+- Theorem :: For every NFA, there is an equivalent DFA. Equivalent
+             means they accept the same
+- Proof idea :: Given δ : Q × Σ_ε → P(Q), construct δ' : P(Q) × Σ_ε →
+                P(Q).  Then δ' is a transition function for a
+                DFA. Need to show that δ' being partial function on
+                P(Q) is not going to be an issue.
+
+* Next time
+  What about memory? Pumping lemma and/or push-down automata and/or
+  Turing machines.
