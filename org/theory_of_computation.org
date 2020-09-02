@@ -1,4 +1,9 @@
 #+title: Theory of Computation
+#+options: toc:2 H:2
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+#+subtitle: =Python -> Tuple[TypeTheory, typing]=
+#+subtitle: [[file:index.org][Home]]
+
 Notes taken from Reading Group
 
 - Reference :: Book by Michael Sipser -- Introduction to theory of
