@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-09-03 Thu 12:21 -->
+<!-- 2020-09-03 Thu 12:28 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Python's Type theory</title>
@@ -256,7 +256,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#orgc69e22e">3.1. Basic data-structures</a></li>
 <li><a href="#orga1d1c9b">3.2. Understanding <code>Any</code></a></li>
-<li><a href="#orgca4bf1a">3.3. Optional and Union</a></li>
+<li><a href="#org6232354">3.3. Optional and Union</a></li>
 <li><a href="#org44cce32">3.4. The <code>cast</code> function</a></li>
 </ul>
 </li>
@@ -588,8 +588,8 @@ user), python simply defaults to usign <code>Any</code> as the variable's type.
 </div>
 </div>
 
-<div id="outline-container-orgca4bf1a" class="outline-3">
-<h3 id="orgca4bf1a"><span class="section-number-3">3.3</span> Optional and Union</h3>
+<div id="outline-container-org6232354" class="outline-3">
+<h3 id="org6232354"><span class="section-number-3">3.3</span> Optional and Union</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 <code>Union</code> represents what in type-theory jargon are called sum-types.
@@ -603,7 +603,7 @@ the use of both of these.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python" id="org12ab9b9"><span style="font-weight: bold;">from</span> typing <span style="font-weight: bold;">import</span> List, Optional, Union
+<pre class="src src-python" id="orgca4bf1a"><span style="font-weight: bold;">from</span> typing <span style="font-weight: bold;">import</span> List, Optional, Union
 
 a: List[Union[<span style="font-weight: bold;">int</span>, <span style="font-weight: bold;">str</span>]] = [1, 2, <span style="font-style: italic;">'a'</span>, 3, <span style="font-style: italic;">'b'</span>]
 
@@ -738,7 +738,7 @@ This is a function that lets you do two things:
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2020-09-03 Thu 12:21</p>
+<p class="date">Created: 2020-09-03 Thu 12:28</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
