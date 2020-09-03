@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-09-01 Tue 12:08 -->
+<!-- 2020-09-03 Thu 09:58 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Python's Type theory</title>
@@ -256,7 +256,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#orgc69e22e">3.1. Basic data-structures</a></li>
 <li><a href="#orga1d1c9b">3.2. Understanding <code>Any</code></a></li>
-<li><a href="#orge7ab9e9">3.3. Optional and Union</a></li>
+<li><a href="#orgf21be1e">3.3. Optional and Union</a></li>
 <li><a href="#org44cce32">3.4. The <code>cast</code> function</a></li>
 </ul>
 </li>
@@ -378,11 +378,11 @@ Python comes with some in-built types.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python" id="org69411f9">a: <span style="color: #483d8b;">int</span>   = 1
-b: <span style="color: #483d8b;">float</span> = 1.0
-c: <span style="color: #483d8b;">str</span>   = <span style="color: #8b2252;">'one'</span>
-d: <span style="color: #483d8b;">bool</span>  = <span style="color: #008b8b;">True</span>
-e: <span style="color: #008b8b;">None</span>  = <span style="color: #008b8b;">None</span>
+<pre class="src src-python" id="org69411f9">a: <span style="font-weight: bold;">int</span>   = 1
+b: <span style="font-weight: bold;">float</span> = 1.0
+c: <span style="font-weight: bold;">str</span>   = <span style="font-style: italic;">'one'</span>
+d: <span style="font-weight: bold;">bool</span>  = <span style="font-weight: bold; text-decoration: underline;">True</span>
+e: <span style="font-weight: bold; text-decoration: underline;">None</span>  = <span style="font-weight: bold; text-decoration: underline;">None</span>
 </pre>
 </div>
 
@@ -392,9 +392,9 @@ In addition, for every class that we define, we can refer to the
 type of its instances using the name of the class itself.
 </p>
 <div class="org-src-container">
-<pre class="src src-python" id="orgdabbe27"><span style="color: #a020f0;">class</span> <span style="color: #228b22;">MyClass</span>:
-    <span style="color: #a020f0;">pass</span>
-m: <span style="color: #a0522d;">MyClass</span> = MyClass()
+<pre class="src src-python" id="orgdabbe27"><span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">MyClass</span>:
+    <span style="font-weight: bold;">pass</span>
+m: <span style="font-weight: bold; font-style: italic;">MyClass</span> = MyClass()
 </pre>
 </div>
 </div>
@@ -434,14 +434,14 @@ function as follows:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python" id="orgf902af8"><span style="color: #b22222;"># </span><span style="color: #b22222;">define a new type</span>
-<span style="color: #a0522d;">PositiveInt</span> = NewType(<span style="color: #8b2252;">'PositiveInt'</span>, <span style="color: #483d8b;">int</span>)  <span style="color: #b22222;"># </span><span style="color: #b22222;">This is the same as declaring PositiveInt &lt;: int</span>
+<pre class="src src-python" id="orgf902af8"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">define a new type</span>
+<span style="font-weight: bold; font-style: italic;">PositiveInt</span> = NewType(<span style="font-style: italic;">'PositiveInt'</span>, <span style="font-weight: bold;">int</span>)  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">This is the same as declaring PositiveInt &lt;: int</span>
 
-<span style="color: #b22222;"># </span><span style="color: #b22222;">define a constructor function for the new type</span>
-<span style="color: #a020f0;">def</span> <span style="color: #0000ff;">make_positive_int</span>(a: <span style="color: #483d8b;">int</span>) -&gt; PositiveInt:
-    <span style="color: #a020f0;">if</span> a &gt; 0:
-        <span style="color: #a020f0;">return</span> PositiveInt(a)
-    <span style="color: #a020f0;">raise</span> <span style="color: #228b22;">ValueError</span>, <span style="color: #8b2252;">'arg was not positive.'</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">define a constructor function for the new type</span>
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">make_positive_int</span>(a: <span style="font-weight: bold;">int</span>) -&gt; PositiveInt:
+    <span style="font-weight: bold;">if</span> a &gt; 0:
+        <span style="font-weight: bold;">return</span> PositiveInt(a)
+    <span style="font-weight: bold;">raise</span> <span style="font-weight: bold; text-decoration: underline;">ValueError</span>, <span style="font-style: italic;">'arg was not positive.'</span>
 </pre>
 </div>
 </div>
@@ -476,17 +476,17 @@ can have:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python" id="orgb0b8096"><span style="color: #b22222;"># </span><span style="color: #b22222;">define a new type</span>
-<span style="color: #a020f0;">from</span> math <span style="color: #a020f0;">import</span> log
+<pre class="src src-python" id="orgb0b8096"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">define a new type</span>
+<span style="font-weight: bold;">from</span> math <span style="font-weight: bold;">import</span> log
 
-<span style="color: #a020f0;">def</span> <span style="color: #0000ff;">safe_logarithm</span>(p: PositiveInt) -&gt; <span style="color: #483d8b;">float</span>:
-    <span style="color: #a020f0;">return</span> math.log(p)
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">safe_logarithm</span>(p: PositiveInt) -&gt; <span style="font-weight: bold;">float</span>:
+    <span style="font-weight: bold;">return</span> math.log(p)
 
-safe_log(-5)  <span style="color: #b22222;"># </span><span style="color: #b22222;">Fails in typechecking as well as in runtime</span>
-safe_log(5)   <span style="color: #b22222;"># </span><span style="color: #b22222;">Fails in typechecking only. Computes correctly at runtime.</span>
+safe_log(-5)  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Fails in typechecking as well as in runtime</span>
+safe_log(5)   <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Fails in typechecking only. Computes correctly at runtime.</span>
 
-safe_log(make_positive_int(-5))  <span style="color: #b22222;"># </span><span style="color: #b22222;">Passes typecking. Raises ValueError and meaningful error message at runtime.</span>
-safe_log(make_positive_int(5))   <span style="color: #b22222;"># </span><span style="color: #b22222;">Passes typechecking. Computes correctly at runtime.</span>
+safe_log(make_positive_int(-5))  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Passes typecking. Raises ValueError and meaningful error message at runtime.</span>
+safe_log(make_positive_int(5))   <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Passes typechecking. Computes correctly at runtime.</span>
 </pre>
 </div>
 </div>
@@ -502,9 +502,9 @@ signatures.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python" id="orgb09e847">a: <span style="color: #483d8b;">int</span>   = 2
-b: <span style="color: #483d8b;">float</span> = 3.0
-<span style="color: #a0522d;">c</span> = a + b
+<pre class="src src-python" id="orgb09e847">a: <span style="font-weight: bold;">int</span>   = 2
+b: <span style="font-weight: bold;">float</span> = 3.0
+<span style="font-weight: bold; font-style: italic;">c</span> = a + b
 </pre>
 </div>
 
@@ -538,23 +538,23 @@ By importing from <code>typing</code>, we get access to some more types.
 <h3 id="orgc69e22e"><span class="section-number-3">3.1</span> Basic data-structures</h3>
 <div class="outline-text-3" id="text-3-1">
 <div class="org-src-container">
-<pre class="src src-python" id="orga3fb6b2"><span style="color: #a020f0;">from</span> typing <span style="color: #a020f0;">import</span> (Any, Dict, FrozenSet, List, Set, Tuple)
+<pre class="src src-python" id="orga3fb6b2"><span style="font-weight: bold;">from</span> typing <span style="font-weight: bold;">import</span> (Any, Dict, FrozenSet, List, Set, Tuple)
 
-a:  <span style="color: #a0522d;">List</span>[<span style="color: #483d8b;">int</span>]      = [1, 2]
-b:  <span style="color: #a0522d;">List</span>[<span style="color: #483d8b;">str</span>]      = [<span style="color: #8b2252;">'one'</span>, <span style="color: #8b2252;">'two'</span>]
-c:  <span style="color: #a0522d;">Dict</span>[<span style="color: #483d8b;">int</span>, <span style="color: #483d8b;">str</span>] = {1: <span style="color: #8b2252;">'a'</span>, 2: <span style="color: #8b2252;">'b'</span>}
-d:  <span style="color: #a0522d;">Set</span>[<span style="color: #483d8b;">str</span>]       = {<span style="color: #8b2252;">'a'</span>, <span style="color: #8b2252;">'b'</span>, <span style="color: #8b2252;">'c'</span>}
-e:  <span style="color: #a0522d;">FrozenSet</span>[<span style="color: #483d8b;">str</span>] = <span style="color: #483d8b;">frozenset</span>({<span style="color: #8b2252;">'a'</span>, <span style="color: #8b2252;">'b'</span>, <span style="color: #8b2252;">'c'</span>})
+a:  <span style="font-weight: bold; font-style: italic;">List</span>[<span style="font-weight: bold;">int</span>]      = [1, 2]
+b:  <span style="font-weight: bold; font-style: italic;">List</span>[<span style="font-weight: bold;">str</span>]      = [<span style="font-style: italic;">'one'</span>, <span style="font-style: italic;">'two'</span>]
+c:  <span style="font-weight: bold; font-style: italic;">Dict</span>[<span style="font-weight: bold;">int</span>, <span style="font-weight: bold;">str</span>] = {1: <span style="font-style: italic;">'a'</span>, 2: <span style="font-style: italic;">'b'</span>}
+d:  <span style="font-weight: bold; font-style: italic;">Set</span>[<span style="font-weight: bold;">str</span>]       = {<span style="font-style: italic;">'a'</span>, <span style="font-style: italic;">'b'</span>, <span style="font-style: italic;">'c'</span>}
+e:  <span style="font-weight: bold; font-style: italic;">FrozenSet</span>[<span style="font-weight: bold;">str</span>] = <span style="font-weight: bold;">frozenset</span>({<span style="font-style: italic;">'a'</span>, <span style="font-style: italic;">'b'</span>, <span style="font-style: italic;">'c'</span>})
 
-f1: <span style="color: #a0522d;">Tuple</span>[<span style="color: #483d8b;">str</span>]           = (<span style="color: #8b2252;">'a'</span>,)
-f2: <span style="color: #a0522d;">Tuple</span>[<span style="color: #483d8b;">str</span>, <span style="color: #483d8b;">str</span>]      = (<span style="color: #8b2252;">'a'</span>, <span style="color: #8b2252;">'b'</span>)
-f3: <span style="color: #a0522d;">Tuple</span>[<span style="color: #483d8b;">str</span>, <span style="color: #483d8b;">str</span>, <span style="color: #483d8b;">str</span>] = (<span style="color: #8b2252;">'a'</span>, <span style="color: #8b2252;">'b'</span>, <span style="color: #8b2252;">'c'</span>)
-f4: <span style="color: #a0522d;">Tuple</span>[<span style="color: #483d8b;">str</span>, ...]      = (<span style="color: #8b2252;">'a'</span>, <span style="color: #8b2252;">'b'</span>, <span style="color: #8b2252;">'c'</span>)
+f1: <span style="font-weight: bold; font-style: italic;">Tuple</span>[<span style="font-weight: bold;">str</span>]           = (<span style="font-style: italic;">'a'</span>,)
+f2: <span style="font-weight: bold; font-style: italic;">Tuple</span>[<span style="font-weight: bold;">str</span>, <span style="font-weight: bold;">str</span>]      = (<span style="font-style: italic;">'a'</span>, <span style="font-style: italic;">'b'</span>)
+f3: <span style="font-weight: bold; font-style: italic;">Tuple</span>[<span style="font-weight: bold;">str</span>, <span style="font-weight: bold;">str</span>, <span style="font-weight: bold;">str</span>] = (<span style="font-style: italic;">'a'</span>, <span style="font-style: italic;">'b'</span>, <span style="font-style: italic;">'c'</span>)
+f4: <span style="font-weight: bold; font-style: italic;">Tuple</span>[<span style="font-weight: bold;">str</span>, ...]      = (<span style="font-style: italic;">'a'</span>, <span style="font-style: italic;">'b'</span>, <span style="font-style: italic;">'c'</span>)
 
-g1: <span style="color: #a0522d;">Any</span>       = 1
-g2: <span style="color: #a0522d;">Any</span>       = {<span style="color: #8b2252;">'a'</span>, <span style="color: #8b2252;">'b'</span>}
-g3: <span style="color: #a0522d;">Any</span>       = {1 : <span style="color: #8b2252;">'a'</span>, 2 : <span style="color: #8b2252;">'b'</span>}
-g4: <span style="color: #a0522d;">List</span>[Any] = [1, 2, <span style="color: #8b2252;">'a'</span>, <span style="color: #8b2252;">'b'</span>]
+g1: <span style="font-weight: bold; font-style: italic;">Any</span>       = 1
+g2: <span style="font-weight: bold; font-style: italic;">Any</span>       = {<span style="font-style: italic;">'a'</span>, <span style="font-style: italic;">'b'</span>}
+g3: <span style="font-weight: bold; font-style: italic;">Any</span>       = {1 : <span style="font-style: italic;">'a'</span>, 2 : <span style="font-style: italic;">'b'</span>}
+g4: <span style="font-weight: bold; font-style: italic;">List</span>[Any] = [1, 2, <span style="font-style: italic;">'a'</span>, <span style="font-style: italic;">'b'</span>]
 </pre>
 </div>
 </div>
@@ -588,8 +588,8 @@ user), python simply defaults to usign <code>Any</code> as the variable's type.
 </div>
 </div>
 
-<div id="outline-container-orge7ab9e9" class="outline-3">
-<h3 id="orge7ab9e9"><span class="section-number-3">3.3</span> Optional and Union</h3>
+<div id="outline-container-orgf21be1e" class="outline-3">
+<h3 id="orgf21be1e"><span class="section-number-3">3.3</span> Optional and Union</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 <code>Union</code> represents what in type-theory jargon are called sum-types.
@@ -603,19 +603,19 @@ the use of both of these.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python" id="orge4d3a53"><span style="color: #a020f0;">from</span> typing <span style="color: #a020f0;">import</span> List, Optional, Union
+<pre class="src src-python" id="orge19dfa2"><span style="font-weight: bold;">from</span> typing <span style="font-weight: bold;">import</span> List, Optional, Union
 
-a: List[Union[<span style="color: #483d8b;">int</span>, <span style="color: #483d8b;">str</span>]] = [1, 2, <span style="color: #8b2252;">'a'</span>, 3, <span style="color: #8b2252;">'b'</span>]
+a: List[Union[<span style="font-weight: bold;">int</span>, <span style="font-weight: bold;">str</span>]] = [1, 2, <span style="font-style: italic;">'a'</span>, 3, <span style="font-style: italic;">'b'</span>]
 
-<span style="color: #a020f0;">def</span> <span style="color: #0000ff;">unsafe_division</span>(a: <span style="color: #483d8b;">int</span>, b: <span style="color: #483d8b;">int</span>) -&gt; Union[<span style="color: #483d8b;">float</span>, <span style="color: #228b22;">Exception</span>]:
-   <span style="color: #8b2252;">"""Divide in an unsafe manner."""</span>
-   <span style="color: #a020f0;">if</span> <span style="color: #a020f0;">not</span> b:
-       <span style="color: #a020f0;">raise</span> <span style="color: #228b22;">ValueError</span>, <span style="color: #8b2252;">'Field axioms do not allow this.'</span>
-   <span style="color: #a020f0;">return</span> a/b
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">unsafe_division</span>(a: <span style="font-weight: bold;">int</span>, b: <span style="font-weight: bold;">int</span>) -&gt; Union[<span style="font-weight: bold;">float</span>, <span style="font-weight: bold; text-decoration: underline;">Exception</span>]:
+   <span style="font-style: italic;">"""Divide in an unsafe manner."""</span>
+   <span style="font-weight: bold;">if</span> <span style="font-weight: bold;">not</span> b:
+       <span style="font-weight: bold;">raise</span> <span style="font-weight: bold; text-decoration: underline;">ValueError</span>, <span style="font-style: italic;">'Field axioms do not allow this.'</span>
+   <span style="font-weight: bold;">return</span> a/b
 
-<span style="color: #a020f0;">def</span> <span style="color: #0000ff;">optional_division</span>(a: <span style="color: #483d8b;">int</span>, b: <span style="color: #483d8b;">int</span>) -&gt; Optional[<span style="color: #483d8b;">float</span>]:
-   <span style="color: #8b2252;">"""Return quotient is b is nonzero, else return None."""</span>
-   <span style="color: #a020f0;">return</span> a/b <span style="color: #a020f0;">if</span> b <span style="color: #a020f0;">else</span> <span style="color: #008b8b;">None</span>
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">optional_division</span>(a: <span style="font-weight: bold;">int</span>, b: <span style="font-weight: bold;">int</span>) -&gt; Optional[<span style="font-weight: bold;">float</span>]:
+   <span style="font-style: italic;">"""Return quotient is b is nonzero, else return None."""</span>
+   <span style="font-weight: bold;">return</span> a/b <span style="font-weight: bold;">if</span> b <span style="font-weight: bold;">else</span> <span style="font-weight: bold; text-decoration: underline;">None</span>
 </pre>
 </div>
 
@@ -647,19 +647,19 @@ This is a function that lets you do two things:
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-python" id="org652d512"><span style="color: #a020f0;">from</span> typing <span style="color: #a020f0;">import</span> cast, Union
+<pre class="src src-python" id="org652d512"><span style="font-weight: bold;">from</span> typing <span style="font-weight: bold;">import</span> cast, Union
 
-<span style="color: #a020f0;">def</span> <span style="color: #0000ff;">madeup_example</span>(a: Union[<span style="color: #483d8b;">int</span>, <span style="color: #483d8b;">str</span>]) -&gt; <span style="color: #483d8b;">int</span>:
-    <span style="color: #a020f0;">if</span> <span style="color: #483d8b;">hasattr</span>(a, <span style="color: #8b2252;">'split'</span>):
-        <span style="color: #b22222;"># </span><span style="color: #b22222;">must be a string</span>
-        <span style="color: #a0522d;">a_str</span> = cast(<span style="color: #483d8b;">str</span>, a)
-        <span style="color: #a020f0;">return</span> <span style="color: #483d8b;">ord</span>(a_str[0])
-    <span style="color: #b22222;"># </span><span style="color: #b22222;">must be an integer</span>
-    <span style="color: #a0522d;">a_int</span> = cast(<span style="color: #483d8b;">int</span>, a)
-    <span style="color: #a020f0;">return</span> a_int + 1
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">madeup_example</span>(a: Union[<span style="font-weight: bold;">int</span>, <span style="font-weight: bold;">str</span>]) -&gt; <span style="font-weight: bold;">int</span>:
+    <span style="font-weight: bold;">if</span> <span style="font-weight: bold;">hasattr</span>(a, <span style="font-style: italic;">'split'</span>):
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">must be a string</span>
+        <span style="font-weight: bold; font-style: italic;">a_str</span> = cast(<span style="font-weight: bold;">str</span>, a)
+        <span style="font-weight: bold;">return</span> <span style="font-weight: bold;">ord</span>(a_str[0])
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">must be an integer</span>
+    <span style="font-weight: bold; font-style: italic;">a_int</span> = cast(<span style="font-weight: bold;">int</span>, a)
+    <span style="font-weight: bold;">return</span> a_int + 1
 
-<span style="color: #a020f0;">print</span>(madeup_example(<span style="color: #8b2252;">'abc'</span>))
-<span style="color: #a020f0;">print</span>(madeup_example(5))
+<span style="font-weight: bold;">print</span>(madeup_example(<span style="font-style: italic;">'abc'</span>))
+<span style="font-weight: bold;">print</span>(madeup_example(5))
 </pre>
 </div>
 </div>
@@ -738,7 +738,7 @@ This is a function that lets you do two things:
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2020-09-01 Tue 12:08</p>
+<p class="date">Created: 2020-09-03 Thu 09:58</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
