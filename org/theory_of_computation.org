@@ -22,6 +22,7 @@ _regular language_.
 
 - HW :: construct automata that accepts Σ = {a, b} and X = all strings
         that start and end with different letters.
+- Solution :: [[file:img/theory_of_computation_hw_1_sol.png][Ascii art showing DFA]]
 
 Regular languages are closed under:
 - Complementation (under Σ*)
