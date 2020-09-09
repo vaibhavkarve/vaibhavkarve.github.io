@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-09-09 Wed 11:15 -->
+<!-- 2020-09-09 Wed 14:57 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Theory of Computation</title>
@@ -237,8 +237,8 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgeb31d21">1. Finite automata</a></li>
-<li><a href="#orgb61ad7b">2. Next time</a></li>
+<li><a href="#org7c76161">1. Finite automata</a></li>
+<li><a href="#org5a49405">2. Regular expressions</a></li>
 </ul>
 </div>
 </div>
@@ -251,8 +251,8 @@ Notes taken from Reading Group
 computation</dd>
 </dl>
 
-<div id="outline-container-orgeb31d21" class="outline-2">
-<h2 id="orgeb31d21"><span class="section-number-2">1</span> Finite automata</h2>
+<div id="outline-container-org7c76161" class="outline-2">
+<h2 id="org7c76161"><span class="section-number-2">1</span> Finite automata</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Part 1 will be Computability. Part 2 will be Complexity.
@@ -326,19 +326,79 @@ P(Q) is not going to be an issue.</dd>
 </div>
 </div>
 
-<div id="outline-container-orgb61ad7b" class="outline-2">
-<h2 id="orgb61ad7b"><span class="section-number-2">2</span> Next time</h2>
+<div id="outline-container-org5a49405" class="outline-2">
+<h2 id="org5a49405"><span class="section-number-2">2</span> Regular expressions</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-What about memory? Pumping lemma and/or push-down automata and/or
-Turing machines.
+They are another way to represent a regular language.  ∅ is the
+language that contains no symbols. ε is the language that only
+contains the empty string. These are to different languages and are
+accepted by two different DFAs.
+</p>
+
+<p>
+Regular expression can contain:
+</p>
+<ol class="org-ol">
+<li>∅, ε</li>
+<li>Any character in Σ</li>
+<li>Parentheses, for grouping.</li>
+<li>Concatenation</li>
+<li>Union, ∪ or |</li>
+<li>Kleene star * (binds tighter than all other symbols)</li>
+</ol>
+
+<p>
+Any finite language is regular &#x2013; we can just list out all the
+elements.
+</p>
+
+<p>
+Regular language ↔ ∃ a DFA that accepts it ↔ there is a 
+</p>
+
+<p>
+<span class="underline">Pumping lemma</span> is a necessary but not sufficient condition for a
+language to be regular.
+</p>
+
+<p>
+Examples of non-regular language:
+</p>
+<ol class="org-ol">
+<li>L = {1ⁿ where n is prime}</li>
+<li>L = {1ⁿ where n is composite}</li>
+</ol>
+
+<p>
+Pushdown automata (PDA) are automata with stacks (read from top of
+stack and then shove any number of symbols on top). Change of state
+can depend on the input (top element of stack).
+</p>
+
+<p>
+A language recognized by a PDA is called <b>context-free</b>. PDAs have
+arbitrarily large memory (unlike DFAs) but they don't have arbitrary
+access!
+</p>
+
+<p>
+Context-free grammars (CFG) are another way to write context-free
+languages. What makes a CFG context free is that its rules are for
+replacing a single variable at a time in a way that is independent of
+other surrounding characters.
+</p>
+
+<p>
+CFGs are <b>not</b> closed under intersection and complementation!
+Non-example of CFG is: {aⁿbⁿcⁿ : n ∈ ℕ}.
 </p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2020-09-09 Wed 11:15</p>
+<p class="date">Created: 2020-09-09 Wed 14:57</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

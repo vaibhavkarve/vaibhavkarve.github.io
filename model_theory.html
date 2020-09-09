@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-09-09 Wed 11:15 -->
+<!-- 2020-09-09 Wed 14:57 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Model theory</title>
@@ -256,7 +256,7 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgea1cbe5">1. Structures and theories</a></li>
+<li><a href="#org10de4a2">1. Structures and theories</a></li>
 </ul>
 </div>
 </div>
@@ -265,8 +265,8 @@ for the JavaScript code in this tag.
 an introduction.</dd>
 </dl>
 
-<div id="outline-container-orgea1cbe5" class="outline-2">
-<h2 id="orgea1cbe5"><span class="section-number-2">1</span> Structures and theories</h2>
+<div id="outline-container-org10de4a2" class="outline-2">
+<h2 id="org10de4a2"><span class="section-number-2">1</span> Structures and theories</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 A <i>structure</i> is a set that we wish to study equipped with collection
@@ -276,7 +276,7 @@ structure.
 </p>
 
 <p>
-A <i>language</i> \(\L\) is given by specifying the following data:
+A <i>language</i> \(\mathcal{L}\) is given by specifying the following data:
 </p>
 <ul class="org-ul">
 <li>\(F\) := a set of function symbols</li>
@@ -290,6 +290,7 @@ A <i>language</i> \(\L\) is given by specifying the following data:
 Examples of languages:
 </p>
 <ol class="org-ol">
+<li>Language of groups = \(\{\cdot, e\}\).</li>
 <li>Language of rings = \(\{+, -, \cdot, 0, 1\}\).</li>
 <li>Language of pure sets = \(\emptyset\).<br />
 <b>Question:</b> why is this not ``\(\{\emptyset\}\)'' or ``\(\{, \}, \emptyset\)''?</li>
@@ -297,18 +298,22 @@ Examples of languages:
 </ol>
 
 <p>
-An \(L\)-<i>structure</i> \(\mathcal{M}\) is given by the following data:
+An \(\mathcal{L}\)-<i>structure</i> \(\mathcal{M}\) is given by the following data:
 </p>
 <ol class="org-ol">
-<li>a nonempty set called the universe, domain, or underlying set of M.</li>
-<li>\(f^M : \)</li>
+<li>\(M\) := a nonempty set called the universe, domain, or underlying set of \(\mathcal{M}\).</li>
+<li>an interpretation of each \(f\in F\) i.e., a function
+\(f^\mathcal{M} : M^{n_f} \rightarrow M\) for each \(f\).</li>
+<li>an interpretation for each \(r \in R\) i.e, a set
+\(R^\mathcal{M}\subseteq M^{n_r}\) for each \(r\).</li>
+<li>an element \(c^\mathcal{M} \in M\) for each \(c\in C\).</li>
 </ol>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2020-09-09 Wed 11:15</p>
+<p class="date">Created: 2020-09-09 Wed 14:57</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
