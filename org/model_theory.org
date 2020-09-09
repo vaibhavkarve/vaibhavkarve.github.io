@@ -9,7 +9,7 @@ of distinguished functions, relations, and elements. We also choose a
 /language/ (which is a set of symbols) to express statements about the
 structure.
 
-- Def :: A /language/ \(L\) is given by specifying the following:
+A /language/ \(L\) is given by specifying the following:
 - \(F\) := a set of function symbols
 - \(n_f : \mathbb{N}\) for every \(f \in F\) i.e., the /arity/ of each function.
 - \(R\) := a set of relation symbols

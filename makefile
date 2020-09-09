@@ -1,6 +1,6 @@
-.PHONY : clean
+.PHONY : website clean
 
-index.html : org/index.org
+website : org/index.org
 	touch org/*.org
 	emacs -l org_publish.el --batch $< --eval="(org-publish-all (symbol-name 'org))" --kill
 	git add .
