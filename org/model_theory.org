@@ -1,6 +1,6 @@
 #+title: Model theory
-
-\newcommand{\L}{\mathcal{L}}
+#+latex_header: \newcommand{\L}{\mathcal{L}}
+#+latex_header: \newcommand{\M}{\mathcal{M}}
 
 - Reference :: Taken from my reading of David Marker's Model Theory:
                an introduction.
