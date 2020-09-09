@@ -16,3 +16,8 @@ A /language/ \(L\) is given by specifying the following:
 - \(n_r : \mathbb{N}\) for every \(r \in R\) i.e., the /arity/ of each relation.
 - \(C\) := a set of constant symbols.
 
+Examples of languages:
+1. Language of rings = \(\{+, -, \cdot, 0, 1\}\).
+2. Language of pure sets = \(\emptyset\).\\
+   *Question:* why is this not \(\{\emptyset\}\) or \(\{, \}, \emptyset\)?
+3. 
