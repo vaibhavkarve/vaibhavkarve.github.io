@@ -1,5 +1,7 @@
 #+title: Model theory
 
+\newcommand{\L}{\mathcal{L}}
+
 - Reference :: Taken from my reading of David Marker's Model Theory:
                an introduction.
 
@@ -9,7 +11,7 @@ of distinguished functions, relations, and elements. We also choose a
 /language/ (which is a set of symbols) to express statements about the
 structure.
 
-A /language/ \(L\) is given by specifying the following:
+A /language/ \(\L\) is given by specifying the following data:
 - \(F\) := a set of function symbols
 - \(n_f : \mathbb{N}\) for every \(f \in F\) i.e., the /arity/ of each function.
 - \(R\) := a set of relation symbols
@@ -19,5 +21,9 @@ A /language/ \(L\) is given by specifying the following:
 Examples of languages:
 1. Language of rings = \(\{+, -, \cdot, 0, 1\}\).
 2. Language of pure sets = \(\emptyset\).\\
-   *Question:* why is this not \(\{\emptyset\}\) or \(\{, \}, \emptyset\)?
-3. 
+   *Question:* why is this not ``\(\{\emptyset\}\)'' or ``\(\{, \}, \emptyset\)''?
+3. Language of graphs = \(\{R\}\), where \(R\) is a binary relation symbol.
+
+An \(L\)-/structure/ \(\mathcal{M}\) is given by the following data:
+1. a nonempty set called the universe, domain, or underlying set of M.
+2. \(f^M : \)
