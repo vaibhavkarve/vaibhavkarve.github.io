@@ -1,0 +1,18 @@
+#+title: Model theory
+
+- Reference :: Taken from my reading of David Marker's Model Theory:
+               an introduction.
+
+* Structures and theories
+A /structure/ is a set that we wish to study equipped with collection
+of distinguished functions, relations, and elements. We also choose a
+/language/ (which is a set of symbols) to express statements about the
+structure.
+
+- Def :: A /language/ \(L\) is given by specifying the following:
+- \(F\) := a set of function symbols
+- \(n_f : \mathbb{N}\) for every \(f \in F\) i.e., the /arity/ of each function.
+- \(R\) := a set of relation symbols
+- \(n_r : \mathbb{N}\) for every \(r \in R\) i.e., the /arity/ of each relation.
+- \(C\) := a set of constant symbols.
+

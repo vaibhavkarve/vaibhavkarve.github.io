@@ -5,6 +5,7 @@
 - [[file:congestion_barcodes.org][Congestion Barcodes]]
 - [[file:geometry.org][Geometry self-study notes]]
 - [[file:manhattan_traffic.org][Manhattan Traffic]]
+- [[file:model_theory.org][Model theory]]
 - [[file:pytype.org][Python's Type theory]]
 - [[file:theory_of_computation.org][Theory of Computation]]
 - [[file:index.org][Vaibhav Karve]]
