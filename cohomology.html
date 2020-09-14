@@ -6,7 +6,7 @@
 <!-- 2020-09-14 Mon 09:40 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Theory of Computation</title>
+<title>Cohomology</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="Vaibhav Karve" />
 <style type="text/css">
@@ -226,173 +226,169 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
-<h1 class="title">Theory of Computation
-<br />
-<span class="subtitle"><a href="index.html">Home</a></span>
-</h1>
+<h1 class="title">Cohomology</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org93e1de3">1. Finite automata</a></li>
-<li><a href="#orgfa14d15">2. Regular expressions</a></li>
+<li><a href="#org85831b6">1. Categories</a>
+<ul>
+<li><a href="#org104a513">1.1. Tensor and exterior algebras</a></li>
+<li><a href="#orgdf326cd">1.2. Topological manifold</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
-<p>
-Notes taken from Reading Group
-</p>
-
 <dl class="org-dl">
-<dt>Reference</dt><dd>Book by Michael Sipser &#x2013; Introduction to theory of
-computation</dd>
+<dt>Reference</dt><dd>Bott and Tu's Differential forms in algebraic topology</dd>
+<dt>Context</dt><dd>these are notes taken from attending a reading group in
+Fall 2020.</dd>
 </dl>
 
-<div id="outline-container-org93e1de3" class="outline-2">
-<h2 id="org93e1de3"><span class="section-number-2">1</span> Finite automata</h2>
+<div id="outline-container-org85831b6" class="outline-2">
+<h2 id="org85831b6"><span class="section-number-2">1</span> Categories</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-Part 1 will be Computability. Part 2 will be Complexity.
+Let \(A\) be a ring. Category \(Mod_A\) is the catergory with objects being
+left \(A\)-modules and morphims are \(A\)-linear maps.
 </p>
 
 <p>
-Finite state machine (Q, Σ, δ, q₀, F) a.k.a deterministic automaton
+<span class="underline">Example of functor</span>: π₀ : Top → Set is the functor that gives the
+connected components of a topological space X. It sends X ↦ X/~ where
+x~y iff ∃ a path from x to y.
+</p>
+
+<p>
+<span class="underline">Natural transformations</span>: Let C and D be to categories. Let F : C → D
+be a functor. Let G : D → C be another functor. Then a <i>natural
+transformation</i> is a map α : F → G such that for every f : x ↦ y,
+</p>
+
+<p>
+F(x) → α(F(x))
+↓ F(f)   ↓α(F(f))
+F(y) → α(F(y))
+</p>
+
+<p>
+this square commutes.
+</p>
+
+<p>
+Let X ∈ Top. Open(X) = open sets of X with partial order
+(inclusion). Open(X) is itself a category where the objects are the
+open sets and morphisms are Hom(U, V) = ∅ if ¬ (U ⊆ V) else ⋆, where ⋆
+is a single morphism.
+</p>
+
+<p>
+Presheaves(X) = Fun(Open(X)ᵒᵖ, Set) is then a category with objects =
+Open(X)ᵒᵖ → Set and morphisms are natural transformations.
+</p>
+
+<p>
+<span class="underline">Exact sequence</span>:
 </p>
 <ul class="org-ul">
-<li>Q = finite set of states</li>
-<li>Σ = finite alphabet</li>
-<li>δ : Q × Σ → Q</li>
-<li>q₀ = start state</li>
-<li>F = final state</li>
-</ul>
-
-
-<p>
-A subset X ⊆ Σ* which has an automata M that accepts X is called a
-<span class="underline">regular language</span>.
-</p>
-
-<dl class="org-dl">
-<dt>HW</dt><dd>construct automata that accepts Σ = {a, b} and X = all strings
-that start and end with different letters.</dd>
-<dt>Solution</dt><dd><img src="img/theory_of_computation_hw_1_sol.png" alt="theory_of_computation_hw_1_sol.png" /></dd>
-</dl>
-
-<p>
-Regular languages are closed under:
-</p>
-<ul class="org-ul">
-<li>Complementation (under Σ*)</li>
-<li>Union and Intersection</li>
-<li>Concatenation</li>
-<li>Kleene Star (i.e. unbounded concatenation)</li>
-</ul>
-
-<p>
-Philosophically, DFAs are "memoryless".
-</p>
-
-<p>
-<span class="underline">Nondeterministic automaton</span> (Q, Σ, δ, q₀, F)
-</p>
-<ul class="org-ul">
-<li>δ : Q × Σ<sub>ε</sub> → P(Q)</li>
-</ul>
-<p>
-where,
-</p>
-<ul class="org-ul">
-<li>ε = empty string</li>
-<li>Σ<sub>ε</sub> = Σ ∪ ε</li>
-<li>P(Q) = power set of Q</li>
+<li>co-chain complex condition</li>
+<li>Ker f<sup>n</sup> = Im f<sup>n+1</sup></li>
 </ul>
 
 <p>
-In a "run" pick some possible paths that can be taken. Accept if any
-run with a given input ends in an accept state.
+<span class="underline">Short exact sequence</span>:
 </p>
 
-<dl class="org-dl">
-<dt>Theorem</dt><dd>For every NFA, there is an equivalent DFA. Equivalent
-means they accept the same</dd>
-<dt>Proof idea</dt><dd>Given δ : Q × Σ<sub>ε</sub> → P(Q), construct δ' : P(Q) × Σ<sub>ε</sub> →
-P(Q).  Then δ' is a transition function for a
-DFA. Need to show that δ' being partial function on
-P(Q) is not going to be an issue.</dd>
-</dl>
+<p>
+0 → M → N → P → 0
+       α    β
+</p>
+
+<p>
+If this is an exact sequence then, we can conclude the following:
+</p>
+<ul class="org-ul">
+<li>β is surjective</li>
+<li>α is injective</li>
+<li>β∘α = 0</li>
+<li>P ≅ N/M</li>
+</ul>
+</div>
+
+<div id="outline-container-org104a513" class="outline-3">
+<h3 id="org104a513"><span class="section-number-3">1.1</span> Tensor and exterior algebras</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Let M be an A-module. (M is free : e₁, &#x2026;, eₙ).
+</p>
+
+<p>
+T*(M) := the universal graded associative A-algebra with a map M → T*(M).
+      = A ⊕ M ⊕ (M⊗M) ⊕ (M⊗M⊗M) ⊕ &#x2026;
+</p>
+
+<p>
+Λ*(M) := the universal graded associative graded commutative A-algebra
+      = A ⊕ M ⊕ A{e<sub>i</sub> ∧ e<sub>j</sub> | i&lt;j} ⊕ A{e<sub>i</sub> ∧ e<sub>j</sub> ∧ e<sub>k</sub> | &#x2026;} ⊕ &#x2026;
+</p>
 </div>
 </div>
 
-<div id="outline-container-orgfa14d15" class="outline-2">
-<h2 id="orgfa14d15"><span class="section-number-2">2</span> Regular expressions</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-orgdf326cd" class="outline-3">
+<h3 id="orgdf326cd"><span class="section-number-3">1.2</span> Topological manifold</h3>
+<div class="outline-text-3" id="text-1-2">
 <p>
-They are another way to represent a regular language.  ∅ is the
-language that contains no symbols. ε is the language that only
-contains the empty string. These are to different languages and are
-accepted by two different DFAs.
+A topological space X is
+</p>
+<ul class="org-ul">
+<li>locally homeomorphic to ℝ<sup>n</sup>.</li>
+<li>Hausdorff</li>
+<li>2nd countable</li>
+</ul>
+
+<p>
+Top.manifolds need not be smooth. Can have a smooth top.mani be
+homeomorphic to a non-smooth top.mani.
 </p>
 
 <p>
-Regular expression can contain:
-</p>
-<ol class="org-ol">
-<li>∅, ε</li>
-<li>Any character in Σ</li>
-<li>Parentheses, for grouping.</li>
-<li>Concatenation</li>
-<li>Union, ∪ or |</li>
-<li>Kleene star * (binds tighter than all other symbols)</li>
-</ol>
-
-<p>
-Any finite language is regular &#x2013; we can just list out all the
-elements.
+Non-example: a top-space with a self-intersection.
 </p>
 
 <p>
-Regular language ↔ ∃ a DFA that accepts it ↔ there is a 
+<span class="underline">Smooth charts and atlases</span>: &#x2026;
 </p>
 
 <p>
-<span class="underline">Pumping lemma</span> is a necessary but not sufficient condition for a
-language to be regular.
+Smooth manifold is a topological manifold together with a smooth atlas.
 </p>
-
-<p>
-Examples of non-regular language:
-</p>
-<ol class="org-ol">
-<li>L = {1ⁿ where n is prime}</li>
-<li>L = {1ⁿ where n is composite}</li>
-</ol>
-
-<p>
-Pushdown automata (PDA) are automata with stacks (read from top of
-stack and then shove any number of symbols on top). Change of state
-can depend on the input (top element of stack).
-</p>
-
-<p>
-A language recognized by a PDA is called <b>context-free</b>. PDAs have
-arbitrarily large memory (unlike DFAs) but they don't have arbitrary
-access!
-</p>
-
-<p>
-Context-free grammars (CFG) are another way to write context-free
-languages. What makes a CFG context free is that its rules are for
-replacing a single variable at a time in a way that is independent of
-other surrounding characters.
-</p>
-
-<p>
-CFGs are <b>not</b> closed under intersection and complementation!
-Non-example of CFG is: {aⁿbⁿcⁿ : n ∈ ℕ}.
-</p>
+</div>
 </div>
 </div>
 </div>

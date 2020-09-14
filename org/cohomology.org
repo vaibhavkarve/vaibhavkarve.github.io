@@ -1,0 +1,72 @@
+#+title: Cohomology
+
+- Reference :: Bott and Tu's Differential forms in algebraic topology
+- Context :: these are notes taken from attending a reading group in
+             Fall 2020.
+
+* Categories
+
+Let \(A\) be a ring. Category \(Mod_A\) is the catergory with objects being
+left \(A\)-modules and morphims are \(A\)-linear maps.
+
+_Example of functor_: π₀ : Top → Set is the functor that gives the
+connected components of a topological space X. It sends X ↦ X/~ where
+x~y iff ∃ a path from x to y.
+
+_Natural transformations_: Let C and D be to categories. Let F : C → D
+be a functor. Let G : D → C be another functor. Then a /natural
+transformation/ is a map α : F → G such that for every f : x ↦ y,
+
+F(x) → α(F(x))
+↓ F(f)   ↓α(F(f))
+F(y) → α(F(y))
+
+this square commutes.
+
+Let X ∈ Top. Open(X) = open sets of X with partial order
+(inclusion). Open(X) is itself a category where the objects are the
+open sets and morphisms are Hom(U, V) = ∅ if ¬ (U ⊆ V) else ⋆, where ⋆
+is a single morphism.
+
+Presheaves(X) = Fun(Open(X)ᵒᵖ, Set) is then a category with objects =
+Open(X)ᵒᵖ → Set and morphisms are natural transformations.
+
+_Exact sequence_:
+- co-chain complex condition
+- Ker f^n = Im f^{n+1}
+
+_Short exact sequence_:
+
+0 → M → N → P → 0
+       α    β
+
+If this is an exact sequence then, we can conclude the following:
+- β is surjective
+- α is injective
+- β∘α = 0
+- P ≅ N/M
+
+** Tensor and exterior algebras
+Let M be an A-module. (M is free : e₁, ..., eₙ).
+
+T*(M) := the universal graded associative A-algebra with a map M → T*(M).
+      = A ⊕ M ⊕ (M⊗M) ⊕ (M⊗M⊗M) ⊕ ...
+
+Λ*(M) := the universal graded associative graded commutative A-algebra
+      = A ⊕ M ⊕ A{e_i ∧ e_j | i<j} ⊕ A{e_i ∧ e_j ∧ e_k | ...} ⊕ ...
+
+** Topological manifold
+A topological space X is
+- locally homeomorphic to ℝ^n.
+- Hausdorff
+- 2nd countable
+
+Top.manifolds need not be smooth. Can have a smooth top.mani be
+homeomorphic to a non-smooth top.mani.
+
+Non-example: a top-space with a self-intersection.
+
+_Smooth charts and atlases_: ...
+
+Smooth manifold is a topological manifold together with a smooth atlas.
+
