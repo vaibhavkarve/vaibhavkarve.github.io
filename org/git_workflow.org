@@ -4,16 +4,16 @@
 #+subtitle: [[file:index.org][Home]]
 #+subtitle:  This is documentation on how to use Git (Gitlab) commands.
 
-- Disclaimer ::
-Git is a complicated tool and there might be mistakes born due to my
-incorrect understanding of how git works. Let me know if you have any
-questions, or if things don't work out the way I say they would.
+- Disclaimer :: Git is a complicated tool and there might be mistakes
+                born due to my incorrect understanding of how git
+                works. Let me know if you have any questions, or if
+                things don't work out the way I say they would.
 
-* Requirements:
+* Requirements
 - Terminal or Command-Prompt
 - Make sure git is installed on your computer.
 
-* For setting up the repository on your local machine:
+* For setting up the repository on your local machine
   (You need to do this only the first time)
 
 - Note :: Do not use this if you are copying a Lean repository. Use
@@ -36,14 +36,14 @@ questions, or if things don't work out the way I say they would.
    - (To undo this step, simply delete the folder from your local
      machine.)
 
-* Helpful commands that you can run at any time without it messing up your files:
+* Helpful commands that you can run at any time without it messing up your files
 
 - =git fetch=
 - =git branch=
 - =git status=
 - =git log --oneline --decorate --graph --all=
 
-* If now you wish to change some part of the code:
+* If now you wish to change some part of the code
 (You need to repeat these steps every time you start working on the code.)
 
 
