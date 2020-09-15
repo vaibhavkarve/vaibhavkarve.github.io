@@ -20,7 +20,6 @@ Examples of languages:
 1. Language of groups = \(\{\cdot, e\}\).
 2. Language of rings = \(\{+, -, \cdot, 0, 1\}\).
 3. Language of pure sets = \(\emptyset\).\\
-   *Question:* why is this not ``\(\{\emptyset\}\)'' or ``\(\{, \}, \emptyset\)''?
 4. Language of graphs = \(\{R\}\), where \(R\) is a binary relation symbol.
 
 An \(\mathcal{L}\)-/structure/ \(\mathcal{M}\) is given by the following data:
@@ -30,3 +29,4 @@ An \(\mathcal{L}\)-/structure/ \(\mathcal{M}\) is given by the following data:
 3. an interpretation for each \(r \in R\) i.e, a set
    \(R^\mathcal{M}\subseteq M^{n_r}\) for each \(r\).
 4. an element \(c^\mathcal{M} \in M\) for each \(c\in C\).
+

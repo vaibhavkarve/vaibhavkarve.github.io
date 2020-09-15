@@ -5,6 +5,7 @@
 - [[file:cohomology.org][Cohomology]]
 - [[file:congestion_barcodes.org][Congestion Barcodes]]
 - [[file:geometry.org][Geometry self-study notes]]
+- [[file:git_workflow.org][Git workflow]]
 - [[file:manhattan_traffic.org][Manhattan Traffic]]
 - [[file:model_theory.org][Model theory]]
 - [[file:pytype.org][Python's Type theory]]

@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-09-15 Tue 16:31 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Git workflow</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Vaibhav Karve" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Git workflow
+<br />
+<span class="subtitle"><a href="index.html">Home</a> This is documentation on how to use Git (Gitlab) commands.</span>
+</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org39f55c0">1. Requirements:</a></li>
+<li><a href="#orgf3497fb">2. For setting up the repository on your local machine:</a></li>
+<li><a href="#orgb2924ad">3. Helpful commands that you can run at any time without it messing up your files:</a></li>
+<li><a href="#org033fc4d">4. If now you wish to change some part of the code:</a></li>
+</ul>
+</div>
+</div>
+<dl class="org-dl">
+<dt>Disclaimer</dt><dd></dd>
+</dl>
+<p>
+Git is a complicated tool and there might be mistakes born due to my
+incorrect understanding of how git works. Let me know if you have any
+questions, or if things don't work out the way I say they would.
+</p>
+
+<div id="outline-container-org39f55c0" class="outline-2">
+<h2 id="org39f55c0"><span class="section-number-2">1</span> Requirements:</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>Terminal or Command-Prompt</li>
+<li>Make sure git is installed on your computer.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf3497fb" class="outline-2">
+<h2 id="orgf3497fb"><span class="section-number-2">2</span> For setting up the repository on your local machine:</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+(You need to do this only the first time)
+</p>
+
+<dl class="org-dl">
+<dt>Note</dt><dd>Do not use this if you are copying a Lean repository. Use
+<code>leanproject get ...</code> instead.</dd>
+
+<dt>(no term)</dt><dd>In your local machine, navigate to a location where you wish to
+create a local copy of the repository.</dd>
+
+<dt>(no term)</dt><dd>Run the command:
+<code>git clone https://github.com/vaibhavkarve/samplerepo.git</code>.
+<ul class="org-ul">
+<li>This will create a copy of the remote GitLab repository (called
+<code>origin</code>) into your local machine (in a folder called
+<code>samplerepo</code>).</li>
+<li>It will also create a hidden <code>.git</code> folder within
+<code>samplerepo</code>.</li>
+<li>You might have to enter your username and password here for
+authorization.</li>
+<li>You now have a working copy of the repository including all its
+branches.</li>
+<li>(To undo this step, simply delete the folder from your local
+machine.)</li>
+</ul></dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-orgb2924ad" class="outline-2">
+<h2 id="orgb2924ad"><span class="section-number-2">3</span> Helpful commands that you can run at any time without it messing up your files:</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li><code>git fetch</code></li>
+<li><code>git branch</code></li>
+<li><code>git status</code></li>
+<li><code>git log --oneline --decorate --graph --all</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org033fc4d" class="outline-2">
+<h2 id="org033fc4d"><span class="section-number-2">4</span> If now you wish to change some part of the code:</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+(You need to repeat these steps every time you start working on the code.)
+</p>
+
+
+<ol class="org-ol">
+<li>Always start by running the command <code>git fetch</code>.
+<ul class="org-ul">
+<li>This updates your local repository with any new changes that
+anyone else might have pushed to GitLab since the last time you
+updated the repository.</li>
+<li>This command is perfectly safe to run as it does not overwrite
+anything and causes no loss of data. It is just a way of syncing
+your git history with that of the remote repository.</li>
+<li>Run this as often as you wish, even while in the middle of
+working on something. The more the better.</li>
+</ul></li>
+
+<li>Before you start editing anything, create a new branch. This keeps
+any changes you make out of the master branch till you are ready to
+merge in the new changes.
+
+<ul class="org-ul">
+<li>Run the command <code>git branch dumbidea</code> to create a branch called
+<code>dumbidea</code>. (Use a more descriptive name though).</li>
+<li>To check if this worked, run <code>git branch</code> to create a list of
+branches with an asterix next to the branch you are currently
+on.</li>
+<li>Note that the default branch is called <code>master</code>.</li>
+<li>(You can undo this step by running <code>git branch -d dumbidea</code>. This
+will delete the branch you just created.)</li>
+</ul></li>
+
+<li>Switch to the branch you created in the previous step by running
+<code>git checkout dumbidea</code>.
+
+<ul class="org-ul">
+<li>(You can undo this step and switch back to master by running
+<code>git checkout master</code>).</li>
+<li><i>Important:</i> every time you switch branches, the files on your
+local machine will change to reflect the state of the files in
+that particular branch.</li>
+</ul></li>
+
+<li>Make the changes you wish to make to any files you want. Say you
+changed <code>A.txt</code>, <code>B.txt</code> and <code>C.txt</code>.
+
+<ul class="org-ul">
+<li>If at any point you wish to revisit or view the old file (before
+your changes), you can access the old version simply by switching
+back to master branch (<code>git checkout master</code>). Make sure you
+switch back to your <code>dumbidea</code> branch before making more changes.</li>
+<li>You can review which files you have changed by running <code>git
+      status</code>.</li>
+<li>You can review which changes you made in a particular file by
+running say <code>git diff C.txt</code>.</li>
+<li>If you are dissatisfied by the changes you made to say <code>C.txt</code>,
+simply run <code>git checkout C.txt</code> to revert back to the state of the
+file as it was during the previous commit. This will undo any
+changes. (You cannot undo this undo-ing. So be careful. Run the
+<code>git checkout C.txt</code> command only if you are sure you want to
+discard any changes you made.)</li>
+</ul></li>
+
+<li>Stage the changes you do wish to keep. This is done by running
+<code>git add path/to/file</code>
+
+<ul class="org-ul">
+<li>Throughout the following steps, you can always run <code>git status</code>
+to keep track of which files have been modified, which have been
+staged, and which have been committed.</li>
+<li>Staging the file is like saying "I am happy with the changes I
+have made and would like to start the process of creating a
+recorded history for the files at this point."</li>
+<li>(You can undo this step by running <code>git reset HEAD
+      path/to/file</code>.</li>
+<li>If you are done editing <code>A.txt</code> but are still working on
+<code>B.txt</code>, it is okay to stage only <code>A.txt</code>. Even if you edit
+<code>A.txt</code> after staging, you can always re-stage it by typing <code>git
+      add A.txt</code>.</li>
+</ul></li>
+
+<li>Once all files have been staged, we are ready to commit our changes
+by running <code>git commit dumbidea</code>:
+
+<ul class="org-ul">
+<li>This is a local commit! This will only commit on our local
+machine and will not affect what is present on GitHub. Think of
+this as an extra layer of security before your <code>dumbidea</code> start
+affecting everyone else.</li>
+<li>You will be prompted with a message window where you should type
+out your commit message in as meaningful a way as possible.</li>
+<li>Check that your commit was successful by running <code>git
+      status</code>. You should now see a message that says <code>your branch is
+      1 commit ahead of origin/master</code>.</li>
+<li>(If you wish to undo this commit, look at the next to steps
+depending on whether you wish to do a soft or hard undo).</li>
+</ul></li>
+
+<li>If you decide that you committed the file too soon and would like
+to undo just the commit but keep all the edits you might have made
+to the file:
+
+<ul class="org-ul">
+<li>Run <code>git reset HEAD~1</code></li>
+<li>This takes you back to how things were two steps ago i.e. files
+are staged but not committed.</li>
+<li>(To undo this undo-ing, simply repeat the previous step.)</li>
+</ul></li>
+
+<li>If you decide that the commit you made in the previous step is
+complete rubbish and you want to erase all history of the edits
+that were made since the commit before that, you need a hard
+reset.
+
+<ul class="org-ul">
+<li>Run <code>git reset --hard HEAD~1</code></li>
+<li>(This undo-ing is hard to undo, but possible. Just be careful
+before doing a hard reset.)</li>
+</ul></li>
+
+<li>I am happy with my commit and now I would like everyone to be able
+to see it on GitHub
+
+<ul class="org-ul">
+<li>If you are done with the commit and haven't had the need to undo
+it, then you can run <code>git push</code> to push your changes to the
+remote repository (i.e. this will update <code>origin</code>).</li>
+<li>(If you wish to undo this, it is going to be difficult, but not
+impossible. First, inform everyone on your team to hold off and
+not work with your erroneous files. Next, start Googling for
+ways to undo the <code>git push</code> commands.)</li>
+</ul></li>
+
+<li>Now you can repeat the pull-edit-add-commit-push loop as many
+times as you want in order to make further changes to your
+<code>dumbidea</code> branch.
+
+<ul class="org-ul">
+<li>Keep running <code>git fetch</code> in order to remain up-to-date with GitHub.</li>
+</ul></li>
+
+<li>Once you are completely confident that <code>dumbidea</code> is actually
+not-so-dumb-afterall, you can decide to merge it into the <code>master</code>
+branch.
+
+<ul class="org-ul">
+<li>Switch to master branch by running <code>git checkout master</code>.</li>
+<li>To merge your branch with master, run <code>git merge dumbidea</code>.</li>
+<li>If this process works out smoothly without displaying any
+Conflict messages, then you have merged successfully. If not,
+look at the next step.</li>
+</ul></li>
+
+<li>If some other user (or you yourself) have made changes to the
+master branch that are not compatible with changes that you have
+made to files in <code>dumbidea</code> then Git will automatically detect
+this as a conflict and not allow you to merge till you resolve all
+the conflicts. If this happens, do the following:
+
+<ul class="org-ul">
+<li><p>
+Open the files that Git has indicated as having conflicts in
+them, say <code>A.txt</code>. In <code>A.txt</code>, Git will have marked the specific
+lines that are in conflict as follows:
+</p>
+
+<p>
+<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD:A.txt This is the line that was in the master branch.</code>
+</p>
+
+<p>
+<code>This is the line that is in the dumbidea branch.</code>
+</p>
+
+<p>
+<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; dumbidea:A.txt</code>
+</p>
+
+<ul class="org-ul">
+<li>Replace the block of text specified above with either the
+version in <code>master</code> branch, the version in <code>dumbidea</code> branch,
+or a mixure of both versions.</li>
+<li>Make sure to completely remove the &lt;&lt;&lt;&lt;&lt;&lt;&lt;, <code>=====</code> and &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+lines.</li>
+<li>After resolving each section in each conflicted file, run <code>git
+       add</code> on each file to mark it as resolved and to stage it.</li>
+<li>Run <code>git commit</code> without any conflict messages.</li>
+</ul></li>
+</ul></li>
+
+<li>Cleaning up after you are done using your branch.
+
+<ul class="org-ul">
+<li>After you have successfully merged a branch into <code>master</code>, you
+can get rid of the <code>dumbidea</code> branch by running <code>git branch -d
+       dumbidea</code>.</li>
+<li>This will clean up the branch history.</li>
+<li>You can check that the branch has been deleted by running <code>git
+       branch</code>.</li>
+</ul></li>
+
+<li>Next time you want to edit something, start again by creating a
+new branch.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Vaibhav Karve</p>
+<p class="date">Created: 2020-09-15 Tue 16:31</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
