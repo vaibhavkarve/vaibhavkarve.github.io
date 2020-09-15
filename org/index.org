@@ -46,6 +46,7 @@ interactive theorem proving (in particular, with the Lean theorem prover).
   - [[file:coq.pdf][Coq]]
   - [[file:esperanto.pdf][Esperanto]]
   - [[file:geometry.org][Geometry]]
+  - [[file:git_workflow.org][Git workflow]]
   - [[file:haskell.pdf][Haskell]]
   - [[file:homology.pdf][Homology]]
   - How I set up this website
