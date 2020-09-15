@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-09-15 Tue 16:34 -->
+<!-- 2020-09-15 Tue 16:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Git workflow</title>
@@ -238,10 +238,21 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org96fe248">1. Requirements</a></li>
-<li><a href="#org4b7c600">2. For setting up the repository on your local machine</a></li>
-<li><a href="#org3918ee7">3. Helpful commands that you can run at any time without it messing up your files</a></li>
-<li><a href="#orgc0fce3e">4. If now you wish to change some part of the code</a></li>
+<li><a href="#orgf7535f6">1. Requirements</a></li>
+<li><a href="#orgaecd074">2. For setting up the repository on your local machine</a></li>
+<li><a href="#org9ab641c">3. Helpful commands that you can run at any time without it messing up your files</a></li>
+<li><a href="#org9dc30b7">4. If now you wish to change some part of the code</a>
+<ul>
+<li><a href="#org059e4aa">4.1. Fetch first</a></li>
+<li><a href="#org34b225b">4.2. Create a branch</a></li>
+<li><a href="#org064c004">4.3. Make changes</a></li>
+<li><a href="#orgf565ecf">4.4. Stage and commit</a></li>
+<li><a href="#org719d592">4.5. Push</a></li>
+<li><a href="#orgf98302d">4.6. Repeat</a></li>
+<li><a href="#org680a84f">4.7. Merge</a></li>
+<li><a href="#org1b5bde9">4.8. Cleanup</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -252,8 +263,8 @@ works. Let me know if you have any questions, or if
 things don't work out the way I say they would.</dd>
 </dl>
 
-<div id="outline-container-org96fe248" class="outline-2">
-<h2 id="org96fe248"><span class="section-number-2">1</span> Requirements</h2>
+<div id="outline-container-orgf7535f6" class="outline-2">
+<h2 id="orgf7535f6"><span class="section-number-2">1</span> Requirements</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>Terminal or Command-Prompt</li>
@@ -262,8 +273,8 @@ things don't work out the way I say they would.</dd>
 </div>
 </div>
 
-<div id="outline-container-org4b7c600" class="outline-2">
-<h2 id="org4b7c600"><span class="section-number-2">2</span> For setting up the repository on your local machine</h2>
+<div id="outline-container-orgaecd074" class="outline-2">
+<h2 id="orgaecd074"><span class="section-number-2">2</span> For setting up the repository on your local machine</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 (You need to do this only the first time)
@@ -295,8 +306,8 @@ machine.)</li>
 </div>
 </div>
 
-<div id="outline-container-org3918ee7" class="outline-2">
-<h2 id="org3918ee7"><span class="section-number-2">3</span> Helpful commands that you can run at any time without it messing up your files</h2>
+<div id="outline-container-org9ab641c" class="outline-2">
+<h2 id="org9ab641c"><span class="section-number-2">3</span> Helpful commands that you can run at any time without it messing up your files</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li><code>git fetch</code></li>
@@ -307,16 +318,21 @@ machine.)</li>
 </div>
 </div>
 
-<div id="outline-container-orgc0fce3e" class="outline-2">
-<h2 id="orgc0fce3e"><span class="section-number-2">4</span> If now you wish to change some part of the code</h2>
+<div id="outline-container-org9dc30b7" class="outline-2">
+<h2 id="org9dc30b7"><span class="section-number-2">4</span> If now you wish to change some part of the code</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 (You need to repeat these steps every time you start working on the code.)
 </p>
+</div>
 
 
-<ol class="org-ol">
-<li>Always start by running the command <code>git fetch</code>.
+<div id="outline-container-org059e4aa" class="outline-3">
+<h3 id="org059e4aa"><span class="section-number-3">4.1</span> Fetch first</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Always start by running the command <code>git fetch</code>.
+</p>
 <ul class="org-ul">
 <li>This updates your local repository with any new changes that
 anyone else might have pushed to GitLab since the last time you
@@ -326,8 +342,15 @@ anything and causes no loss of data. It is just a way of syncing
 your git history with that of the remote repository.</li>
 <li>Run this as often as you wish, even while in the middle of
 working on something. The more the better.</li>
-</ul></li>
+</ul>
+</div>
+</div>
 
+
+<div id="outline-container-org34b225b" class="outline-3">
+<h3 id="org34b225b"><span class="section-number-3">4.2</span> Create a branch</h3>
+<div class="outline-text-3" id="text-4-2">
+<ol class="org-ol">
 <li>Before you start editing anything, create a new branch. This keeps
 any changes you make out of the master branch till you are ready to
 merge in the new changes.
@@ -353,9 +376,17 @@ will delete the branch you just created.)</li>
 local machine will change to reflect the state of the files in
 that particular branch.</li>
 </ul></li>
+</ol>
+</div>
+</div>
 
-<li>Make the changes you wish to make to any files you want. Say you
-changed <code>A.txt</code>, <code>B.txt</code> and <code>C.txt</code>.
+<div id="outline-container-org064c004" class="outline-3">
+<h3 id="org064c004"><span class="section-number-3">4.3</span> Make changes</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+Make the changes you wish to make to any files you want. Say you
+  changed <code>A.txt</code>, <code>B.txt</code> and <code>C.txt</code>.
+</p>
 
 <ul class="org-ul">
 <li>If at any point you wish to revisit or view the old file (before
@@ -363,7 +394,7 @@ your changes), you can access the old version simply by switching
 back to master branch (<code>git checkout master</code>). Make sure you
 switch back to your <code>dumbidea</code> branch before making more changes.</li>
 <li>You can review which files you have changed by running <code>git
-      status</code>.</li>
+     status</code>.</li>
 <li>You can review which changes you made in a particular file by
 running say <code>git diff C.txt</code>.</li>
 <li>If you are dissatisfied by the changes you made to say <code>C.txt</code>,
@@ -372,8 +403,14 @@ file as it was during the previous commit. This will undo any
 changes. (You cannot undo this undo-ing. So be careful. Run the
 <code>git checkout C.txt</code> command only if you are sure you want to
 discard any changes you made.)</li>
-</ul></li>
+</ul>
+</div>
+</div>
 
+<div id="outline-container-orgf565ecf" class="outline-3">
+<h3 id="orgf565ecf"><span class="section-number-3">4.4</span> Stage and commit</h3>
+<div class="outline-text-3" id="text-4-4">
+<ol class="org-ol">
 <li>Stage the changes you do wish to keep. This is done by running
 <code>git add path/to/file</code>
 
@@ -385,11 +422,11 @@ staged, and which have been committed.</li>
 have made and would like to start the process of creating a
 recorded history for the files at this point."</li>
 <li>(You can undo this step by running <code>git reset HEAD
-      path/to/file</code>.</li>
+     path/to/file</code>.</li>
 <li>If you are done editing <code>A.txt</code> but are still working on
 <code>B.txt</code>, it is okay to stage only <code>A.txt</code>. Even if you edit
 <code>A.txt</code> after staging, you can always re-stage it by typing <code>git
-      add A.txt</code>.</li>
+     add A.txt</code>.</li>
 </ul></li>
 
 <li>Once all files have been staged, we are ready to commit our changes
@@ -403,8 +440,8 @@ affecting everyone else.</li>
 <li>You will be prompted with a message window where you should type
 out your commit message in as meaningful a way as possible.</li>
 <li>Check that your commit was successful by running <code>git
-      status</code>. You should now see a message that says <code>your branch is
-      1 commit ahead of origin/master</code>.</li>
+     status</code>. You should now see a message that says <code>your branch is
+     1 commit ahead of origin/master</code>.</li>
 <li>(If you wish to undo this commit, look at the next to steps
 depending on whether you wish to do a soft or hard undo).</li>
 </ul></li>
@@ -430,9 +467,18 @@ reset.
 <li>(This undo-ing is hard to undo, but possible. Just be careful
 before doing a hard reset.)</li>
 </ul></li>
+</ol>
+</div>
+</div>
 
-<li>I am happy with my commit and now I would like everyone to be able
-to see it on GitHub
+
+<div id="outline-container-org719d592" class="outline-3">
+<h3 id="org719d592"><span class="section-number-3">4.5</span> Push</h3>
+<div class="outline-text-3" id="text-4-5">
+<p>
+We are now happy with our commit and now we would like everyone to be able
+   to see it on GitHub
+</p>
 
 <ul class="org-ul">
 <li>If you are done with the commit and haven't had the need to undo
@@ -442,16 +488,29 @@ remote repository (i.e. this will update <code>origin</code>).</li>
 impossible. First, inform everyone on your team to hold off and
 not work with your erroneous files. Next, start Googling for
 ways to undo the <code>git push</code> commands.)</li>
-</ul></li>
+</ul>
+</div>
+</div>
 
-<li>Now you can repeat the pull-edit-add-commit-push loop as many
-times as you want in order to make further changes to your
-<code>dumbidea</code> branch.
+<div id="outline-container-orgf98302d" class="outline-3">
+<h3 id="orgf98302d"><span class="section-number-3">4.6</span> Repeat</h3>
+<div class="outline-text-3" id="text-4-6">
+<p>
+Now you can repeat the pull-edit-add-commit-push loop as many times
+  as you want in order to make further changes to your <code>dumbidea</code>
+  branch.
+</p>
 
 <ul class="org-ul">
 <li>Keep running <code>git fetch</code> in order to remain up-to-date with GitHub.</li>
-</ul></li>
+</ul>
+</div>
+</div>
 
+<div id="outline-container-org680a84f" class="outline-3">
+<h3 id="org680a84f"><span class="section-number-3">4.7</span> Merge</h3>
+<div class="outline-text-3" id="text-4-7">
+<ol class="org-ol">
 <li>Once you are completely confident that <code>dumbidea</code> is actually
 not-so-dumb-afterall, you can decide to merge it into the <code>master</code>
 branch.
@@ -500,16 +559,23 @@ lines.</li>
 <li>Run <code>git commit</code> without any conflict messages.</li>
 </ul></li>
 </ul></li>
+</ol>
+</div>
+</div>
 
+<div id="outline-container-org1b5bde9" class="outline-3">
+<h3 id="org1b5bde9"><span class="section-number-3">4.8</span> Cleanup</h3>
+<div class="outline-text-3" id="text-4-8">
+<ol class="org-ol">
 <li>Cleaning up after you are done using your branch.
 
 <ul class="org-ul">
 <li>After you have successfully merged a branch into <code>master</code>, you
 can get rid of the <code>dumbidea</code> branch by running <code>git branch -d
-       dumbidea</code>.</li>
+     dumbidea</code>.</li>
 <li>This will clean up the branch history.</li>
 <li>You can check that the branch has been deleted by running <code>git
-       branch</code>.</li>
+     branch</code>.</li>
 </ul></li>
 
 <li>Next time you want to edit something, start again by creating a
@@ -518,9 +584,10 @@ new branch.</li>
 </div>
 </div>
 </div>
+</div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2020-09-15 Tue 16:34</p>
+<p class="date">Created: 2020-09-15 Tue 16:39</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
