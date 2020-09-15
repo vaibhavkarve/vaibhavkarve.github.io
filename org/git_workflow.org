@@ -14,11 +14,12 @@
 - Make sure git is installed on your computer.
 
 * For setting up the repository on your local machine
-  (You need to do this only the first time)
 
-- Note :: Do not use this if you are copying a Lean repository. Use
-          =leanproject get ...= instead.
+- Note :: Do not use =git clone ..= if you are cloning a Lean-specific
+          repository. Use =leanproject get ...= instead.
   
+  You need to follow these steps only the first time.
+
 1. In your local machine, navigate to a location where you wish to
    create a local copy of the repository.
 

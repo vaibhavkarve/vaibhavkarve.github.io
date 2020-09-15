@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-09-15 Tue 16:39 -->
+<!-- 2020-09-15 Tue 16:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Git workflow</title>
@@ -238,19 +238,19 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf7535f6">1. Requirements</a></li>
-<li><a href="#orgaecd074">2. For setting up the repository on your local machine</a></li>
-<li><a href="#org9ab641c">3. Helpful commands that you can run at any time without it messing up your files</a></li>
-<li><a href="#org9dc30b7">4. If now you wish to change some part of the code</a>
+<li><a href="#orgfd5a6e4">1. Requirements</a></li>
+<li><a href="#org298dffd">2. For setting up the repository on your local machine</a></li>
+<li><a href="#orge2d24f7">3. Helpful commands that you can run at any time without it messing up your files</a></li>
+<li><a href="#org3718b1e">4. If now you wish to change some part of the code</a>
 <ul>
-<li><a href="#org059e4aa">4.1. Fetch first</a></li>
-<li><a href="#org34b225b">4.2. Create a branch</a></li>
-<li><a href="#org064c004">4.3. Make changes</a></li>
-<li><a href="#orgf565ecf">4.4. Stage and commit</a></li>
-<li><a href="#org719d592">4.5. Push</a></li>
-<li><a href="#orgf98302d">4.6. Repeat</a></li>
-<li><a href="#org680a84f">4.7. Merge</a></li>
-<li><a href="#org1b5bde9">4.8. Cleanup</a></li>
+<li><a href="#orgfa9e42b">4.1. Fetch first</a></li>
+<li><a href="#org8605eb5">4.2. Create a branch</a></li>
+<li><a href="#org1caad5f">4.3. Make changes</a></li>
+<li><a href="#org0eb917b">4.4. Stage and commit</a></li>
+<li><a href="#orgd5b08cc">4.5. Push</a></li>
+<li><a href="#org1f1f3f8">4.6. Repeat</a></li>
+<li><a href="#org5a49516">4.7. Merge</a></li>
+<li><a href="#org4b1e03c">4.8. Cleanup</a></li>
 </ul>
 </li>
 </ul>
@@ -263,8 +263,8 @@ works. Let me know if you have any questions, or if
 things don't work out the way I say they would.</dd>
 </dl>
 
-<div id="outline-container-orgf7535f6" class="outline-2">
-<h2 id="orgf7535f6"><span class="section-number-2">1</span> Requirements</h2>
+<div id="outline-container-orgfd5a6e4" class="outline-2">
+<h2 id="orgfd5a6e4"><span class="section-number-2">1</span> Requirements</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>Terminal or Command-Prompt</li>
@@ -273,16 +273,18 @@ things don't work out the way I say they would.</dd>
 </div>
 </div>
 
-<div id="outline-container-orgaecd074" class="outline-2">
-<h2 id="orgaecd074"><span class="section-number-2">2</span> For setting up the repository on your local machine</h2>
+<div id="outline-container-org298dffd" class="outline-2">
+<h2 id="org298dffd"><span class="section-number-2">2</span> For setting up the repository on your local machine</h2>
 <div class="outline-text-2" id="text-2">
-<p>
-(You need to do this only the first time)
+<dl class="org-dl">
+<dt>Note</dt><dd><p>
+Do not use <code>git clone ..</code> if you are cloning a Lean-specific
+repository. Use <code>leanproject get ...</code> instead.
 </p>
 
-<dl class="org-dl">
-<dt>Note</dt><dd>Do not use this if you are copying a Lean repository. Use
-<code>leanproject get ...</code> instead.</dd>
+<p>
+You need to follow these steps only the first time.
+</p></dd>
 
 <dt>(no term)</dt><dd>In your local machine, navigate to a location where you wish to
 create a local copy of the repository.</dd>
@@ -306,8 +308,8 @@ machine.)</li>
 </div>
 </div>
 
-<div id="outline-container-org9ab641c" class="outline-2">
-<h2 id="org9ab641c"><span class="section-number-2">3</span> Helpful commands that you can run at any time without it messing up your files</h2>
+<div id="outline-container-orge2d24f7" class="outline-2">
+<h2 id="orge2d24f7"><span class="section-number-2">3</span> Helpful commands that you can run at any time without it messing up your files</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li><code>git fetch</code></li>
@@ -318,8 +320,8 @@ machine.)</li>
 </div>
 </div>
 
-<div id="outline-container-org9dc30b7" class="outline-2">
-<h2 id="org9dc30b7"><span class="section-number-2">4</span> If now you wish to change some part of the code</h2>
+<div id="outline-container-org3718b1e" class="outline-2">
+<h2 id="org3718b1e"><span class="section-number-2">4</span> If now you wish to change some part of the code</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 (You need to repeat these steps every time you start working on the code.)
@@ -327,8 +329,8 @@ machine.)</li>
 </div>
 
 
-<div id="outline-container-org059e4aa" class="outline-3">
-<h3 id="org059e4aa"><span class="section-number-3">4.1</span> Fetch first</h3>
+<div id="outline-container-orgfa9e42b" class="outline-3">
+<h3 id="orgfa9e42b"><span class="section-number-3">4.1</span> Fetch first</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 Always start by running the command <code>git fetch</code>.
@@ -347,8 +349,8 @@ working on something. The more the better.</li>
 </div>
 
 
-<div id="outline-container-org34b225b" class="outline-3">
-<h3 id="org34b225b"><span class="section-number-3">4.2</span> Create a branch</h3>
+<div id="outline-container-org8605eb5" class="outline-3">
+<h3 id="org8605eb5"><span class="section-number-3">4.2</span> Create a branch</h3>
 <div class="outline-text-3" id="text-4-2">
 <ol class="org-ol">
 <li>Before you start editing anything, create a new branch. This keeps
@@ -380,8 +382,8 @@ that particular branch.</li>
 </div>
 </div>
 
-<div id="outline-container-org064c004" class="outline-3">
-<h3 id="org064c004"><span class="section-number-3">4.3</span> Make changes</h3>
+<div id="outline-container-org1caad5f" class="outline-3">
+<h3 id="org1caad5f"><span class="section-number-3">4.3</span> Make changes</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 Make the changes you wish to make to any files you want. Say you
@@ -407,8 +409,8 @@ discard any changes you made.)</li>
 </div>
 </div>
 
-<div id="outline-container-orgf565ecf" class="outline-3">
-<h3 id="orgf565ecf"><span class="section-number-3">4.4</span> Stage and commit</h3>
+<div id="outline-container-org0eb917b" class="outline-3">
+<h3 id="org0eb917b"><span class="section-number-3">4.4</span> Stage and commit</h3>
 <div class="outline-text-3" id="text-4-4">
 <ol class="org-ol">
 <li>Stage the changes you do wish to keep. This is done by running
@@ -472,8 +474,8 @@ before doing a hard reset.)</li>
 </div>
 
 
-<div id="outline-container-org719d592" class="outline-3">
-<h3 id="org719d592"><span class="section-number-3">4.5</span> Push</h3>
+<div id="outline-container-orgd5b08cc" class="outline-3">
+<h3 id="orgd5b08cc"><span class="section-number-3">4.5</span> Push</h3>
 <div class="outline-text-3" id="text-4-5">
 <p>
 We are now happy with our commit and now we would like everyone to be able
@@ -492,8 +494,8 @@ ways to undo the <code>git push</code> commands.)</li>
 </div>
 </div>
 
-<div id="outline-container-orgf98302d" class="outline-3">
-<h3 id="orgf98302d"><span class="section-number-3">4.6</span> Repeat</h3>
+<div id="outline-container-org1f1f3f8" class="outline-3">
+<h3 id="org1f1f3f8"><span class="section-number-3">4.6</span> Repeat</h3>
 <div class="outline-text-3" id="text-4-6">
 <p>
 Now you can repeat the pull-edit-add-commit-push loop as many times
@@ -507,8 +509,8 @@ Now you can repeat the pull-edit-add-commit-push loop as many times
 </div>
 </div>
 
-<div id="outline-container-org680a84f" class="outline-3">
-<h3 id="org680a84f"><span class="section-number-3">4.7</span> Merge</h3>
+<div id="outline-container-org5a49516" class="outline-3">
+<h3 id="org5a49516"><span class="section-number-3">4.7</span> Merge</h3>
 <div class="outline-text-3" id="text-4-7">
 <ol class="org-ol">
 <li>Once you are completely confident that <code>dumbidea</code> is actually
@@ -563,8 +565,8 @@ lines.</li>
 </div>
 </div>
 
-<div id="outline-container-org1b5bde9" class="outline-3">
-<h3 id="org1b5bde9"><span class="section-number-3">4.8</span> Cleanup</h3>
+<div id="outline-container-org4b1e03c" class="outline-3">
+<h3 id="org4b1e03c"><span class="section-number-3">4.8</span> Cleanup</h3>
 <div class="outline-text-3" id="text-4-8">
 <ol class="org-ol">
 <li>Cleaning up after you are done using your branch.
@@ -587,7 +589,7 @@ new branch.</li>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2020-09-15 Tue 16:39</p>
+<p class="date">Created: 2020-09-15 Tue 16:45</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
