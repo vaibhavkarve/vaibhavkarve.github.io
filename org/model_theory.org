@@ -1,7 +1,17 @@
 #+title: Model theory
 
-- Reference :: Taken from my reading of David Marker's Model Theory:
-               an introduction.
+- Book :: David Marker's Model Theory: an introduction.
+- Book :: Open logic project [[http://builds.openlogicproject.org/open-logic-complete.pdf][link to built pdf]] (chapters 14 and 15)
+
+* Basic concepts
+Syntax and semantics of expressions → first-order logic (FOL) → theory and
+metatheory of FOL.
+
+Expressions of FOL := terms and formulas.
+
+Terms := variables | constant-symbols | function-symbols.
+
+Formulas := predicate-symbols and terms (combined recursively using logical connectives and quantifiers).
 
 * Structures and theories
 A /structure/ is a set that we wish to study equipped with collection
