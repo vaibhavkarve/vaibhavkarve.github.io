@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-09-16 Wed 10:40 -->
+<!-- 2020-09-16 Wed 10:41 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Multiprocessing in Python</title>
@@ -238,18 +238,18 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgeef02c1">1. Introduction</a></li>
-<li><a href="#orgfaa390b">2. Start methods</a>
+<li><a href="#orge77dfdf">1. Introduction</a></li>
+<li><a href="#org869651b">2. Start methods</a>
 <ul>
-<li><a href="#orgd3791d1">2.1. <code>spawn</code></a></li>
-<li><a href="#orgeeb7196">2.2. <code>fork</code></a></li>
-<li><a href="#org3eb3e5e">2.3. <code>forkserver</code></a></li>
-<li><a href="#org35cb69b">2.4. Verdict</a></li>
+<li><a href="#org22dabec">2.1. <code>spawn</code></a></li>
+<li><a href="#orgdcc8861">2.2. <code>fork</code></a></li>
+<li><a href="#org3706585">2.3. <code>forkserver</code></a></li>
+<li><a href="#org5d35ee2">2.4. Verdict</a></li>
 </ul>
 </li>
-<li><a href="#org33788ae">3. Communication between processes</a>
+<li><a href="#org6bf82c2">3. Communication between processes</a>
 <ul>
-<li><a href="#org056af87">3.1. Queue</a></li>
+<li><a href="#orgb81efb4">3.1. Queue</a></li>
 </ul>
 </li>
 </ul>
@@ -259,8 +259,8 @@ for the JavaScript code in this tag.
 <dt>Python documentation</dt><dd><a href="https://docs.python.org/3/library/multiprocessing.html">multiprocessing module</a></dd>
 </dl>
 
-<div id="outline-container-orgeef02c1" class="outline-2">
-<h2 id="orgeef02c1"><span class="section-number-2">1</span> Introduction</h2>
+<div id="outline-container-orge77dfdf" class="outline-2">
+<h2 id="orge77dfdf"><span class="section-number-2">1</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 The <code>multiprocessing</code> module (MP) spawns sub-processes insteads of threads.  Can be
@@ -271,14 +271,14 @@ processes.
 </div>
 </div>
 
-<div id="outline-container-orgfaa390b" class="outline-2">
-<h2 id="orgfaa390b"><span class="section-number-2">2</span> Start methods</h2>
+<div id="outline-container-org869651b" class="outline-2">
+<h2 id="org869651b"><span class="section-number-2">2</span> Start methods</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Can be set as follows.
 </p>
 <div class="org-src-container">
-<pre class="src src-python" id="orgfcc0769"><span style="font-weight: bold;">import</span> multiprocessing <span style="font-weight: bold;">as</span> mp
+<pre class="src src-python" id="orgdab6330"><span style="font-weight: bold;">import</span> multiprocessing <span style="font-weight: bold;">as</span> mp
 
 <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">foo</span>(q):
     <span style="font-weight: bold;">pass</span>
@@ -299,8 +299,8 @@ Can be set as follows.
 </p>
 </div>
 
-<div id="outline-container-orgd3791d1" class="outline-3">
-<h3 id="orgd3791d1"><span class="section-number-3">2.1</span> <code>spawn</code></h3>
+<div id="outline-container-org22dabec" class="outline-3">
+<h3 id="org22dabec"><span class="section-number-3">2.1</span> <code>spawn</code></h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Parent process starts a fresh python interpreter each time. This is
@@ -310,8 +310,8 @@ the <code>multiprocessing.Process.run</code> method.
 </div>
 </div>
 
-<div id="outline-container-orgeeb7196" class="outline-3">
-<h3 id="orgeeb7196"><span class="section-number-3">2.2</span> <code>fork</code></h3>
+<div id="outline-container-orgdcc8861" class="outline-3">
+<h3 id="orgdcc8861"><span class="section-number-3">2.2</span> <code>fork</code></h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Parent process forks the python interpreter using <code>os.fork()</code>. All
@@ -332,8 +332,8 @@ This is available on Unix only.
 </div>
 </div>
 
-<div id="outline-container-org3eb3e5e" class="outline-3">
-<h3 id="org3eb3e5e"><span class="section-number-3">2.3</span> <code>forkserver</code></h3>
+<div id="outline-container-org3706585" class="outline-3">
+<h3 id="org3706585"><span class="section-number-3">2.3</span> <code>forkserver</code></h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 When the program starts, using this method, a server process is
@@ -349,8 +349,8 @@ Similar to <code>fork</code>, this is available on Unix only.
 </div>
 </div>
 
-<div id="outline-container-org35cb69b" class="outline-3">
-<h3 id="org35cb69b"><span class="section-number-3">2.4</span> Verdict</h3>
+<div id="outline-container-org5d35ee2" class="outline-3">
+<h3 id="org5d35ee2"><span class="section-number-3">2.4</span> Verdict</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 I will be using <code>forkserver</code> for my programs.
@@ -359,21 +359,21 @@ I will be using <code>forkserver</code> for my programs.
 </div>
 </div>
 
-<div id="outline-container-org33788ae" class="outline-2">
-<h2 id="org33788ae"><span class="section-number-2">3</span> Communication between processes</h2>
+<div id="outline-container-org6bf82c2" class="outline-2">
+<h2 id="org6bf82c2"><span class="section-number-2">3</span> Communication between processes</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 MP allows exchange of objects between processes.
 </p>
 </div>
-<div id="outline-container-org056af87" class="outline-3">
-<h3 id="org056af87"><span class="section-number-3">3.1</span> Queue</h3>
+<div id="outline-container-orgb81efb4" class="outline-3">
+<h3 id="orgb81efb4"><span class="section-number-3">3.1</span> Queue</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2020-09-16 Wed 10:40</p>
+<p class="date">Created: 2020-09-16 Wed 10:41</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
