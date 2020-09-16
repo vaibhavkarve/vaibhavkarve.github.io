@@ -118,3 +118,14 @@ TM := (Q, Σ, Γ, δ, q₀, q_accept, q_reject)
 - q_reject ∈ Q is accept state. q_accept ≠ q_reject.
 
 Note that Q, Σ, Γ all should be finite sets.
+
+* Decidability
+If a TM accepts a language then the language is /recognizable/. (*Recursively enumerable*)
+
+A TM that always halts is called a /decider/. A language that is
+recognized by a decider is said to be /Decidable/. (*Recursive*)
+
+Decidable ⇒ Recognizable (converse not true).
+
+A language that is recognizable but not decidable is the Halting
+problem.

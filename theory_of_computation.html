@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-09-16 Wed 12:32 -->
+<!-- 2020-09-16 Wed 12:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Theory of Computation</title>
@@ -238,9 +238,10 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org31dd5b8">1. Finite automata</a></li>
-<li><a href="#org898a2b2">2. Regular expressions</a></li>
-<li><a href="#org3bb6d2d">3. Turing Machines</a></li>
+<li><a href="#org1dd7967">1. Finite automata</a></li>
+<li><a href="#org47c420a">2. Regular expressions</a></li>
+<li><a href="#org6812705">3. Turing Machines</a></li>
+<li><a href="#org3160d52">4. Decidability</a></li>
 </ul>
 </div>
 </div>
@@ -253,8 +254,8 @@ Notes taken from Reading Group
 computation</dd>
 </dl>
 
-<div id="outline-container-org31dd5b8" class="outline-2">
-<h2 id="org31dd5b8"><span class="section-number-2">1</span> Finite automata</h2>
+<div id="outline-container-org1dd7967" class="outline-2">
+<h2 id="org1dd7967"><span class="section-number-2">1</span> Finite automata</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Part 1 will be Computability. Part 2 will be Complexity.
@@ -328,8 +329,8 @@ P(Q) is not going to be an issue.</dd>
 </div>
 </div>
 
-<div id="outline-container-org898a2b2" class="outline-2">
-<h2 id="org898a2b2"><span class="section-number-2">2</span> Regular expressions</h2>
+<div id="outline-container-org47c420a" class="outline-2">
+<h2 id="org47c420a"><span class="section-number-2">2</span> Regular expressions</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 They are another way to represent a regular language.  ∅ is the
@@ -398,8 +399,8 @@ Non-example of CFG is: {aⁿbⁿcⁿ : n ∈ ℕ}.
 </div>
 </div>
 
-<div id="outline-container-org3bb6d2d" class="outline-2">
-<h2 id="org3bb6d2d"><span class="section-number-2">3</span> Turing Machines</h2>
+<div id="outline-container-org6812705" class="outline-2">
+<h2 id="org6812705"><span class="section-number-2">3</span> Turing Machines</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Similar to DFA but has unlimited and unrestricted memory. The stack is
@@ -437,10 +438,33 @@ Note that Q, Σ, Γ all should be finite sets.
 </p>
 </div>
 </div>
+
+<div id="outline-container-org3160d52" class="outline-2">
+<h2 id="org3160d52"><span class="section-number-2">4</span> Decidability</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+If a TM accepts a language then the language is <i>recognizable</i>. (<b>Recursively enumerable</b>)
+</p>
+
+<p>
+A TM that always halts is called a <i>decider</i>. A language that is
+recognized by a decider is said to be <i>Decidable</i>. (<b>Recursive</b>)
+</p>
+
+<p>
+Decidable ⇒ Recognizable (converse not true).
+</p>
+
+<p>
+A language that is recognizable but not decidable is the Halting
+problem.
+</p>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2020-09-16 Wed 12:32</p>
+<p class="date">Created: 2020-09-16 Wed 12:43</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
