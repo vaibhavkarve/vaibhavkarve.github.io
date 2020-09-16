@@ -11,20 +11,32 @@ parallelism -- parallelizing the execution of a function accross
 multiple input values by distributing the data accross processes.
 
 * Start methods
-Can be set as follows:
+Can be set as follows.
 #+name: set-start-method
 #+attr_latex: :options label= (python3.8) (scratch) <<set-start-method>>
 #+begin_src python :exports code :eval none
-import multiprocessing as mp
+  import multiprocessing as mp
 
-if __name__ == '__main__':
-    mp.set_start_method('spawn')
+  def foo(q):
+      pass
+
+  if __name__ == '__main__':
+      # using get_context() is preferred over set_start_method().
+      ctx = mp.get_context('spawn')  # mp has custom Context object
+				     # types.
+      q = ctx.Queue()
+      p = ctx.Process(target=foo, args=(q,))
 #+end_src
+
+
+
+=set_start_method()= should not be used more than once in the program.
 
 ** =spawn=
    Parent process starts a fresh python interpreter each time. This is
    the slowest option. Inherits only those objects that are needed by
    the =multiprocessing.Process.run= method.
+
 ** =fork=
    Parent process forks the python interpreter using =os.fork()=. All
    resources of the parent are inherited by the child process. This is
@@ -43,3 +55,6 @@ if __name__ == '__main__':
    is requested. The fork process server is single-threaded and so it
    is safely uses =os.fork()=. No unnecessary resources are inherited
    from the parent process.
+
+   Similar to =fork=, this is available on Unix only.
+
