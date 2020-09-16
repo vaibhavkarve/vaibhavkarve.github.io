@@ -62,7 +62,7 @@ Can be set as follows.
 ** Verdict
    I will be using =forkserver= for my programs.
 
-* Communication between processes
+* Communication between processes                                  :noexport:
   MP allows exchange of objects between processes.
 ** Queue
 Use =mp.Queue= instead of =queue.Queue=.
@@ -76,7 +76,7 @@ Steps:
    list.
 #+name: queue-example
 #+attr_latex: :options label= (python3.8) (scratch) <<queue-example>>
-#+begin_src python :results output pp :exports both :session
+#+begin_src python :results output pp :exports both :session :eval none
 import multiprocessing as mp
 
 q = mp.Queue()
@@ -98,7 +98,7 @@ print(len(q.get()))
 
 #+name: process-queues
 #+attr_latex: :options label= (python3.8) (scratch) <<process-queues>>
-#+begin_src python :session :results output
+#+begin_src python :session :results output :eval none
 def putter(q: mp.queues.Queue, value):
     q.put(value)
 
