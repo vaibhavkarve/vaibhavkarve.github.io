@@ -55,8 +55,10 @@ interactive theorem proving (in particular, with the Lean theorem prover).
   - [[file:lambda_calculus.pdf][Lambda calculus]]
   - Logic
   - [[file:lua.pdf][Lua]]
+  - [[file:model_theory.org][Model theory]]
   - [[file:persistent_homology.pdf][Persistent homology]]
   - [[file:philosophy.pdf][Philosophy]]
+  - [[file:python_multiprocessing.org][Python multiprocessing]]
   - [[file:pytype.org][Python's type theory]]
 
 

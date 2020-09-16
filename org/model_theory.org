@@ -2,6 +2,7 @@
 
 - Book :: David Marker's Model Theory: an introduction.
 - Book :: Open logic project [[http://builds.openlogicproject.org/open-logic-complete.pdf][link to built pdf]] (chapters 14 and 15)
+- Wikipedia :: First order logic [[https://en.wikipedia.org/wiki/First-order_logic][link]]
 
 * Basic concepts
 Syntax and semantics of expressions → first-order logic (FOL) → theory and
@@ -11,7 +12,14 @@ Expressions of FOL := terms and formulas.
 
 Terms := variables | constant-symbols | function-symbols.
 
-Formulas := predicate-symbols and terms (combined recursively using logical connectives and quantifiers).
+Formulas := predicate-symbols and terms (combined recursively using logical
+connectives and quantifiers).
+
+Semantics deals with the concept of satisfaction in a structure. Using
+satisfiability, it then defines other notions like validity and entailment.
+
+* First-order languages
+
 
 * Structures and theories
 A /structure/ is a set that we wish to study equipped with collection
@@ -33,7 +41,8 @@ Examples of languages:
 4. Language of graphs = \(\{R\}\), where \(R\) is a binary relation symbol.
 
 An \(\mathcal{L}\)-/structure/ \(\mathcal{M}\) is given by the following data:
-1. \(M\) := a nonempty set called the universe, domain, or underlying set of \(\mathcal{M}\).
+1. \(M\) := a nonempty set called the universe, domain, or underlying
+   set of \(\mathcal{M}\).
 2. an interpretation of each \(f\in F\) i.e., a function
    \(f^\mathcal{M} : M^{n_f} \rightarrow M\) for each \(f\).
 3. an interpretation for each \(r \in R\) i.e, a set

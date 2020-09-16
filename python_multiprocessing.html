@@ -6,7 +6,7 @@
 <!-- 2020-09-16 Wed 09:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Boolean Satisfiability notes</title>
+<title>Multiprocessing in Python</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="Vaibhav Karve" />
 <style type="text/css">
@@ -180,7 +180,6 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -227,81 +226,97 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
-</script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
-<h1 class="title">Boolean Satisfiability notes
-<br />
-<span class="subtitle"><a href="index.html">Home</a></span>
-</h1>
+<h1 class="title">Multiprocessing in Python</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org345c3fe">1. Introduction</a></li>
+<li><a href="#orgb839289">1. Introduction</a></li>
+<li><a href="#org143fe18">2. Start methods</a>
+<ul>
+<li><a href="#org2b3662e">2.1. <code>spawn</code></a></li>
+<li><a href="#org368c972">2.2. <code>fork</code></a></li>
+<li><a href="#orge72b968">2.3. <code>forkserver</code></a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
-<p>
-These are my notes from Donald Knuth's The Art of Computer Programming:
-Satisfiability, Volume 4, Fascicle 6.
-</p>
+<dl class="org-dl">
+<dt>Documentation</dt><dd><a href="https://docs.python.org/3/library/multiprocessing.html">link</a></dd>
+</dl>
 
-
-<div id="outline-container-org345c3fe" class="outline-2">
-<h2 id="org345c3fe"><span class="section-number-2">1</span> Introduction</h2>
+<div id="outline-container-orgb839289" class="outline-2">
+<h2 id="orgb839289"><span class="section-number-2">1</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-A efficient algorithm for SAT would involve deciding a CNF on \(N\)
-variables in \(N^{O(1)}\) steps. It is possible (and D.K. believes so)
-that SAT is in \(P\) but the algorithm is "unknowable", meaning we might
-get an existence proof of such an algorithm.
+Spawns sub-processes insteads of threads.  Can be used for data
+parallelism &#x2013; parallelizing the execution of a function accross
+multiple input values by distributing the data accross processes.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org143fe18" class="outline-2">
+<h2 id="org143fe18"><span class="section-number-2">2</span> Start methods</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Can be set as follows:
+</p>
+<div class="org-src-container">
+<pre class="src src-python" id="org425945e"><span style="font-weight: bold;">import</span> multiprocessing <span style="font-weight: bold;">as</span> mp
+
+<span style="font-weight: bold;">if</span> <span style="font-weight: bold;">__name__</span> == <span style="font-style: italic;">'__main__'</span>:
+    mp.set_start_method(<span style="font-style: italic;">'spawn'</span>)
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org2b3662e" class="outline-3">
+<h3 id="org2b3662e"><span class="section-number-3">2.1</span> <code>spawn</code></h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Parent process starts a fresh python interpreter each time. This is
+the slowest option. Inherits only those objects that are needed by
+the <code>multiprocessing.Process.run</code> method.
+</p>
+</div>
+</div>
+<div id="outline-container-org368c972" class="outline-3">
+<h3 id="org368c972"><span class="section-number-3">2.2</span> <code>fork</code></h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Parent process forks the python interpreter using <code>os.fork()</code>. All
+resources of the parent are inherited by the child process. This is
+faster then <code>spawn</code>.
 </p>
 
 <p>
-D.K. defines a literal to be either a variable or its complement.  Two
-literals are <i>distinct</i> if \(l_1 \neq l_2\). They are <i>strictly
-distinct</i> if \(|l_1| \neq |l_2|\).
+"Not safe if used on a multi-threading process" (I think this means
+that this method should not be used if we are also using the
+<code>threading</code> module?). Overall the fork start method can lead to
+crashes of the subprocess so it is unsafe.
+</p>
+
+<p>
+This is available on Unix only.
 </p>
 </div>
+</div>
 
-<div id="outline-container-org7d59fa1" class="outline-3">
-<h3 id="org7d59fa1"><span class="section-number-3">1.1</span> SAT is equivalent to a covering problem</h3>
-<div class="outline-text-3" id="text-1-1">
-<pre class="example">
-def Tₙ (n : ℕ) : CNF := {{1, ¬1}, {2, ¬ 2}, ..., {n, ¬n}}
-variable (S : Cnf)
-
-def is_sat S : Prop :=
-  let n := number_of_variables S in
-  ∃ L : set (Literals),
-  -- (1) L has size n
-  L.size = n
-  -- (2) every clause had a literal that is in L.
-  ∧ ∀ (c : Clause) ∈ S, ∃ l ∈ L, l ∈ c
-</pre>
+<div id="outline-container-orge72b968" class="outline-3">
+<h3 id="orge72b968"><span class="section-number-3">2.3</span> <code>forkserver</code></h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+When the program starts, using this method, a server process is
+also started. The fork server can fork a new process every time it
+is requested. The fork process server is single-threaded and so it
+is safely uses <code>os.fork()</code>. No unnecessary resources are inherited
+from the parent process.
+</p>
 </div>
 </div>
 </div>

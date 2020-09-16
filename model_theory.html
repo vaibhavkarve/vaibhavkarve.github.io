@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-09-15 Tue 16:58 -->
+<!-- 2020-09-16 Wed 09:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Model theory</title>
@@ -256,18 +256,20 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgfd83a62">1. Basic concepts</a></li>
-<li><a href="#orgf6224d7">2. Structures and theories</a></li>
+<li><a href="#org35691c6">1. Basic concepts</a></li>
+<li><a href="#org1f090e2">2. First-order languages</a></li>
+<li><a href="#org923f95f">3. Structures and theories</a></li>
 </ul>
 </div>
 </div>
 <dl class="org-dl">
 <dt>Book</dt><dd>David Marker's Model Theory: an introduction.</dd>
 <dt>Book</dt><dd>Open logic project <a href="http://builds.openlogicproject.org/open-logic-complete.pdf">link to built pdf</a> (chapters 14 and 15)</dd>
+<dt>Wikipedia</dt><dd>First order logic <a href="https://en.wikipedia.org/wiki/First-order_logic">link</a></dd>
 </dl>
 
-<div id="outline-container-orgfd83a62" class="outline-2">
-<h2 id="orgfd83a62"><span class="section-number-2">1</span> Basic concepts</h2>
+<div id="outline-container-org35691c6" class="outline-2">
+<h2 id="org35691c6"><span class="section-number-2">1</span> Basic concepts</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Syntax and semantics of expressions → first-order logic (FOL) → theory and
@@ -283,14 +285,25 @@ Terms := variables | constant-symbols | function-symbols.
 </p>
 
 <p>
-Formulas := predicate-symbols and terms (combined recursively using logical connectives and quantifiers).
+Formulas := predicate-symbols and terms (combined recursively using logical
+connectives and quantifiers).
+</p>
+
+<p>
+Semantics deals with the concept of satisfaction in a structure. Using
+satisfiability, it then defines other notions like validity and entailment.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgf6224d7" class="outline-2">
-<h2 id="orgf6224d7"><span class="section-number-2">2</span> Structures and theories</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-org1f090e2" class="outline-2">
+<h2 id="org1f090e2"><span class="section-number-2">2</span> First-order languages</h2>
+</div>
+
+
+<div id="outline-container-org923f95f" class="outline-2">
+<h2 id="org923f95f"><span class="section-number-2">3</span> Structures and theories</h2>
+<div class="outline-text-2" id="text-3">
 <p>
 A <i>structure</i> is a set that we wish to study equipped with collection
 of distinguished functions, relations, and elements. We also choose a
@@ -323,7 +336,8 @@ Examples of languages:
 An \(\mathcal{L}\)-<i>structure</i> \(\mathcal{M}\) is given by the following data:
 </p>
 <ol class="org-ol">
-<li>\(M\) := a nonempty set called the universe, domain, or underlying set of \(\mathcal{M}\).</li>
+<li>\(M\) := a nonempty set called the universe, domain, or underlying
+set of \(\mathcal{M}\).</li>
 <li>an interpretation of each \(f\in F\) i.e., a function
 \(f^\mathcal{M} : M^{n_f} \rightarrow M\) for each \(f\).</li>
 <li>an interpretation for each \(r \in R\) i.e, a set
@@ -335,7 +349,7 @@ An \(\mathcal{L}\)-<i>structure</i> \(\mathcal{M}\) is given by the following da
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2020-09-15 Tue 16:58</p>
+<p class="date">Created: 2020-09-16 Wed 09:46</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
