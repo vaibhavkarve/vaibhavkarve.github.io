@@ -1,6 +1,6 @@
 #+title: Multiprocessing in Python
 #+options: toc:2 H:2
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/org_autogen.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 #+subtitle: [[file:index.org][Home]]
 
 - Python documentation :: [[https://docs.python.org/3/library/multiprocessing.html][multiprocessing module]]
