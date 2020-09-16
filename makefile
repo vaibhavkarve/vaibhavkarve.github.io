@@ -2,7 +2,7 @@
 
 htmls : org/index.org
 	touch org/*.org
-	emacs -q -l org_publish.el --batch $< --eval="(org-publish-all (symbol-name 'org))" --kill
+	emacs -l org_publish.el --batch $< --eval="(org-publish-all (symbol-name 'org))" --kill
 
 website : htmls
 	git add .
