@@ -1,5 +1,5 @@
 #+title: Multiprocessing in Python
-#+options: toc:2 H:2
+#+options: toc:2 H:3
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 #+subtitle: [[file:index.org][Home]]
 

@@ -1,4 +1,7 @@
 #+title: Model theory
+#+options: toc:2 H:2
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+#+subtitle: [[file:index.org][Home]]
 
 - Book :: David Marker's Model Theory: an introduction.
 - Book :: Open logic project [[http://builds.openlogicproject.org/open-logic-complete.pdf][link to built pdf]] (chapters 14 and 15)
