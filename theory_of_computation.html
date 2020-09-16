@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-09-16 Wed 11:07 -->
+<!-- 2020-09-16 Wed 12:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Theory of Computation</title>
@@ -180,6 +180,7 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -237,8 +238,9 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org62e9bc8">1. Finite automata</a></li>
-<li><a href="#org1878ea0">2. Regular expressions</a></li>
+<li><a href="#org31dd5b8">1. Finite automata</a></li>
+<li><a href="#org898a2b2">2. Regular expressions</a></li>
+<li><a href="#org3bb6d2d">3. Turing Machines</a></li>
 </ul>
 </div>
 </div>
@@ -251,8 +253,8 @@ Notes taken from Reading Group
 computation</dd>
 </dl>
 
-<div id="outline-container-org62e9bc8" class="outline-2">
-<h2 id="org62e9bc8"><span class="section-number-2">1</span> Finite automata</h2>
+<div id="outline-container-org31dd5b8" class="outline-2">
+<h2 id="org31dd5b8"><span class="section-number-2">1</span> Finite automata</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Part 1 will be Computability. Part 2 will be Complexity.
@@ -326,8 +328,8 @@ P(Q) is not going to be an issue.</dd>
 </div>
 </div>
 
-<div id="outline-container-org1878ea0" class="outline-2">
-<h2 id="org1878ea0"><span class="section-number-2">2</span> Regular expressions</h2>
+<div id="outline-container-org898a2b2" class="outline-2">
+<h2 id="org898a2b2"><span class="section-number-2">2</span> Regular expressions</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 They are another way to represent a regular language.  ∅ is the
@@ -395,10 +397,50 @@ Non-example of CFG is: {aⁿbⁿcⁿ : n ∈ ℕ}.
 </p>
 </div>
 </div>
+
+<div id="outline-container-org3bb6d2d" class="outline-2">
+<h2 id="org3bb6d2d"><span class="section-number-2">3</span> Turing Machines</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Similar to DFA but has unlimited and unrestricted memory. The stack is
+no longer losing information when we pop values. The memory is modeled
+as an infinite tape. The tape is more central to these machines than
+the state descriptors.
+</p>
+
+<p>
+In most formal definitions we state that the pointer can move one cell
+to the left or right. But in fact, this is equivalent to a pointer
+that can move to any arbitrary position.
+</p>
+
+<p>
+A Turing Machine might accept, reject or go on forever. Halting or not
+halting is what determines the decidability of a problem.
+</p>
+
+<p>
+TM := (Q, Σ, Γ, δ, q₀, q<sub>accept</sub>, q<sub>reject</sub>)
+</p>
+<ul class="org-ul">
+<li>Q = Set of states</li>
+<li>Σ = Alphabet</li>
+<li>Γ = Tape alphabet. Σ ⊆ Γ</li>
+<li>δ : Q × Γ → Q × Γ × {L, R} is the transition function</li>
+<li>q₀ ∈ Q is initial state</li>
+<li>q<sub>accept</sub> ∈ Q is accept state</li>
+<li>q<sub>reject</sub> ∈ Q is accept state. q<sub>accept</sub> ≠ q<sub>reject</sub>.</li>
+</ul>
+
+<p>
+Note that Q, Σ, Γ all should be finite sets.
+</p>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2020-09-16 Wed 11:07</p>
+<p class="date">Created: 2020-09-16 Wed 12:32</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

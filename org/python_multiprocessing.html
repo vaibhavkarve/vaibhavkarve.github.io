@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-09-16 Wed 12:32 -->
+<!-- 2020-09-16 Wed 11:19 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Manhattan Traffic</title>
+<title>Multiprocessing in Python</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="[[file:../index.html][Vaibhav Karve]]Vaibhav Karve" />
+<meta name="author" content="Vaibhav Karve" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -180,7 +180,6 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -230,54 +229,150 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Manhattan Traffic
+<h1 class="title">Multiprocessing in Python
 <br />
-<span class="subtitle"><a href="../index.html">Home</a></span>
+<span class="subtitle"><a href="index.html">Home</a></span>
 </h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org147fc33">1. Collaborators</a></li>
+<li><a href="#org549d687">1. Introduction</a></li>
+<li><a href="#orgf21e7f0">2. Start methods</a>
+<ul>
+<li><a href="#orgd3cfbe2">2.1. <code>spawn</code></a></li>
+<li><a href="#org2518e21">2.2. <code>fork</code></a></li>
+<li><a href="#org27b7e5e">2.3. <code>forkserver</code></a></li>
+<li><a href="#orga26a944">2.4. Verdict</a></li>
+</ul>
+</li>
+<li><a href="#orgf4e7d65">3. Communication between processes</a>
+<ul>
+<li><a href="#org64fa8db">3.1. Queue</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
-<p>
-In this project, we analyze Manhattan taxi-traffic using a constrained
-nonnegative matrix factorization algorithm that promotes sparsity and
-allows us to decompose traffic into a linear combination of 50
-distinct <i>traffic signatures</i>.
-</p>
-
 <dl class="org-dl">
-<dt>GitLab code repository</dt><dd><a href="https://gitlab-beta.engr.illinois.edu/TrafficPatterns/CSNMF">gitlab-beta.engr.illinois.edu/TrafficPatterns/CSNMF</a></dd>
-<dt>Original data files</dt><dd><a href="https://doi.org/10.13012/B2IDB-4900670_V1">doi.org/10.13012/B2IDB-4900670<sub>V1</sub></a></dd>
+<dt>Python documentation</dt><dd><a href="https://docs.python.org/3/library/multiprocessing.html">multiprocessing module</a></dd>
 </dl>
 
-<p>
-A manuscript for this project has been submitted for publication and
-is pending review.
-</p>
-
-<p>
-The <a href="congestion_barcodes.html">congestion barcodes project</a> was an offshoot of this work.
-</p>
-
-<div id="outline-container-org147fc33" class="outline-2">
-<h2 id="org147fc33"><span class="section-number-2">1</span> Collaborators</h2>
+<div id="outline-container-org549d687" class="outline-2">
+<h2 id="org549d687"><span class="section-number-2">1</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
-<ul class="org-ul">
-<li>Richard Sowers</li>
-<li>Daniel B.&nbsp; Work</li>
-<li>Derrek Yager</li>
-<li>Marzieh Abolhelm</li>
-</ul>
+<p>
+The <code>multiprocessing</code> module (MP) spawns sub-processes insteads of threads.  Can be
+used for data parallelism &#x2013; parallelizing the execution of a function
+accross multiple input values by distributing the data accross
+processes.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf21e7f0" class="outline-2">
+<h2 id="orgf21e7f0"><span class="section-number-2">2</span> Start methods</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Can be set as follows.
+</p>
+<div class="org-src-container">
+<pre class="src src-python" id="org8fc901d"><span style="color: #a020f0;">import</span> multiprocessing <span style="color: #a020f0;">as</span> mp
+
+<span style="color: #a020f0;">def</span> <span style="color: #0000ff;">foo</span>(q):
+    <span style="color: #a020f0;">pass</span>
+
+<span style="color: #a020f0;">if</span> <span style="color: #483d8b;">__name__</span> == <span style="color: #8b2252;">'__main__'</span>:
+    <span style="color: #b22222;"># </span><span style="color: #b22222;">using get_context() is preferred over set_start_method().</span>
+    <span style="color: #a0522d;">ctx</span> = mp.get_context(<span style="color: #8b2252;">'spawn'</span>)  <span style="color: #b22222;"># </span><span style="color: #b22222;">mp has custom Context object</span>
+                                   <span style="color: #b22222;"># </span><span style="color: #b22222;">types.</span>
+    <span style="color: #a0522d;">q</span> = ctx.Queue()
+    <span style="color: #a0522d;">p</span> = ctx.Process(target=foo, args=(q,))
+</pre>
+</div>
+
+
+
+<p>
+<code>set_start_method()</code> should not be used more than once in the program.
+</p>
+</div>
+
+<div id="outline-container-orgd3cfbe2" class="outline-3">
+<h3 id="orgd3cfbe2"><span class="section-number-3">2.1</span> <code>spawn</code></h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Parent process starts a fresh python interpreter each time. This is
+the slowest option. Inherits only those objects that are needed by
+the <code>multiprocessing.Process.run</code> method.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2518e21" class="outline-3">
+<h3 id="org2518e21"><span class="section-number-3">2.2</span> <code>fork</code></h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Parent process forks the python interpreter using <code>os.fork()</code>. All
+resources of the parent are inherited by the child process. This is
+faster then <code>spawn</code>.
+</p>
+
+<p>
+"Not safe if used on a multi-threading process" (I think this means
+that this method should not be used if we are also using the
+<code>threading</code> module?). Overall the fork start method can lead to
+crashes of the subprocess so it is unsafe.
+</p>
+
+<p>
+This is available on Unix only.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org27b7e5e" class="outline-3">
+<h3 id="org27b7e5e"><span class="section-number-3">2.3</span> <code>forkserver</code></h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+When the program starts, using this method, a server process is
+also started. The fork server can fork a new process every time it
+is requested. The fork process server is single-threaded and so it
+is safely uses <code>os.fork()</code>. No unnecessary resources are inherited
+from the parent process.
+</p>
+
+<p>
+Similar to <code>fork</code>, this is available on Unix only.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga26a944" class="outline-3">
+<h3 id="orga26a944"><span class="section-number-3">2.4</span> Verdict</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+I will be using <code>forkserver</code> for my programs.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf4e7d65" class="outline-2">
+<h2 id="orgf4e7d65"><span class="section-number-2">3</span> Communication between processes</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+MP allows exchange of objects between processes.
+</p>
+</div>
+<div id="outline-container-org64fa8db" class="outline-3">
+<h3 id="org64fa8db"><span class="section-number-3">3.1</span> Queue</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: <a href="../index.html">Vaibhav Karve</a></p>
-<p class="date">Created: 2020-09-16 Wed 12:32</p>
+<p class="author">Author: Vaibhav Karve</p>
+<p class="date">Created: 2020-09-16 Wed 11:19</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

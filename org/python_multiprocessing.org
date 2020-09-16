@@ -65,3 +65,53 @@ Can be set as follows.
 * Communication between processes
   MP allows exchange of objects between processes.
 ** Queue
+Use =mp.Queue= instead of =queue.Queue=.
+
+Steps:
+1. Create a queue using =q = mp.Queue()=.
+2. =q.put([1, 'a', 2])= puts the list =[1, 'a', 2]= into the queue.
+3. =q.get()= retrieves whatever was put in the queue (I think it
+   retrieves in FIFO order?). This can be using in conjunction with
+   another function as in =len(q.get())= to get the length of our
+   list.
+#+name: queue-example
+#+attr_latex: :options label= (python3.8) (scratch) <<queue-example>>
+#+begin_src python :results output pp :exports both :session
+import multiprocessing as mp
+
+q = mp.Queue()
+print(q)
+q.put([1, 'a', 2])
+print(len(q.get()))
+#+end_src
+
+#+RESULTS: queue-example
+: <multiprocessing.queues.Queue object at 0x7ff4e73a86d0>
+: 3
+
+*** Putting many queues inside(?) a single process
+1. Start a process using =p = mp.Process(target=putter, arg=q)=, where
+   =putter= puts objects into the queue =q=.
+2. Start the process: =p.start()=.
+3. Intermediate action like requesting things from the queue.
+4. Join after process termination: =p.join()=.
+
+#+name: process-queues
+#+attr_latex: :options label= (python3.8) (scratch) <<process-queues>>
+#+begin_src python :session :results output
+def putter(q: mp.queues.Queue, value):
+    q.put(value)
+
+if __name__ == '__main__':
+    q: mp.queues.Queue = mp.Queue()
+
+    p: mp.Process = mp.Process(target=putter, args=(q, [42, None, 'hello']))
+    
+    p.start()
+    print(q.get())    # prints "[42, None, 'hello']"
+    # print(q.get)    # Running it again blocks the process for some reason.
+    p.join()
+#+end_src
+
+#+RESULTS: process-queues
+: [42, None, 'hello']

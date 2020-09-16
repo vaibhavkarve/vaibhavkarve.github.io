@@ -1,8 +1,10 @@
-.PHONY : website clean
+.PHONY : htmls website clean
 
-website : org/index.org
+htmls : org/index.org
 	touch org/*.org
-	emacs -l org_publish.el --batch $< --eval="(org-publish-all (symbol-name 'org))" --kill
+	emacs -q -l org_publish.el --batch $< --eval="(org-publish-all (symbol-name 'org))" --kill
+
+website : htmls
 	git add .
 	git commit -m "auto-update webpages"
 	git push origin master
