@@ -62,7 +62,7 @@ Can be set as follows.
 ** Verdict
    I will be using =forkserver= for my programs.
 
-* Communication between processes                                  :noexport:
+* Communication between processes                                  
   MP allows exchange of objects between processes.
 ** Queue
 Use =mp.Queue= instead of =queue.Queue=.
