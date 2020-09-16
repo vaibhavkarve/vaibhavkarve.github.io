@@ -30,3 +30,4 @@
 
 ))
 (setq htmlize-output-type 'css)
+(setq org-html-htmlize-output-type 'css)
