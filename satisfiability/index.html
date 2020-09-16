@@ -260,10 +260,10 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgca461f1">1. Definitions</a></li>
-<li><a href="#orgb8d3658">2. In Lean</a></li>
-<li><a href="#org66796bf">3. In Python</a></li>
-<li><a href="#org4fd8e10">4. In Haskell</a></li>
+<li><a href="#org846716a">1. Definitions</a></li>
+<li><a href="#orgd22dc90">2. In Lean</a></li>
+<li><a href="#orge69c1c4">3. In Python</a></li>
+<li><a href="#orga9cbfe0">4. In Haskell</a></li>
 </ul>
 </div>
 </div>
@@ -279,12 +279,12 @@ satisfiability problem.
 <dt>GitLab</dt><dd><a href="https://git.math.illinois.edu/hirani_group/home/-/tree/master/projects/sat">private repository</a></dd>
 </dl>
 
-<div id="outline-container-orgca461f1" class="outline-2">
-<h2 id="orgca461f1"><span class="section-number-2">1</span> Definitions</h2>
+<div id="outline-container-org846716a" class="outline-2">
+<h2 id="org846716a"><span class="section-number-2">1</span> Definitions</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgadaa407" class="outline-3">
-<h3 id="orgadaa407"><span class="section-number-3">1.1</span> SAT</h3>
+<div id="outline-container-org1243909" class="outline-3">
+<h3 id="org1243909"><span class="section-number-3">1.1</span> SAT</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 We pick a countable set and call it our set of variables.
@@ -307,8 +307,8 @@ satisfies it.  Otherwise it is <i>unsatisfiable</i>.
 </div>
 </div>
 
-<div id="outline-container-orgfc7938c" class="outline-3">
-<h3 id="orgfc7938c"><span class="section-number-3">1.2</span> \(\pi: CNFs \rightarrow Graphs\)</h3>
+<div id="outline-container-org06a3385" class="outline-3">
+<h3 id="org06a3385"><span class="section-number-3">1.2</span> \(\pi: CNFs \rightarrow Graphs\)</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 For every CNF we define a multi-hypergraph by erasing all negating
@@ -383,8 +383,8 @@ Table summarizing the effect of \(\pi\):
 </div>
 </div>
 
-<div id="outline-container-org177e9ea" class="outline-3">
-<h3 id="org177e9ea"><span class="section-number-3">1.3</span> Graphsat</h3>
+<div id="outline-container-org4c27639" class="outline-3">
+<h3 id="org4c27639"><span class="section-number-3">1.3</span> Graphsat</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 A multi-hypergraph \(G\) is <i>satisfiable</i> if the set \(\pi^{-1}(G)\)
@@ -395,8 +395,8 @@ satisfiable. Otherwise it is unsatisfiable.
 </div>
 </div>
 
-<div id="outline-container-orgb8d3658" class="outline-2">
-<h2 id="orgb8d3658"><span class="section-number-2">2</span> In Lean</h2>
+<div id="outline-container-orgd22dc90" class="outline-2">
+<h2 id="orgd22dc90"><span class="section-number-2">2</span> In Lean</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 I have formalized the definition of graph satisfiability in Lean.  I
@@ -405,7 +405,7 @@ results in Lean.
 </p>
 
 
-<div id="org2994717" class="figure">
+<div id="org550c4d1" class="figure">
 <p><img src="../img/graphsat_in_lean.png" alt="graphsat_in_lean.png" />
 </p>
 <p><span class="figure-number">Figure 1: </span>The definition of a satisfiable graph in Lean.</p>
@@ -413,8 +413,8 @@ results in Lean.
 </div>
 </div>
 
-<div id="outline-container-org66796bf" class="outline-2">
-<h2 id="org66796bf"><span class="section-number-2">3</span> In Python</h2>
+<div id="outline-container-orge69c1c4" class="outline-2">
+<h2 id="orge69c1c4"><span class="section-number-2">3</span> In Python</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 I have created a python3.8 package called <code>graphsat</code> that can perform computations on
@@ -425,8 +425,8 @@ experimentation and computation.
 </div>
 </div>
 
-<div id="outline-container-org4fd8e10" class="outline-2">
-<h2 id="org4fd8e10"><span class="section-number-2">4</span> In Haskell</h2>
+<div id="outline-container-orga9cbfe0" class="outline-2">
+<h2 id="orga9cbfe0"><span class="section-number-2">4</span> In Haskell</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 I am attempting to translate <code>graphsat</code> in Haskell as well. This is

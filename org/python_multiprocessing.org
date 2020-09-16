@@ -1,4 +1,7 @@
 #+title: Multiprocessing in Python
+#+options: toc:2 H:2
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+#+subtitle: [[file:index.org][Home]]
 
 - Documentation :: [[https://docs.python.org/3/library/multiprocessing.html][link]]
 
