@@ -29,3 +29,4 @@
 	("org" :components ("org-notes" "org-static"))
 
 ))
+(setq htmlize-output-type 'css)
