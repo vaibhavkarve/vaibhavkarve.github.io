@@ -9,6 +9,7 @@
 	 :base-extension "org"
 	 :publishing-directory "~/org/website/"
 	 :recursive t
+	 :htmlized-source t
 	 :publishing-function org-html-publish-to-html
 	 :headline-levels 4             ; Just the default for this project.
 	 :auto-preamble t

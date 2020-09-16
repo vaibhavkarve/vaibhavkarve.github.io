@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-09-16 Wed 10:20 -->
+<!-- 2020-09-16 Wed 10:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Cohomology</title>
+<title>Multiprocessing in Python</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="Vaibhav Karve" />
 <style type="text/css">
@@ -226,175 +226,153 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
-</script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
-<h1 class="title">Cohomology</h1>
+<h1 class="title">Multiprocessing in Python
+<br />
+<span class="subtitle"><a href="index.html">Home</a></span>
+</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd2acb06">1. Categories</a>
+<li><a href="#orge1b1bfa">1. Introduction</a></li>
+<li><a href="#orgb153b83">2. Start methods</a>
 <ul>
-<li><a href="#org5949d8e">1.1. Tensor and exterior algebras</a></li>
-<li><a href="#orgbf2181a">1.2. Topological manifold</a></li>
+<li><a href="#orgedb005c">2.1. <code>spawn</code></a></li>
+<li><a href="#org1e597a1">2.2. <code>fork</code></a></li>
+<li><a href="#org74b3be1">2.3. <code>forkserver</code></a></li>
+<li><a href="#orge1fb226">2.4. Verdict</a></li>
+</ul>
+</li>
+<li><a href="#orgac72aab">3. Communication between processes</a>
+<ul>
+<li><a href="#org232f4b3">3.1. Queue</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 <dl class="org-dl">
-<dt>Reference</dt><dd>Bott and Tu's Differential forms in algebraic topology</dd>
-<dt>Context</dt><dd>these are notes taken from attending a reading group in
-Fall 2020.</dd>
+<dt>Python documentation</dt><dd><a href="https://docs.python.org/3/library/multiprocessing.html">multiprocessing module</a></dd>
 </dl>
 
-<div id="outline-container-orgd2acb06" class="outline-2">
-<h2 id="orgd2acb06"><span class="section-number-2">1</span> Categories</h2>
+<div id="outline-container-orge1b1bfa" class="outline-2">
+<h2 id="orge1b1bfa"><span class="section-number-2">1</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-Let \(A\) be a ring. Category \(Mod_A\) is the catergory with objects being
-left \(A\)-modules and morphims are \(A\)-linear maps.
-</p>
-
-<p>
-<span class="underline">Example of functor</span>: π₀ : Top → Set is the functor that gives the
-connected components of a topological space X. It sends X ↦ X/~ where
-x~y iff ∃ a path from x to y.
-</p>
-
-<p>
-<span class="underline">Natural transformations</span>: Let C and D be to categories. Let F : C → D
-be a functor. Let G : D → C be another functor. Then a <i>natural
-transformation</i> is a map α : F → G such that for every f : x ↦ y,
-</p>
-
-<p>
-F(x) → α(F(x))
-↓ F(f)   ↓α(F(f))
-F(y) → α(F(y))
-</p>
-
-<p>
-this square commutes.
-</p>
-
-<p>
-Let X ∈ Top. Open(X) = open sets of X with partial order
-(inclusion). Open(X) is itself a category where the objects are the
-open sets and morphisms are Hom(U, V) = ∅ if ¬ (U ⊆ V) else ⋆, where ⋆
-is a single morphism.
-</p>
-
-<p>
-Presheaves(X) = Fun(Open(X)ᵒᵖ, Set) is then a category with objects =
-Open(X)ᵒᵖ → Set and morphisms are natural transformations.
-</p>
-
-<p>
-<span class="underline">Exact sequence</span>:
-</p>
-<ul class="org-ul">
-<li>co-chain complex condition</li>
-<li>Ker f<sup>n</sup> = Im f<sup>n+1</sup></li>
-</ul>
-
-<p>
-<span class="underline">Short exact sequence</span>:
-</p>
-
-<p>
-0 → M → N → P → 0
-       α    β
-</p>
-
-<p>
-If this is an exact sequence then, we can conclude the following:
-</p>
-<ul class="org-ul">
-<li>β is surjective</li>
-<li>α is injective</li>
-<li>β∘α = 0</li>
-<li>P ≅ N/M</li>
-</ul>
-</div>
-
-<div id="outline-container-org5949d8e" class="outline-3">
-<h3 id="org5949d8e"><span class="section-number-3">1.1</span> Tensor and exterior algebras</h3>
-<div class="outline-text-3" id="text-1-1">
-<p>
-Let M be an A-module. (M is free : e₁, &#x2026;, eₙ).
-</p>
-
-<p>
-T*(M) := the universal graded associative A-algebra with a map M → T*(M).
-      = A ⊕ M ⊕ (M⊗M) ⊕ (M⊗M⊗M) ⊕ &#x2026;
-</p>
-
-<p>
-Λ*(M) := the universal graded associative graded commutative A-algebra
-      = A ⊕ M ⊕ A{e<sub>i</sub> ∧ e<sub>j</sub> | i&lt;j} ⊕ A{e<sub>i</sub> ∧ e<sub>j</sub> ∧ e<sub>k</sub> | &#x2026;} ⊕ &#x2026;
+The <code>multiprocessing</code> module (MP) spawns sub-processes insteads of threads.  Can be
+used for data parallelism &#x2013; parallelizing the execution of a function
+accross multiple input values by distributing the data accross
+processes.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgbf2181a" class="outline-3">
-<h3 id="orgbf2181a"><span class="section-number-3">1.2</span> Topological manifold</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-orgb153b83" class="outline-2">
+<h2 id="orgb153b83"><span class="section-number-2">2</span> Start methods</h2>
+<div class="outline-text-2" id="text-2">
 <p>
-A topological space X is
+Can be set as follows.
 </p>
-<ul class="org-ul">
-<li>locally homeomorphic to ℝ<sup>n</sup>.</li>
-<li>Hausdorff</li>
-<li>2nd countable</li>
-</ul>
+<div class="org-src-container">
+<pre class="src src-python" id="org67335c5"><span style="color: #51afef;">import</span> multiprocessing <span style="color: #51afef;">as</span> mp
+
+<span style="color: #51afef;">def</span> <span style="color: #c678dd;">foo</span>(q):
+    <span style="color: #51afef;">pass</span>
+
+<span style="color: #51afef;">if</span> <span style="color: #c678dd;">__name__</span> == <span style="color: #98be65;">'__main__'</span>:
+    <span style="color: #5B6268;"># </span><span style="color: #5B6268;">using get_context() is preferred over set_start_method().</span>
+    <span style="color: #dcaeea;">ctx</span> = mp.get_context(<span style="color: #98be65;">'spawn'</span>)  <span style="color: #5B6268;"># </span><span style="color: #5B6268;">mp has custom Context object</span>
+                                   <span style="color: #5B6268;"># </span><span style="color: #5B6268;">types.</span>
+    <span style="color: #dcaeea;">q</span> = ctx.Queue()
+    <span style="color: #dcaeea;">p</span> = ctx.Process(target=foo, args=(q,))
+</pre>
+</div>
+
+
 
 <p>
-Top.manifolds need not be smooth. Can have a smooth top.mani be
-homeomorphic to a non-smooth top.mani.
-</p>
-
-<p>
-Non-example: a top-space with a self-intersection.
-</p>
-
-<p>
-<span class="underline">Smooth charts and atlases</span>: &#x2026;
-</p>
-
-<p>
-Smooth manifold is a topological manifold together with a smooth atlas.
+<code>set_start_method()</code> should not be used more than once in the program.
 </p>
 </div>
+
+<div id="outline-container-orgedb005c" class="outline-3">
+<h3 id="orgedb005c"><span class="section-number-3">2.1</span> <code>spawn</code></h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Parent process starts a fresh python interpreter each time. This is
+the slowest option. Inherits only those objects that are needed by
+the <code>multiprocessing.Process.run</code> method.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1e597a1" class="outline-3">
+<h3 id="org1e597a1"><span class="section-number-3">2.2</span> <code>fork</code></h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Parent process forks the python interpreter using <code>os.fork()</code>. All
+resources of the parent are inherited by the child process. This is
+faster then <code>spawn</code>.
+</p>
+
+<p>
+"Not safe if used on a multi-threading process" (I think this means
+that this method should not be used if we are also using the
+<code>threading</code> module?). Overall the fork start method can lead to
+crashes of the subprocess so it is unsafe.
+</p>
+
+<p>
+This is available on Unix only.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org74b3be1" class="outline-3">
+<h3 id="org74b3be1"><span class="section-number-3">2.3</span> <code>forkserver</code></h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+When the program starts, using this method, a server process is
+also started. The fork server can fork a new process every time it
+is requested. The fork process server is single-threaded and so it
+is safely uses <code>os.fork()</code>. No unnecessary resources are inherited
+from the parent process.
+</p>
+
+<p>
+Similar to <code>fork</code>, this is available on Unix only.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge1fb226" class="outline-3">
+<h3 id="orge1fb226"><span class="section-number-3">2.4</span> Verdict</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+I will be using <code>forkserver</code> for my programs.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgac72aab" class="outline-2">
+<h2 id="orgac72aab"><span class="section-number-2">3</span> Communication between processes</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+MP allows exchange of objects between processes.
+</p>
+</div>
+<div id="outline-container-org232f4b3" class="outline-3">
+<h3 id="org232f4b3"><span class="section-number-3">3.1</span> Queue</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2020-09-16 Wed 10:20</p>
+<p class="date">Created: 2020-09-16 Wed 10:17</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
