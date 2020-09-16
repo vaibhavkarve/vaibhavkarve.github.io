@@ -94,7 +94,7 @@ other surrounding characters.
 CFGs are *not* closed under intersection and complementation!
 Non-example of CFG is: {aⁿbⁿcⁿ : n ∈ ℕ}.
 
-* Turing Machines                                                  :noexport:
+* Turing Machines                                                  
 
 Similar to DFA but has unlimited and unrestricted memory. The stack is
 no longer losing information when we pop values. The memory is modeled
@@ -119,7 +119,7 @@ TM := (Q, Σ, Γ, δ, q₀, q_accept, q_reject)
 
 Note that Q, Σ, Γ all should be finite sets.
 
-* Decidability                                                     :noexport:
+* Decidability                                                     
 If a TM accepts a language then the language is /recognizable/. (*Recursively enumerable*)
 
 A TM that always halts is called a /decider/. A language that is

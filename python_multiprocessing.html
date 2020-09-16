@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-09-16 Wed 13:02 -->
+<!-- 2020-09-16 Wed 13:03 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Multiprocessing in Python</title>
@@ -238,13 +238,13 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgcf93c40">1. Introduction</a></li>
-<li><a href="#orgae6be4b">2. Start methods</a>
+<li><a href="#orgb6be1d1">1. Introduction</a></li>
+<li><a href="#org6714b5c">2. Start methods</a>
 <ul>
-<li><a href="#orgd75dde3">2.1. <code>spawn</code></a></li>
-<li><a href="#org0118150">2.2. <code>fork</code></a></li>
-<li><a href="#org9b03f82">2.3. <code>forkserver</code></a></li>
-<li><a href="#org2add449">2.4. Verdict</a></li>
+<li><a href="#org29fa76d">2.1. <code>spawn</code></a></li>
+<li><a href="#org761e053">2.2. <code>fork</code></a></li>
+<li><a href="#org2a8f5c5">2.3. <code>forkserver</code></a></li>
+<li><a href="#orge5973a8">2.4. Verdict</a></li>
 </ul>
 </li>
 </ul>
@@ -254,8 +254,8 @@ for the JavaScript code in this tag.
 <dt>Python documentation</dt><dd><a href="https://docs.python.org/3/library/multiprocessing.html">multiprocessing module</a></dd>
 </dl>
 
-<div id="outline-container-orgcf93c40" class="outline-2">
-<h2 id="orgcf93c40"><span class="section-number-2">1</span> Introduction</h2>
+<div id="outline-container-orgb6be1d1" class="outline-2">
+<h2 id="orgb6be1d1"><span class="section-number-2">1</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 The <code>multiprocessing</code> module (MP) spawns sub-processes insteads of threads.  Can be
@@ -266,14 +266,14 @@ processes.
 </div>
 </div>
 
-<div id="outline-container-orgae6be4b" class="outline-2">
-<h2 id="orgae6be4b"><span class="section-number-2">2</span> Start methods</h2>
+<div id="outline-container-org6714b5c" class="outline-2">
+<h2 id="org6714b5c"><span class="section-number-2">2</span> Start methods</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Can be set as follows.
 </p>
 <div class="org-src-container">
-<pre class="src src-python" id="org4bfcb29"><span class="org-keyword">import</span> multiprocessing <span class="org-keyword">as</span> mp
+<pre class="src src-python" id="orgbaf98f3"><span class="org-keyword">import</span> multiprocessing <span class="org-keyword">as</span> mp
 
 <span class="org-keyword">def</span> <span class="org-function-name">foo</span>(q):
     <span class="org-keyword">pass</span>
@@ -294,8 +294,8 @@ Can be set as follows.
 </p>
 </div>
 
-<div id="outline-container-orgd75dde3" class="outline-3">
-<h3 id="orgd75dde3"><span class="section-number-3">2.1</span> <code>spawn</code></h3>
+<div id="outline-container-org29fa76d" class="outline-3">
+<h3 id="org29fa76d"><span class="section-number-3">2.1</span> <code>spawn</code></h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Parent process starts a fresh python interpreter each time. This is
@@ -305,8 +305,8 @@ the <code>multiprocessing.Process.run</code> method.
 </div>
 </div>
 
-<div id="outline-container-org0118150" class="outline-3">
-<h3 id="org0118150"><span class="section-number-3">2.2</span> <code>fork</code></h3>
+<div id="outline-container-org761e053" class="outline-3">
+<h3 id="org761e053"><span class="section-number-3">2.2</span> <code>fork</code></h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Parent process forks the python interpreter using <code>os.fork()</code>. All
@@ -327,8 +327,8 @@ This is available on Unix only.
 </div>
 </div>
 
-<div id="outline-container-org9b03f82" class="outline-3">
-<h3 id="org9b03f82"><span class="section-number-3">2.3</span> <code>forkserver</code></h3>
+<div id="outline-container-org2a8f5c5" class="outline-3">
+<h3 id="org2a8f5c5"><span class="section-number-3">2.3</span> <code>forkserver</code></h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 When the program starts, using this method, a server process is
@@ -344,8 +344,8 @@ Similar to <code>fork</code>, this is available on Unix only.
 </div>
 </div>
 
-<div id="outline-container-org2add449" class="outline-3">
-<h3 id="org2add449"><span class="section-number-3">2.4</span> Verdict</h3>
+<div id="outline-container-orge5973a8" class="outline-3">
+<h3 id="orge5973a8"><span class="section-number-3">2.4</span> Verdict</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 I will be using <code>forkserver</code> for my programs.
@@ -356,7 +356,7 @@ I will be using <code>forkserver</code> for my programs.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2020-09-16 Wed 13:02</p>
+<p class="date">Created: 2020-09-16 Wed 13:03</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

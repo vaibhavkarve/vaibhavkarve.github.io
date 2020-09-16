@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-09-16 Wed 13:02 -->
+<!-- 2020-09-16 Wed 13:03 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Theory of Computation</title>
@@ -238,8 +238,10 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf223288">1. Finite automata</a></li>
-<li><a href="#org92f06d6">2. Regular expressions</a></li>
+<li><a href="#orgdc9dd31">1. Finite automata</a></li>
+<li><a href="#org5d4d730">2. Regular expressions</a></li>
+<li><a href="#org1d17aaf">3. Turing Machines</a></li>
+<li><a href="#orgeab49bb">4. Decidability</a></li>
 </ul>
 </div>
 </div>
@@ -252,8 +254,8 @@ Notes taken from Reading Group
 computation</dd>
 </dl>
 
-<div id="outline-container-orgf223288" class="outline-2">
-<h2 id="orgf223288"><span class="section-number-2">1</span> Finite automata</h2>
+<div id="outline-container-orgdc9dd31" class="outline-2">
+<h2 id="orgdc9dd31"><span class="section-number-2">1</span> Finite automata</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Part 1 will be Computability. Part 2 will be Complexity.
@@ -327,8 +329,8 @@ P(Q) is not going to be an issue.</dd>
 </div>
 </div>
 
-<div id="outline-container-org92f06d6" class="outline-2">
-<h2 id="org92f06d6"><span class="section-number-2">2</span> Regular expressions</h2>
+<div id="outline-container-org5d4d730" class="outline-2">
+<h2 id="org5d4d730"><span class="section-number-2">2</span> Regular expressions</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 They are another way to represent a regular language.  ∅ is the
@@ -396,10 +398,73 @@ Non-example of CFG is: {aⁿbⁿcⁿ : n ∈ ℕ}.
 </p>
 </div>
 </div>
+
+<div id="outline-container-org1d17aaf" class="outline-2">
+<h2 id="org1d17aaf"><span class="section-number-2">3</span> Turing Machines</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Similar to DFA but has unlimited and unrestricted memory. The stack is
+no longer losing information when we pop values. The memory is modeled
+as an infinite tape. The tape is more central to these machines than
+the state descriptors.
+</p>
+
+<p>
+In most formal definitions we state that the pointer can move one cell
+to the left or right. But in fact, this is equivalent to a pointer
+that can move to any arbitrary position.
+</p>
+
+<p>
+A Turing Machine might accept, reject or go on forever. Halting or not
+halting is what determines the decidability of a problem.
+</p>
+
+<p>
+TM := (Q, Σ, Γ, δ, q₀, q<sub>accept</sub>, q<sub>reject</sub>)
+</p>
+<ul class="org-ul">
+<li>Q = Set of states</li>
+<li>Σ = Alphabet</li>
+<li>Γ = Tape alphabet. Σ ⊆ Γ</li>
+<li>δ : Q × Γ → Q × Γ × {L, R} is the transition function</li>
+<li>q₀ ∈ Q is initial state</li>
+<li>q<sub>accept</sub> ∈ Q is accept state</li>
+<li>q<sub>reject</sub> ∈ Q is accept state. q<sub>accept</sub> ≠ q<sub>reject</sub>.</li>
+</ul>
+
+<p>
+Note that Q, Σ, Γ all should be finite sets.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgeab49bb" class="outline-2">
+<h2 id="orgeab49bb"><span class="section-number-2">4</span> Decidability</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+If a TM accepts a language then the language is <i>recognizable</i>. (<b>Recursively enumerable</b>)
+</p>
+
+<p>
+A TM that always halts is called a <i>decider</i>. A language that is
+recognized by a decider is said to be <i>Decidable</i>. (<b>Recursive</b>)
+</p>
+
+<p>
+Decidable ⇒ Recognizable (converse not true).
+</p>
+
+<p>
+A language that is recognizable but not decidable is the Halting
+problem.
+</p>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2020-09-16 Wed 13:02</p>
+<p class="date">Created: 2020-09-16 Wed 13:03</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
