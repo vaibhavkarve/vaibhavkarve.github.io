@@ -3,12 +3,13 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 #+subtitle: [[file:index.org][Home]]
 
-- Documentation :: [[https://docs.python.org/3/library/multiprocessing.html][link]]
+- Python documentation :: [[https://docs.python.org/3/library/multiprocessing.html][multiprocessing module]]
 
 * Introduction
-Spawns sub-processes insteads of threads.  Can be used for data
-parallelism -- parallelizing the execution of a function accross
-multiple input values by distributing the data accross processes.
+The =multiprocessing= module (MP) spawns sub-processes insteads of threads.  Can be
+used for data parallelism -- parallelizing the execution of a function
+accross multiple input values by distributing the data accross
+processes.
 
 * Start methods
 Can be set as follows.
@@ -58,3 +59,10 @@ Can be set as follows.
 
    Similar to =fork=, this is available on Unix only.
 
+** Verdict
+   
+   I will be using =forkserver= for my programs.
+
+* Communication between processes
+  MP allows exchange of objects between processes.
+** Queue
