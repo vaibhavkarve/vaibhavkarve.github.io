@@ -110,14 +110,21 @@ halting is what determines the decidability of a problem.
 
 TM := (Q, Σ, Γ, δ, q₀, q_accept, q_reject)
 - Q = Set of states
-- Σ = Alphabet
-- Γ = Tape alphabet. Σ ⊆ Γ
+- Σ = Alphabet for input strings
+- Γ = Alphabet for writing to the tape. Σ ⊂ Γ. Blank symbol ∈ Γ-Σ.
 - δ : Q × Γ → Q × Γ × {L, R} is the transition function
 - q₀ ∈ Q is initial state
 - q_accept ∈ Q is accept state
 - q_reject ∈ Q is accept state. q_accept ≠ q_reject.
 
-Note that Q, Σ, Γ all should be finite sets.
+1. If a string ends run in q_accept, then TM accepts string.
+2. If no run halts then, the TM neither accepts not rejects.
+3. If all runs that halt end in a q_reject, then string is rejected.
+
+Note that Q, Σ, Γ all should be **finite** sets.
+
+For non-deterministic TM,
+δ : Q × Γ → P(Q×Γ×{L, R})
 
 * Decidability                                                     
 If a TM accepts a language then the language is /recognizable/. (*Recursively enumerable*)
@@ -129,3 +136,24 @@ Decidable ⇒ Recognizable (converse not true).
 
 A language that is recognizable but not decidable is the Halting
 problem.
+
+Call a language L ⊆ Σ* /decidable/ if there is a TM M such that for
+all w ∈ Σ*,
+1. M accepts w iff w ∈ L, and
+2. M rejects w iff w ∉ L, and
+3. M never loops on any run infinitely.
+
+Examples:
+- Multiplication is turing recognizable and decidable.
+- The language {⟨A, w⟩ | A is a DFA that accepts input w} is decidable
+
+Decidability is equivalent for deterministic and non-deterministic
+TMs.  But the complexity questions are not equivalent.
+
+Not all languages that _Turing-recongnizable_ are decidable.
+
+* Halting problem
+- Halting problem :: The language HALT = {⟨M, w⟩ | M is a TM that accepts input w} is undecidable.
+- Proof :: By contradiction.
+
+HALT is turing-recognizable.

@@ -1,5 +1,5 @@
 #+title: Multiprocessing in Python
-#+options: toc:2 H:4
+#+options: toc:4 H:4
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 #+subtitle: [[file:index.org][Home]]
 
@@ -76,7 +76,7 @@ Steps:
    list.
 #+name: queue-example
 #+attr_latex: :options label= (python3.8) (scratch) <<queue-example>>
-#+begin_src python :results output pp :exports both :session :eval none
+#+begin_src python :results output pp :exports code :session :eval none
 import multiprocessing as mp
 
 q = mp.Queue()
@@ -85,9 +85,6 @@ q.put([1, 'a', 2])
 print(len(q.get()))
 #+end_src
 
-#+RESULTS: queue-example
-: <multiprocessing.queues.Queue object at 0x7ff4e73a86d0>
-: 3
 
 *** Putting many queues inside(?) a single process
 1. Start a process using =p = mp.Process(target=putter, arg=q)=, where
@@ -115,3 +112,9 @@ if __name__ == '__main__':
 
 #+RESULTS: process-queues
 : [42, None, 'hello']
+
+** Pipe
+The =Pipe()= function returns a two-way connection by returning a pair
+of connection objects.
+
+Each connection object has a =send()= and =recv()= method.

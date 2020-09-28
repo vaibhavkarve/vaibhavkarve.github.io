@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-09-16 Wed 15:05 -->
+<!-- 2020-09-28 Mon 08:33 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Theory of Computation</title>
@@ -238,10 +238,11 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0bfb2f6">1. Finite automata</a></li>
-<li><a href="#org89a01cf">2. Regular expressions</a></li>
-<li><a href="#orge98b1fc">3. Turing Machines</a></li>
-<li><a href="#orgb2d68c9">4. Decidability</a></li>
+<li><a href="#org342746d">1. Finite automata</a></li>
+<li><a href="#orgc81dc95">2. Regular expressions</a></li>
+<li><a href="#orgbaf213a">3. Turing Machines</a></li>
+<li><a href="#orgd841c96">4. Decidability</a></li>
+<li><a href="#org827b5d7">5. Halting problem</a></li>
 </ul>
 </div>
 </div>
@@ -254,8 +255,8 @@ Notes taken from Reading Group
 computation</dd>
 </dl>
 
-<div id="outline-container-org0bfb2f6" class="outline-2">
-<h2 id="org0bfb2f6"><span class="section-number-2">1</span> Finite automata</h2>
+<div id="outline-container-org342746d" class="outline-2">
+<h2 id="org342746d"><span class="section-number-2">1</span> Finite automata</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Part 1 will be Computability. Part 2 will be Complexity.
@@ -329,8 +330,8 @@ P(Q) is not going to be an issue.</dd>
 </div>
 </div>
 
-<div id="outline-container-org89a01cf" class="outline-2">
-<h2 id="org89a01cf"><span class="section-number-2">2</span> Regular expressions</h2>
+<div id="outline-container-orgc81dc95" class="outline-2">
+<h2 id="orgc81dc95"><span class="section-number-2">2</span> Regular expressions</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 They are another way to represent a regular language.  ∅ is the
@@ -399,8 +400,8 @@ Non-example of CFG is: {aⁿbⁿcⁿ : n ∈ ℕ}.
 </div>
 </div>
 
-<div id="outline-container-orge98b1fc" class="outline-2">
-<h2 id="orge98b1fc"><span class="section-number-2">3</span> Turing Machines</h2>
+<div id="outline-container-orgbaf213a" class="outline-2">
+<h2 id="orgbaf213a"><span class="section-number-2">3</span> Turing Machines</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Similar to DFA but has unlimited and unrestricted memory. The stack is
@@ -425,22 +426,31 @@ TM := (Q, Σ, Γ, δ, q₀, q<sub>accept</sub>, q<sub>reject</sub>)
 </p>
 <ul class="org-ul">
 <li>Q = Set of states</li>
-<li>Σ = Alphabet</li>
-<li>Γ = Tape alphabet. Σ ⊆ Γ</li>
+<li>Σ = Alphabet for input strings</li>
+<li>Γ = Alphabet for writing to the tape. Σ ⊂ Γ. Blank symbol ∈ Γ-Σ.</li>
 <li>δ : Q × Γ → Q × Γ × {L, R} is the transition function</li>
 <li>q₀ ∈ Q is initial state</li>
 <li>q<sub>accept</sub> ∈ Q is accept state</li>
 <li>q<sub>reject</sub> ∈ Q is accept state. q<sub>accept</sub> ≠ q<sub>reject</sub>.</li>
+
+<li>If a string ends run in q<sub>accept</sub>, then TM accepts string.</li>
+<li>If no run halts then, the TM neither accepts not rejects.</li>
+<li>If all runs that halt end in a q<sub>reject</sub>, then string is rejected.</li>
 </ul>
 
 <p>
-Note that Q, Σ, Γ all should be finite sets.
+Note that Q, Σ, Γ all should be <b><b>finite</b></b> sets.
+</p>
+
+<p>
+For non-deterministic TM,
+δ : Q × Γ → P(Q×Γ×{L, R})
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgb2d68c9" class="outline-2">
-<h2 id="orgb2d68c9"><span class="section-number-2">4</span> Decidability</h2>
+<div id="outline-container-orgd841c96" class="outline-2">
+<h2 id="orgd841c96"><span class="section-number-2">4</span> Decidability</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 If a TM accepts a language then the language is <i>recognizable</i>. (<b>Recursively enumerable</b>)
@@ -459,12 +469,53 @@ Decidable ⇒ Recognizable (converse not true).
 A language that is recognizable but not decidable is the Halting
 problem.
 </p>
+
+<p>
+Call a language L ⊆ Σ* <i>decidable</i> if there is a TM M such that for
+all w ∈ Σ*,
+</p>
+<ol class="org-ol">
+<li>M accepts w iff w ∈ L, and</li>
+<li>M rejects w iff w ∉ L, and</li>
+<li>M never loops on any run infinitely.</li>
+</ol>
+
+<p>
+Examples:
+</p>
+<ul class="org-ul">
+<li>Multiplication is turing recognizable and decidable.</li>
+<li>The language {⟨A, w⟩ | A is a DFA that accepts input w} is decidable</li>
+</ul>
+
+<p>
+Decidability is equivalent for deterministic and non-deterministic
+TMs.  But the complexity questions are not equivalent.
+</p>
+
+<p>
+Not all languages that <span class="underline">Turing-recongnizable</span> are decidable.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org827b5d7" class="outline-2">
+<h2 id="org827b5d7"><span class="section-number-2">5</span> Halting problem</h2>
+<div class="outline-text-2" id="text-5">
+<dl class="org-dl">
+<dt>Halting problem</dt><dd>The language HALT = {⟨M, w⟩ | M is a TM that accepts input w} is undecidable.</dd>
+<dt>Proof</dt><dd>By contradiction.</dd>
+</dl>
+
+<p>
+HALT is turing-recognizable.
+</p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2020-09-16 Wed 15:05</p>
+<p class="date">Created: 2020-09-28 Mon 08:33</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
