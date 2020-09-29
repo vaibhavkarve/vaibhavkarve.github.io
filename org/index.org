@@ -8,7 +8,7 @@ of Illinois at Urbana-Champaign.  My PhD advisor is [[https://faculty.math.illin
 
 My research interests lie in graph theory, logic, algorithms and
 computational topology.  I am currently writing my doctoral thesis,
-titled /Graphical structure of unsatisfiable boolean formulas/ which
+titled /Graphical structure of unsatisfiable boolean formulae/ which
 combines the tools of graph theory and topology to analyze boolean
 satisfiability -- a classic problem in logic and computer science.
 
