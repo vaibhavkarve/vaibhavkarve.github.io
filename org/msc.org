@@ -14,58 +14,58 @@ I last updated this list on 2020-09-29.
 
 * My interests with corresponding indices
 
-- 03 :: Mathematical logic and foundations
-  - Overall heading :: General/foundations [Study of foundations of mathematics and logic]
-  - 03-04 :: Software, source code, etc.  for problems pertaining to mathematical logic and foundations
-  - 03-08 :: Computational methods for problems pertaining to mathematical logic and foundations
-  - 03Bxx :: General logic
-    - 03B35 :: Mechanization of proofs and logical operations [See also 68V15]
-    - 03B38 :: Type theory
-    - 03B40 :: Combinatory logic and lambda calculus [See also 68N18]
-    - 03B70 :: Logic in computer science [See also 68-xx]
-  - 03Dxx :: Computability and recursion theory
-    - 03D15 :: Complexity of computation (including implicit computational complexity) [See also 68Q15, 68Q17]
+- 03 : Mathematical logic and foundations
+  - Overall heading : General/foundations [Study of foundations of mathematics and logic]
+  - 03-04 : Software, source code, etc.  for problems pertaining to mathematical logic and foundations
+  - 03-08 : Computational methods for problems pertaining to mathematical logic and foundations
+  - 03Bxx : General logic
+    - 03B35 : Mechanization of proofs and logical operations [See also 68V15]
+    - 03B38 : Type theory
+    - 03B40 : Combinatory logic and lambda calculus [See also 68N18]
+    - 03B70 : Logic in computer science [See also 68-xx]
+  - 03Dxx : Computability and recursion theory
+    - 03D15 : Complexity of computation (including implicit computational complexity) [See also 68Q15, 68Q17]
 
-- 05 :: Combinatorics
-  - Overall heading :: Discrete mathematics/algebra [Study of structure of mathematical abstractions]
-  - 05-04 :: Software, source code, etc. for problems pertaining to combinatorics
-  - 05-08 :: Computational methods for problems pertaining to combinatorics
-  - 05Cxx :: Graph theory
-    - 05C30 :: Enumeration in graph theory
-    - 05C65 :: Hypergraphs
-    - 05C75 :: Structural characterization of families of graphs
-    - 05C76 :: Graph operations (line graphs, products, etc.)
-    - 05C83 :: Graph minors
-    - 05C85 :: Graph algorithms (graph-theoretic aspects) [See also 68R10, 68W05]
-    - 05C90 :: Applications of graph theory [See also 68R10, 90C35] 
+- 05 : Combinatorics
+  - Overall heading : Discrete mathematics/algebra [Study of structure of mathematical abstractions]
+  - 05-04 : Software, source code, etc. for problems pertaining to combinatorics
+  - 05-08 : Computational methods for problems pertaining to combinatorics
+  - 05Cxx : Graph theory
+    - 05C30 : Enumeration in graph theory
+    - 05C65 : Hypergraphs
+    - 05C75 : Structural characterization of families of graphs
+    - 05C76 : Graph operations (line graphs, products, etc.)
+    - 05C83 : Graph minors
+    - 05C85 : Graph algorithms (graph-theoretic aspects) [See also 68R10, 68W05]
+    - 05C90 : Applications of graph theory [See also 68R10, 90C35] 
 
-- 68 :: Computer science
-  - Overall heading :: Applied mathematics / other [Study of applications of mathematical abstractions]
-  - 68-04 :: Software, source code, etc.  for problems pertaining to computer science 
-  - 68Nxx :: Theory of software
-    - 68N01 :: General topics in the theory of software
-    - 68N15 :: Theory of programming languages
-    - 68N17 :: Logic programming
-    - 68N18 :: Functional programming and lambda calculus [See also 03B40]
-  - 68Qxx :: Theory of computing
-    - 68Q15 :: Complexity classes (hierarchies, relations among complexity classes, etc.)  [See also 03D15, 68Q17]
-    - 68Q17 :: Computational difficulty of problems (lower bounds, completeness, difficulty of approximation, etc.)  [See also 68Q15]
-    - 68Q25 :: Analysis of algorithms and problem complexity [See also 68W40]
-    - 68Q42 :: Grammars and rewriting systems
-  - 68Rxx :: Discrete mathematics in relation to computer science
-    - 68R07 :: Computational aspects of satisfiability 
-    - 68R10 :: Graph theory (including graph drawing) in computer science [See also 05Cxx, 90C35] 
-  - 68Vxx :: Computer science support for mathematical research and practice 
-    - 68V05 :: Computer assisted proofs of proofs-by-exhaustion type
-    - 68V15 :: Theorem proving (automated and interactive theorem provers, deduction, resolution, etc.) [See also 03B35]
-    - 68V20 :: Formalization of mathematics in connection with theorem provers [See also 03B35, 68V15]
-  - 68Wxx :: Algorithms  in  computer  science {For combinatorics and graph theory, see 05C85, 68Rxx} 
-  - 68W05 :: Nonnumerical algorithms
-  - 68W40 :: Analysis of algorithms [See also 68Q25]
+- 68 : Computer science
+  - Overall heading : Applied mathematics / other [Study of applications of mathematical abstractions]
+  - 68-04 : Software, source code, etc.  for problems pertaining to computer science 
+  - 68Nxx : Theory of software
+    - 68N01 : General topics in the theory of software
+    - 68N15 : Theory of programming languages
+    - 68N17 : Logic programming
+    - 68N18 : Functional programming and lambda calculus [See also 03B40]
+  - 68Qxx : Theory of computing
+    - 68Q15 : Complexity classes (hierarchies, relations among complexity classes, etc.)  [See also 03D15, 68Q17]
+    - 68Q17 : Computational difficulty of problems (lower bounds, completeness, difficulty of approximation, etc.)  [See also 68Q15]
+    - 68Q25 : Analysis of algorithms and problem complexity [See also 68W40]
+    - 68Q42 : Grammars and rewriting systems
+  - 68Rxx : Discrete mathematics in relation to computer science
+    - 68R07 : Computational aspects of satisfiability 
+    - 68R10 : Graph theory (including graph drawing) in computer science [See also 05Cxx, 90C35] 
+  - 68Vxx : Computer science support for mathematical research and practice 
+    - 68V05 : Computer assisted proofs of proofs-by-exhaustion type
+    - 68V15 : Theorem proving (automated and interactive theorem provers, deduction, resolution, etc.) [See also 03B35]
+    - 68V20 : Formalization of mathematics in connection with theorem provers [See also 03B35, 68V15]
+  - 68Wxx : Algorithms  in  computer  science {For combinatorics and graph theory, see 05C85, 68Rxx} 
+  - 68W05 : Nonnumerical algorithms
+  - 68W40 : Analysis of algorithms [See also 68Q25]
 
-- 90 :: Operations research, mathematical programming
-  - 90Cxx :: Mathematical programming 
-    - 90C27 :: Combinatorial optimization
-    - 90C35 :: Programming involving graphs or networks [See also 90C27]
+- 90 : Operations research, mathematical programming
+  - 90Cxx : Mathematical programming 
+    - 90C27 : Combinatorial optimization
+    - 90C35 : Programming involving graphs or networks [See also 90C27]
 * TODO ACM computing classification system 2012
 * TODO arXiv.org math classification
