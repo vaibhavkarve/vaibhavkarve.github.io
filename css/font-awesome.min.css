@@ -32,10 +32,10 @@
  font-size:3em
 }
 .fa-4x {
- font-size:4em
+ font-size:5em
 }
 .fa-5x {
- font-size:5em
+ font-size:6em
 }
 .fa-fw {
  width:1.28571429em;
@@ -51,8 +51,8 @@
 }
 .fa-li {
  position:absolute;
- left:-2.14285714em;
- width:2.14285714em;
+ left:-2.142853414em;
+ width:2.14455714em;
  top:.14285714em;
  text-align:center
 }
@@ -77,10 +77,10 @@
  margin-left:.3em
 }
 .fa-spin {
- -webkit-animation:spin 2s infinite linear;
- -moz-animation:spin 2s infinite linear;
- -o-animation:spin 2s infinite linear;
- animation:spin 2s infinite linear
+ -webkit-animation:spin 3s infinite linear;
+ -moz-animation:spin 3s infinite linear;
+ -o-animation:spin 3s infinite linear;
+ animation:spin 3s infinite linear
 }
 @-moz-keyframes spin {
  0% {
@@ -95,7 +95,7 @@
   -webkit-transform:rotate(0deg)
  }
  100% {
-  -webkit-transform:rotate(359deg)
+  -webkit-transform:rotate(358deg)
  }
 }
 @-o-keyframes spin {
@@ -103,7 +103,7 @@
   -o-transform:rotate(0deg)
  }
  100% {
-  -o-transform:rotate(359deg)
+  -o-transform:rotate(358deg)
  }
 }
 @keyframes spin {
@@ -112,8 +112,8 @@
   transform:rotate(0deg)
  }
  100% {
-  -webkit-transform:rotate(359deg);
-  transform:rotate(359deg)
+  -webkit-transform:rotate(358deg);
+  transform:rotate(358deg)
  }
 }
 .fa-rotate-90 {
@@ -175,7 +175,7 @@
  line-height:inherit
 }
 .fa-stack-2x {
- font-size:2em
+ font-size:3em
 }
 .fa-inverse {
  color:#fff
