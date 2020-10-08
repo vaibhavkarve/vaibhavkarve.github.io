@@ -28,10 +28,11 @@ interactive theorem proving (in particular, with the Lean theorem prover).
 
 * Teaching
   My ever-evolving [[file:Teaching_Philosophy_Statement.pdf][teaching philosophy]].
-  - LeanTeach 2020 @ Illinois Geometry Lab + UniHigh Summer program
-  - Computational mathematics
-  - Classical constructions @ Summer Illinois Math Camp, UIUC
+  - Math490: Computational mathematics
   - Merit program @ Math UIUC
+  - Model theory in Lean @ Illinois Geometry Lab
+  - LeanTeach 2020 @ Illinois Geometry Lab + UniHigh Summer program
+  - Classical constructions @ Summer Illinois Math Camp, UIUC
   - Past courses
     
 
@@ -57,6 +58,7 @@ interactive theorem proving (in particular, with the Lean theorem prover).
   - [[file:lambda_calculus.pdf][Lambda calculus]]
   - Logic
   - [[file:lua.pdf][Lua]]
+  - [[file:tidbits.org][Mathematical tidbits]]
   - [[file:model_theory.org][Model theory]]
   - [[file:persistent_homology.pdf][Persistent homology]]
   - [[file:philosophy.pdf][Philosophy]]
