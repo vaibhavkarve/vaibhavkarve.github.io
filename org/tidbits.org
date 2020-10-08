@@ -1,0 +1,18 @@
+#+title: Mathematical tidbits
+#+author: [[file:../index.html][Vaibhav Karve]]
+#+options: toc:1
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
+#+subtitle: [[../index.html][Home]]
+
+This is just a list of facts/definitions that didn't fit elsewhere.
+
+
+* Homotopy
+** Massey triple product
+ If [α]⬝[β] = 0 ⇒ α⬝β = dσ.
+ If [β]⬝[γ] = 0 ⇒ β⬝γ = dτ.
+ Then define the triple product with
+ ⟨α, β, γ⟩ = [σ⬝γ - α⬝τ]
+
+- Keywords :: Operads, A_∞, E_∞. "More associative than (associative)
+              rings. More commutative than commutative rings."

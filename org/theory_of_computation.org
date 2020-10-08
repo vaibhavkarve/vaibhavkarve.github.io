@@ -157,3 +157,12 @@ Not all languages that _Turing-recongnizable_ are decidable.
 - Proof :: By contradiction.
 
 HALT is turing-recognizable.
+* Time complexity
+Let g : ℝ⁺ → ℝ⁺. Then O(g(n)) is the set of functions f : ℝ⁺ → ℝ⁺ for
+which ∃ M ∈ ℝ⁺ such that f(x) ≤ Mg(x) for all sufficiently large x.
+
+f ∈ Θ(g) ↔ f ∈ O(g) ∧ g ∈ O(f). So Θ is more precise than O.
+Because for example, O(n²) ⊂ O(n³).
+
+P ⊂ NP ⊂ PSPACE ⊂ EXPTIME P ≠ EXPTIME. Therefore, at least one other
+the inclusions above must be strict.

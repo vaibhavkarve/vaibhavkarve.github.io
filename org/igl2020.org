@@ -1,0 +1,22 @@
+#+title: Model Theory in Lean
+#+author: [[file:../index.html][Vaibhav Karve]]
+#+options: toc:1
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
+#+subtitle: [[../index.html][Home]]
+
+In this project, we formalize first-order logic, languages, structures
+and models in Lean. This project is being run as part of the Illinois
+Geometry Lab at UIUC.
+
+- GitHub code repository :: [[https:github.com/vaibhavkarve/igl2020][github.com/vaibhavkarve/igl2020]]
+
+* Collaborators
+- Eion Blanchard
+- Scott Harman
+- Philipp Hieronymi
+- Nikil Ravi
+- Joel Schargorodsky
+- Kyle Thompson
+- Noble Wulffraat
+- Tianfan Xu
+- Fenglong Zhao
