@@ -31,7 +31,7 @@ interactive theorem proving (in particular, with the Lean theorem prover).
   - Math490: Computational mathematics
   - Merit program @ Math UIUC
   - Model theory in Lean @ Illinois Geometry Lab
-  - LeanTeach 2020 @ Illinois Geometry Lab + UniHigh Summer program
+  - [[file:leanteach_2020.org][LeanTeach 2020 @ Illinois Geometry Lab + UniHigh Summer program]]
   - Classical constructions @ Summer Illinois Math Camp, UIUC
   - Past courses
     
