@@ -1,0 +1,83 @@
+#+title: Vaibhav Karve
+#+options: toc:0 H:2 num:0
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+#+subtitle: [[file:CV.pdf][CV]]\nbsp{}\nbsp{}\nbsp{}\nbsp{} [[https://github.com/vaibhavkarve][GitHub]] \nbsp{}\nbsp{}\nbsp{}\nbsp{} [[https://www.linkedin.com/in/vaibhav-karve/][LinkedIn]] \nbsp{}\nbsp{}\nbsp{}\nbsp{} [[https://git.math.illinois.edu/vkarve2][GitLab]]
+
+I am a PhD student at the [[https://math.illinois.edu][Department of Mathematics]] at the University
+of Illinois at Urbana-Champaign.  My PhD advisor is [[https://faculty.math.illinois.edu/~hirani/][Anil Hirani]].
+
+My research interests lie in graph theory, logic, algorithms and
+computational topology.  I am currently writing my doctoral thesis,
+titled /Graphical structure of unsatisfiable boolean formulae/ which
+combines the tools of graph theory and topology to analyze boolean
+satisfiability -- a classic problem in logic and computer science.
+
+I am also looking to extend my doctoral work towards the upcoming and
+adjacent field of computer-assisted formalized mathematics and
+interactive theorem proving (in particular, with the Lean theorem prover).
+
+* Research
+  My publications listed at [[https://math.illinois.edu/graduate-papers][UIUC math]] and [[https://scholar.google.com/citations?hl=en&user=_JqNTooAAAAJ][Google scholar]].
+  - [[file:satisfiability/index.org][Graph satisfiability]] [fn:1]
+  - [[file:igl2020.org][Model theory in Lean]]
+  - [[file:manhattan_traffic.org][Manhattan traffic]]
+  - [[file:leanteach2020.org][Axiomatic geometry in Lean]]
+  - Past projects
+    - On the pullback of real exterior forms
+    - [[file:congestion_barcodes.org][Congestion barcodes]]
+
+* Teaching
+  My ever-evolving [[file:Teaching_Philosophy_Statement.pdf][teaching philosophy]].
+  - Math490: Computational mathematics
+  - Merit program @ Math UIUC
+  - Model theory in Lean @ Illinois Geometry Lab
+  - LeanTeach 2020 @ Illinois Geometry Lab + UniHigh Summer program
+  - Classical constructions @ Summer Illinois Math Camp, UIUC
+  - Past courses
+    
+
+* Notes
+  These are mostly notes I have taken as part of self-studying various
+  things. They are not meant to be comprehensive notes -- just a
+  collection of things I found interesting at different times and
+  wished to keep a record of.
+  - [[file:algebraic_geometry.pdf][Algebraic geometry]]
+  - [[file:algebraic_topology.pdf][Algebraic topology]]
+  - [[file:boolean_satisfiability.org][Boolean satisfiability]]
+  - [[file:category_theory_and_haskell.pdf][Category theory and haskell]]
+  - [[file:combinatorial_vector_fields.pdf][Combinatorial vector fields]]
+  - [[file:coq.pdf][Coq]]
+  - [[file:esperanto.pdf][Esperanto]]
+  - [[file:geometry.org][Geometry]]
+  - [[file:git_workflow.org][Git workflow]]
+  - [[file:haskell.pdf][Haskell]]
+  - [[file:homology.pdf][Homology]]
+  - How I set up this website
+    - followed the steps [[https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html][here]],
+    - also set up the sitemap.
+  - [[file:lambda_calculus.pdf][Lambda calculus]]
+  - Logic
+  - [[file:lua.pdf][Lua]]
+  - [[file:tidbits.org][Mathematical tidbits]]
+  - [[file:model_theory.org][Model theory]]
+  - [[file:persistent_homology.pdf][Persistent homology]]
+  - [[file:philosophy.pdf][Philosophy]]
+  - [[file:python_multiprocessing.org][Python multiprocessing]]
+  - [[file:pytype.org][Python's type theory]]
+  - [[file:theory_of_computation.org][Theory of computation]] 
+
+* Everything else
+- [[file:6174.org][6174 : Kaprekar's constant visualized]]
+- [[file:msc.org][My areas of interest according to the Mathematics Subject Classification]]
+- Plots and graphs I generated
+- First attempt at publishing package : multihypergraph on PyPI
+- [[https://mediaspace.illinois.edu/media/t/1_6n9da3ph/10797641][Recognizing patterns in New York traffic : 4 min video]]
+  as part of UIUC Graduate College's Research Live! 2016 competition.
+- Slides from my talks
+- Photos from conferences
+- My Klein bottle
+- [[https://goodreads.com/vaibhavkarve][My Goodreads profile]]
+* Footnotes
+
+[fn:1] this work is currently funded by the [[https://math.illinois.edu/academics/graduate-program/funding/graduate-awards-and-fellowships/david-g-bourgin-mathematics][David G. Bourgin Mathematics Fellowship]].
+

@@ -1,0 +1,79 @@
+#+title: Axiomatic Geometry in Lean
+#+author: [[file:../index.html][Vaibhav Karve]]
+#+options: toc:1
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
+#+subtitle: [[../index.html][Home]]
+
+This project was titled /Interactive theorem proving in Lean: teaching
+mathematics to a computer/ and ran as part of the Illinois Geometry Lab in
+Summer 2020. I was involved in running the project with 4 high-school students.
+
+
+* The team
+- *Me* (Principal Investigator)
+- Lawrence Zhao (Frankel scholar)
+- Edward Kong (Frankel scholar)
+- Alex Dolcos (Frankel scholar)
+- Nicholas Phillips (Frankel scholar)
+file:img/leanteach2020_team.png
+
+
+* Project Goals
+This project was code-named =LeanTeach 2020=.
+
+** Goal 0: Teach Lean to Humans
+We met 9 hours per week to discuss math, philosophy and programming as it
+relates to formalizing mathematics in a theorem prover. We used Microsoft
+Research's /Lean Theorem Prover/ and its Mathematical Library (/mathlib/) as our
+proof assistant for this. We all had experience programming in Python before
+this. We explored how things work differently in a purely functional
+language. We also learned about tactics in Lean. We used Slack for text-based
+communication, Zoom for video meetings and CoCalc for sharing and
+collaboratively editing code.
+
+** Goal 1: Teach Math to a Computer
+The idea was that we can take a piece of familiar mathematics and translate it
+into code that is acceptable to Lean. Lean already understands basic logic and
+does not accept incorrect mathematics as input. We wanted to choose a topic in
+mathematics that,
+1. is known to us with a high degree of familiarity -- because intuition comes
+   in handy when we are stuck in a Math → Lean translation,
+2. is preferably already in an axiomatic form -- we wanted to follow the
+   workflow of Definitions → Axioms/Postulates → Propositions/Theorems,
+3. is not already in mathlib -- this ruled out group theory, number theory,
+   category theory...
+
+We settled on formalizing Axiomatic Geometry of three types:
+- Euclid's axioms
+- Hilbert's axioms
+- Tarski's axioms
+
+* Outcomes and links
+All the code generated during this project can be found at the GitHub code
+repository [[https://github.com/vaibhavkarve/leanteach2020][github.com/vaibhavkarve/leanteach2020]]
+
+Throughout the duration of the project, we create extensive notes on everything
+we learned, any problems we encountered and all the approaches we tried when
+attempting to solve those problems. These notes were collected in the form of a
+project wiki that is hosted at [[https://wiki.illinois.edu/wiki/display/LT2020][IllinoisWiki LeanTeach 2020]]. This wiki serves as
+a lab-notebook + documentation.
+
+I-STEM education initiative featured a news article that mentioned our project
+-- [[https://www.istem.illinois.edu/news/uni.high.igl.research.20.html][Uni high students experience math research during IGL’s summer program]]
+
+The project outcomes are summarized in the following [[file:leanteach_poster.pdf][poster]], [[file:leanteach_report.pdf][report]] and
+[[file:leanteach_slides.pdf][slides]]. We also created a video describing the project:
+
+#+begin_src html
+  <iframe id="kmsembed-1_mxgjcfr4" width="640" height="394"
+  src="https://mediaspace.illinois.edu/embed/secure/iframe/entryId/1_mxgjcfr4/uiConfId/26883701"
+  class="kmsembed" allowfullscreen webkitallowfullscreen
+  mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *"
+  referrerPolicy="no-referrer-when-downgrade" sandbox="allow-forms
+  allow-same-origin allow-scripts allow-top-navigation
+  allow-pointer-lock allow-popups allow-modals allow-orientation-lock
+  allow-popups-to-escape-sandbox allow-presentation
+  allow-top-navigation-by-user-activation" frameborder="0"
+  title="Kaltura Player"></iframe>
+#+end_src
+
