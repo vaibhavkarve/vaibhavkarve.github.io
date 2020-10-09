@@ -19,7 +19,7 @@ high-school students.
 file:img/leanteach2020_team.png
 
 
-* Project Goals                                                    :noexport:
+* Project Goals
 This project was code-named =LeanTeach 2020=.
 
 ** Goal 0: Teach Lean to Humans
@@ -49,7 +49,7 @@ We settled on formalizing Axiomatic Geometry of three types:
 - Hilbert's axioms
 - Tarski's axioms
 
-* Outcomes and links                                               :noexport:
+* Outcomes and links
 All the code generated during this project can be found at the GitHub code
 repository [[https://github.com/vaibhavkarve/leanteach2020][github.com/vaibhavkarve/leanteach2020]]
 
