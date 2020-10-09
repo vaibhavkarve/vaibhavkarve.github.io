@@ -9,6 +9,9 @@ mathematics to a computer* and ran as part of the Illinois Geometry
 Lab in Summer 2020. I was involved in running the project with 4
 high-school students.
 
+The project outcomes are summarized in the following [[file:leanteach_poster.pdf][final poster]],
+[[file:leanteach_report.pdf][project report]] and [[file:leanteach_slides.pdf][presentation slides]].
+
 
 * The team
 - *Me* (Principal Investigator)
@@ -63,9 +66,7 @@ a lab-notebook + documentation.
 I-STEM education initiative featured a news article that mentioned our project
 -- [[https://www.istem.illinois.edu/news/uni.high.igl.research.20.html][Uni high students experience math research during IGL’s summer program]].
 
-The project outcomes are summarized in the following [[file:leanteach_poster.pdf][final poster]],
-[[file:leanteach_report.pdf][project report]] and [[file:leanteach_slides.pdf][presentation slides]]. Below is a video recording of
-the project being presented.
+Below is a video recording of the project being presented.
 
 #+begin_export html
 <iframe id="kmsembed-1_mxgjcfr4" width="640" height="394"

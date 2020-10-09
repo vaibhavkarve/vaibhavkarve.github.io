@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-10-09 Fri 14:24 -->
+<!-- 2020-10-09 Fri 14:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Python's Type theory</title>
@@ -238,70 +238,70 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org429a146">1. Context</a>
+<li><a href="#orgb524075">1. Context</a>
 <ul>
-<li><a href="#org96af026">1.1. Opening remarks</a></li>
-<li><a href="#orgbb89843">1.2. Types vs Types</a></li>
-<li><a href="#org8f1fd53">1.3. So, what is type theory?</a></li>
+<li><a href="#org1e3cf63">1.1. Opening remarks</a></li>
+<li><a href="#orged22920">1.2. Types vs Types</a></li>
+<li><a href="#orge346d85">1.3. So, what is type theory?</a></li>
 </ul>
 </li>
-<li><a href="#org27eb2e4">2. Types that are in-built in python</a>
+<li><a href="#orga9c8236">2. Types that are in-built in python</a>
 <ul>
-<li><a href="#orgc0f0d65">2.1. Subtypes and NewType</a></li>
-<li><a href="#org3773fef">2.2. Why use <code>NewType</code>?</a></li>
-<li><a href="#orgbf7e8be">2.3. Type coercion</a></li>
+<li><a href="#orga49cd4e">2.1. Subtypes and NewType</a></li>
+<li><a href="#org7f1fc26">2.2. Why use <code>NewType</code>?</a></li>
+<li><a href="#org3e63cb6">2.3. Type coercion</a></li>
 </ul>
 </li>
-<li><a href="#org714c370">3. Importing more Types</a>
+<li><a href="#org4fe72f6">3. Importing more Types</a>
 <ul>
-<li><a href="#orgfb413a1">3.1. Basic data-structures</a></li>
-<li><a href="#org9f9439f">3.2. Understanding <code>Any</code></a></li>
-<li><a href="#org09b5a2f">3.3. Optional and Union</a></li>
-<li><a href="#orgd1a6fe4">3.4. The <code>cast</code> function</a></li>
+<li><a href="#org52167bf">3.1. Basic data-structures</a></li>
+<li><a href="#org43ea90b">3.2. Understanding <code>Any</code></a></li>
+<li><a href="#org693f306">3.3. Optional and Union</a></li>
+<li><a href="#orgf2a93e9">3.4. The <code>cast</code> function</a></li>
 </ul>
 </li>
-<li><a href="#org4f254d2">4. <span class="todo TODO">TODO</span> Function types</a>
+<li><a href="#orgb7dc4cb">4. <span class="todo TODO">TODO</span> Function types</a>
 <ul>
-<li><a href="#orge9c7bf3">4.1. Call signatures for functions</a></li>
-<li><a href="#orgd509c21">4.2. Callable</a></li>
-<li><a href="#org4df9011">4.3. Map, reduce, filter</a></li>
-<li><a href="#orgdf24d05">4.4. Polymosphism via single-dispatch a.k.a. overloaded functions</a></li>
+<li><a href="#orgb987d33">4.1. Call signatures for functions</a></li>
+<li><a href="#org8705f01">4.2. Callable</a></li>
+<li><a href="#org9550cde">4.3. Map, reduce, filter</a></li>
+<li><a href="#org4067615">4.4. Polymosphism via single-dispatch a.k.a. overloaded functions</a></li>
 </ul>
 </li>
-<li><a href="#org89bc53d">5. <span class="todo TODO">TODO</span> Other special types</a>
+<li><a href="#org6d03646">5. <span class="todo TODO">TODO</span> Other special types</a>
 <ul>
-<li><a href="#org5fea561">5.1. Literal</a></li>
-<li><a href="#org3b31ddf">5.2. Final</a></li>
-<li><a href="#org408f292">5.3. NamedTuple</a></li>
-<li><a href="#org3b06961">5.4. Counter</a></li>
-<li><a href="#orgfd73f8d">5.5. IO</a></li>
+<li><a href="#org92a2543">5.1. Literal</a></li>
+<li><a href="#org0195fb2">5.2. Final</a></li>
+<li><a href="#org4b0d16c">5.3. NamedTuple</a></li>
+<li><a href="#org4fbcf1f">5.4. Counter</a></li>
+<li><a href="#orgb345712">5.5. IO</a></li>
 </ul>
 </li>
-<li><a href="#org9c321da">6. <span class="todo TODO">TODO</span> Type classes</a>
+<li><a href="#orgabfb03a">6. <span class="todo TODO">TODO</span> Type classes</a>
 <ul>
-<li><a href="#orgb7ac01c">6.1. Iterator</a></li>
-<li><a href="#orgadd9ff9">6.2. Sized</a></li>
-<li><a href="#orgcef1a06">6.3. Generator</a></li>
-<li><a href="#org6200796">6.4. Iterable</a></li>
-<li><a href="#orgf8f55d7">6.5. Collection</a></li>
-<li><a href="#orgdecd1b2">6.6. AbstractSet</a></li>
+<li><a href="#orge4bac0e">6.1. Iterator</a></li>
+<li><a href="#org3e8bf32">6.2. Sized</a></li>
+<li><a href="#org3a9cdef">6.3. Generator</a></li>
+<li><a href="#org870072b">6.4. Iterable</a></li>
+<li><a href="#org3cc8180">6.5. Collection</a></li>
+<li><a href="#org7b3d61d">6.6. AbstractSet</a></li>
 </ul>
 </li>
-<li><a href="#orgf24da73">7. <span class="todo TODO">TODO</span> Generic Types</a>
+<li><a href="#org2ca47e5">7. <span class="todo TODO">TODO</span> Generic Types</a>
 <ul>
-<li><a href="#org7fc03e6">7.1. Covariant and contravariant types</a></li>
+<li><a href="#org3b8a963">7.1. Covariant and contravariant types</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org429a146" class="outline-2">
-<h2 id="org429a146"><span class="section-number-2">1</span> Context</h2>
+<div id="outline-container-orgb524075" class="outline-2">
+<h2 id="orgb524075"><span class="section-number-2">1</span> Context</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org96af026" class="outline-3">
-<h3 id="org96af026"><span class="section-number-3">1.1</span> Opening remarks</h3>
+<div id="outline-container-org1e3cf63" class="outline-3">
+<h3 id="org1e3cf63"><span class="section-number-3">1.1</span> Opening remarks</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Python added support for type hints in the <code>typing</code> module in Python
@@ -340,8 +340,8 @@ fool-proof reference. For proper documentation, one can refer to
 </div>
 </div>
 
-<div id="outline-container-orgbb89843" class="outline-3">
-<h3 id="orgbb89843"><span class="section-number-3">1.2</span> Types vs Types</h3>
+<div id="outline-container-orged22920" class="outline-3">
+<h3 id="orged22920"><span class="section-number-3">1.2</span> Types vs Types</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 There are two meanings for types in python now.  One is the type of
@@ -358,8 +358,8 @@ the type of an object.
 </div>
 </div>
 
-<div id="outline-container-org8f1fd53" class="outline-3">
-<h3 id="org8f1fd53"><span class="section-number-3">1.3</span> So, what is type theory?</h3>
+<div id="outline-container-orge346d85" class="outline-3">
+<h3 id="orge346d85"><span class="section-number-3">1.3</span> So, what is type theory?</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 Think of it as the math/rules that govern these types.  A basic fact
@@ -370,15 +370,15 @@ specify it to the type-checker or not.
 </div>
 </div>
 
-<div id="outline-container-org27eb2e4" class="outline-2">
-<h2 id="org27eb2e4"><span class="section-number-2">2</span> Types that are in-built in python</h2>
+<div id="outline-container-orga9c8236" class="outline-2">
+<h2 id="orga9c8236"><span class="section-number-2">2</span> Types that are in-built in python</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Python comes with some in-built types.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python" id="org088b734">a: <span class="org-builtin">int</span>   = 1
+<pre class="src src-python" id="org479827b">a: <span class="org-builtin">int</span>   = 1
 b: <span class="org-builtin">float</span> = 1.0
 c: <span class="org-builtin">str</span>   = <span class="org-string">'one'</span>
 d: <span class="org-builtin">bool</span>  = <span class="org-constant">True</span>
@@ -392,15 +392,15 @@ In addition, for every class that we define, we can refer to the
 type of its instances using the name of the class itself.
 </p>
 <div class="org-src-container">
-<pre class="src src-python" id="orgab495ec"><span class="org-keyword">class</span> <span class="org-type">MyClass</span>:
+<pre class="src src-python" id="org45705ef"><span class="org-keyword">class</span> <span class="org-type">MyClass</span>:
     <span class="org-keyword">pass</span>
 m: <span class="org-variable-name">MyClass</span> = MyClass()
 </pre>
 </div>
 </div>
 
-<div id="outline-container-orgc0f0d65" class="outline-3">
-<h3 id="orgc0f0d65"><span class="section-number-3">2.1</span> Subtypes and NewType</h3>
+<div id="outline-container-orga49cd4e" class="outline-3">
+<h3 id="orga49cd4e"><span class="section-number-3">2.1</span> Subtypes and NewType</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 So far, we have talked about types without specifically defining
@@ -434,7 +434,7 @@ function as follows:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python" id="org8d7fb3b"><span class="org-comment-delimiter"># </span><span class="org-comment">define a new type</span>
+<pre class="src src-python" id="org9ecae1f"><span class="org-comment-delimiter"># </span><span class="org-comment">define a new type</span>
 <span class="org-variable-name">PositiveInt</span> = NewType(<span class="org-string">'PositiveInt'</span>, <span class="org-builtin">int</span>)  <span class="org-comment-delimiter"># </span><span class="org-comment">This is the same as declaring PositiveInt &lt;: int</span>
 
 <span class="org-comment-delimiter"># </span><span class="org-comment">define a constructor function for the new type</span>
@@ -448,8 +448,8 @@ function as follows:
 </div>
 
 
-<div id="outline-container-org3773fef" class="outline-3">
-<h3 id="org3773fef"><span class="section-number-3">2.2</span> Why use <code>NewType</code>?</h3>
+<div id="outline-container-org7f1fc26" class="outline-3">
+<h3 id="org7f1fc26"><span class="section-number-3">2.2</span> Why use <code>NewType</code>?</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 <code>NewType</code> offers a way to restrict the type of argument supplied
@@ -476,7 +476,7 @@ can have:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python" id="org2763a78"><span class="org-comment-delimiter"># </span><span class="org-comment">define a new type</span>
+<pre class="src src-python" id="org226e9ea"><span class="org-comment-delimiter"># </span><span class="org-comment">define a new type</span>
 <span class="org-keyword">from</span> math <span class="org-keyword">import</span> log
 
 <span class="org-keyword">def</span> <span class="org-function-name">safe_logarithm</span>(p: PositiveInt) -&gt; <span class="org-builtin">float</span>:
@@ -492,8 +492,8 @@ safe_log(make_positive_int(5))   <span class="org-comment-delimiter"># </span><s
 </div>
 </div>
 
-<div id="outline-container-orgbf7e8be" class="outline-3">
-<h3 id="orgbf7e8be"><span class="section-number-3">2.3</span> Type coercion</h3>
+<div id="outline-container-org3e63cb6" class="outline-3">
+<h3 id="org3e63cb6"><span class="section-number-3">2.3</span> Type coercion</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 Type coercion refers to the process by which the typechecker
@@ -502,7 +502,7 @@ signatures.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python" id="orgf1e09e1">a: <span class="org-builtin">int</span>   = 2
+<pre class="src src-python" id="orge42de90">a: <span class="org-builtin">int</span>   = 2
 b: <span class="org-builtin">float</span> = 3.0
 <span class="org-variable-name">c</span> = a + b
 </pre>
@@ -526,19 +526,19 @@ whenever they know that <code>A</code> is a subtype of <code>B</code>.
 </div>
 </div>
 
-<div id="outline-container-org714c370" class="outline-2">
-<h2 id="org714c370"><span class="section-number-2">3</span> Importing more Types</h2>
+<div id="outline-container-org4fe72f6" class="outline-2">
+<h2 id="org4fe72f6"><span class="section-number-2">3</span> Importing more Types</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 By importing from <code>typing</code>, we get access to some more types.
 </p>
 </div>
 
-<div id="outline-container-orgfb413a1" class="outline-3">
-<h3 id="orgfb413a1"><span class="section-number-3">3.1</span> Basic data-structures</h3>
+<div id="outline-container-org52167bf" class="outline-3">
+<h3 id="org52167bf"><span class="section-number-3">3.1</span> Basic data-structures</h3>
 <div class="outline-text-3" id="text-3-1">
 <div class="org-src-container">
-<pre class="src src-python" id="org5d8059c"><span class="org-keyword">from</span> typing <span class="org-keyword">import</span> (Any, Dict, FrozenSet, List, Set, Tuple)
+<pre class="src src-python" id="org98bc5cd"><span class="org-keyword">from</span> typing <span class="org-keyword">import</span> (Any, Dict, FrozenSet, List, Set, Tuple)
 
 a:  <span class="org-variable-name">List</span>[<span class="org-builtin">int</span>]      = [1, 2]
 b:  <span class="org-variable-name">List</span>[<span class="org-builtin">str</span>]      = [<span class="org-string">'one'</span>, <span class="org-string">'two'</span>]
@@ -560,8 +560,8 @@ g4: <span class="org-variable-name">List</span>[Any] = [1, 2, <span class="org-s
 </div>
 </div>
 
-<div id="outline-container-org9f9439f" class="outline-3">
-<h3 id="org9f9439f"><span class="section-number-3">3.2</span> Understanding <code>Any</code></h3>
+<div id="outline-container-org43ea90b" class="outline-3">
+<h3 id="org43ea90b"><span class="section-number-3">3.2</span> Understanding <code>Any</code></h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 <code>Any</code> is a sort of magic type. I like to think of <code>Any</code> as the
@@ -588,8 +588,8 @@ user), python simply defaults to usign <code>Any</code> as the variable's type.
 </div>
 </div>
 
-<div id="outline-container-org09b5a2f" class="outline-3">
-<h3 id="org09b5a2f"><span class="section-number-3">3.3</span> Optional and Union</h3>
+<div id="outline-container-org693f306" class="outline-3">
+<h3 id="org693f306"><span class="section-number-3">3.3</span> Optional and Union</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 <code>Union</code> represents what in type-theory jargon are called sum-types.
@@ -603,7 +603,7 @@ the use of both of these.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python" id="org59b116c"><span class="org-keyword">from</span> typing <span class="org-keyword">import</span> List, Optional, Union
+<pre class="src src-python" id="org0142be7"><span class="org-keyword">from</span> typing <span class="org-keyword">import</span> List, Optional, Union
 
 a: List[Union[<span class="org-builtin">int</span>, <span class="org-builtin">str</span>]] = [1, 2, <span class="org-string">'a'</span>, 3, <span class="org-string">'b'</span>]
 
@@ -635,8 +635,8 @@ exceptions and errors are inherited from the base class <code>Exception</code>.
 </div>
 </div>
 
-<div id="outline-container-orgd1a6fe4" class="outline-3">
-<h3 id="orgd1a6fe4"><span class="section-number-3">3.4</span> The <code>cast</code> function</h3>
+<div id="outline-container-orgf2a93e9" class="outline-3">
+<h3 id="orgf2a93e9"><span class="section-number-3">3.4</span> The <code>cast</code> function</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 This is a function that lets you do two things:
@@ -647,7 +647,7 @@ This is a function that lets you do two things:
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-python" id="orga312a71"><span class="org-keyword">from</span> typing <span class="org-keyword">import</span> cast, Union
+<pre class="src src-python" id="org5993e8f"><span class="org-keyword">from</span> typing <span class="org-keyword">import</span> cast, Union
 
 <span class="org-keyword">def</span> <span class="org-function-name">madeup_example</span>(a: Union[<span class="org-builtin">int</span>, <span class="org-builtin">str</span>]) -&gt; <span class="org-builtin">int</span>:
     <span class="org-keyword">if</span> <span class="org-builtin">hasattr</span>(a, <span class="org-string">'split'</span>):
@@ -667,78 +667,78 @@ This is a function that lets you do two things:
 </div>
 
 
-<div id="outline-container-org4f254d2" class="outline-2">
-<h2 id="org4f254d2"><span class="section-number-2">4</span> <span class="todo TODO">TODO</span> Function types</h2>
+<div id="outline-container-orgb7dc4cb" class="outline-2">
+<h2 id="orgb7dc4cb"><span class="section-number-2">4</span> <span class="todo TODO">TODO</span> Function types</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orge9c7bf3" class="outline-3">
-<h3 id="orge9c7bf3"><span class="section-number-3">4.1</span> Call signatures for functions</h3>
+<div id="outline-container-orgb987d33" class="outline-3">
+<h3 id="orgb987d33"><span class="section-number-3">4.1</span> Call signatures for functions</h3>
 </div>
-<div id="outline-container-orgd509c21" class="outline-3">
-<h3 id="orgd509c21"><span class="section-number-3">4.2</span> Callable</h3>
+<div id="outline-container-org8705f01" class="outline-3">
+<h3 id="org8705f01"><span class="section-number-3">4.2</span> Callable</h3>
 </div>
-<div id="outline-container-org4df9011" class="outline-3">
-<h3 id="org4df9011"><span class="section-number-3">4.3</span> Map, reduce, filter</h3>
+<div id="outline-container-org9550cde" class="outline-3">
+<h3 id="org9550cde"><span class="section-number-3">4.3</span> Map, reduce, filter</h3>
 </div>
-<div id="outline-container-orgdf24d05" class="outline-3">
-<h3 id="orgdf24d05"><span class="section-number-3">4.4</span> Polymosphism via single-dispatch a.k.a. overloaded functions</h3>
+<div id="outline-container-org4067615" class="outline-3">
+<h3 id="org4067615"><span class="section-number-3">4.4</span> Polymosphism via single-dispatch a.k.a. overloaded functions</h3>
 </div>
 </div>
-<div id="outline-container-org89bc53d" class="outline-2">
-<h2 id="org89bc53d"><span class="section-number-2">5</span> <span class="todo TODO">TODO</span> Other special types</h2>
+<div id="outline-container-org6d03646" class="outline-2">
+<h2 id="org6d03646"><span class="section-number-2">5</span> <span class="todo TODO">TODO</span> Other special types</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org5fea561" class="outline-3">
-<h3 id="org5fea561"><span class="section-number-3">5.1</span> Literal</h3>
+<div id="outline-container-org92a2543" class="outline-3">
+<h3 id="org92a2543"><span class="section-number-3">5.1</span> Literal</h3>
 </div>
-<div id="outline-container-org3b31ddf" class="outline-3">
-<h3 id="org3b31ddf"><span class="section-number-3">5.2</span> Final</h3>
+<div id="outline-container-org0195fb2" class="outline-3">
+<h3 id="org0195fb2"><span class="section-number-3">5.2</span> Final</h3>
 </div>
-<div id="outline-container-org408f292" class="outline-3">
-<h3 id="org408f292"><span class="section-number-3">5.3</span> NamedTuple</h3>
+<div id="outline-container-org4b0d16c" class="outline-3">
+<h3 id="org4b0d16c"><span class="section-number-3">5.3</span> NamedTuple</h3>
 </div>
-<div id="outline-container-org3b06961" class="outline-3">
-<h3 id="org3b06961"><span class="section-number-3">5.4</span> Counter</h3>
+<div id="outline-container-org4fbcf1f" class="outline-3">
+<h3 id="org4fbcf1f"><span class="section-number-3">5.4</span> Counter</h3>
 </div>
-<div id="outline-container-orgfd73f8d" class="outline-3">
-<h3 id="orgfd73f8d"><span class="section-number-3">5.5</span> IO</h3>
+<div id="outline-container-orgb345712" class="outline-3">
+<h3 id="orgb345712"><span class="section-number-3">5.5</span> IO</h3>
 </div>
 </div>
-<div id="outline-container-org9c321da" class="outline-2">
-<h2 id="org9c321da"><span class="section-number-2">6</span> <span class="todo TODO">TODO</span> Type classes</h2>
+<div id="outline-container-orgabfb03a" class="outline-2">
+<h2 id="orgabfb03a"><span class="section-number-2">6</span> <span class="todo TODO">TODO</span> Type classes</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-orgb7ac01c" class="outline-3">
-<h3 id="orgb7ac01c"><span class="section-number-3">6.1</span> Iterator</h3>
+<div id="outline-container-orge4bac0e" class="outline-3">
+<h3 id="orge4bac0e"><span class="section-number-3">6.1</span> Iterator</h3>
 </div>
-<div id="outline-container-orgadd9ff9" class="outline-3">
-<h3 id="orgadd9ff9"><span class="section-number-3">6.2</span> Sized</h3>
+<div id="outline-container-org3e8bf32" class="outline-3">
+<h3 id="org3e8bf32"><span class="section-number-3">6.2</span> Sized</h3>
 </div>
-<div id="outline-container-orgcef1a06" class="outline-3">
-<h3 id="orgcef1a06"><span class="section-number-3">6.3</span> Generator</h3>
+<div id="outline-container-org3a9cdef" class="outline-3">
+<h3 id="org3a9cdef"><span class="section-number-3">6.3</span> Generator</h3>
 </div>
-<div id="outline-container-org6200796" class="outline-3">
-<h3 id="org6200796"><span class="section-number-3">6.4</span> Iterable</h3>
+<div id="outline-container-org870072b" class="outline-3">
+<h3 id="org870072b"><span class="section-number-3">6.4</span> Iterable</h3>
 </div>
-<div id="outline-container-orgf8f55d7" class="outline-3">
-<h3 id="orgf8f55d7"><span class="section-number-3">6.5</span> Collection</h3>
+<div id="outline-container-org3cc8180" class="outline-3">
+<h3 id="org3cc8180"><span class="section-number-3">6.5</span> Collection</h3>
 </div>
-<div id="outline-container-orgdecd1b2" class="outline-3">
-<h3 id="orgdecd1b2"><span class="section-number-3">6.6</span> AbstractSet</h3>
+<div id="outline-container-org7b3d61d" class="outline-3">
+<h3 id="org7b3d61d"><span class="section-number-3">6.6</span> AbstractSet</h3>
 </div>
 </div>
-<div id="outline-container-orgf24da73" class="outline-2">
-<h2 id="orgf24da73"><span class="section-number-2">7</span> <span class="todo TODO">TODO</span> Generic Types</h2>
+<div id="outline-container-org2ca47e5" class="outline-2">
+<h2 id="org2ca47e5"><span class="section-number-2">7</span> <span class="todo TODO">TODO</span> Generic Types</h2>
 <div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-org7fc03e6" class="outline-3">
-<h3 id="org7fc03e6"><span class="section-number-3">7.1</span> Covariant and contravariant types</h3>
+<div id="outline-container-org3b8a963" class="outline-3">
+<h3 id="org3b8a963"><span class="section-number-3">7.1</span> Covariant and contravariant types</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2020-10-09 Fri 14:24</p>
+<p class="date">Created: 2020-10-09 Fri 14:43</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
