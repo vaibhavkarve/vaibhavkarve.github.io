@@ -1,7 +1,7 @@
 #+TITLE: Sitemap
 
 - [[file:6174.org][6174 : Visualizing Kaprekar's process]]
-- [[file:leanteach2020.org][Axiomatic Geometry in Lean]]
+- [[file:leanteach_2020.org][Axiomatic Geometry in Lean]]
 - [[file:boolean_satisfiability.org][Boolean Satisfiability notes]]
 - [[file:cohomology.org][Cohomology]]
 - [[file:congestion_barcodes.org][Congestion Barcodes]]
