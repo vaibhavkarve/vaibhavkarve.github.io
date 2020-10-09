@@ -23,14 +23,15 @@ file:img/leanteach2020_team.png
 This project was code-named =LeanTeach 2020=.
 
 ** Goal 0: Teach Lean to Humans
-We met 9 hours per week to discuss math, philosophy and programming as it
-relates to formalizing mathematics in a theorem prover. We used Microsoft
-Research's /Lean Theorem Prover/ and its Mathematical Library (/mathlib/) as our
-proof assistant for this. We all had experience programming in Python before
-this. We explored how things work differently in a purely functional
-language. We also learned about tactics in Lean. We used Slack for text-based
-communication, Zoom for video meetings and CoCalc for sharing and
-collaboratively editing code.
+We met 9 hours per week to discuss math, philosophy and programming as
+it relates to formalizing mathematics in a theorem prover. We used
+Microsoft Research's *Lean Theorem Prover* and its Mathematical
+Library (*mathlib*) as our proof assistant for this. We all had
+experience programming in Python before this. We explored how things
+work differently in a purely functional language. We also learned
+about tactics in Lean. We used Slack for text-based communication,
+Zoom for video meetings and CoCalc for sharing and collaboratively
+editing code.
 
 ** Goal 1: Teach Math to a Computer
 The idea was that we can take a piece of familiar mathematics and translate it
@@ -60,10 +61,11 @@ project wiki that is hosted at [[https://wiki.illinois.edu/wiki/display/LT2020][
 a lab-notebook + documentation.
 
 I-STEM education initiative featured a news article that mentioned our project
--- [[https://www.istem.illinois.edu/news/uni.high.igl.research.20.html][Uni high students experience math research during IGL’s summer program]]
+-- [[https://www.istem.illinois.edu/news/uni.high.igl.research.20.html][Uni high students experience math research during IGL’s summer program]].
 
-The project outcomes are summarized in the following [[file:leanteach_poster.pdf][poster]], [[file:leanteach_report.pdf][report]] and
-[[file:leanteach_slides.pdf][slides]]. We also created a video describing the project:
+The project outcomes are summarized in the following [[file:leanteach_poster.pdf][final poster]],
+[[file:leanteach_report.pdf][project report]] and [[file:leanteach_slides.pdf][presentation slides]]. Below is a video recording of
+the project being presented.
 
 #+begin_export html
 <iframe id="kmsembed-1_mxgjcfr4" width="640" height="394"

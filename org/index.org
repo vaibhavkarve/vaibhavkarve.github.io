@@ -30,7 +30,7 @@ interactive theorem proving (in particular, with the Lean theorem prover).
   My ever-evolving [[file:Teaching_Philosophy_Statement.pdf][teaching philosophy]].
   - Math490: Computational mathematics
   - Merit program @ Math UIUC
-  - Model theory in Lean @ Illinois Geometry Lab
+  - [[file:igl2020.org][Model theory in Lean @ Illinois Geometry Lab]]
   - [[file:leanteach_2020.org][LeanTeach 2020 @ Illinois Geometry Lab + UniHigh Summer program]]
   - Classical constructions @ Summer Illinois Math Camp, UIUC
   - Past courses
