@@ -65,7 +65,7 @@ I-STEM education initiative featured a news article that mentioned our project
 The project outcomes are summarized in the following [[file:leanteach_poster.pdf][poster]], [[file:leanteach_report.pdf][report]] and
 [[file:leanteach_slides.pdf][slides]]. We also created a video describing the project:
 
-#+begin_src html :exports none
+#+begin_src html
   <iframe id="kmsembed-1_mxgjcfr4" width="640" height="394"
   src="https://mediaspace.illinois.edu/embed/secure/iframe/entryId/1_mxgjcfr4/uiConfId/26883701"
   class="kmsembed" allowfullscreen webkitallowfullscreen
