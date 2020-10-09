@@ -4,12 +4,13 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
 #+subtitle: [[../index.html][Home]]
 
-This project was titled /Interactive theorem proving in Lean: teaching
-mathematics to a computer/ and ran as part of the Illinois Geometry Lab in
-Summer 2020. I was involved in running the project with 4 high-school students.
+This project was titled *Interactive theorem proving in Lean: teaching
+mathematics to a computer* and ran as part of the Illinois Geometry
+Lab in Summer 2020. I was involved in running the project with 4
+high-school students.
 
 
-* The team                                                         :noexport:
+* The team
 - *Me* (Principal Investigator)
 - Lawrence Zhao (Frankel scholar)
 - Edward Kong (Frankel scholar)
