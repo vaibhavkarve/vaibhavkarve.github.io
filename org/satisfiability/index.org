@@ -8,8 +8,8 @@ This is the subject of my PhD research --- a new type of
 satisfiability problem.
 
 - Dissertation summary (work in progress) :: [[file:~/org/website/dissertation_summary.pdf][pdf]]
-- 2sat result publication :: [[https://doi.org/10.1016/j.dam.2019.12.017][https://doi.org/10.1016/j.dam.2019.12.017]]
-- 2sat result arXiv version :: https://arxiv.org/abs/1812.10849
+- 2sat result publication :: [[https://doi.org/10.1016/j.dam.2019.12.017][The complete set of minimal simple graphs that support unsatisfiable 2-CNFs]]
+- 2sat result arXiv version :: [[https://arxiv.org/abs/1812.10849][The complete set of minimal simple graphs that support unsatisfiable 2-CNFs]]
 - GitLab :: [[https://git.math.illinois.edu/hirani_group/home/-/tree/master/projects/sat][private repository]]
 
 * Definitions
