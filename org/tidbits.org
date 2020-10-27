@@ -33,5 +33,6 @@ Plabic graphs := planar bicolorable graphs.
 
 _Note:_ a quantum version of sampling this distribution will look
 like (assuming X is discrete):
-$$|ψ⟩ = Σₓ αₓ |x, c(x)⟩, where αₓ = \sqrt{D(x)}$$
+$$|ψ\rangle = \Sum_x \alpha_x |x, c(x)\rangle,$$
+where $\alpha_x = \sqrt{D(x)}$.
 
