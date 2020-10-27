@@ -16,3 +16,22 @@ This is just a list of facts/definitions that didn't fit elsewhere.
 
 - Keywords :: Operads, A_∞, E_∞. "More associative than (associative)
               rings. More commutative than commutative rings."
+
+* Graph theory
+Plabic graphs := planar bicolorable graphs.
+
+* Quantum computing
+** PAC learning model
+- concept ≡ feature; c : X → {0, 1}
+- concept class ≡ collection of features
+- labelled examples (x, c(x))
+- x ~ D, distribution on X
+- given t samples (xᵢ, c(xᵢ)), i ∈ [t], compute with probability ≥
+  1-δ, hypothesis c' such that Pr_{x~D}(c'(x) = c(x)) ≥ 1-ε.
+- Interesting question to ask is what should be the size of t in terms
+  of ε and δ?
+
+_Note:_ a quantum version of sampling this distribution will look
+like (assuming X is discrete):
+|ψ⟩ = Σₓ αₓ |x, c(x)⟩, where αₓ = \sqrt{D(x)}.
+

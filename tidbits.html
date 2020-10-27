@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-10-15 Thu 12:40 -->
+<!-- 2020-10-27 Tue 11:33 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mathematical tidbits</title>
@@ -227,6 +227,28 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
@@ -238,7 +260,9 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org63d05bf">1. Homotopy</a></li>
+<li><a href="#org5f878aa">1. Homotopy</a></li>
+<li><a href="#orga8630b6">2. Graph theory</a></li>
+<li><a href="#org238f99d">3. Quantum computing</a></li>
 </ul>
 </div>
 </div>
@@ -247,12 +271,12 @@ This is just a list of facts/definitions that didn't fit elsewhere.
 </p>
 
 
-<div id="outline-container-org63d05bf" class="outline-2">
-<h2 id="org63d05bf"><span class="section-number-2">1</span> Homotopy</h2>
+<div id="outline-container-org5f878aa" class="outline-2">
+<h2 id="org5f878aa"><span class="section-number-2">1</span> Homotopy</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org97dafec" class="outline-3">
-<h3 id="org97dafec"><span class="section-number-3">1.1</span> Massey triple product</h3>
+<div id="outline-container-org65cb048" class="outline-3">
+<h3 id="org65cb048"><span class="section-number-3">1.1</span> Massey triple product</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 If [α]⬝[β] = 0 ⇒ α⬝β = dσ.
@@ -268,10 +292,60 @@ rings. More commutative than commutative rings."</dd>
 </div>
 </div>
 </div>
+
+<div id="outline-container-orga8630b6" class="outline-2">
+<h2 id="orga8630b6"><span class="section-number-2">2</span> Graph theory</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Plabic graphs := planar bicolorable graphs.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org238f99d" class="outline-2">
+<h2 id="org238f99d"><span class="section-number-2">3</span> Quantum computing</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgb8ae24c" class="outline-3">
+<h3 id="orgb8ae24c"><span class="section-number-3">3.1</span> PAC learning model</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>concept ≡ feature; c : X → {0, 1}</li>
+<li>concept class ≡ collection of features</li>
+<li>labelled examples (x, c(x))</li>
+<li>x ~ D, distribution on X</li>
+<li>given t samples (xᵢ, c(xᵢ)), i ∈ [t], compute with probability ≥
+1-δ, hypothesis c' such that Pr<sub>x~D</sub>(c'(x) = c(x)) ≥ 1-ε.</li>
+<li>Interesting question to ask is what should be the size of t in terms
+of ε and δ?</li>
+</ul>
+
+<p>
+<span class="underline">Note:</span> a quantum version of sampling this distribution will look
+like (assuming X is discrete):
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">ψ⟩ = Σₓ αₓ</td>
+<td class="org-left">x, c(x)⟩, where αₓ = \sqrt{D(x)}.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: <a href="../index.html">Vaibhav Karve</a></p>
-<p class="date">Created: 2020-10-15 Thu 12:40</p>
+<p class="date">Created: 2020-10-27 Tue 11:33</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

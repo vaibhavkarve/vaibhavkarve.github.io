@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-10-15 Thu 12:40 -->
+<!-- 2020-10-27 Tue 11:33 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Theory of Computation</title>
@@ -238,12 +238,17 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org27840f1">1. Finite automata</a></li>
-<li><a href="#orge70ebec">2. Regular expressions</a></li>
-<li><a href="#orgd316216">3. Turing Machines</a></li>
-<li><a href="#orgc02af98">4. Decidability</a></li>
-<li><a href="#orgb18fb75">5. Halting problem</a></li>
-<li><a href="#orgd09a832">6. Time complexity</a></li>
+<li><a href="#org1e9b3e9">1. Finite automata</a></li>
+<li><a href="#org9d48d40">2. Regular expressions</a></li>
+<li><a href="#org6dd4ea7">3. Turing Machines</a></li>
+<li><a href="#org207f0d0">4. Decidability</a></li>
+<li><a href="#org6edd3dd">5. Halting problem</a></li>
+<li><a href="#org41d7b11">6. Time complexity</a></li>
+<li><a href="#orgd7e931e">7. Space complexity</a>
+<ul>
+<li><a href="#org2e530d0">7.1. Space classes</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -256,8 +261,8 @@ Notes taken from Reading Group
 computation</dd>
 </dl>
 
-<div id="outline-container-org27840f1" class="outline-2">
-<h2 id="org27840f1"><span class="section-number-2">1</span> Finite automata</h2>
+<div id="outline-container-org1e9b3e9" class="outline-2">
+<h2 id="org1e9b3e9"><span class="section-number-2">1</span> Finite automata</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Part 1 will be Computability. Part 2 will be Complexity.
@@ -331,8 +336,8 @@ P(Q) is not going to be an issue.</dd>
 </div>
 </div>
 
-<div id="outline-container-orge70ebec" class="outline-2">
-<h2 id="orge70ebec"><span class="section-number-2">2</span> Regular expressions</h2>
+<div id="outline-container-org9d48d40" class="outline-2">
+<h2 id="org9d48d40"><span class="section-number-2">2</span> Regular expressions</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 They are another way to represent a regular language.  ∅ is the
@@ -401,8 +406,8 @@ Non-example of CFG is: {aⁿbⁿcⁿ : n ∈ ℕ}.
 </div>
 </div>
 
-<div id="outline-container-orgd316216" class="outline-2">
-<h2 id="orgd316216"><span class="section-number-2">3</span> Turing Machines</h2>
+<div id="outline-container-org6dd4ea7" class="outline-2">
+<h2 id="org6dd4ea7"><span class="section-number-2">3</span> Turing Machines</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Similar to DFA but has unlimited and unrestricted memory. The stack is
@@ -450,8 +455,8 @@ For non-deterministic TM,
 </div>
 </div>
 
-<div id="outline-container-orgc02af98" class="outline-2">
-<h2 id="orgc02af98"><span class="section-number-2">4</span> Decidability</h2>
+<div id="outline-container-org207f0d0" class="outline-2">
+<h2 id="org207f0d0"><span class="section-number-2">4</span> Decidability</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 If a TM accepts a language then the language is <i>recognizable</i>. (<b>Recursively enumerable</b>)
@@ -500,8 +505,8 @@ Not all languages that <span class="underline">Turing-recongnizable</span> are d
 </div>
 </div>
 
-<div id="outline-container-orgb18fb75" class="outline-2">
-<h2 id="orgb18fb75"><span class="section-number-2">5</span> Halting problem</h2>
+<div id="outline-container-org6edd3dd" class="outline-2">
+<h2 id="org6edd3dd"><span class="section-number-2">5</span> Halting problem</h2>
 <div class="outline-text-2" id="text-5">
 <dl class="org-dl">
 <dt>Halting problem</dt><dd>The language HALT = {⟨M, w⟩ | M is a TM that accepts input w} is undecidable.</dd>
@@ -513,8 +518,8 @@ HALT is turing-recognizable.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd09a832" class="outline-2">
-<h2 id="orgd09a832"><span class="section-number-2">6</span> Time complexity</h2>
+<div id="outline-container-org41d7b11" class="outline-2">
+<h2 id="org41d7b11"><span class="section-number-2">6</span> Time complexity</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 Let g : ℝ⁺ → ℝ⁺. Then O(g(n)) is the set of functions f : ℝ⁺ → ℝ⁺ for
@@ -532,10 +537,55 @@ the inclusions above must be strict.
 </p>
 </div>
 </div>
+<div id="outline-container-orgd7e931e" class="outline-2">
+<h2 id="orgd7e931e"><span class="section-number-2">7</span> Space complexity</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+Let M be a halting Turing machine. The space complexity of M is the
+function f : ℕ → ℕ where f(n) is the max number of tape cells M scans
+on any input of length n (if non-deterministic, then max over all
+branches).
+</p>
+
+<p>
+Problems that require lots of space are usually harder than problems
+that require lots of time.
+</p>
+</div>
+<div id="outline-container-org2e530d0" class="outline-3">
+<h3 id="org2e530d0"><span class="section-number-3">7.1</span> Space classes</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+Let f : ℕ → ℝ⁺.
+</p>
+<ul class="org-ul">
+<li>SPACE(f(n)) := {Languages decided by O(f(n)) space TM}</li>
+<li>NSPACE(f(n)) := {Languages decided by O(f(n)) space non-det TM.}</li>
+<li>TIME(f(n)) := {Languages decided by O(f(n)) time}</li>
+<li>PSPACE = ⋃ₖ SPACE(nᵏ)</li>
+<li>NPSPACE = ⋃ₖ NSPACE(nᵏ)</li>
+<li>L = {uses log space for det TM}</li>
+<li>NL = {uses log space for non-det TM}</li>
+</ul>
+
+<p>
+Results:
+</p>
+<ul class="org-ul">
+<li>SAT ∈ SPACE(n) ⊂ PSPACE</li>
+<li>NL ⊆ P</li>
+<li id="Savitch's theorem">NSPACE(f(n)) ⊆ SPACE(f(n)²)</li>
+<li id="Corollary">PSPACE = NPSPACE</li>
+<li id="Inclusion chain">P ⊆ NP ⊆ PSPACE ⊆ EXPSPACE. But we know that P ⊂ EXPSPACE.</li>
+<li id="Also">co-PSPACE = PSPACE</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2020-10-15 Thu 12:40</p>
+<p class="date">Created: 2020-10-27 Tue 11:33</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

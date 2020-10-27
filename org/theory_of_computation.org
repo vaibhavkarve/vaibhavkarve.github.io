@@ -166,3 +166,28 @@ Because for example, O(n²) ⊂ O(n³).
 
 P ⊂ NP ⊂ PSPACE ⊂ EXPTIME P ≠ EXPTIME. Therefore, at least one other
 the inclusions above must be strict.
+* Space complexity
+Let M be a halting Turing machine. The space complexity of M is the
+function f : ℕ → ℕ where f(n) is the max number of tape cells M scans
+on any input of length n (if non-deterministic, then max over all
+branches).
+
+Problems that require lots of space are usually harder than problems
+that require lots of time.
+** Space classes
+Let f : ℕ → ℝ⁺.
+- SPACE(f(n)) := {Languages decided by O(f(n)) space TM}
+- NSPACE(f(n)) := {Languages decided by O(f(n)) space non-det TM.}
+- TIME(f(n)) := {Languages decided by O(f(n)) time}
+- PSPACE = ⋃ₖ SPACE(nᵏ)
+- NPSPACE = ⋃ₖ NSPACE(nᵏ)
+- L = {uses log space for det TM}
+- NL = {uses log space for non-det TM}
+
+Results:
+- SAT ∈ SPACE(n) ⊂ PSPACE
+- NL ⊆ P
+- Savitch's theorem :: NSPACE(f(n)) ⊆ SPACE(f(n)²)
+- Corollary :: PSPACE = NPSPACE
+- Inclusion chain :: P ⊆ NP ⊆ PSPACE ⊆ EXPSPACE. But we know that P ⊂ EXPSPACE.
+- Also :: co-PSPACE = PSPACE
