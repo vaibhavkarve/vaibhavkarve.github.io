@@ -37,6 +37,7 @@ $$|ψ\rangle = \sum_x \alpha_x |x, c(x)\rangle,$$
 where $\alpha_x = \sqrt{D(x)}$.
 
 * Stern sequence
+  Bruce Reznick has some notes on these at [[https://faculty.math.illinois.edu/~reznick/595-ch1.pdf][link]].
   #+BEGIN_SRC lean :eval no
   def s : ℕ → ℕ
   | 0 := 0
@@ -44,4 +45,3 @@ where $\alpha_x = \sqrt{D(x)}$.
   | 2n := s(n)
   | 2n+1 := s(n) + s(n+1)  
   #+END_SRC
-
