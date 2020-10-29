@@ -36,3 +36,12 @@ like (assuming X is discrete):
 $$|ψ\rangle = \sum_x \alpha_x |x, c(x)\rangle,$$
 where $\alpha_x = \sqrt{D(x)}$.
 
+* Stern sequence
+  #+BEGIN_SRC lean :eval no
+  def s : ℕ → ℕ
+  | 0 := 0
+  | 1 := 1
+  | 2n := s(n)
+  | 2n+1 := s(n) + s(n+1)  
+  #+END_SRC
+
