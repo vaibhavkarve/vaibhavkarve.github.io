@@ -9,7 +9,7 @@ website : htmls
 	git commit -m "auto-update webpages"
 	git push origin master
 
-org/CV.pdf : ~/org/ref/cv_october_2020/CV.pdf
+org/CV.pdf : ~/org/ref/cv_november_2020/CV.pdf
 	cp $< $@
 
 clean :
