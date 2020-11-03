@@ -45,3 +45,116 @@ where $\alpha_x = \sqrt{D(x)}$.
   | 2n := s(n)
   | 2n+1 := s(n) + s(n+1)  
   #+END_SRC
+* Hypertrees
+    - wiki :: https://en.wikipedia.org/wiki/Hypertree
+
+A _hypertree_ is a hypergraph whose _host graph_ is a tree. Equivalently, h is a
+hypertree if ∃ a tree t such that ∀ e ∈ h there is a corresponding subtree of t
+having the same vertex set as e.
+
+A connected graph g is a _host graph_ of a connected hypergraph h if every
+hyperedge of h induces a connected subgraph in g.
+
+As far as I can see, it is not very east to check if a hypergraph is a
+hypertree. However, there seem to be some equivalent
+graph-property-testing definitions for answering this question that
+are faster to check.
+* Circle packings
+** Circle packing -- a mathematical tale by Kenneth Stephenson
+- Type :: article
+- Reference :: https://www.math.utk.edu/~kens/Notices_article.pdf
+- Key idea :: Triangulation → Circle packing → Conformal mapping →
+              metric → geometry
+- Source :: This was communicated to Hirani by Nathan.
+*** Triangulations → Circle packing
+- Original idea :: from Thurston's "Note"
+
+The packing is a configuration of circles that are tangent to one
+another.
+
+Moreover, this packing is unique up to Möbius transformations and
+inversions of the sphere.
+
+*** Circle packing (combinatorial data) → Conformal mapping (geometric data)
+- Original idea :: "A finite Riemann mapping theorem", a talk by
+                   Thurston
+
+*** Setup
+- Notation ::
+  - $\mathbb{P}$ :: the sphere
+  - ℂ :: the euclidean plane
+  - $\mathbb{D}$ :: the unit disc
+
+_Complex:_ the tangency patterns for circle packings are encoded as
+abstract simplicial 2-complexes K. Assume K triangulates an
+oriented topological surface. (In Graphsat, these complexes are
+Hypergraphs).
+
+_(Circle) Packing:_ a packing P for K is a configuration of
+circles such that,
+- ∀ (v : Vertex) ∈ K, ∃ (c_v : Circle) such that
+- ∀ (⟨v, u⟩ : Edge) ∈ K, c_v and c_u are externally tangent.
+- ∀ (⟨v, u, w⟩: Positively-Oriented-Face) ∈ K, ⟨c_v, c_u, c_w⟩ are
+  positively-oriented-triple-of-tangent-circles.
+
+_Label:_ A label R of K is a map of Vertex → ℝ given by v ↦
+radius(c_v).
+
+The drawing can be constructed once we know K and R. The position of
+the vertices is not important, only the adjacencies in K matter. R
+needs to be computed.
+
+*** Computing the labels
+1. _Flower:_ a circle surrounding by its tangent circles. The "petals"
+   form an oriented chain of tangent circles. The chain is closed iff
+   the original circle is centered at an internal vertex of K.
+2. _Angle sum:_ θ_R(v) is the sum of all angles incident at the vertex
+   from the petals surrounding it. On other words, the sum is over all
+   faces that are incident at v.
+3. _Packing condition:_ for an interior vertex, the sum must add up to
+   some positive multiple of 2π.
+
+If K is simply connected, then the packing condition suffices to
+guarantee a packing. If not simply connected, then "global
+obstructions" become important.
+
+4. _Univalent packing_: ?? This part is unclear. Something to do local
+   vs. global. ??
+*** Note
+    I did not understand the rest of the article. 🤷
+** Circle Packing theorem
+- wiki :: https://en.wikipedia.org/wiki/Circle_packing_theorem
+- related to :: circle packing
+- also called :: Koebe-Andreev-Thurston theorem
+
+The interiors of a circle packing must be disjoint.
+Example image:
+https://en.wikipedia.org/wiki/File:Circle_packing_theorem_K5_minus_edge_example.svg
+
+
+_Circle packing theorem:_ For every connected simple planar graph G there is a
+circle packing in the plane whose intersection graph is (isomorphic to) G.
+
+_Koebe-Andreev-Thurston theorem:_ If G is a finite maximal planar graph, then
+the circle packing whose tangency graph is isomorphic to G is unique, up to
+Möbius transformations and reflections in lines.
+
+A _conformal map_ between two open sets in the plane or in a higher-dimensional
+space is a continuous function from one set to the other that preserves the
+angles between any two curves. The _Riemann mapping theorem_, formulated by
+Bernhard Riemann in 1851, states that, for any two open topological disks in the
+plane, there is a conformal map from one disk to the other.
+
+Thurston used circle packings to find a conformal mapping from an arbitrary open
+disk A to the interior of a circle. The mapping from one topological disk A to
+another disk B could then be found by composing the map from A to a circle with
+the inverse of the map from B to a circle.
+** Enumeration of triangulations of the disc by William G. Brown
+ - ref :: Enumeration of triangulations of the disk by William G. Brown (paper)
+
+ A triangulation of type [n, m] of a disc is a polyhedron Ω having (m+3) exterior
+ vertices and n interior vertices. Extrior edges are edges that have both
+ vertices exterior.
+
+ I checked [n, 0] triangulations.
+ They are always satisfiable for n ≤ 4.
