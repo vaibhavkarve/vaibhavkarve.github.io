@@ -158,3 +158,4 @@ the inverse of the map from B to a circle.
 
  I checked [n, 0] triangulations.
  They are always satisfiable for n ≤ 4.
+* Matrix multiplication
