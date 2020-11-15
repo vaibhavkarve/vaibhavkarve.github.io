@@ -12,6 +12,7 @@ satisfiability problem.
 - 2sat result arXiv version :: [[https://arxiv.org/abs/1812.10849][The complete set of minimal simple graphs that support unsatisfiable 2-CNFs]]
 - GitLab :: [[https://git.math.illinois.edu/hirani_group/home/-/tree/master/projects/sat][private repository]]
 - Slides from talk given at Theory of Computation reading group (UIUC Math) :: [[file:graphsat_and_other_decision_problems.pdf][GraphSAT and other decision problems]]
+- Slides from talk given at Logic seminar :: [[file:~/org/website/org/logic_seminar.pdf][GraphSAT for logic-oriented audiences]]
 
 * Definitions
 ** SAT
