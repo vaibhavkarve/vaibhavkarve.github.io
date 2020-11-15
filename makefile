@@ -12,5 +12,9 @@ website : htmls
 org/CV.pdf : ~/org/ref/cv_november_2020/CV.pdf
 	cp $< $@
 
+org/Teaching_Philosophy_Statement.pdf : ~/org/ref/teaching_statement_nov_2020/teaching_statement_nov_2020.pdf
+	cp $< $@
+
+
 clean :
 	rm -f index.html
