@@ -11,6 +11,7 @@ satisfiability problem.
 - 2sat result publication :: [[https://doi.org/10.1016/j.dam.2019.12.017][The complete set of minimal simple graphs that support unsatisfiable 2-CNFs]]
 - 2sat result arXiv version :: [[https://arxiv.org/abs/1812.10849][The complete set of minimal simple graphs that support unsatisfiable 2-CNFs]]
 - GitLab :: [[https://git.math.illinois.edu/hirani_group/home/-/tree/master/projects/sat][private repository]]
+- Slides from talk given at Theory of Computation reading group (UIUC Math) :: [[file:graphsat_and_other_decision_problems.pdf][GraphSAT and other decision problems]]
 
 * Definitions
 ** SAT
@@ -33,9 +34,9 @@ satisfiability problem.
    Example:
    \[(a\vee \neg b) \wedge (b \vee \neg c)
      \wedge (\neg a \vee \neg c)\wedge d \longmapsto (ab),(bc),(ac),(d)\]
-   
+
    Here, $(d)$ should be interpreted as a loop at the vertex d.
- 
+
    Table summarizing the effect of $\pi$:
    | Concepts in the CNF world | Concepts in the Graph world |
    |---------------------------+-----------------------------|
@@ -56,7 +57,7 @@ satisfiability problem.
   I have formalized the definition of graph satisfiability in Lean.  I
   am working on project called =leansat= formalizing some of my 2-sat
   results in Lean.
-  
+
   #+CAPTION: The definition of a satisfiable graph in Lean.
   #+NAME: fig:graphsat_in_lean.png
   [[../img/graphsat_in_lean.png]]
