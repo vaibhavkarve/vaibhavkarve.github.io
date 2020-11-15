@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-11-13 Fri 15:51 -->
+<!-- 2020-11-15 Sun 09:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Multiprocessing in Python</title>
@@ -238,23 +238,23 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb100c62">1. Introduction</a></li>
-<li><a href="#orge688d8d">2. Start methods</a>
+<li><a href="#orgc24f98a">1. Introduction</a></li>
+<li><a href="#org46907f8">2. Start methods</a>
 <ul>
-<li><a href="#org2912d26">2.1. <code>spawn</code></a></li>
-<li><a href="#org20b8410">2.2. <code>fork</code></a></li>
-<li><a href="#orgb96118e">2.3. <code>forkserver</code></a></li>
-<li><a href="#org527953a">2.4. Verdict</a></li>
+<li><a href="#org6d2237f">2.1. <code>spawn</code></a></li>
+<li><a href="#org369417b">2.2. <code>fork</code></a></li>
+<li><a href="#org7da22dc">2.3. <code>forkserver</code></a></li>
+<li><a href="#org32eea0c">2.4. Verdict</a></li>
 </ul>
 </li>
-<li><a href="#org5540b4d">3. Communication between processes</a>
+<li><a href="#orgc0d3afa">3. Communication between processes</a>
 <ul>
-<li><a href="#orgbe7efc4">3.1. Queue</a>
+<li><a href="#orgd199d5b">3.1. Queue</a>
 <ul>
-<li><a href="#org4092c4e">3.1.1. Putting many queues inside(?) a single process</a></li>
+<li><a href="#orga868cd4">3.1.1. Putting many queues inside(?) a single process</a></li>
 </ul>
 </li>
-<li><a href="#org4c5038a">3.2. Pipe</a></li>
+<li><a href="#org616cb57">3.2. Pipe</a></li>
 </ul>
 </li>
 </ul>
@@ -264,8 +264,8 @@ for the JavaScript code in this tag.
 <dt>Python documentation</dt><dd><a href="https://docs.python.org/3/library/multiprocessing.html">multiprocessing module</a></dd>
 </dl>
 
-<div id="outline-container-orgb100c62" class="outline-2">
-<h2 id="orgb100c62"><span class="section-number-2">1</span> Introduction</h2>
+<div id="outline-container-orgc24f98a" class="outline-2">
+<h2 id="orgc24f98a"><span class="section-number-2">1</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 The <code>multiprocessing</code> module (MP) spawns sub-processes insteads of threads.  Can be
@@ -276,14 +276,14 @@ processes.
 </div>
 </div>
 
-<div id="outline-container-orge688d8d" class="outline-2">
-<h2 id="orge688d8d"><span class="section-number-2">2</span> Start methods</h2>
+<div id="outline-container-org46907f8" class="outline-2">
+<h2 id="org46907f8"><span class="section-number-2">2</span> Start methods</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Can be set as follows.
 </p>
 <div class="org-src-container">
-<pre class="src src-python" id="orgf2564f7"><span class="org-keyword">import</span> multiprocessing <span class="org-keyword">as</span> mp
+<pre class="src src-python" id="orgaa1e089"><span class="org-keyword">import</span> multiprocessing <span class="org-keyword">as</span> mp
 
 <span class="org-keyword">def</span> <span class="org-function-name">foo</span>(q):
     <span class="org-keyword">pass</span>
@@ -304,8 +304,8 @@ Can be set as follows.
 </p>
 </div>
 
-<div id="outline-container-org2912d26" class="outline-3">
-<h3 id="org2912d26"><span class="section-number-3">2.1</span> <code>spawn</code></h3>
+<div id="outline-container-org6d2237f" class="outline-3">
+<h3 id="org6d2237f"><span class="section-number-3">2.1</span> <code>spawn</code></h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Parent process starts a fresh python interpreter each time. This is
@@ -315,8 +315,8 @@ the <code>multiprocessing.Process.run</code> method.
 </div>
 </div>
 
-<div id="outline-container-org20b8410" class="outline-3">
-<h3 id="org20b8410"><span class="section-number-3">2.2</span> <code>fork</code></h3>
+<div id="outline-container-org369417b" class="outline-3">
+<h3 id="org369417b"><span class="section-number-3">2.2</span> <code>fork</code></h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Parent process forks the python interpreter using <code>os.fork()</code>. All
@@ -337,8 +337,8 @@ This is available on Unix only.
 </div>
 </div>
 
-<div id="outline-container-orgb96118e" class="outline-3">
-<h3 id="orgb96118e"><span class="section-number-3">2.3</span> <code>forkserver</code></h3>
+<div id="outline-container-org7da22dc" class="outline-3">
+<h3 id="org7da22dc"><span class="section-number-3">2.3</span> <code>forkserver</code></h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 When the program starts, using this method, a server process is
@@ -354,8 +354,8 @@ Similar to <code>fork</code>, this is available on Unix only.
 </div>
 </div>
 
-<div id="outline-container-org527953a" class="outline-3">
-<h3 id="org527953a"><span class="section-number-3">2.4</span> Verdict</h3>
+<div id="outline-container-org32eea0c" class="outline-3">
+<h3 id="org32eea0c"><span class="section-number-3">2.4</span> Verdict</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 I will be using <code>forkserver</code> for my programs.
@@ -364,15 +364,15 @@ I will be using <code>forkserver</code> for my programs.
 </div>
 </div>
 
-<div id="outline-container-org5540b4d" class="outline-2">
-<h2 id="org5540b4d"><span class="section-number-2">3</span> Communication between processes</h2>
+<div id="outline-container-orgc0d3afa" class="outline-2">
+<h2 id="orgc0d3afa"><span class="section-number-2">3</span> Communication between processes</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 MP allows exchange of objects between processes.
 </p>
 </div>
-<div id="outline-container-orgbe7efc4" class="outline-3">
-<h3 id="orgbe7efc4"><span class="section-number-3">3.1</span> Queue</h3>
+<div id="outline-container-orgd199d5b" class="outline-3">
+<h3 id="orgd199d5b"><span class="section-number-3">3.1</span> Queue</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Use <code>mp.Queue</code> instead of <code>queue.Queue</code>.
@@ -390,7 +390,7 @@ another function as in <code>len(q.get())</code> to get the length of our
 list.</li>
 </ol>
 <div class="org-src-container">
-<pre class="src src-python" id="org28ba4fd"><span class="org-keyword">import</span> multiprocessing <span class="org-keyword">as</span> mp
+<pre class="src src-python" id="org3a77ea9"><span class="org-keyword">import</span> multiprocessing <span class="org-keyword">as</span> mp
 
 <span class="org-variable-name">q</span> = mp.Queue()
 <span class="org-keyword">print</span>(q)
@@ -401,8 +401,8 @@ q.put([1, <span class="org-string">'a'</span>, 2])
 </div>
 
 
-<div id="outline-container-org4092c4e" class="outline-4">
-<h4 id="org4092c4e"><span class="section-number-4">3.1.1</span> Putting many queues inside(?) a single process</h4>
+<div id="outline-container-orga868cd4" class="outline-4">
+<h4 id="orga868cd4"><span class="section-number-4">3.1.1</span> Putting many queues inside(?) a single process</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <ol class="org-ol">
 <li>Start a process using <code>p = mp.Process(target=putter, arg=q)</code>, where
@@ -413,7 +413,7 @@ q.put([1, <span class="org-string">'a'</span>, 2])
 </ol>
 
 <div class="org-src-container">
-<pre class="src src-python" id="orgfcd7fa9"><span class="org-keyword">def</span> <span class="org-function-name">putter</span>(q: mp.queues.Queue, value):
+<pre class="src src-python" id="orge09df39"><span class="org-keyword">def</span> <span class="org-function-name">putter</span>(q: mp.queues.Queue, value):
     q.put(value)
 
 <span class="org-keyword">if</span> <span class="org-builtin">__name__</span> == <span class="org-string">'__main__'</span>:
@@ -431,8 +431,8 @@ q.put([1, <span class="org-string">'a'</span>, 2])
 </div>
 </div>
 
-<div id="outline-container-org4c5038a" class="outline-3">
-<h3 id="org4c5038a"><span class="section-number-3">3.2</span> Pipe</h3>
+<div id="outline-container-org616cb57" class="outline-3">
+<h3 id="org616cb57"><span class="section-number-3">3.2</span> Pipe</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 The <code>Pipe()</code> function returns a two-way connection by returning a pair
@@ -448,7 +448,7 @@ Each connection object has a <code>send()</code> and <code>recv()</code> method.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2020-11-13 Fri 15:51</p>
+<p class="date">Created: 2020-11-15 Sun 09:46</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
