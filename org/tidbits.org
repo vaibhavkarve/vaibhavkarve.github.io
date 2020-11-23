@@ -185,3 +185,13 @@ the inverse of the map from B to a circle.
  I checked [n, 0] triangulations.
  They are always satisfiable for n ≤ 4.
 * Matrix multiplication
+* Presburger arithmetic
+Peano's axioms are not decidable.
+
+Presburger Arithmetic (PA) are less powerful than Peano's.
+PA is consistent
+PA is complete
+PA is decidable
+PA has quantifier eliminanion
+
+PA := ⟨ℤ, +, ≤⟩ is a first order theory for natural numbers.

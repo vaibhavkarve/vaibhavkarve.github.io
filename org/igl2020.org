@@ -8,7 +8,7 @@ In this project, we formalize first-order logic, languages, structures
 and models in Lean. This project is being run as part of the Illinois
 Geometry Lab at UIUC.
 
-- GitHub code repository :: [[https:github.com/vaibhavkarve/igl2020][github.com/vaibhavkarve/igl2020]]
+- GitHub code repository :: [[https://github.com/vaibhavkarve/igl2020][/vaibhavkarve/igl2020]]
 
 * Collaborators
 - Eion Blanchard
