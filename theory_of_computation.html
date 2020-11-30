@@ -238,15 +238,15 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc44a470">1. Finite automata</a></li>
-<li><a href="#org44b8812">2. Regular expressions</a></li>
-<li><a href="#orgc43254b">3. Turing Machines</a></li>
-<li><a href="#org7d0acdf">4. Decidability</a></li>
-<li><a href="#orgb574f66">5. Halting problem</a></li>
-<li><a href="#org51d65b1">6. Time complexity</a></li>
-<li><a href="#org3cd8e1f">7. Space complexity</a>
+<li><a href="#org552894c">1. Finite automata</a></li>
+<li><a href="#orgf6328ad">2. Regular expressions</a></li>
+<li><a href="#org6deaec3">3. Turing Machines</a></li>
+<li><a href="#orgd006080">4. Decidability</a></li>
+<li><a href="#org713510f">5. Halting problem</a></li>
+<li><a href="#orgf7cf956">6. Time complexity</a></li>
+<li><a href="#org17f57fe">7. Space complexity</a>
 <ul>
-<li><a href="#orgc1c6622">7.1. Space classes</a></li>
+<li><a href="#orgc02ebb6">7.1. Space classes</a></li>
 </ul>
 </li>
 </ul>
@@ -261,8 +261,8 @@ Notes taken from Reading Group
 computation</dd>
 </dl>
 
-<div id="outline-container-orgc44a470" class="outline-2">
-<h2 id="orgc44a470"><span class="section-number-2">1</span> Finite automata</h2>
+<div id="outline-container-org552894c" class="outline-2">
+<h2 id="org552894c"><span class="section-number-2">1</span> Finite automata</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Part 1 will be Computability. Part 2 will be Complexity.
@@ -336,8 +336,8 @@ P(Q) is not going to be an issue.</dd>
 </div>
 </div>
 
-<div id="outline-container-org44b8812" class="outline-2">
-<h2 id="org44b8812"><span class="section-number-2">2</span> Regular expressions</h2>
+<div id="outline-container-orgf6328ad" class="outline-2">
+<h2 id="orgf6328ad"><span class="section-number-2">2</span> Regular expressions</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 They are another way to represent a regular language.  ∅ is the
@@ -406,8 +406,8 @@ Non-example of CFG is: {aⁿbⁿcⁿ : n ∈ ℕ}.
 </div>
 </div>
 
-<div id="outline-container-orgc43254b" class="outline-2">
-<h2 id="orgc43254b"><span class="section-number-2">3</span> Turing Machines</h2>
+<div id="outline-container-org6deaec3" class="outline-2">
+<h2 id="org6deaec3"><span class="section-number-2">3</span> Turing Machines</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Similar to DFA but has unlimited and unrestricted memory. The stack is
@@ -455,8 +455,8 @@ For non-deterministic TM,
 </div>
 </div>
 
-<div id="outline-container-org7d0acdf" class="outline-2">
-<h2 id="org7d0acdf"><span class="section-number-2">4</span> Decidability</h2>
+<div id="outline-container-orgd006080" class="outline-2">
+<h2 id="orgd006080"><span class="section-number-2">4</span> Decidability</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 If a TM accepts a language then the language is <i>recognizable</i>. (<b>Recursively enumerable</b>)
@@ -505,8 +505,8 @@ Not all languages that <span class="underline">Turing-recongnizable</span> are d
 </div>
 </div>
 
-<div id="outline-container-orgb574f66" class="outline-2">
-<h2 id="orgb574f66"><span class="section-number-2">5</span> Halting problem</h2>
+<div id="outline-container-org713510f" class="outline-2">
+<h2 id="org713510f"><span class="section-number-2">5</span> Halting problem</h2>
 <div class="outline-text-2" id="text-5">
 <dl class="org-dl">
 <dt>Halting problem</dt><dd>The language HALT = {⟨M, w⟩ | M is a TM that accepts input w} is undecidable.</dd>
@@ -518,8 +518,8 @@ HALT is turing-recognizable.
 </p>
 </div>
 </div>
-<div id="outline-container-org51d65b1" class="outline-2">
-<h2 id="org51d65b1"><span class="section-number-2">6</span> Time complexity</h2>
+<div id="outline-container-orgf7cf956" class="outline-2">
+<h2 id="orgf7cf956"><span class="section-number-2">6</span> Time complexity</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 Let g : ℝ⁺ → ℝ⁺. Then O(g(n)) is the set of functions f : ℝ⁺ → ℝ⁺ for
@@ -537,8 +537,8 @@ the inclusions above must be strict.
 </p>
 </div>
 </div>
-<div id="outline-container-org3cd8e1f" class="outline-2">
-<h2 id="org3cd8e1f"><span class="section-number-2">7</span> Space complexity</h2>
+<div id="outline-container-org17f57fe" class="outline-2">
+<h2 id="org17f57fe"><span class="section-number-2">7</span> Space complexity</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 Let M be a halting Turing machine. The space complexity of M is the
@@ -552,8 +552,8 @@ Problems that require lots of space are usually harder than problems
 that require lots of time.
 </p>
 </div>
-<div id="outline-container-orgc1c6622" class="outline-3">
-<h3 id="orgc1c6622"><span class="section-number-3">7.1</span> Space classes</h3>
+<div id="outline-container-orgc02ebb6" class="outline-3">
+<h3 id="orgc02ebb6"><span class="section-number-3">7.1</span> Space classes</h3>
 <div class="outline-text-3" id="text-7-1">
 <p>
 Let f : ℕ → ℝ⁺.
