@@ -45,7 +45,10 @@ in $H_j$.
 
 G has an H minor iff there exists a model of H in G.
 
-
+** Graph isomorphism
+   The graph isomorphism problem is known to be in NP but is one of
+   the few problems for which we don't know if it is also in P or in
+   NP-complete.
 * Quantum computing
 ** PAC learning model
 - concept ≡ feature; c : X → {0, 1}
@@ -184,7 +187,6 @@ the inverse of the map from B to a circle.
 
  I checked [n, 0] triangulations.
  They are always satisfiable for n ≤ 4.
-* Matrix multiplication
 * Presburger arithmetic
 Peano's axioms are not decidable.
 
