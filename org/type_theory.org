@@ -1,0 +1,21 @@
+#+title: Type theory
+#+options: toc:2 H:2
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+#+subtitle: [[file:index.org][Home]]
+
+* The Curry-Howard Isomorphism
+
+| Type theory     | Set theory         | Logic             |
+|-----------------+--------------------+-------------------|
+| A : Type        | set                | proposition       |
+| a : A           | element            | proof             |
+| A → B           | set of functions   | implication       |
+| A × B           | cartesian product  | conjunction       |
+| A + B           | disjoint union     | disjunction       |
+| unit            | singleton          | ⊤                 |
+| empty           | ∅                  | ⊥                 |
+|                 |                    |                   |
+| x:A ⊢ B(x):Type | \{B_x\}_{x ∈ A}    | predicate         |
+| x:A ⊢ b(x):B(x) | family of elements | conditional proof |
+| Σ (x:A), B(x)   | ⊔_{x ∈ A} B_x      | ∃ (x : A), B(x)   |
+| Π (x:A), B(x)   | Π_{x ∈ A} B_x      | ∀ (x : A), B(x)   |
