@@ -68,6 +68,7 @@ interactive theorem proving (in particular, with the Lean theorem prover).
   - [[file:python_multiprocessing.org][Python multiprocessing]]
   - [[file:pytype.org][Python's type theory]]
   - [[file:theory_of_computation.org][Theory of computation]]
+  - [[file:type_theory.org][Type theory]]
 
 * Everything else
 - [[file:6174.org][6174 : Kaprekar's constant visualized]]
