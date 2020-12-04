@@ -15,7 +15,7 @@
 | unit            | singleton          | ⊤                 |
 | empty           | ∅                  | ⊥                 |
 |                 |                    |                   |
-| x:A ⊢ B(x):Type | \{B_x\}_{x ∈ A}    | predicate         |
+| x:A ⊢ B(x):Type | {B_x}_{x ∈ A}      | predicate         |
 | x:A ⊢ b(x):B(x) | family of elements | conditional proof |
 | Σ (x:A), B(x)   | ⊔_{x ∈ A} B_x      | ∃ (x : A), B(x)   |
 | Π (x:A), B(x)   | Π_{x ∈ A} B_x      | ∀ (x : A), B(x)   |
