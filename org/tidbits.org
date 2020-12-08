@@ -222,3 +222,72 @@ General classification of problems in complexity theory --
 - Representation :: efficient, compact encoding
 - Decomposition :: split objects into smallest number of simple objects
 - Dimension :: embed objects into smallest number of one-dimensional objects
+* Partition function and related functions
+The partition function counts the number of partitions of an integer n
+
+\begin{align*}
+  5 &= 5 \\
+    &= 4+1 \\
+    &= 3+2 \\
+    &= 3+1+1 \\
+    &= 2+2+1 \\
+    &= 2+1+1+1 \\
+    &= 1+1+1+1+1
+\end{align*}
+
+∴ p(5) = 7.
+
+** Asymptotic formula for p(n)
+ This is due to Hardy-Ramanujan asymptotic.
+ \[p(n) \sim \frac{1}{4n\sqrt{3}}e^{\pi\sqrt{2n/3}}\]
+
+** Congruences due to Ramanujan
+ 1. p(5k+4) ≡ 0 mod 5
+ 2. p(7k+5) ≡ 0 mod 7
+ 3. p(11k+6) ≡ 0 mod 11
+
+** Recurrence relation for p(n)
+ \[p(n) = \frac{1}{n}\sum_{k=0}^{n-1}\sigma(n-k)p(k),\]
+ where \(\sigma\) is the sum of divisors.
+
+** Rademacher's formula
+  \[p(n) =
+  2\pi(24n-1)^{3/4}\sum_{c=1}^\infty\frac{A_c(n)}{c}I_{3/2}\left(\frac{\lambda(n)}{c}\right),\]
+
+ where \(A_c(n)\) is the generalized Kloosterman sum and \(I_{3/2}\) is
+ the \(3/2\)-I-Bessel function.
+
+** k-colored partition function
+ \(p_k(n) := k\)-colored partition function.
+
+*** Example
+    \begin{align*}
+      2 &= 2_r \\
+	&= 2_b \\
+	&= 1_r + 1_r \\
+	&= 1_b + 1_b \\
+	&= 1_r + 1_b
+    \end{align*}
+
+ ∴ \(p_2(2) = 5\)
+
+** Smallest parts function
+ \(spt(n)\) counts the number of smallest parts among the partitions of n.
+
+ \begin{align*}
+   5 &= \textbf{5} \\
+     &= 4+\textbf{1} \\
+     &= 3+\textbf{2} \\
+     &= 3+\textbf{1}+\textbf{1} \\
+     &= 2+2+\textbf{1} \\
+     &= 2+\textbf{1}+\textbf{1}+\textbf{1} \\
+     &= \textbf{1}+\textbf{1}+\textbf{1}+\textbf{1}+\textbf{1}
+ \end{align*}
+
+ ∴ \()spt(5) = 14\).
+
+*** Asymptotics
+ It is surprising that the small parts function has "nice"
+ assymptotics/recurrence etc.
+
+ \[spt(n) \sim \frac{\sqrt{6}}{\pi}\sqrt{n}p(n)\]
