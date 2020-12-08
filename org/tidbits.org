@@ -62,10 +62,10 @@ Note also that --
 where \(cc^1\) is the clieque chromatic index of $G$.
 
 Note how it is easier to define the Prague dimension for the
-[[complement graph]] than for the graph directly.
-** complement graph
+[[Complement graph][complement graph]] than for the graph directly.
+** Complement graph
 Let $G_{n,p}$ denote the binomial random graph i.e. pick from
-\(\choose{n}{2}\) edges randomly with probability \(p\).
+\(\binom{n}{2}\) edges randomly with probability \(p\).
 
 The complement graph of \(G_{n,p}\) is \(G_{n,1-p}\).
 
