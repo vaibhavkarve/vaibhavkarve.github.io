@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-12-04 Fri 11:38 -->
+<!-- 2020-12-08 Tue 14:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Graph Satisfiability</title>
@@ -260,10 +260,10 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd3f335f">1. Definitions</a></li>
-<li><a href="#org1272347">2. In Lean</a></li>
-<li><a href="#org389c20b">3. In Python</a></li>
-<li><a href="#org7c4ef43">4. In Haskell</a></li>
+<li><a href="#org0935d02">1. Definitions</a></li>
+<li><a href="#org748628a">2. In Lean</a></li>
+<li><a href="#orgdecd354">3. In Python</a></li>
+<li><a href="#orgfb8dcc0">4. In Haskell</a></li>
 </ul>
 </div>
 </div>
@@ -281,12 +281,12 @@ satisfiability problem.
 </dl>
 
 
-<div id="outline-container-orgd3f335f" class="outline-2">
-<h2 id="orgd3f335f"><span class="section-number-2">1</span> Definitions</h2>
+<div id="outline-container-org0935d02" class="outline-2">
+<h2 id="org0935d02"><span class="section-number-2">1</span> Definitions</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org031148e" class="outline-3">
-<h3 id="org031148e"><span class="section-number-3">1.1</span> SAT</h3>
+<div id="outline-container-org766673a" class="outline-3">
+<h3 id="org766673a"><span class="section-number-3">1.1</span> SAT</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 We pick a countable set and call it our set of variables.
@@ -309,8 +309,8 @@ satisfies it.  Otherwise it is <i>unsatisfiable</i>.
 </div>
 </div>
 
-<div id="outline-container-org680af6b" class="outline-3">
-<h3 id="org680af6b"><span class="section-number-3">1.2</span> \(\pi: CNFs \rightarrow Graphs\)</h3>
+<div id="outline-container-orgf857358" class="outline-3">
+<h3 id="orgf857358"><span class="section-number-3">1.2</span> \(\pi: CNFs \rightarrow Graphs\)</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 For every CNF we define a multi-hypergraph by erasing all negating
@@ -385,8 +385,8 @@ Table summarizing the effect of \(\pi\):
 </div>
 </div>
 
-<div id="outline-container-org092318b" class="outline-3">
-<h3 id="org092318b"><span class="section-number-3">1.3</span> Graphsat</h3>
+<div id="outline-container-org5c8fba6" class="outline-3">
+<h3 id="org5c8fba6"><span class="section-number-3">1.3</span> Graphsat</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 A multi-hypergraph \(G\) is <i>satisfiable</i> if the set \(\pi^{-1}(G)\)
@@ -397,8 +397,8 @@ satisfiable. Otherwise it is unsatisfiable.
 </div>
 </div>
 
-<div id="outline-container-org1272347" class="outline-2">
-<h2 id="org1272347"><span class="section-number-2">2</span> In Lean</h2>
+<div id="outline-container-org748628a" class="outline-2">
+<h2 id="org748628a"><span class="section-number-2">2</span> In Lean</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 I have formalized the definition of graph satisfiability in Lean.  I
@@ -407,7 +407,7 @@ results in Lean.
 </p>
 
 
-<div id="orge5817b8" class="figure">
+<div id="org238ee9b" class="figure">
 <p><img src="../img/graphsat_in_lean.png" alt="graphsat_in_lean.png" />
 </p>
 <p><span class="figure-number">Figure 1: </span>The definition of a satisfiable graph in Lean.</p>
@@ -415,8 +415,8 @@ results in Lean.
 </div>
 </div>
 
-<div id="outline-container-org389c20b" class="outline-2">
-<h2 id="org389c20b"><span class="section-number-2">3</span> In Python</h2>
+<div id="outline-container-orgdecd354" class="outline-2">
+<h2 id="orgdecd354"><span class="section-number-2">3</span> In Python</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 I have created a python3.8 package called <code>graphsat</code> that can perform computations on
@@ -427,8 +427,8 @@ experimentation and computation.
 </div>
 </div>
 
-<div id="outline-container-org7c4ef43" class="outline-2">
-<h2 id="org7c4ef43"><span class="section-number-2">4</span> In Haskell</h2>
+<div id="outline-container-orgfb8dcc0" class="outline-2">
+<h2 id="orgfb8dcc0"><span class="section-number-2">4</span> In Haskell</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 I am attempting to translate <code>graphsat</code> in Haskell as well. This is
@@ -439,7 +439,7 @@ still a work in progress.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: <a href="../index.html">Vaibhav Karve</a></p>
-<p class="date">Created: 2020-12-04 Fri 11:38</p>
+<p class="date">Created: 2020-12-08 Tue 14:39</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

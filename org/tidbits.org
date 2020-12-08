@@ -49,6 +49,26 @@ G has an H minor iff there exists a model of H in G.
    The graph isomorphism problem is known to be in NP but is one of
    the few problems for which we don't know if it is also in P or in
    NP-complete.
+** Prague dimension of graphs
+Is NP-hard to determine
+
+Let G^c denote the complement of a graph G.  Then the _Prague
+dimention_ is denoted \(dim_p(G^c)\) and is the minimum \(k\) such
+that ∃ a clique edge-coloring $C$ of $G$ which can be $k$-colored,
+i.e. all cliques in each color class are vertex-disjoint.
+
+Note also that --
+ \[dim_p(G^c) = \min_{C\text{ of }G}\chi^1(G) = cc^1(G),\]
+where \(cc^1\) is the clieque chromatic index of $G$.
+
+Note how it is easier to define the Prague dimension for the
+[[complement graph]] than for the graph directly.
+** complement graph
+Let $G_{n,p}$ denote the binomial random graph i.e. pick from
+\(\choose{n}{2}\) edges randomly with probability \(p\).
+
+The complement graph of \(G_{n,p}\) is \(G_{n,1-p}\).
+
 * Quantum computing
 ** PAC learning model
 - concept ≡ feature; c : X → {0, 1}
@@ -197,3 +217,8 @@ PA is decidable
 PA has quantifier eliminanion
 
 PA := ⟨ℤ, +, ≤⟩ is a first order theory for natural numbers.
+* Complexity
+General classification of problems in complexity theory --
+- Representation :: efficient, compact encoding
+- Decomposition :: split objects into smallest number of simple objects
+- Dimension :: embed objects into smallest number of one-dimensional objects
