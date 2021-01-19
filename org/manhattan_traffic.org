@@ -12,8 +12,9 @@ distinct /traffic signatures/.
 
 - GitLab code repository :: [[https://gitlab-beta.engr.illinois.edu/TrafficPatterns/CSNMF][gitlab-beta.engr.illinois.edu/TrafficPatterns/CSNMF]]
 - Original data files :: [[https://doi.org/10.13012/B2IDB-4900670_V1][doi.org/10.13012/B2IDB-4900670_V1]]
+- to appear in the Journal of Big Data Analytics in Transportation :: Seasonal Disorder in Urban Traffic Patterns: a low rank analysis
 
-A manuscript for this project has been submitted for publication and
+A manuscript for this project is set to be published been submitted for publication and
 is pending review.
 
 The [[file:congestion_barcodes.org][congestion barcodes project]] was an offshoot of this work.
