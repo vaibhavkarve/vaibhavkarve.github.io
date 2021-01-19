@@ -40,37 +40,35 @@ My publications listed at [[https://math.illinois.edu/graduate-papers][UIUC math
   - Classical constructions @ Summer Illinois Math Camp, UIUC
   - Past courses
 
-
 * Notes
-  These are mostly notes I have taken as part of self-studying various
-  things. They are not meant to be comprehensive notes -- just a
-  collection of things I found interesting at different times and
-  wished to keep a record of.
-  - [[file:algebraic_geometry.pdf][Algebraic geometry]]
-  - [[file:algebraic_topology.pdf][Algebraic topology]]
-  - [[file:boolean_satisfiability.org][Boolean satisfiability]]
-  - [[file:category_theory_and_haskell.pdf][Category theory and haskell]]
-  - [[file:combinatorial_vector_fields.pdf][Combinatorial vector fields]]
-  - [[file:coq.pdf][Coq]]
-  - [[file:esperanto.pdf][Esperanto]]
-  - [[file:geometry.org][Geometry]]
-  - [[file:git_workflow.org][Git workflow]]
-  - [[file:haskell.pdf][Haskell]]
-  - [[file:homology.pdf][Homology]]
-  - How I set up this website
-    - followed the steps [[https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html][here]],
-    - also set up the sitemap.
-  - [[file:lambda_calculus.pdf][Lambda calculus]]
-  - Logic
-  - [[file:lua.pdf][Lua]]
-  - [[file:tidbits.org][Mathematical tidbits]]
-  - [[file:model_theory.org][Model theory]]
-  - [[file:persistent_homology.pdf][Persistent homology]]
-  - [[file:philosophy.pdf][Philosophy]]
-  - [[file:python_multiprocessing.org][Python multiprocessing]]
-  - [[file:pytype.org][Python's type theory]]
-  - [[file:theory_of_computation.org][Theory of computation]]
-  - [[file:type_theory.org][Type theory]]
+These are mostly notes I have taken as part of self-studying various
+things. They are not meant to be comprehensive notes -- just a collection of
+things I found interesting at different times and wished to keep a record of.
+- [[file:algebraic_geometry.pdf][Algebraic geometry]]
+- [[file:algebraic_topology.pdf][Algebraic topology]]
+- [[file:boolean_satisfiability.org][Boolean satisfiability]]
+- [[file:category_theory_and_haskell.pdf][Category theory and haskell]]
+- [[file:combinatorial_vector_fields.pdf][Combinatorial vector fields]]
+- [[file:coq.pdf][Coq]]
+- [[file:esperanto.pdf][Esperanto]]
+- [[file:geometry.org][Geometry]]
+- [[file:git_workflow.org][Git workflow]]
+- [[file:haskell.pdf][Haskell]]
+- [[file:homology.pdf][Homology]]
+- How I set up this website
+  - followed the steps [[https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html][here]],
+  - also set up the sitemap.
+- [[file:lambda_calculus.pdf][Lambda calculus]]
+- Logic
+- [[file:lua.pdf][Lua]]
+- [[file:tidbits.org][Mathematical tidbits]]
+- [[file:model_theory.org][Model theory]]
+- [[file:persistent_homology.pdf][Persistent homology]]
+- [[file:philosophy.pdf][Philosophy]]
+- [[file:python_multiprocessing.org][Python multiprocessing]]
+- [[file:pytype.org][Python's type theory]]
+- [[file:theory_of_computation.org][Theory of computation]]
+- [[file:type_theory.org][Type theory]]
 
 * Everything else
 - [[file:6174.org][6174 : Kaprekar's constant visualized]]
@@ -83,6 +81,6 @@ My publications listed at [[https://math.illinois.edu/graduate-papers][UIUC math
 - Photos from conferences
 - My Klein bottle
 - [[https://goodreads.com/vaibhavkarve][My Goodreads profile]]
-* Footnotes
 
+* Footnotes
 [fn:1] this work was funded in Fall 2020 by the [[https://math.illinois.edu/academics/graduate-program/funding/graduate-awards-and-fellowships/david-g-bourgin-mathematics][David G. Bourgin Mathematics Fellowship]].

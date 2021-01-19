@@ -21,7 +21,7 @@ This research was conducted as part of the Illinois Geometry
 Laboratory's 2017 program.  It was an offshoot of the much larger
 [[file:manhattan_traffic.html][Manhattan traffic]] project.
 
-Below is a short video that visualizes the ideas that came from this project
+Below is a short video that visualizes the topology of traffic.
 #+begin_export html
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xZFWk8LBXEE"
 frameborder="0" allow="accelerometer; autoplay; clipboard-write;
