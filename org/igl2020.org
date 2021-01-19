@@ -22,7 +22,7 @@ the Illinois Geometry Lab at UIUC.
 - Fenglong Zhao
 
 
-* Talk given at LeanTogether 2021
+* Talk given at the LeanTogether 2021 conference
 #+begin_export html
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pMCZFrii4lA"
 frameborder="0" allow="accelerometer; autoplay; clipboard-write;
