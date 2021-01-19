@@ -5,9 +5,11 @@
 
 Name in Devanagari: वैभव कर्वे \nbsp{}\nbsp{} Name in IPA: ʋəibʱəʋə kərʋeː
 
-I am a PhD student at the [[https://math.illinois.edu][Department of Mathematics]] at the
-University of Illinois at Urbana-Champaign.  My PhD advisor is [[https://faculty.math.illinois.edu/~hirani/][Anil
-Hirani]].
+I am a PhD candidate at the [[https://math.illinois.edu][Department of Mathematics]] at the University of
+Illinois at Urbana-Champaign.  My PhD advisor is [[https://faculty.math.illinois.edu/~hirani/][Anil Hirani]].
+
+*I am currently on the job market for postdocs in Mathematics as well as
+Theoretical CS!*
 
 My research interests lie in graph theory, logic, algorithms and
 computational topology.  I am currently writing my doctoral thesis,
