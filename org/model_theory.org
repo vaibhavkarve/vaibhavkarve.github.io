@@ -7,6 +7,7 @@
 - Book :: Open logic project [[http://builds.openlogicproject.org/open-logic-complete.pdf][link to built pdf]] (chapters 14 and 15)
 - Wikipedia :: First order logic [[https://en.wikipedia.org/wiki/First-order_logic][link]]
 
+
 * Basic concepts
 Syntax and semantics of expressions → first-order logic (FOL) → theory and
 metatheory of FOL.
@@ -51,4 +52,3 @@ An \(\mathcal{L}\)-/structure/ \(\mathcal{M}\) is given by the following data:
 3. an interpretation for each \(r \in R\) i.e, a set
    \(R^\mathcal{M}\subseteq M^{n_r}\) for each \(r\).
 4. an element \(c^\mathcal{M} \in M\) for each \(c\in C\).
-

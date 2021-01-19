@@ -4,9 +4,9 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
 #+subtitle: [[../index.html][Home]]
 
-In this project, we formalize first-order logic, languages, structures
-and models in Lean. This project is being run as part of the Illinois
-Geometry Lab at UIUC.
+In this project, we formalize first-order logic, languages, structures and
+models in Lean. This project is being run (Fall 2020 & Spring 2021) as part of
+the Illinois Geometry Lab at UIUC.
 
 - GitHub code repository :: [[https://github.com/vaibhavkarve/igl2020][/vaibhavkarve/igl2020]]
 
@@ -20,3 +20,11 @@ Geometry Lab at UIUC.
 - Noble Wulffraat
 - Tianfan Xu
 - Fenglong Zhao
+
+
+* Talk given at LeanTogether 2021
+#+begin_export html
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pMCZFrii4lA"
+frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#+end_export
