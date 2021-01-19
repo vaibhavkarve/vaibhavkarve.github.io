@@ -4,71 +4,82 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
 #+subtitle: [[../index.html][Home]]
 
-This is the subject of my PhD research --- a new type of
-satisfiability problem.
+This is the subject of my PhD research --- a novel graph decision problem.
 
 - Dissertation summary (work in progress) :: [[file:~/org/website/dissertation_summary.pdf][pdf]]
 - 2sat result publication :: [[https://doi.org/10.1016/j.dam.2019.12.017][The complete set of minimal simple graphs that support unsatisfiable 2-CNFs]]
-- 2sat result arXiv version :: [[https://arxiv.org/abs/1812.10849][The complete set of minimal simple graphs that support unsatisfiable 2-CNFs]]
+- 2sat result arXiv version (somewhat outdated) :: [[https://arxiv.org/abs/1812.10849][The complete set of minimal simple graphs that support unsatisfiable 2-CNFs]]
 - GitLab :: [[https://git.math.illinois.edu/hirani_group/home/-/tree/master/projects/sat][private repository]]
 - Slides from talk given at Theory of Computation reading group (UIUC Math) :: [[file:graphsat_and_other_decision_problems.pdf][GraphSAT and other decision problems]]
 
-
 * Definitions
 ** SAT
-   We pick a countable set and call it our set of variables.
+Pick a countable set and call it our set of /variables/.  A boolean /literal/ is
+a variable or its negation such that we can assign boolean values to it each
+variable.
 
-   A boolean *literal* is a variable or its negation such that we can
-   assign boolean values to it each variable.
-
-   A boolean formula is said to be in Conjunctive Normal Form (CNF)
-   if it is the conjunction of disjunctions of boolean literals.
-
-   A CNF is /satisfiable/ if there exists a truth assignment that
-   satisfies it.  Otherwise it is /unsatisfiable/.
+A boolean formula is said to be in /Conjunctive Normal Form/ (CNF) if it is the
+conjunction of disjunctions of boolean literals.  A CNF is /satisfiable/ if
+there exists a truth assignment that satisfies it.  Otherwise it is
+/unsatisfiable/.
 
 ** $\pi: CNFs \rightarrow Graphs$
-   For every CNF we define a multi-hypergraph by erasing all negating
-   and then treating clauses as hyperedges and conjunctions as the
-   graph join operation. We denote this projection map by $\pi$.
+For every CNF we define a multi-hypergraph by erasing all negations and then
+treating clauses as hyperedges and conjunctions as the graph-join operation. We
+denote this projection map by $\pi$.
 
-   Example:
-   \[(a\vee \neg b) \wedge (b \vee \neg c)
-     \wedge (\neg a \vee \neg c)\wedge d \longmapsto (ab),(bc),(ac),(d)\]
+Example: \[(a\vee \neg b) \wedge (b \vee \neg c) \wedge (\neg a \vee \neg
+c)\wedge d \longmapsto (ab),(bc),(ac),(d)\]
 
-   Here, $(d)$ should be interpreted as a loop at the vertex d.
+Here, \((d)\) should be interpreted as a loop at the vertex \(d\).
 
-   Table summarizing the effect of $\pi$:
-   | Concepts in the CNF world | Concepts in the Graph world |
-   |---------------------------+-----------------------------|
-   | Variables                 | Vertices                    |
-   | Literals                  | Vertices                    |
-   | Clauses                   | (hyper)Edges                |
-   | 1-SAT clause              | Loop                        |
-   | 2-SAT clause              | Simple edge                 |
-   | 3-SAT clause              | Hyperedge                   |
-   | CNF                       | Multi-hypergraph            |
+Table summarizing the effect of $\pi$:
+| Concepts in the CNF world | Concepts in the Graph world |
+|---------------------------+-----------------------------|
+| Variables                 | Vertices                    |
+| Literals                  | Vertices                    |
+| Clauses                   | (hyper)Edges                |
+| 1-SAT clause              | Loop                        |
+| 2-SAT clause              | Simple edge                 |
+| 3-SAT clause              | Hyperedge                   |
+| CNF                       | Multi-hypergraph            |
 
-** Graphsat
-   A multi-hypergraph $G$ is /satisfiable/ if the set $\pi^{-1}(G)$
-   is nonempty and every element of $\pi^{-1}(G)$ is
-   satisfiable. Otherwise it is unsatisfiable.
+** GraphSAT
+A multi-hypergraph $G$ is /satisfiable/ if the set $\pi^{-1}(G)$
+is nonempty and every element of $\pi^{-1}(G)$ is
+satisfiable. Otherwise it is /unsatisfiable/.
+
+We let /GraphSAT/ itself denote both the decision problem as well as the set of
+all satisfiable multi-hypergraphs.
+
+* Forbidden Graph Characterization
+Our big result (published in the 2sat paper linked above) is the forbidden graph
+characterization of GraphSAT.  We showed that 2GraphSAT (which is the set of all
+satisfiable simple graphs) can be equivalently defined as the set of all simple
+graphs that avoid the following 4 graphs as a *topological minor*.
+- \(K_4\) i.e. the complete graph on four vertices
+- Butterfly i.e. the graph \(ab,ac,ad,ae,bc,de\)
+- Bowtie i.e. the graph \(ab,ac,bc,cd,de,df,ef\)
+- \(K_{1,1,3}\) i.e. the graph \(ab,ac,ad,ae,bc,bd,be\)
+
+We are attempting similar forbiddeng graph characterizations for
+multi-hypergraphs as well as infinite graphs.
 
 * In Lean
-  I have formalized the definition of graph satisfiability in Lean.  I
-  am working on project called =leansat= formalizing some of my 2-sat
-  results in Lean.
+I have formalized the definition of graph satisfiability in Lean.  I
+am working on project called =leansat= formalizing some of my 2-sat
+results in Lean.
 
-  #+CAPTION: The definition of a satisfiable graph in Lean.
-  #+NAME: fig:graphsat_in_lean.png
-  [[../img/graphsat_in_lean.png]]
+#+CAPTION: The definition of a satisfiable graph in Lean.
+#+NAME: fig:graphsat_in_lean.png
+[[../img/graphsat_in_lean.png]]
 
 * In Python
-  I have created a python3.8 package called ~graphsat~ that can perform computations on
-  graphs, multi-graphs, hypergraphs and multi-hypergraphs as well as
-  on CNFs.  The package is unpublished as of now.  I use it for all my
-  experimentation and computation.
+I have created a python3.9 package called ~graphsat~ that can perform
+computations on graphs, multi-graphs, hypergraphs and multi-hypergraphs as well
+as on CNFs.  The package is unpublished as of now.  I use it for all my
+experimentation and computation.
 
 * In Haskell
-  I am attempting to translate ~graphsat~ in Haskell as well. This is
-  still a work in progress.
+I am attempting to translate ~graphsat~ in Haskell as well. This is still a work
+in progress.
