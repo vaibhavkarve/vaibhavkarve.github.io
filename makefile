@@ -9,10 +9,10 @@ website : htmls
 	git commit -m "auto-update webpages"
 	git push origin master
 
-org/CV.pdf : ~/org/ref/cv_november_2020/CV.pdf
+org/CV.pdf : ~/org/ref/cv_jan_2021/CV.pdf
 	cp $< $@
 
-org/Teaching_Philosophy_Statement.pdf : ~/org/ref/teaching_statement_nov_2020/teaching_statement_nov_2020.pdf
+org/Teaching_Philosophy_Statement.pdf : ~/org/ref/teaching_statement_jan_2021/teaching_statement_jan_2021.pdf
 	cp $< $@
 
 
