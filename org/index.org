@@ -40,20 +40,20 @@ My ever-evolving [[file:Teaching_Philosophy_Statement.pdf][teaching philosophy]]
 - [[file:leanteach_2020.org][LeanTeach 2020 @ Illinois Geometry Lab + UniHigh Summer program]]
 - Classical constructions @ Summer Illinois Math Camp, UIUC
 - Past courses
-  + 2021 Spring : TA, Math 241 -- Merit
-  + 2020 Spring : TA, Math 490
-  + 2019 summer : RA, Bourgin Fellow
-  + 2019 Spring : TA, Math 490
-  + 2019 Fall   : RA, supervisor: Anil N. Hirani
-  + 2018 Spring : RA, supervisor: Richard Sowers
-  + 2018 Fall   : TA, Math 285 -- Merit + Math 490 course developer + Merit TA mentor
-  + 2017 summer : RA, supervisor: Richard Sowers
-  + 2017 Spring : TA, Math 231 -- Merit
-  + 2017 Fall   : TA, Math 241 -- Merit + Merit TA mentoring
-  + 2016 Spring : TA, Math 241
-  + 2016 Fall   : TA, Math 221 -- Merit
-  + 2015 Fall   : TA, Math 241
-
+  | 2021 Spring | TA | *Math 241* (/Merit/) Calculus III                                      |
+  | 2020 Fall   | RA | supervisor: Anil N. Hirani                                             |
+  | 2020 Spring | TA | *Math 490* Computational Mathematics                                   |
+  | 2019 Summer | RA | Dabid G. Bourgin Fellow                                                |
+  | 2019 Spring | TA | *Math 490* Computational Mathematics                                   |
+  | 2019 Fall   | RA | supervisor: Anil N. Hirani                                             |
+  | 2018 Spring | RA | supervisor: Richard Sowers                                             |
+  | 2018 Fall   | TA | *Math 285* (/Merit/) Intro to differential equations + Merit TA mentor |
+  | 2017 Summer | RA | supervisor: Richard Sowers                                             |
+  | 2017 Spring | TA | *Math 231* (/Merit/) Calculus II                                       |
+  | 2017 Fall   | TA | *Math 241* (/Merit/) Calculus III + Merit TA mentoring                 |
+  | 2016 Spring | TA | *Math 241* Calculus III                                                |
+  | 2016 Fall   | TA | *Math 221* (/Merit/) Calculus I                                        |
+  | 2015 Fall   | TA | *Math 241* Calculus III                                                |
 * Notes
 These are mostly notes I have taken as part of self-studying various
 things. They are not meant to be comprehensive notes -- just a collection of
