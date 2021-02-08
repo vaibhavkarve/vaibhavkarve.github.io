@@ -23,6 +23,9 @@ proving (in particular, with the Lean theorem prover).
 
 * Research
 My publications listed at [[https://math.illinois.edu/graduate-papers][UIUC math]] and [[https://scholar.google.com/citations?hl=en&user=_JqNTooAAAAJ][Google scholar]].
+| 2021 | [[https://link.springer.com/article/10.1007/s42421-021-00033-4][Seasonal Disorder in Urban Traffic Patterns: A Low Rank Analysis]]                          |
+| 2020 | [[https://doi.org/10.1016/j.dam.2019.12.017][The complete set of minimal simple graphs that support unsatisfiable 2-CNFs]]               |
+| 2017 | [[https://arxiv.org/abs/1707.08557][Congestion Barcodes: Exploring the Topology of Urban Congestion Using Persistent Homology]] |
 - [[file:satisfiability/index.org][Graph satisfiability]] [fn:1]
 - [[file:igl2020.org][Model theory in Lean]]
 - [[file:leanteach_2020.org][Axiomatic geometry in Lean]]
@@ -30,6 +33,7 @@ My publications listed at [[https://math.illinois.edu/graduate-papers][UIUC math
 - Past projects
   - On the pullback of real exterior forms
   - [[file:congestion_barcodes.org][Congestion barcodes]]
+
 
 * Teaching
 My ever-evolving [[file:Teaching_Philosophy_Statement.pdf][teaching philosophy]].
