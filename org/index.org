@@ -22,10 +22,11 @@ field of computer-assisted formalized mathematics and interactive theorem
 proving (in particular, with the Lean theorem prover).
 
 * Research
-My publications listed at [[https://math.illinois.edu/graduate-papers][UIUC math]] and [[https://scholar.google.com/citations?hl=en&user=_JqNTooAAAAJ][Google scholar]].
-| 2021 | [[https://link.springer.com/article/10.1007/s42421-021-00033-4][Seasonal Disorder in Urban Traffic Patterns: A Low Rank Analysis]]                          |
-| 2020 | [[https://doi.org/10.1016/j.dam.2019.12.017][The complete set of minimal simple graphs that support unsatisfiable 2-CNFs]]               |
-| 2017 | [[https://arxiv.org/abs/1707.08557][Congestion Barcodes: Exploring the Topology of Urban Congestion Using Persistent Homology]] |
+- List of journal publications
+  | 2021 | *Karve*, Yager, Abolhelm, Work, Sowers                  | [[https://link.springer.com/article/10.1007/s42421-021-00033-4][Seasonal Disorder in Urban Traffic Patterns: A Low Rank Analysis]]                          |   |
+  | 2020 | *Karve*, Hirani                                         | [[https://doi.org/10.1016/j.dam.2019.12.017][The complete set of minimal simple graphs that support unsatisfiable 2-CNFs]]               |   |
+  | 2017 | Wu, Shindnes, *Karve*, Yager, Work, Chakraborty, Sowers | [[https://arxiv.org/abs/1707.08557][Congestion Barcodes: Exploring the Topology of Urban Congestion Using Persistent Homology]] |   |
+  These publications are also listed at [[https://math.illinois.edu/graduate-papers][UIUC math]] and [[https://scholar.google.com/citations?hl=en&user=_JqNTooAAAAJ][Google scholar]].
 - [[file:satisfiability/index.org][Graph satisfiability]] [fn:1]
 - [[file:igl2020.org][Model theory in Lean]]
 - [[file:leanteach_2020.org][Axiomatic geometry in Lean]]
