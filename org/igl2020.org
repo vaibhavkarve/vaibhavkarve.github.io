@@ -2,10 +2,6 @@
 #+author: [[file:../index.html][Vaibhav Karve]]
 #+options: toc:1
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
-#+HTML_HEAD: <link rel="stylesheet" href="~/lib/Font-Awesome/css/fontawesome.min.css">
-#+HTML_HEAD: <link rel="stylesheet" href="~/lib/Font-Awesome/css/regular.min.css">
-#+HTML_HEAD: <link rel="stylesheet" href="~/lib/Font-Awesome/css/solid.min.css">
-
 #+subtitle: [[../index.html][Home]]
 
 In this project, we formalize first-order logic, languages, structures and
@@ -13,17 +9,19 @@ models in Lean. The end goal is to formalize *o-minimality*. This project is
 being run (Fall 2020 & Spring 2021) as part of the Illinois Geometry Lab at
 UIUC.
 
- [[https://github.com/vaibhavkarve/igl2020][/vaibhavkarve/igl2020]]
+- GitHub code repository :: [[https://github.com/vaibhavkarve/igl2020][/vaibhavkarve/igl2020]]
 
 * Collaborators
+- Tyler Behme
 - Eion Blanchard
 - Scott Harman
 - Philipp Hieronymi
 - Nikil Ravi
 - Joel Schargorodsky
-- Kyle Thompson
+- Kay Thompson
 - Noble Wulffraat
 - Tianfan Xu
+- Andrew Yin
 - Fenglong Zhao
 
 
