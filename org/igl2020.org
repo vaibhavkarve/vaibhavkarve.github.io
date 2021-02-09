@@ -5,10 +5,11 @@
 #+subtitle: [[../index.html][Home]]
 
 In this project, we formalize first-order logic, languages, structures and
-models in Lean. This project is being run (Fall 2020 & Spring 2021) as part of
-the Illinois Geometry Lab at UIUC.
+models in Lean. The end goal is to formalize *o-minimality*. This project is
+being run (Fall 2020 & Spring 2021) as part of the Illinois Geometry Lab at
+UIUC.
 
-- GitHub code repository :: [[https://github.com/vaibhavkarve/igl2020][/vaibhavkarve/igl2020]]
+ [[https://github.com/vaibhavkarve/igl2020][/vaibhavkarve/igl2020]]
 
 * Collaborators
 - Eion Blanchard
