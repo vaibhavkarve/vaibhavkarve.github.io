@@ -2,6 +2,10 @@
 #+author: [[file:../index.html][Vaibhav Karve]]
 #+options: toc:1
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
+#+HTML_HEAD: <link rel="stylesheet" href="~/lib/Font-Awesome/css/fontawesome.min.css">
+#+HTML_HEAD: <link rel="stylesheet" href="~/lib/Font-Awesome/css/regular.min.css">
+#+HTML_HEAD: <link rel="stylesheet" href="~/lib/Font-Awesome/css/solid.min.css">
+
 #+subtitle: [[../index.html][Home]]
 
 In this project, we formalize first-order logic, languages, structures and
