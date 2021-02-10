@@ -6,47 +6,46 @@
 
 * Context
 ** Opening remarks
-  Python added support for type hints in the =typing= module in Python
-  version 3.5.  Use this for:
-  - adding type hints (think of these as a *very* powerful form of
-    adding comments to your code).
-  - static typechecking (by an external tool like =mypy=).
-  - typechecking within an IDE (many editors and IDEs do this on the fly).
-  - a sanity check (to ensure that the code you are writing makes
-    sense even without running it).
+Python added support for type hints in the =typing= module in Python version
+3.5.  Use this for:
+- adding type hints (think of these as a *very* powerful form of adding comments
+  to your code).
+- static typechecking (by an external tool like =mypy=).
+- typechecking within an IDE (many editors and IDEs do this on the fly).
+- a sanity check (to ensure that the code you are writing makes sense even
+  without running it).
 
-  Two key points to remember:
-  - type hints are an optional feature of python. So, it is not
-    necessary that we add type hints to every single line of code.
-  - type hints are ignored during runtime and do not affect
-    performance of the code.
+Two key points to remember:
+- type hints are an optional feature of python. So, it is not necessary that we
+  add type hints to every single line of code.
+- type hints are ignored during runtime and do not affect performance of the
+  code.
 
-  Using type hints is optional. But I have found it to be an extremely
-  useful feature. I frequently find myself wishing for more features
-  in the typing module -- not less.
+Using type hints is optional. But I have found it to be an extremely useful
+feature. I frequently find myself wishing for more features in the typing module
+-- not less.
 
-  These are just my notes on Python's type thoery. Do not use it as a
-  fool-proof reference. For proper documentation, one can refer to
-  [[https://docs.python.org/3/library/typing.html][typing module docs]] or [[https://www.python.org/dev/peps/pep-0483/][PEP 483]].
+These are just my notes on Python's type thoery. Do not use it as a fool-proof
+reference. For proper documentation, one can refer to [[https://docs.python.org/3/library/typing.html][typing module docs]] or PEP
+483]].
 
 ** Types vs Types
-  There are two meanings for types in python now.  One is the type of
-  an object that is returned by calling the in-built =type()=
-  function.  The other is the type inferred by an external typechecker
-  like =mypy=, and which can be displayed using the =reveal_type=
-  function and then running the script through =mypy=.
-  
-  We will always refer to the second interpretation when we refer to
-  the type of an object.
+There are two meanings for types in python now.  One is the type of an object
+that is returned by calling the in-built =type()= function.  The other is the
+type inferred by an external typechecker like =mypy=, and which can be displayed
+using the =reveal_type= function and then running the script through =mypy=.
+
+We will always refer to the second interpretation when we refer to the type of
+an object in these notes.
 
 ** So, what is type theory?
-  Think of it as the math/rules that govern these types.  A basic fact
-  to understand it that /every/ python object has a type, whether we
-  specify it to the type-checker or not.
+Think of it as the math/rules that govern these types. A basic fact to
+understand is that /every/ python object has a type, whether we specify it
+explicitly or not.
 
-* Types that are in-built in python
-  Python comes with some in-built types.
-  
+* Types that are built-in in python
+  Python comes with some buil-in types.
+
   #+NAME: built-in types
   #+BEGIN_SRC python :results output
   a: int   = 1
@@ -94,7 +93,7 @@
   #+BEGIN_SRC python :results output
   # define a new type
   PositiveInt = NewType('PositiveInt', int)  # This is the same as declaring PositiveInt <: int
-  
+
   # define a constructor function for the new type
   def make_positive_int(a: int) -> PositiveInt:
       if a > 0:
@@ -255,7 +254,7 @@
       # must be an integer
       a_int = cast(int, a)
       return a_int + 1
-  
+
   print(madeup_example('abc'))
   print(madeup_example(5))
   #+END_SRC
