@@ -1,0 +1,2496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://vaibhavkarve.github.io/igl2020-docs/style.css">
+    <link rel="stylesheet" href="https://vaibhavkarve.github.io/igl2020-docs/pygments.css">
+    <link rel="shortcut icon" href="https://vaibhavkarve.github.io/igl2020-docs/favicon.ico">
+    <title>mathlib docs: tactic.omega.nat.dnf</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+
+    <meta name="og:title" content="mathlib docs: tactic.omega.nat.dnf">
+    <meta name="og:site_name" content="mathlib for Lean - API documentation">
+    <meta name="og:description" content="">
+    <meta name="og:image" content="https://vaibhavkarve.github.io/igl2020-docs/meta-og.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="mathlib docs: tactic.omega.nat.dnf">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://vaibhavkarve.github.io/igl2020-docs/meta-twitter.png">
+</head>
+
+<body>
+
+<input id="nav_toggle" type="checkbox">
+
+<header>
+    <h1><label for="nav_toggle"></label><a href="https://leanprover-community.github.io">mathlib</a>
+        <span>documentation</span></h1>
+    <p class="header_filename break_within"><span class="name">tactic</span>.<span class="name">omega</span>.<span class="name">nat</span>.<span class="name">dnf</span></p>
+    <form action="https://google.com/search" method="get" id="search_form">
+        <input type="hidden" name="sitesearch" value="https://leanprover-community.github.io/mathlib_docs">
+        <input type="text" name="q" autocomplete="off">
+        <button>search</button>
+    </form>
+</header>
+
+<nav class="internal_nav">
+<h3><a class="break_within" href="#top"><span class="name">tactic</span>.<span class="name">omega</span>.<span class="name">nat</span>.<span class="name">dnf</span></a></h3>
+
+<p class="gh_nav_link"><a href="https://github.com/leanprover-community/mathlib/blob/7f11d7218b35891b7c38222e2a2af5199b96b471/src/tactic/omega/nat/dnf.lean">source</a></p>
+
+<div class="imports">
+    <details>
+        <summary>Imports</summary>
+        <ul>
+            <li><a href="https://vaibhavkarve.github.io/igl2020-docs/init/default.html">
+                init.default</a></li>
+        
+            <li><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/clause.html">
+                tactic.omega.clause</a></li>
+        
+            <li><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/form.html">
+                tactic.omega.nat.form</a></li>
+        </ul>
+    </details>
+    <details>
+        <summary>Imported by</summary>
+        <ul>
+            <li><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/main.html">
+                tactic.omega.nat.main</a></li>
+        </ul>
+    </details>
+</div>
+
+
+    <div class="nav_link"><a class="break_within" href="#omega.nat.bools.or"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">bools</span>.<span class="name">or</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#omega.nat.dnf"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">dnf</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#omega.nat.dnf_core"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">dnf_core</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#omega.nat.exists_clause_holds"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">exists_clause_holds</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#omega.nat.exists_clause_holds_core"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">exists_clause_holds_core</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#omega.nat.exists_clause_sat"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">exists_clause_sat</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#omega.nat.holds_nonneg_consts"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">holds_nonneg_consts</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#omega.nat.holds_nonneg_consts_core"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">holds_nonneg_consts_core</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#omega.nat.nonneg_consts"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">nonneg_consts</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#omega.nat.nonneg_consts_core"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">nonneg_consts_core</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#omega.nat.nonnegate"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">nonnegate</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#omega.nat.term.vars"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">term</span>.<span class="name">vars</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#omega.nat.term.vars_core"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">term</span>.<span class="name">vars_core</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#omega.nat.terms.vars"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">terms</span>.<span class="name">vars</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#omega.nat.unsat_of_unsat_dnf"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">unsat_of_unsat_dnf</span></a></div>
+
+</nav>
+
+<main>
+    <a id="top"></a>
+    
+
+    
+        
+        
+<div class="decl" id="omega.nat.dnf_core">
+<div class="def">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/7f11d7218b35891b7c38222e2a2af5199b96b471/src/tactic/omega/nat/dnf.lean#L19">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.dnf_core"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">dnf_core</span></a></span>
+&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/form.html#omega.nat.preform">omega.nat.preform</a> → <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list">list</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/clause.html#omega.clause">omega.clause</a></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.dnf_core">omega.nat.dnf_core</a> <span class="fn">(p <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/form.html#omega.nat.preform.and" title="omega.nat.preform.and">∧*</a> q)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/list/basic.html#list.map">list.map</a> <span class="fn">(λ (pq : <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/clause.html#omega.clause">omega.clause</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#prod" title="prod">×</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/clause.html#omega.clause">omega.clause</a>)</span>, <span class="fn">pq.<a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#prod.fst" title="prod.fst">fst</a>.<a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/clause.html#omega.clause.append" title="omega.clause.append">append</a> pq.<a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#prod.snd" title="prod.snd">snd</a>)</span></span></span> <span class="fn"><span class="fn"><span class="fn">((<a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.dnf_core">omega.nat.dnf_core</a> p)</span>.<a href="https://vaibhavkarve.github.io/igl2020-docs/data/list/defs.html#list.product" title="list.product">product</a></span> <span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.dnf_core">omega.nat.dnf_core</a> q))</span></span></span></span></li>
+            
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.dnf_core">omega.nat.dnf_core</a> <span class="fn">(p <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/form.html#omega.nat.preform.or" title="omega.nat.preform.or">∨*</a> q)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.dnf_core">omega.nat.dnf_core</a> p</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_append.append" title="has_append.append">++</a> <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.dnf_core">omega.nat.dnf_core</a> q</span></span></span></li>
+            
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.dnf_core">omega.nat.dnf_core</a> <span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/form.html#omega.nat.preform.not" title="omega.nat.preform.not">¬*</a> _x)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list.nil">list.nil</a></span></li>
+            
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.dnf_core">omega.nat.dnf_core</a> <span class="fn">(t <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/form.html#omega.nat.preform.le" title="omega.nat.preform.le">≤*</a> s)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">[(<a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list.nil">list.nil</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/term.html#omega.term">omega.term</a></span>, <span class="fn"><span class="fn"><span class="fn">[(<a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/preterm.html#omega.nat.canonize">omega.nat.canonize</a> s)</span>.<a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/term.html#omega.term.sub" title="omega.term.sub">sub</a></span> <span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/preterm.html#omega.nat.canonize">omega.nat.canonize</a> t)])]</span></span></span></span></li>
+            
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.dnf_core">omega.nat.dnf_core</a> <span class="fn">(t <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/form.html#omega.nat.preform.eq" title="omega.nat.preform.eq">=*</a> s)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn"><span class="fn">[([(<a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/preterm.html#omega.nat.canonize">omega.nat.canonize</a> s)</span>.<a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/term.html#omega.term.sub" title="omega.term.sub">sub</a></span> <span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/preterm.html#omega.nat.canonize">omega.nat.canonize</a> t)]</span></span>, <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list.nil">list.nil</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/term.html#omega.term">omega.term</a>)]</span></span></span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="omega.nat.exists_clause_holds_core">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/7f11d7218b35891b7c38222e2a2af5199b96b471/src/tactic/omega/nat/dnf.lean#L29">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.exists_clause_holds_core"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">exists_clause_holds_core</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{v : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a> → <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{p : <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/form.html#omega.nat.preform">omega.nat.preform</a>}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">p.<a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/form.html#omega.nat.preform.neg_free" title="omega.nat.preform.neg_free">neg_free</a> → <span class="fn">p.<a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/form.html#omega.nat.preform.sub_free" title="omega.nat.preform.sub_free">sub_free</a> → <span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/form.html#omega.nat.preform.holds">omega.nat.preform.holds</a> v</span> p</span> → <span class="fn">(∃ (c : <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/clause.html#omega.clause">omega.clause</a>) (H : <span class="fn">c <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.dnf_core">omega.nat.dnf_core</a> p)</span></span>, <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/clause.html#omega.clause.holds">omega.clause.holds</a> <span class="fn">(λ (x : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a>), <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/coe.html#coe" title="coe">↑</a><span class="fn">(v x))</span></span></span></span> c)</span></span></span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="omega.nat.term.vars_core">
+<div class="def">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/7f11d7218b35891b7c38222e2a2af5199b96b471/src/tactic/omega/nat/dnf.lean#L64">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.term.vars_core"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">term</span>.<span class="name">vars_core</span></a></span>
+
+    <span class="decl_args"><span class="fn">(is : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list">list</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/int/basic.html#int" title="int">ℤ</a>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list">list</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#bool">bool</a></span></div>
+</div>
+
+
+
+
+
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.term.vars_core">omega.nat.term.vars_core</a> is</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/list/basic.html#list.map">list.map</a> <span class="fn">(λ (i : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/int/basic.html#int" title="int">ℤ</a>), <span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#ite">ite</a> <span class="fn">(i <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> 0)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#bool.ff" title="bool.ff">ff</a></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#bool.tt" title="bool.tt">tt</a>)</span></span></span> is</span></span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="omega.nat.term.vars">
+<div class="def">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/7f11d7218b35891b7c38222e2a2af5199b96b471/src/tactic/omega/nat/dnf.lean#L68">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.term.vars"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">term</span>.<span class="name">vars</span></a></span>
+
+    <span class="decl_args"><span class="fn">(t : <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/term.html#omega.term">omega.term</a>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list">list</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#bool">bool</a></span></div>
+</div>
+
+
+
+
+
+<p>Return a list of bools that encodes which variables have nonzero coefficients</p>
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.term.vars">omega.nat.term.vars</a> t</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.term.vars_core">omega.nat.term.vars_core</a> t.<a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#prod.snd" title="prod.snd">snd</a></span></span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="omega.nat.bools.or">
+<div class="def">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/7f11d7218b35891b7c38222e2a2af5199b96b471/src/tactic/omega/nat/dnf.lean#L71">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.bools.or"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">bools</span>.<span class="name">or</span></a></span>
+&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list">list</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#bool">bool</a></span> → <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list">list</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#bool">bool</a></span> → <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list">list</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#bool">bool</a></span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.bools.or">omega.nat.bools.or</a> <span class="fn">(b1 <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list.cons" title="list.cons">::</a> bs1)</span></span> <span class="fn">(b2 <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list.cons" title="list.cons">::</a> bs2)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">(b1 <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/bool/basic.html#bor" title="bor">||</a> b2)</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list.cons" title="list.cons">::</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.bools.or">omega.nat.bools.or</a> bs1</span> bs2</span></span></span></li>
+            
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.bools.or">omega.nat.bools.or</a> <span class="fn">(hd <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list.cons" title="list.cons">::</a> tl)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list.nil">list.nil</a></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn">hd <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list.cons" title="list.cons">::</a> tl</span></span></li>
+            
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.bools.or">omega.nat.bools.or</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list.nil">list.nil</a></span> <span class="fn">(hd <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list.cons" title="list.cons">::</a> tl)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn">hd <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list.cons" title="list.cons">::</a> tl</span></span></li>
+            
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.bools.or">omega.nat.bools.or</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list.nil">list.nil</a></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list.nil">list.nil</a></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list.nil">list.nil</a></span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="omega.nat.terms.vars">
+<div class="def">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/7f11d7218b35891b7c38222e2a2af5199b96b471/src/tactic/omega/nat/dnf.lean#L77">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.terms.vars"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">terms</span>.<span class="name">vars</span></a></span>
+&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list">list</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/term.html#omega.term">omega.term</a></span> → <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list">list</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#bool">bool</a></span></span></div>
+</div>
+
+
+
+
+
+<p>Return a list of bools that encodes which variables have nonzero coefficients in any one of the input terms</p>
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.terms.vars">omega.nat.terms.vars</a> <span class="fn">(t <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list.cons" title="list.cons">::</a> ts)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.bools.or">omega.nat.bools.or</a> <span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.term.vars">omega.nat.term.vars</a> t)</span></span> <span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.terms.vars">omega.nat.terms.vars</a> ts)</span></span></span></li>
+            
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.terms.vars">omega.nat.terms.vars</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list.nil">list.nil</a></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list.nil">list.nil</a></span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="omega.nat.nonneg_consts_core">
+<div class="def">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/7f11d7218b35891b7c38222e2a2af5199b96b471/src/tactic/omega/nat/dnf.lean#L83">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.nonneg_consts_core"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">nonneg_consts_core</span></a></span>
+&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a> → <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list">list</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#bool">bool</a></span> → <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list">list</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/term.html#omega.term">omega.term</a></span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.nonneg_consts_core">omega.nat.nonneg_consts_core</a> k</span> <span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#bool.tt" title="bool.tt">tt</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list.cons" title="list.cons">::</a> bs)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">(0, <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list.nil">list.nil</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/data/list/func.html#list.func.set" title="list.func.set">{</a>k <a href="https://vaibhavkarve.github.io/igl2020-docs/data/list/func.html#list.func.set" title="list.func.set">↦</a> 1<a href="https://vaibhavkarve.github.io/igl2020-docs/data/list/func.html#list.func.set" title="list.func.set">}</a>)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list.cons" title="list.cons">::</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.nonneg_consts_core">omega.nat.nonneg_consts_core</a> <span class="fn">(k <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_add.add" title="has_add.add">+</a> 1)</span></span> bs</span></span></span></li>
+            
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.nonneg_consts_core">omega.nat.nonneg_consts_core</a> k</span> <span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#bool.ff" title="bool.ff">ff</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list.cons" title="list.cons">::</a> bs)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.nonneg_consts_core">omega.nat.nonneg_consts_core</a> <span class="fn">(k <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_add.add" title="has_add.add">+</a> 1)</span></span> bs</span></span></li>
+            
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.nonneg_consts_core">omega.nat.nonneg_consts_core</a> _x</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list.nil">list.nil</a></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list.nil">list.nil</a></span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="omega.nat.nonneg_consts">
+<div class="def">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/7f11d7218b35891b7c38222e2a2af5199b96b471/src/tactic/omega/nat/dnf.lean#L88">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.nonneg_consts"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">nonneg_consts</span></a></span>
+
+    <span class="decl_args"><span class="fn">(bs : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list">list</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#bool">bool</a>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list">list</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/term.html#omega.term">omega.term</a></span></div>
+</div>
+
+
+
+
+
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.nonneg_consts">omega.nat.nonneg_consts</a> bs</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.nonneg_consts_core">omega.nat.nonneg_consts_core</a> 0</span> bs</span></span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="omega.nat.nonnegate">
+<div class="def">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/7f11d7218b35891b7c38222e2a2af5199b96b471/src/tactic/omega/nat/dnf.lean#L91">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.nonnegate"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">nonnegate</span></a></span>
+&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/clause.html#omega.clause">omega.clause</a> → <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/clause.html#omega.clause">omega.clause</a></span></div>
+</div>
+
+
+
+
+
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.nonnegate">omega.nat.nonnegate</a> <span class="fn">(eqs, les)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn">let xs : <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list">list</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#bool">bool</a></span> := <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.terms.vars">omega.nat.terms.vars</a> eqs</span>, ys : <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list">list</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#bool">bool</a></span> := <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.terms.vars">omega.nat.terms.vars</a> les</span>, bs : <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list">list</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#bool">bool</a></span> := <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.bools.or">omega.nat.bools.or</a> xs</span> ys</span> in <span class="fn">(eqs, <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.nonneg_consts">omega.nat.nonneg_consts</a> bs</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_append.append" title="has_append.append">++</a> les)</span></span></span></span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="omega.nat.dnf">
+<div class="def">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/7f11d7218b35891b7c38222e2a2af5199b96b471/src/tactic/omega/nat/dnf.lean#L98">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.dnf"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">dnf</span></a></span>
+
+    <span class="decl_args"><span class="fn">(p : <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/form.html#omega.nat.preform">omega.nat.preform</a>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list">list</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/clause.html#omega.clause">omega.clause</a></span></div>
+</div>
+
+
+
+
+
+<p>DNF transformation</p>
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.dnf">omega.nat.dnf</a> p</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/list/basic.html#list.map">list.map</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.nonnegate">omega.nat.nonnegate</a></span> <span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.dnf_core">omega.nat.dnf_core</a> p)</span></span></span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="omega.nat.holds_nonneg_consts_core">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/7f11d7218b35891b7c38222e2a2af5199b96b471/src/tactic/omega/nat/dnf.lean#L101">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.holds_nonneg_consts_core"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">holds_nonneg_consts_core</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{v : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a> → <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/int/basic.html#int" title="int">ℤ</a>}</span></span></span>
+    <span class="decl_args"><span class="fn">(h1 : ∀ (x : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a>), <span class="fn">0 <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn">v x</span></span>)</span></span>
+    <span class="decl_args"><span class="fn">(m : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a>)</span></span>
+    <span class="decl_args"><span class="fn">(bs : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list">list</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#bool">bool</a>)</span></span>
+    <span class="decl_args"><span class="fn">(t : <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/term.html#omega.term">omega.term</a>)</span></span>
+    <span class="decl_args"><span class="fn">(H : t <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.nonneg_consts_core">omega.nat.nonneg_consts_core</a> m</span> bs</span>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">0 <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/term.html#omega.term.val">omega.term.val</a> v</span> t</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="omega.nat.holds_nonneg_consts">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/7f11d7218b35891b7c38222e2a2af5199b96b471/src/tactic/omega/nat/dnf.lean#L115">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.holds_nonneg_consts"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">holds_nonneg_consts</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{v : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a> → <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/int/basic.html#int" title="int">ℤ</a>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{bs : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list">list</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#bool">bool</a>}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">(∀ (x : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a>), <span class="fn">0 <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn">v x)</span></span></span> → <span class="fn">∀ (t : <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/term.html#omega.term">omega.term</a>), <span class="fn"><span class="fn">t <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.nonneg_consts">omega.nat.nonneg_consts</a> bs</span></span> → <span class="fn">0 <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/term.html#omega.term.val">omega.term.val</a> v</span> t</span></span></span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="omega.nat.exists_clause_holds">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/7f11d7218b35891b7c38222e2a2af5199b96b471/src/tactic/omega/nat/dnf.lean#L120">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.exists_clause_holds"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">exists_clause_holds</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{v : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a> → <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{p : <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/form.html#omega.nat.preform">omega.nat.preform</a>}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">p.<a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/form.html#omega.nat.preform.neg_free" title="omega.nat.preform.neg_free">neg_free</a> → <span class="fn">p.<a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/form.html#omega.nat.preform.sub_free" title="omega.nat.preform.sub_free">sub_free</a> → <span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/form.html#omega.nat.preform.holds">omega.nat.preform.holds</a> v</span> p</span> → <span class="fn">(∃ (c : <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/clause.html#omega.clause">omega.clause</a>) (H : <span class="fn">c <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.dnf">omega.nat.dnf</a> p)</span></span>, <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/clause.html#omega.clause.holds">omega.clause.holds</a> <span class="fn">(λ (x : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a>), <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/coe.html#coe" title="coe">↑</a><span class="fn">(v x))</span></span></span></span> c)</span></span></span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="omega.nat.exists_clause_sat">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/7f11d7218b35891b7c38222e2a2af5199b96b471/src/tactic/omega/nat/dnf.lean#L139">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.exists_clause_sat"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">exists_clause_sat</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{p : <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/form.html#omega.nat.preform">omega.nat.preform</a>}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">p.<a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/form.html#omega.nat.preform.neg_free" title="omega.nat.preform.neg_free">neg_free</a> → <span class="fn">p.<a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/form.html#omega.nat.preform.sub_free" title="omega.nat.preform.sub_free">sub_free</a> → <span class="fn">p.<a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/form.html#omega.nat.preform.sat" title="omega.nat.preform.sat">sat</a> → <span class="fn">(∃ (c : <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/clause.html#omega.clause">omega.clause</a>) (H : <span class="fn">c <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.dnf">omega.nat.dnf</a> p)</span></span>, c.<a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/clause.html#omega.clause.sat" title="omega.clause.sat">sat</a>)</span></span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="omega.nat.unsat_of_unsat_dnf">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/7f11d7218b35891b7c38222e2a2af5199b96b471/src/tactic/omega/nat/dnf.lean#L148">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.unsat_of_unsat_dnf"><span class="name">omega</span>.<span class="name">nat</span>.<span class="name">unsat_of_unsat_dnf</span></a></span>
+
+    <span class="decl_args"><span class="fn">(p : <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/form.html#omega.nat.preform">omega.nat.preform</a>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">p.<a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/form.html#omega.nat.preform.neg_free" title="omega.nat.preform.neg_free">neg_free</a> → <span class="fn">p.<a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/form.html#omega.nat.preform.sub_free" title="omega.nat.preform.sub_free">sub_free</a> → <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/clause.html#omega.clauses.unsat">omega.clauses.unsat</a> <span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html#omega.nat.dnf">omega.nat.dnf</a> p)</span></span> → p.<a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/form.html#omega.nat.preform.unsat" title="omega.nat.preform.unsat">unsat</a></span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+
+</main>
+
+<nav class="nav">
+    <h3>General documentation</h3>
+<div class="nav_link"><a href="https://vaibhavkarve.github.io/igl2020-docs/">index</a></div>
+<div class="nav_link"><a href="https://vaibhavkarve.github.io/igl2020-docs/tactics.html">tactics</a></div>
+<div class="nav_link"><a href="https://vaibhavkarve.github.io/igl2020-docs/commands.html">commands</a></div>
+<div class="nav_link"><a href="https://vaibhavkarve.github.io/igl2020-docs/hole_commands.html">hole commands</a></div>
+<div class="nav_link"><a href="https://vaibhavkarve.github.io/igl2020-docs/attributes.html">attributes</a></div>
+<div class="nav_link"><a href="https://vaibhavkarve.github.io/igl2020-docs/notes.html">notes</a></div>
+
+<h3>Additional documentation</h3>
+
+
+<h3>Library</h3>
+        <h4>core</h4>
+        
+        <details class="nav_sect" data-path="data" >
+            <summary>data</summary>
+            
+        <details class="nav_sect" data-path="data/buffer" >
+            <summary>buffer</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/buffer/parser.html">parser</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/buffer.html">buffer</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/dlist.html">dlist</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/vector.html">vector</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="init" >
+            <summary>init</summary>
+            
+        <details class="nav_sect" data-path="init/algebra" >
+            <summary>algebra</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/algebra/classes.html">classes</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/algebra/functions.html">functions</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/algebra/order.html">order</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="init/control" >
+            <summary>control</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/control/alternative.html">alternative</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/control/applicative.html">applicative</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/control/combinators.html">combinators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/control/except.html">except</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/control/functor.html">functor</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/control/id.html">id</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/control/lawful.html">lawful</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/control/lift.html">lift</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/control/monad.html">monad</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/control/monad_fail.html">monad_fail</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/control/option.html">option</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/control/reader.html">reader</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/control/state.html">state</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="init/data" >
+            <summary>data</summary>
+            
+        <details class="nav_sect" data-path="init/data/array" >
+            <summary>array</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/array/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/array/slice.html">slice</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="init/data/bool" >
+            <summary>bool</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/bool/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/bool/lemmas.html">lemmas</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="init/data/char" >
+            <summary>char</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/char/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/char/classes.html">classes</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/char/lemmas.html">lemmas</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="init/data/fin" >
+            <summary>fin</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/fin/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/fin/ops.html">ops</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="init/data/int" >
+            <summary>int</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/int/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/int/bitwise.html">bitwise</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/int/comp_lemmas.html">comp_lemmas</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/int/order.html">order</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="init/data/list" >
+            <summary>list</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/list/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/list/instances.html">instances</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/list/lemmas.html">lemmas</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/list/qsort.html">qsort</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="init/data/nat" >
+            <summary>nat</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/nat/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/nat/bitwise.html">bitwise</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/nat/div.html">div</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/nat/gcd.html">gcd</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/nat/lemmas.html">lemmas</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="init/data/option" >
+            <summary>option</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/option/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/option/instances.html">instances</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="init/data/ordering" >
+            <summary>ordering</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/ordering/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/ordering/lemmas.html">lemmas</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="init/data/rbmap" >
+            <summary>rbmap</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/rbmap/basic.html">basic</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="init/data/rbtree" >
+            <summary>rbtree</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/rbtree/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/rbtree/default.html">default</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="init/data/sigma" >
+            <summary>sigma</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/sigma/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/sigma/lex.html">lex</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="init/data/string" >
+            <summary>string</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/string/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/string/ops.html">ops</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="init/data/subtype" >
+            <summary>subtype</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/subtype/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/subtype/instances.html">instances</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="init/data/sum" >
+            <summary>sum</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/sum/basic.html">basic</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="init/data/unsigned" >
+            <summary>unsigned</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/unsigned/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/unsigned/ops.html">ops</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/prod.html">prod</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/punit.html">punit</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/quot.html">quot</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/repr.html">repr</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/set.html">set</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/setoid.html">setoid</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/to_string.html">to_string</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="init/meta" >
+            <summary>meta</summary>
+            
+        <details class="nav_sect" data-path="init/meta/converter" >
+            <summary>converter</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/converter/conv.html">conv</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/converter/interactive.html">interactive</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="init/meta/lean" >
+            <summary>lean</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/lean/parser.html">parser</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="init/meta/smt" >
+            <summary>smt</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/smt/congruence_closure.html">congruence_closure</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/smt/ematch.html">ematch</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/smt/interactive.html">interactive</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/smt/rsimp.html">rsimp</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/smt/smt_tactic.html">smt_tactic</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="init/meta/widget" >
+            <summary>widget</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/widget/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/widget/html_cmd.html">html_cmd</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/widget/interactive_expr.html">interactive_expr</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/widget/replace_save_info.html">replace_save_info</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/widget/tactic_component.html">tactic_component</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/ac_tactics.html">ac_tactics</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/async_tactic.html">async_tactic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/attribute.html">attribute</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/backward.html">backward</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/case_tag.html">case_tag</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/comp_value_tactics.html">comp_value_tactics</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/congr_lemma.html">congr_lemma</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/congr_tactic.html">congr_tactic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/constructor_tactic.html">constructor_tactic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/contradiction_tactic.html">contradiction_tactic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/declaration.html">declaration</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/derive.html">derive</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/environment.html">environment</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/exceptional.html">exceptional</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/expr.html">expr</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/expr_address.html">expr_address</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/float.html">float</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/format.html">format</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/fun_info.html">fun_info</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/has_reflect.html">has_reflect</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/hole_command.html">hole_command</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/injection_tactic.html">injection_tactic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/interaction_monad.html">interaction_monad</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/interactive.html">interactive</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/interactive_base.html">interactive_base</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/json.html">json</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/level.html">level</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/local_context.html">local_context</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/match_tactic.html">match_tactic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/mk_dec_eq_instance.html">mk_dec_eq_instance</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/mk_has_reflect_instance.html">mk_has_reflect_instance</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/mk_has_sizeof_instance.html">mk_has_sizeof_instance</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/mk_inhabited_instance.html">mk_inhabited_instance</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/module_info.html">module_info</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/name.html">name</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/occurrences.html">occurrences</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/options.html">options</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/pexpr.html">pexpr</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/rb_map.html">rb_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/rec_util.html">rec_util</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/ref.html">ref</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/relation_tactics.html">relation_tactics</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/rewrite_tactic.html">rewrite_tactic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/set_get_option_tactics.html">set_get_option_tactics</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/simp_tactic.html">simp_tactic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/tactic.html">tactic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/tagged_format.html">tagged_format</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/task.html">task</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/type_context.html">type_context</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/vm.html">vm</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/meta/well_founded_tactics.html">well_founded_tactics</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/cc_lemmas.html">cc_lemmas</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/classical.html">classical</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/coe.html">coe</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html">core</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/default.html">default</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/function.html">function</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/funext.html">funext</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/ite_simp.html">ite_simp</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html">logic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/propext.html">propext</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/util.html">util</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/version.html">version</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/init/wf.html">wf</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="system" >
+            <summary>system</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/system/io.html">io</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/system/io_interface.html">io_interface</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/system/random.html">random</a>
+        </div>
+        </details>
+        <h4>igl2020</h4>
+        
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/examples.html">examples</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html">model</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/sandbox.html">sandbox</a>
+        </div>
+        <h4>mathlib</h4>
+        
+        <details class="nav_sect" data-path="algebra" >
+            <summary>algebra</summary>
+            
+        <details class="nav_sect" data-path="algebra/big_operators" >
+            <summary>big_operators</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/big_operators/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/big_operators/order.html">order</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/big_operators/ring.html">ring</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="algebra/group" >
+            <summary>group</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/group/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/group/commute.html">commute</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/group/defs.html">defs</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/group/hom.html">hom</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/group/inj_surj.html">inj_surj</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/group/pi.html">pi</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/group/prod.html">prod</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/group/semiconj.html">semiconj</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/group/to_additive.html">to_additive</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/group/type_tags.html">type_tags</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/group/units.html">units</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/group/units_hom.html">units_hom</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/group/with_one.html">with_one</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="algebra/group_power" >
+            <summary>group_power</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/group_power/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/group_power/lemmas.html">lemmas</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="algebra/group_with_zero" >
+            <summary>group_with_zero</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/group_with_zero/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/group_with_zero/defs.html">defs</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/group_with_zero/power.html">power</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="algebra/module" >
+            <summary>module</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/module/basic.html">basic</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="algebra/ring" >
+            <summary>ring</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/ring/basic.html">basic</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="algebra/star" >
+            <summary>star</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/star/basic.html">basic</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/archimedean.html">archimedean</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/char_zero.html">char_zero</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/divisibility.html">divisibility</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/euclidean_domain.html">euclidean_domain</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/field.html">field</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/field_power.html">field_power</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/floor.html">floor</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/opposites.html">opposites</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/order.html">order</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/order_functions.html">order_functions</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/ordered_field.html">ordered_field</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/ordered_group.html">ordered_group</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/ordered_monoid.html">ordered_monoid</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/ordered_ring.html">ordered_ring</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/algebra/pointwise.html">pointwise</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="category_theory" >
+            <summary>category_theory</summary>
+            
+        <details class="nav_sect" data-path="category_theory/category" >
+            <summary>category</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/category_theory/category/default.html">default</a>
+        </div>
+        </details>
+        </details>
+        <details class="nav_sect" data-path="control" >
+            <summary>control</summary>
+            
+        <details class="nav_sect" data-path="control/equiv_functor" >
+            <summary>equiv_functor</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/control/equiv_functor/instances.html">instances</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="control/monad" >
+            <summary>monad</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/control/monad/basic.html">basic</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="control/traversable" >
+            <summary>traversable</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/control/traversable/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/control/traversable/derive.html">derive</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/control/traversable/equiv.html">equiv</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/control/traversable/instances.html">instances</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/control/traversable/lemmas.html">lemmas</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/control/applicative.html">applicative</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/control/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/control/bifunctor.html">bifunctor</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/control/equiv_functor.html">equiv_functor</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/control/functor.html">functor</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="data" >
+            <summary>data</summary>
+            
+        <details class="nav_sect" data-path="data/array" >
+            <summary>array</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/array/lemmas.html">lemmas</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="data/dlist" >
+            <summary>dlist</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/dlist/basic.html">basic</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="data/equiv" >
+            <summary>equiv</summary>
+            
+        <details class="nav_sect" data-path="data/equiv/encodable" >
+            <summary>encodable</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/equiv/encodable/basic.html">basic</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/equiv/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/equiv/denumerable.html">denumerable</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/equiv/functor.html">functor</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/equiv/list.html">list</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/equiv/mul_add.html">mul_add</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/equiv/nat.html">nat</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/equiv/ring.html">ring</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="data/finset" >
+            <summary>finset</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/finset/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/finset/fold.html">fold</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/finset/intervals.html">intervals</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/finset/lattice.html">lattice</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/finset/pi.html">pi</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/finset/powerset.html">powerset</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/finset/sort.html">sort</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="data/fintype" >
+            <summary>fintype</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/fintype/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/fintype/card.html">card</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/fintype/intervals.html">intervals</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="data/int" >
+            <summary>int</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/int/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/int/cast.html">cast</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/int/char_zero.html">char_zero</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/int/range.html">range</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="data/list" >
+            <summary>list</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/list/bag_inter.html">bag_inter</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/list/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/list/chain.html">chain</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/list/defs.html">defs</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/list/erase_dup.html">erase_dup</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/list/forall2.html">forall2</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/list/func.html">func</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/list/intervals.html">intervals</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/list/min_max.html">min_max</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/list/nodup.html">nodup</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/list/nodup_equiv_fin.html">nodup_equiv_fin</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/list/of_fn.html">of_fn</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/list/pairwise.html">pairwise</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/list/perm.html">perm</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/list/range.html">range</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/list/sort.html">sort</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/list/tfae.html">tfae</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/list/zip.html">zip</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="data/multiset" >
+            <summary>multiset</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/multiset/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/multiset/erase_dup.html">erase_dup</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/multiset/finset_ops.html">finset_ops</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/multiset/fold.html">fold</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/multiset/intervals.html">intervals</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/multiset/lattice.html">lattice</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/multiset/nodup.html">nodup</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/multiset/pi.html">pi</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/multiset/powerset.html">powerset</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/multiset/range.html">range</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/multiset/sort.html">sort</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="data/nat" >
+            <summary>nat</summary>
+            
+        <details class="nav_sect" data-path="data/nat/choose" >
+            <summary>choose</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/nat/choose/basic.html">basic</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/nat/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/nat/cast.html">cast</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/nat/enat.html">enat</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/nat/factorial.html">factorial</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/nat/gcd.html">gcd</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/nat/pairing.html">pairing</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/nat/prime.html">prime</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/nat/sqrt.html">sqrt</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="data/num" >
+            <summary>num</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/num/basic.html">basic</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="data/option" >
+            <summary>option</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/option/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/option/defs.html">defs</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="data/pnat" >
+            <summary>pnat</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/pnat/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/pnat/intervals.html">intervals</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="data/rat" >
+            <summary>rat</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/rat/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/rat/cast.html">cast</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/rat/default.html">default</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/rat/floor.html">floor</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/rat/meta_defs.html">meta_defs</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/rat/order.html">order</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="data/real" >
+            <summary>real</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/real/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/real/cau_seq.html">cau_seq</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/real/cau_seq_completion.html">cau_seq_completion</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="data/set" >
+            <summary>set</summary>
+            
+        <details class="nav_sect" data-path="data/set/intervals" >
+            <summary>intervals</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/set/intervals/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/set/intervals/disjoint.html">disjoint</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/set/intervals/image_preimage.html">image_preimage</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/set/intervals/ord_connected.html">ord_connected</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/set/intervals/unordered_interval.html">unordered_interval</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/set/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/set/countable.html">countable</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/set/finite.html">finite</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/set/function.html">function</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/set/lattice.html">lattice</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="data/sigma" >
+            <summary>sigma</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/sigma/basic.html">basic</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="data/string" >
+            <summary>string</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/string/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/string/defs.html">defs</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/bool.html">bool</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/char.html">char</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/fin.html">fin</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/mllist.html">mllist</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/opposite.html">opposite</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/pfun.html">pfun</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/pi.html">pi</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/prod.html">prod</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/quot.html">quot</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/rel.html">rel</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/subtype.html">subtype</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/sum.html">sum</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/tree.html">tree</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/vector2.html">vector2</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="deprecated" >
+            <summary>deprecated</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/deprecated/group.html">group</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="dynamics" >
+            <summary>dynamics</summary>
+            
+        <details class="nav_sect" data-path="dynamics/fixed_points" >
+            <summary>fixed_points</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/dynamics/fixed_points/basic.html">basic</a>
+        </div>
+        </details>
+        </details>
+        <details class="nav_sect" data-path="group_theory" >
+            <summary>group_theory</summary>
+            
+        <details class="nav_sect" data-path="group_theory/group_action" >
+            <summary>group_action</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/group_theory/group_action/defs.html">defs</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/group_theory/group_action/group.html">group</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="group_theory/perm" >
+            <summary>perm</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/group_theory/perm/basic.html">basic</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="group_theory/submonoid" >
+            <summary>submonoid</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/group_theory/submonoid/basic.html">basic</a>
+        </div>
+        </details>
+        </details>
+        <details class="nav_sect" data-path="logic" >
+            <summary>logic</summary>
+            
+        <details class="nav_sect" data-path="logic/function" >
+            <summary>function</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/logic/function/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/logic/function/conjugate.html">conjugate</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/logic/function/iterate.html">iterate</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/logic/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/logic/embedding.html">embedding</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/logic/nontrivial.html">nontrivial</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/logic/relation.html">relation</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/logic/relator.html">relator</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/logic/unique.html">unique</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="meta" >
+            <summary>meta</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/meta/expr.html">expr</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/meta/expr_lens.html">expr_lens</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/meta/rb_map.html">rb_map</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="order" >
+            <summary>order</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/order/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/order/boolean_algebra.html">boolean_algebra</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/order/bounded_lattice.html">bounded_lattice</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/order/bounds.html">bounds</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/order/complete_boolean_algebra.html">complete_boolean_algebra</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/order/complete_lattice.html">complete_lattice</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/order/conditionally_complete_lattice.html">conditionally_complete_lattice</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/order/directed.html">directed</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/order/fixed_points.html">fixed_points</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/order/galois_connection.html">galois_connection</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/order/lattice.html">lattice</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/order/order_dual.html">order_dual</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/order/rel_classes.html">rel_classes</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/order/rel_iso.html">rel_iso</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/order/well_founded.html">well_founded</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/order/zorn.html">zorn</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory" >
+            <summary>set_theory</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/set_theory/cardinal.html">cardinal</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="tactic" open>
+            <summary>tactic</summary>
+            
+        <details class="nav_sect" data-path="tactic/converter" >
+            <summary>converter</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/converter/apply_congr.html">apply_congr</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/converter/interactive.html">interactive</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/converter/old_conv.html">old_conv</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="tactic/linarith" >
+            <summary>linarith</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/linarith/datatypes.html">datatypes</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/linarith/elimination.html">elimination</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/linarith/frontend.html">frontend</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/linarith/lemmas.html">lemmas</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/linarith/parsing.html">parsing</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/linarith/preprocessing.html">preprocessing</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/linarith/verification.html">verification</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="tactic/lint" >
+            <summary>lint</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/lint/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/lint/default.html">default</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/lint/frontend.html">frontend</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/lint/misc.html">misc</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/lint/simp.html">simp</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/lint/type_classes.html">type_classes</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="tactic/monotonicity" >
+            <summary>monotonicity</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/monotonicity/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/monotonicity/interactive.html">interactive</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/monotonicity/lemmas.html">lemmas</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="tactic/nth_rewrite" >
+            <summary>nth_rewrite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/nth_rewrite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/nth_rewrite/congr.html">congr</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/nth_rewrite/default.html">default</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="tactic/omega" open>
+            <summary>omega</summary>
+            
+        <details class="nav_sect" data-path="tactic/omega/int" >
+            <summary>int</summary>
+            
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/int/dnf.html">dnf</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/int/form.html">form</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/int/main.html">main</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/int/preterm.html">preterm</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="tactic/omega/nat" open>
+            <summary>nat</summary>
+            
+        <div class="nav_link visible">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/dnf.html">dnf</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/form.html">form</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/main.html">main</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/neg_elim.html">neg_elim</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/preterm.html">preterm</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/nat/sub_elim.html">sub_elim</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/clause.html">clause</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/coeffs.html">coeffs</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/eq_elim.html">eq_elim</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/find_ees.html">find_ees</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/find_scalars.html">find_scalars</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/lin_comb.html">lin_comb</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/main.html">main</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/misc.html">misc</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/prove_unsats.html">prove_unsats</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/omega/term.html">term</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/abel.html">abel</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/algebra.html">algebra</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/alias.html">alias</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/apply.html">apply</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/apply_fun.html">apply_fun</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/auto_cases.html">auto_cases</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/binder_matching.html">binder_matching</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/cache.html">cache</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/cancel_denoms.html">cancel_denoms</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/chain.html">chain</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/choose.html">choose</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/clear.html">clear</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/congr.html">congr</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/core.html">core</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/dec_trivial.html">dec_trivial</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/delta_instance.html">delta_instance</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/dependencies.html">dependencies</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/derive_fintype.html">derive_fintype</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/derive_inhabited.html">derive_inhabited</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/doc_commands.html">doc_commands</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/elide.html">elide</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/equiv_rw.html">equiv_rw</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/explode.html">explode</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/ext.html">ext</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/field_simp.html">field_simp</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/fin_cases.html">fin_cases</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/find.html">find</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/finish.html">finish</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/fix_reflect_string.html">fix_reflect_string</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/generalize_proofs.html">generalize_proofs</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/generalizes.html">generalizes</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/group.html">group</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/hint.html">hint</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/interactive.html">interactive</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/interactive_expr.html">interactive_expr</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/interval_cases.html">interval_cases</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/lean_core_docs.html">lean_core_docs</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/lift.html">lift</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/localized.html">localized</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/mk_iff_of_inductive_prop.html">mk_iff_of_inductive_prop</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/noncomm_ring.html">noncomm_ring</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/norm_cast.html">norm_cast</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/norm_num.html">norm_num</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/obviously.html">obviously</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/pi_instances.html">pi_instances</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/pretty_cases.html">pretty_cases</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/protected.html">protected</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/push_neg.html">push_neg</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/rcases.html">rcases</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/reassoc_axiom.html">reassoc_axiom</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/rename_var.html">rename_var</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/replacer.html">replacer</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/reserved_notation.html">reserved_notation</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/restate_axiom.html">restate_axiom</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/rewrite.html">rewrite</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/ring.html">ring</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/ring_exp.html">ring_exp</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/scc.html">scc</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/show_term.html">show_term</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/simp_command.html">simp_command</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/simp_result.html">simp_result</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/simp_rw.html">simp_rw</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/simpa.html">simpa</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/simps.html">simps</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/slice.html">slice</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/solve_by_elim.html">solve_by_elim</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/split_ifs.html">split_ifs</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/squeeze.html">squeeze</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/subtype_instance.html">subtype_instance</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/suggest.html">suggest</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/tauto.html">tauto</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/tfae.html">tfae</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/tidy.html">tidy</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/transform_decl.html">transform_decl</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/transport.html">transport</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/trunc_cases.html">trunc_cases</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/unfold_cases.html">unfold_cases</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/unify_equations.html">unify_equations</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/where.html">where</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/wlog.html">wlog</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/tactic/zify.html">zify</a>
+        </div>
+        </details>
+</nav>
+
+</body>
+
+
+<script>
+MathJax = {
+    tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+    },
+    options: {
+        skipHtmlTags: [
+            'script', 'noscript', 'style', 'textarea', 'pre',
+            'code', 'annotation', 'annotation-xml',
+            'decl', 'decl_meta', 'attributes', 'decl_args', 'decl_header', 'decl_name',
+            'decl_type', 'equation', 'equations', 'structure_field', 'structure_fields',
+            'constructor', 'constructors', 'instances'
+        ],
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process',
+    },
+};
+
+siteRoot = "https://vaibhavkarve.github.io/igl2020-docs/";
+</script>
+<script src="https://vaibhavkarve.github.io/igl2020-docs/nav.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
