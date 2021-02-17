@@ -44,62 +44,58 @@ understand is that /every/ python object has a type, whether we specify it
 explicitly or not.
 
 * Types that are built-in in python
-  Python comes with some buil-in types.
+Python comes with some buil-in types.
 
-  #+NAME: built-in types
-  #+BEGIN_SRC python :results output
-  a: int   = 1
-  b: float = 1.0
-  c: str   = 'one'
-  d: bool  = True
-  e: None  = None
-  #+END_SRC
+#+NAME: built-in types
+#+BEGIN_SRC python :results output
+a: int   = 1
+b: float = 1.0
+c: str   = 'one'
+d: bool  = True
+e: None  = None
+#+END_SRC
 
 
-  In addition, for every class that we define, we can refer to the
-  type of its instances using the name of the class itself.
-  #+NAME: classes are Types.
-  #+BEGIN_SRC python :results output
-  class MyClass:
-      pass
-  m: MyClass = MyClass()
-  #+END_SRC
+In addition, for every class that we define, we can refer to the type of its
+instances using the name of the class itself.
+#+NAME: classes are Types.
+#+BEGIN_SRC python :results output
+class MyClass:
+    pass
+m: MyClass = MyClass()
+#+END_SRC
 
 ** Subtypes and NewType
-   So far, we have talked about types without specifically defining
-   what a type is. We will continue to *not* define them. However, we
-   will say that one way to think about a type is simply as a set of
-   values (sometimes these values are called terms, or even
-   instances). So, =bool= can be thought of as the set ={True,
-   False}=, and =int= can be thought of as ={1, 2, 3, ...}=, and so
-   on.
+So far, we have talked about types without specifically defining what a type
+is. We will continue to /not/ define them. However, we will say that one way to
+think about a type is simply as a set of values (sometimes these values are
+called terms, or even instances). So, =bool= can be thought of as the set
+={True, False}=, and =int= can be thought of as ={1, 2, 3, ...}=, and so on.
 
-   This analogy is also handy when trying to understand Subtypes. A
-   type =A= is a subtype of a type =B= if the set of values
-   corresponding to =A= is a subset of the set of values corresponding
-   to =B=. This is often written (in type-theory texts, but not in
-   python itself) as =A <: B=.
+This analogy is also handy when trying to understand Subtypes. A type =A= is a
+subtype of a type =B= if the set of values corresponding to =A= is a subset of
+the set of values corresponding to =B=. This is often written (in type-theory
+texts, but not in python itself) as =A <: B=.
 
-   For example, =int <: float=. In other words, every =int= is also a
-   =float=.  It may come as a surprise to some python users that in
-   python, the following is also true: =bool <: int=.  This is because
-   =bool= inherits from =int= and =False=, =True= are just aliases of
-   =0= and =1= respectively.
+For example, =int <: float=. In other words, every =int= is also a =float=.  It
+may come as a surprise to some python users that in python, the following is
+also true: =bool <: int=.  This is because =bool= inherits from =int= and
+=False=, =True= are just aliases of =0= and =1= respectively.
 
-   The =typing= library lets us define subtypes using the =NewType=
-   function as follows:
+The =typing= library lets us define subtypes using the =NewType= function as
+follows:
 
-  #+NAME: positive integers
-  #+BEGIN_SRC python :results output
-  # define a new type
-  PositiveInt = NewType('PositiveInt', int)  # This is the same as declaring PositiveInt <: int
+#+NAME: positive integers
+#+BEGIN_SRC python :results output
+# define a new type
+PositiveInt = NewType('PositiveInt', int)  # This is the same as declaring PositiveInt <: int
 
-  # define a constructor function for the new type
-  def make_positive_int(a: int) -> PositiveInt:
-      if a > 0:
-          return PositiveInt(a)
-      raise ValueError, 'arg was not positive.'
-  #+END_SRC
+# define a constructor function for the new type
+def make_positive_int(a: int) -> PositiveInt:
+    if a > 0:
+        return PositiveInt(a)
+    raise ValueError, 'arg was not positive.'
+#+END_SRC
 
 
 ** Why use =NewType=?
