@@ -18,12 +18,7 @@ org/Teaching_Philosophy_Statement.pdf : ~/org/ref/teaching_statement_jan_2021/te
 
 leandocs :
 	rm -rf igl2020-docs
-	git branch -D lean-doc
-	git branch --track lean-doc origin/lean-doc
-	git checkout lean-doc
-	git pull
-	git checkout master
-	git checkout lean-doc -- igl2020-docs
+	git checkout origin/lean-doc -- igl2020-docs
 	git add igl2020-docs/
 	git commit -m "auto-update lean documentation for igl2020"
 	git push origin master
