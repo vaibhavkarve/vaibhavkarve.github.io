@@ -7,16 +7,16 @@
     <title>mathlib docs: igl2020 / model</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="model.lean. In this file,. We define functions of arity (n : ℕ) and their API. We define languages. We define structures. We define embedding between two structures on the same language. We define…" />
+    <meta name="description" content="model.lean. In this file, we define. functions of arity `(n : ℕ)` and their API. languages. structures. embedding between two structures on the same language. terms. we define a function for term…" />
 
     <meta name="og:title" content="mathlib docs: igl2020 / model">
     <meta name="og:site_name" content="mathlib for Lean - API documentation">
-    <meta name="og:description" content="model.lean. In this file,. We define functions of arity (n : ℕ) and their API. We define languages. We define structures. We define embedding between two structures on the same language. We define…">
+    <meta name="og:description" content="model.lean. In this file, we define. functions of arity `(n : ℕ)` and their API. languages. structures. embedding between two structures on the same language. terms. we define a function for term…">
     <meta name="og:image" content="https://vaibhavkarve.github.io/igl2020-docs/meta-og.png">
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="mathlib docs: igl2020 / model">
-    <meta name="twitter:description" content="model.lean. In this file,. We define functions of arity (n : ℕ) and their API. We define languages. We define structures. We define embedding between two structures on the same language. We define…">
+    <meta name="twitter:description" content="model.lean. In this file, we define. functions of arity `(n : ℕ)` and their API. languages. structures. embedding between two structures on the same language. terms. we define a function for term…">
     <meta name="twitter:image" content="https://vaibhavkarve.github.io/igl2020-docs/meta-twitter.png">
 </head>
 
@@ -38,7 +38,7 @@
 <nav class="internal_nav">
 <h3><a class="break_within" href="#top"><span class="name">igl2020</span> / <span class="name">model</span></a></h3>
 
-<p class="gh_nav_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean">source</a></p>
+<p class="gh_nav_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean">source</a></p>
 
 <div class="imports">
     <details>
@@ -147,6 +147,8 @@
 
     <div class="nav_link"><a class="break_within" href="#number_of_vars"><span class="name">number_of_vars</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#primes"><span class="name">primes</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#sentence"><span class="name">sentence</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#sentence_to_formula"><span class="name">sentence_to_formula</span></a></div>
@@ -185,30 +187,30 @@
 
     
         <div class="mod_doc">
-            <p>model.lean</p>
-<p>In this file,
-0. We define functions of arity (n : ℕ) and their API.</p>
-<ol>
-<li>We define languages.</li>
-<li>We define structures.</li>
-<li>We define embedding between two structures on the same language.</li>
-<li>We define terms.
+            <h1 id="modellean" class="markdown-heading">model.lean <a class="hover-link" href="#modellean">#</a></h1>
+<p>In this file, we define</p>
 <ul>
-<li>We define a function for term substitution and prove a theorem.</li>
-<li>We give an interpretation of terms in structures.</li>
+<li>functions of arity <code>(n : ℕ)</code> and their API.</li>
+<li>languages</li>
+<li>structures</li>
+<li>embedding between two structures on the same language.</li>
+<li>terms
+<ul>
+<li>we define a function for term substitution and prove a theorem.</li>
+<li>we give an interpretation of terms in structures.</li>
 </ul>
 </li>
-<li>We define formulas.</li>
-</ol>
+<li>formulas.</li>
+</ul>
+<h2 id="tags" class="markdown-heading">Tags <a class="hover-link" href="#tags">#</a></h2>
+<p>model-theory, o-minimality</p>
 
         </div>
     
 
     
         <div class="mod_doc">
-            <ol start="0">
-<li>Arity n Functions and their API</li>
-</ol>
+            <p>Arity n Functions and their API</p>
 
         </div>
     
@@ -219,7 +221,7 @@
 <div class="decl" id="Func">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L24">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L29">source</a></div>
 
 
 
@@ -266,7 +268,7 @@ terms of type α.</p>
 <div class="decl" id="Funcs">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L31">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L36">source</a></div>
 
 
 
@@ -311,7 +313,7 @@ sum up the types. Sum for types corresponds to union for sets.</p>
 <div class="decl" id="Funcs.inhabited">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L44">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L49">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -369,7 +371,7 @@ that returns an arbitrary α.</p>
 <div class="decl" id="mk_Func_of_total">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L53">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L58">source</a></div>
 
 
 
@@ -421,7 +423,7 @@ it into a partial function of the same arity.</p>
 <div class="decl" id="app_elem">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L62">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L67">source</a></div>
 
 
 
@@ -470,7 +472,7 @@ function.</p>
 <div class="decl" id="app_vec">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L71">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L76">source</a></div>
 
 
 
@@ -524,7 +526,7 @@ remaining (n+1)-sized tail.</li>
 <div class="decl" id="app_fin">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L77">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L82">source</a></div>
 
 
 
@@ -571,7 +573,7 @@ remaining (n+1)-sized tail.</li>
 <div class="decl" id="app_vec_partial">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L84">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L89">source</a></div>
 
 
 
@@ -620,7 +622,7 @@ TODO: Turn this into patter-matched term-style definition.</p>
 <div class="decl" id="app_vec_partial'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L96">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L101">source</a></div>
 
 
 
@@ -666,9 +668,7 @@ TODO: Turn this into patter-matched term-style definition.</p>
 
     
         <div class="mod_doc">
-            <hr />
-<p>-- 1. Languages</p>
-<hr />
+            <p>Languages</p>
 
         </div>
     
@@ -679,7 +679,7 @@ TODO: Turn this into patter-matched term-style definition.</p>
 <div class="decl" id="lang">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L110">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L113">source</a></div>
 
 
 
@@ -724,7 +724,7 @@ along with the arity of each function and each relation.</p>
 <div class="decl" id="lang.C">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L115">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L118">source</a></div>
 
 
 
@@ -768,7 +768,7 @@ along with the arity of each function and each relation.</p>
 <div class="decl" id="DLO_lang">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L129">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L132">source</a></div>
 
 
 
@@ -819,7 +819,7 @@ single binary relation symbol ≤ satisfying the following sentences:
 <div class="decl" id="lang.inhabited">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L135">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L138">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -861,9 +861,7 @@ inhabited type.</p>
 
     
         <div class="mod_doc">
-            <hr />
-<p>-- 2. Structures</p>
-<hr />
+            <p>Structures</p>
 
         </div>
     
@@ -874,7 +872,7 @@ inhabited type.</p>
 <div class="decl" id="struc">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L149">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L150">source</a></div>
 
 
 
@@ -925,7 +923,7 @@ as (L.F 0). But in fact we should keep one or the other, not both.</p>
 <div class="decl" id="struc.C">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L154">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L155">source</a></div>
 
 
 
@@ -969,7 +967,7 @@ as (L.F 0). But in fact we should keep one or the other, not both.</p>
 <div class="decl" id="struc.inhabited">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L157">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L158">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -1010,9 +1008,7 @@ as (L.F 0). But in fact we should keep one or the other, not both.</p>
 
     
         <div class="mod_doc">
-            <hr />
-<p>-- 3. Embeddings between Structures</p>
-<hr />
+            <p>Embeddings between Structures</p>
 
         </div>
     
@@ -1023,7 +1019,7 @@ as (L.F 0). But in fact we should keep one or the other, not both.</p>
 <div class="decl" id="embedding">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L172">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L171">source</a></div>
 
 
 
@@ -1079,7 +1075,7 @@ on the domain and preserves the interpretation of all the symbols of L.</p>
 <div class="decl" id="vec_map_id">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L182">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L181">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1117,7 +1113,7 @@ on the domain and preserves the interpretation of all the symbols of L.</p>
 <div class="decl" id="embedding.inhabited">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L191">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L190">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -1165,7 +1161,7 @@ to itself via the identity map.</p>
 <div class="decl" id="isomorphism">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L200">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L199">source</a></div>
 
 
 
@@ -1211,7 +1207,7 @@ to itself via the identity map.</p>
 <div class="decl" id="isomorphism.inhabited">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L206">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L205">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -1259,7 +1255,7 @@ to itself.</p>
 <div class="decl" id="card">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L212">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L211">source</a></div>
 
 
 
@@ -1304,7 +1300,7 @@ to itself.</p>
 <div class="decl" id="le_card_of_embedding">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L217">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L216">source</a></div>
 
 
 
@@ -1338,9 +1334,7 @@ the cardinality of M.</p>
 
     
         <div class="mod_doc">
-            <hr />
-<p>-- 4. Terms</p>
-<hr />
+            <p>Terms</p>
 
         </div>
     
@@ -1351,7 +1345,7 @@ the cardinality of M.</p>
 <div class="decl" id="term">
 <div class="inductive">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L229">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L227">source</a></div>
 
 
 
@@ -1405,7 +1399,7 @@ of type L.F 0.</p>
 <div class="decl" id="term.inhabited">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L241">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L239">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -1453,7 +1447,7 @@ language has countably infinite terms of level 0.</p>
 <div class="decl" id="vars_in_term">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L251">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L249">source</a></div>
 
 
 
@@ -1508,7 +1502,7 @@ language has countably infinite terms of level 0.</p>
 <div class="decl" id="number_of_vars">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L260">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L258">source</a></div>
 
 
 
@@ -1564,7 +1558,7 @@ the finset given by vars_in_term.</p>
 <div class="decl" id="term_interpretation">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L267">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L265">source</a></div>
 
 
 
@@ -1627,7 +1621,7 @@ the finset given by vars_in_term.</p>
 <div class="decl" id="term_sub">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L284">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L282">source</a></div>
 
 
 
@@ -1686,7 +1680,7 @@ generalized to subsitute each variable with its own term.</p>
 <div class="decl" id="term_sub_for_var">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L293">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L291">source</a></div>
 
 
 
@@ -1739,9 +1733,7 @@ occur over only one variable.</p>
 
     
         <div class="mod_doc">
-            <hr />
-<p>-- 5. Formulas and Sentences</p>
-<hr />
+            <p>Formulas and Sentences</p>
 
         </div>
     
@@ -1752,7 +1744,7 @@ occur over only one variable.</p>
 <div class="decl" id="formula">
 <div class="inductive">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L307">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L302">source</a></div>
 
 
 
@@ -1817,7 +1809,7 @@ occur over only one variable.</p>
 <div class="decl" id="impl">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L328">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L323">source</a></div>
 
 
 
@@ -1861,7 +1853,7 @@ occur over only one variable.</p>
 <div class="decl" id="bicond">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L331">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L326">source</a></div>
 
 
 
@@ -1905,7 +1897,7 @@ occur over only one variable.</p>
 <div class="decl" id="vars_in_list">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L338">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L333">source</a></div>
 
 
 
@@ -1951,7 +1943,7 @@ occur over only one variable.</p>
 <div class="decl" id="vars_in_formula">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L344">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L339">source</a></div>
 
 
 
@@ -2011,7 +2003,7 @@ occur over only one variable.</p>
 <div class="decl" id="is_var_free">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L358">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L353">source</a></div>
 
 
 
@@ -2073,7 +2065,7 @@ over.</p>
 <div class="decl" id="var_is_bound">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L371">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L366">source</a></div>
 
 
 
@@ -2119,7 +2111,7 @@ over.</p>
 <div class="decl" id="is_sentence">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L375">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L370">source</a></div>
 
 
 
@@ -2164,7 +2156,7 @@ over.</p>
 <div class="decl" id="sentence">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L378">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L373">source</a></div>
 
 
 
@@ -2210,9 +2202,7 @@ over.</p>
 
     
         <div class="mod_doc">
-            <hr />
-<p>-- 6. Satisfiability and Models</p>
-<hr />
+            <p>Satisfiability and Models</p>
 
         </div>
     
@@ -2223,7 +2213,7 @@ over.</p>
 <div class="decl" id="expanded_lang">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L394">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L387">source</a></div>
 
 
 
@@ -2267,7 +2257,7 @@ over.</p>
 <div class="decl" id="expanded_struc">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L400">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L393">source</a></div>
 
 
 
@@ -2312,7 +2302,7 @@ over.</p>
 <div class="decl" id="models">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L412">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L405">source</a></div>
 
 
 
@@ -2374,7 +2364,7 @@ an L-structure.</p>
 <div class="decl" id="eq_term_interpretation_of_identical_var_assign">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L427">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L420">source</a></div>
 
 
 
@@ -2415,7 +2405,7 @@ Then t is interpreted to the same element under both s₁ and s₂.</p>
 <div class="decl" id="iff_models_relation_of_identical_var_assign">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L471">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L464">source</a></div>
 
 
 
@@ -2458,7 +2448,7 @@ satisfied in M under s₁ iff it is also satisfied under s₂.</p>
 <div class="decl" id="iff_models_of_identical_var_assign">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L502">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L495">source</a></div>
 
 
 
@@ -2499,7 +2489,7 @@ Then M ⊨ ϕ[s₁] iff M ⊨ ϕ[s₂].</p>
 <div class="decl" id="models_all_or_none_sentences">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L579">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L572">source</a></div>
 
 
 
@@ -2538,7 +2528,7 @@ for all assignment functions s, of M ⊨ σ[s] for no assignment function s.</p>
 <div class="decl" id="Model">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L602">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L595">source</a></div>
 
 
 
@@ -2588,7 +2578,7 @@ of sentences and show (ℚ, &lt;) models the axioms for DLO.</p>
 <div class="decl" id="godel_encoding">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L642">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L635">source</a></div>
 
 
 
@@ -2650,7 +2640,7 @@ of sentences and show (ℚ, &lt;) models the axioms for DLO.</p>
 <div class="decl" id="nat_to_prime">
 <div class="axiom">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L657">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L650">source</a></div>
 
 
 
@@ -2683,7 +2673,7 @@ of sentences and show (ℚ, &lt;) models the axioms for DLO.</p>
 <div class="decl" id="encoding1">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L661">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L654">source</a></div>
 
 
 
@@ -2727,10 +2717,52 @@ of sentences and show (ℚ, &lt;) models the axioms for DLO.</p>
     
         
         
+<div class="decl" id="primes">
+<div class="def">
+
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L661">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://vaibhavkarve.github.io/igl2020-docs/model.html#primes"><span class="name">primes</span></a></span>
+&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list">list</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a></span></div>
+</div>
+
+
+
+
+
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#primes">primes</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/list/basic.html#list.filter">list.filter</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/data/nat/prime.html#nat.prime">nat.prime</a></span> [1]</span></span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="is_complete">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L671">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L669">source</a></div>
 
 
 
@@ -2749,9 +2781,6 @@ of sentences and show (ℚ, &lt;) models the axioms for DLO.</p>
 
 
 
-<p>Completeness of Language
-========================</p>
-<p>All sentences are formulas.</p>
 
 
 
@@ -2777,7 +2806,7 @@ of sentences and show (ℚ, &lt;) models the axioms for DLO.</p>
 <div class="decl" id="is_countable">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L672">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L670">source</a></div>
 
 
 
@@ -2820,7 +2849,7 @@ of sentences and show (ℚ, &lt;) models the axioms for DLO.</p>
 <div class="decl" id="sentence_to_formula">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L673">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L671">source</a></div>
 
 
 
@@ -2863,7 +2892,7 @@ of sentences and show (ℚ, &lt;) models the axioms for DLO.</p>
 <div class="decl" id="all_models_are_iso_as_structures">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L674">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L672">source</a></div>
 
 
 
@@ -2907,7 +2936,7 @@ of sentences and show (ℚ, &lt;) models the axioms for DLO.</p>
 <div class="decl" id="Vaught">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/397c68d9153f3308779521aace721e10029ba75c/src/model.lean#L676">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L674">source</a></div>
 
 
 

@@ -969,6 +969,7 @@ encodable.encode_list_nil
 list.unzip_nil
 nat.bit_zero
 list.nth_le_of_fn
+primes
 with_top.order_bot
 set.Ioc_top
 list.span_eq_take_drop
