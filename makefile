@@ -18,7 +18,7 @@ org/Teaching_Philosophy_Statement.pdf : ~/org/ref/teaching_statement_jan_2021/te
 
 leandocs :
 	rm -rf igl2020-docs
-	git branch -D lean-doc
+	git branch -D lean-doc || true
 	git branch --track lean-doc origin/lean-doc
 	git checkout lean-doc
 	git pull
