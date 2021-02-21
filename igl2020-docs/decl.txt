@@ -39,6 +39,7 @@ cau_seq.neg_equiv_neg
 expr.is_sort
 neg_of_mul_pos_right
 fixed_points.prev
+stream.corec_id_id_eq_const
 environment
 is_cond_left_inv
 is_cond_left_inv.left_inv
@@ -647,6 +648,7 @@ div_neg
 list.cons_ne_self
 nat.succ_pos'
 interactive.types.ident_
+stream.head_cons
 bnot_eq_true_eq_eq_ff
 csupr_const
 is_glb_univ
@@ -804,6 +806,7 @@ set.left_mem_Ioo
 local_context.is_subset
 monoid_with_zero_hom.congr_fun
 tactic.flat_assoc
+stream.unfolds_eq
 ge.is_total_preorder
 int.coe_cast_ring_hom
 list.prefix_cons_inj
@@ -969,7 +972,6 @@ encodable.encode_list_nil
 list.unzip_nil
 nat.bit_zero
 list.nth_le_of_fn
-primes
 with_top.order_bot
 set.Ioc_top
 list.span_eq_take_drop
@@ -1061,6 +1063,7 @@ equiv.of_injective
 inf_sup_left
 expr.is_arrow
 tactic_doc_entry.inhabited
+stream.head_zip
 linarith.preprocessor.globalize
 tactic.mk_constructor_arg_names
 nat.factors_unique
@@ -1557,6 +1560,7 @@ set.bInter_univ
 option.bind_pmap
 set.ssubset_iff_of_subset
 finset.sup
+stream.iterate_id
 encodable.of_left_injection
 nat.add_one_ne_zero
 tactic.explode.args
@@ -1692,6 +1696,7 @@ cardinal.nat_lt_omega
 exists_int_pow_near
 enat.add_left_cancel_iff
 finset.sum_mono_set
+stream.append_stream
 finset.sum_le_sum
 list.erase_dup_eq_self
 list.prod_repeat
@@ -1807,6 +1812,7 @@ group_with_zero.no_zero_divisors
 option.mem_to_finset
 nat.max_succ_succ
 module_info.of_module_name
+stream.mem_of_mem_even
 bnot_eq_ff_eq_eq_tt
 fintype.decidable_exists_fintype
 quotient.ind'
@@ -1835,6 +1841,7 @@ num.mul
 is_group_hom.injective_iff
 infinite.nonempty
 finset.mem_sup
+stream.coinduction
 int.repr
 option.bind
 multiset.bind_zero
@@ -2315,6 +2322,7 @@ set.fintype_range
 tactic.whnf_target
 tactic.interactive.side_conditions
 opposite.op_zero
+stream.tail
 sqr_lt_sqr'
 set.image_univ
 list.perm.union_right
@@ -2336,6 +2344,7 @@ smt_tactic.interactive.induction
 int.has_div
 list.sublists_aux_eq_foldr
 int.le_of_coe_nat_le_coe_nat
+stream.nth_even
 sup_eq_left
 fin.forall_iff
 function.const_apply
@@ -2372,6 +2381,7 @@ tactic.dependencies_of_hyps
 list.length_take_le
 list.chain'.iff
 int.bit
+stream.mem_interleave_left
 list.append_subset_of_subset_of_subset
 finset.prod_cancels_of_partition_cancels
 is_valid_char_range_2
@@ -2530,6 +2540,7 @@ is_strict_total_order'.to_is_strict_order
 is_strict_total_order'.mk
 interactive.types.only_flag
 zero_hom.id_comp
+stream.nth_zero_cons
 list.pairwise_pmap
 multiset.Ico.succ_singleton
 finset.empty_subset
@@ -2567,6 +2578,7 @@ succ_ne_self
 is_glb.of_image
 norm_num.div_eq
 rat.semigroup
+stream.eq_of_bisim
 multiset.disjoint_union_right
 finset.sum_div
 is_lub
@@ -2649,6 +2661,7 @@ int.nat_abs_mul_self
 tactic.nth_rewrite.tracked_rewrite.eval
 tactic.interactive.guard_tags
 relation.refl_trans_gen_lift
+stream.cons
 smt_tactic.add_ematch_lhs_lemma_from_decl
 semilattice_sup_top
 semilattice_sup_top.top
@@ -2694,6 +2707,7 @@ function.inv_fun_eq
 right_eq_mul_iff
 inv_lt_one_iff_one_lt
 fintype.univ_empty
+stream.approx_zero
 quotient.lift_on'_mk'
 tactic.rcases_hint
 int.mod_self
@@ -2952,6 +2966,7 @@ set.set_semiring
 set.image2_image_left
 partial_order.ext
 finset.min'_mem
+stream.tail_const
 unsigned.of_nat
 functor.map_equiv_refl
 has_le.le.le_or_le
@@ -3046,6 +3061,7 @@ euclidean_domain.mod_self
 set.surj_on_iff_exists_bij_on_subset
 finset.card_empty
 tactic.match_or
+stream
 godel_encoding
 prod.semigroup
 set.mem_Ioc
@@ -3194,6 +3210,7 @@ int.cast_eq_zero
 task.bind
 set.mem_image2_iff
 list.length_le_of_sublist
+stream.tails_eq_iterate
 int.ne_of_nat_ne_nonneg_case
 finset.union_sdiff_symm
 nat.find_greatest_of_ne_zero
@@ -3355,6 +3372,7 @@ nodup_perms_of_list
 set.bind_def
 finset.range_subset
 function.semiconj.id_left
+stream.tail_interleave
 nat.shiftl_sub
 nat.pow_lt_pow_succ
 reader_t.run_read
@@ -3424,6 +3442,7 @@ tt_eq_ff_eq_false
 comm_group.to_group
 add_zero
 finset.sdiff_union_inter
+stream.map_eq
 list.ilast
 abs_sub_square
 finset.sum_partition
@@ -3465,6 +3484,7 @@ gpow_neg_one
 native.float.sign
 tactic.interactive.revert
 set.range_ite_subset'
+stream.primes
 set.Icc_union_Ici_eq_Ici
 subtype.coind_injective
 multiset.sum_nonneg
@@ -3473,6 +3493,7 @@ function.embedding.right_inv_of_inv_of_mem_range
 ge.is_trans
 tactic.ring.unfold_div
 enat.coe_one
+stream.nth_succ
 division_ring.to_nontrivial
 omega.int.val_canonize
 tactic.ext_core
@@ -3496,6 +3517,7 @@ list.perm.bag_inter_left
 roption.none_decidable
 set.infinite_image_iff
 set.Inter_subset
+stream.zip_eq
 finset.image_mono
 nat.gcd_zero_left
 is_field
@@ -3507,6 +3529,7 @@ expr.is_napp_of
 opposite.equiv_to_opposite
 rat.ordered_ring
 sub_le_sub_left
+stream.head
 tactic.norm_num.eval_prime
 right_ne_zero_of_mul
 old_conv.trace
@@ -3586,6 +3609,7 @@ cardinal.prod_mk
 auto.add_conjuncts
 list.all
 nat.zero_lt_one
+stream.all_def
 set.fmap_eq_image
 applicative_transformation
 applicative_transformation.app
@@ -3616,6 +3640,7 @@ units.mul_left_symm
 tactic.interactive.rcases
 infi_true
 set.image_const_add_Ioo
+stream.map_iterate
 monoid_with_zero_hom.cancel_right
 mul_comm_div'
 function.injective.comm_group_with_zero
@@ -3749,6 +3774,7 @@ tactic.solve_by_elim.basic_opt.discharger
 tactic.solve_by_elim.basic_opt.max_depth
 tactic.solve_by_elim.basic_opt.mk
 and_eq_of_eq_true_right
+stream.composition
 vector.to_list_append
 or.assoc
 fin.sum_pow_mul_eq_add_pow
@@ -3885,6 +3911,7 @@ equiv.fun_unique
 tactic.interactive.ring1
 has_dup
 associative
+stream.nth_inits
 string.iterator.length_next_to_string_next
 function.commute.refl
 int.neg_succ_mul_coe_nat
@@ -3980,6 +4007,7 @@ mem_smul_set_iff_inv_smul_mem
 int.div_neg
 list.fin_range
 rat.num_pos_iff_pos
+stream.corec
 set.nonempty_Ioc_subtype
 rat.add_left_cancel_semigroup
 multiset.add_inter_distrib
@@ -4066,6 +4094,7 @@ pnat.mod_coe
 mul_gpow_self
 fintype.card_pos_iff
 prod.lex.decidable
+stream.interleave_eq
 no_top_order
 no_top_order.no_top
 no_top_order.mk
@@ -4124,6 +4153,7 @@ cau_seq.has_coe_to_fun
 string.str
 tactic.interactive.ring.mode
 rel_embedding.is_trans
+stream.eq_or_mem_of_mem_cons
 order_dual.semilattice_sup_top
 finset.exists_mem_empty_iff
 half_sub
@@ -4519,6 +4549,7 @@ string.iterator.prevn
 quotient.choice_eq
 tactic.derive_fintype.mk_sigma_elim_eq
 multiset.disjoint.symm
+stream.tail_map
 nat.find_min'
 fin.cast_succ_lt_succ
 list.nth_modify_nth_eq
@@ -4639,6 +4670,7 @@ finset.sum_sub_distrib
 has_le.le.lt_or_le
 reader_t.run_map
 nat.nsmul_eq_mul
+stream.interleave
 finset.val_inj
 real.add_semigroup
 mul_hom.map_mul
@@ -5036,6 +5068,7 @@ monoid_hom.is_group_hom
 equiv.surjective
 list.reverse_eq_nil
 tactic.interactive.simp_arg_type.has_to_string
+term_number
 list.range_core
 is_glb_lt_iff
 native.float.log2
@@ -5074,6 +5107,7 @@ le_of_mul_le_mul_left'
 finset.bUnion_empty
 eq_of_le_of_forall_ge_of_dense
 quotient.lift_mk
+stream.eta
 galois_connection.le_u_l
 true_ne_false
 int.nonneg
@@ -5159,7 +5193,6 @@ ring_hom.eq_int_cast
 finset.infi_insert_update
 semilattice_sup_bot.to_semilattice_sup
 vector.to_list_length
-example_terms.ψ₂
 quotient.induction_on₃
 forall_eq_or_imp
 coe_ff
@@ -5207,6 +5240,7 @@ tactic.rcases_patt.name
 semiconj_by.eq
 add_monoid_hom.apply_int
 fin.mod_def
+stream.bisim_simple
 multiset.repeat_subset_singleton
 lattice_of_linear_order
 mul_neg_iff
@@ -5996,6 +6030,7 @@ list.mpartition
 expr.is_heq
 multiset.map_singleton
 linarith.sum.mul
+stream.tails
 ring.inverse_non_unit
 tactic.ring_exp.ex.info
 finset.disjoint_union_left
@@ -6167,6 +6202,7 @@ list.length_drop
 int.add
 nat.add_mul_div_left
 native.rb_set.of_list
+stream.nth_interleave_left
 finset.sum_filter_of_ne
 tactic.choose1
 rat.nontrivial
@@ -6264,6 +6300,7 @@ rat.cast_div
 set.univ_neg
 finset.compl_ne_univ_iff_nonempty
 list.cons_subperm_of_mem
+stream.nth_zip
 lt_mul_iff_one_lt_left
 eq_min
 add_monoid_hom.snd_comp_prod
@@ -6444,6 +6481,7 @@ expr.occurs
 tactic.norm_num
 function.equiv.trans
 encodable.encode_inl
+stream.approx_succ
 set.Ioi_subset_Ioc_union_Ici
 tactic.solve_by_elim.solve_by_elim_trace
 galois_connection.lift_order_bot
@@ -6474,6 +6512,7 @@ ring_equiv.coe_symm_mk
 set.Icc_subset_Icc_union_Ioc
 set.image_add_const_Icc
 equiv.subtype_preimage_symm_apply_coe_neg
+stream.odd_eq
 int.div_nonpos
 int.lt_of_add_lt_add_left
 set.range_eq_empty
@@ -6609,6 +6648,7 @@ set.mem_image
 gt_of_gt_of_ge
 cardinal.mk_image_eq
 list.bag_inter_nil
+stream.nth_unfolds_head_tail
 exists_unique.intro
 is_lub.mono
 real.partial_order
@@ -6966,6 +7006,7 @@ finset.disjoint_filter
 option.seq_some
 fin.one_eq_zero_iff
 set.Ioc_union_Ico_eq_Ioo
+stream.is_bisimulation
 fin.heq_fun_iff
 semimodule.of_core
 environment.add_namespace
@@ -7000,6 +7041,7 @@ tactic.new_goals
 tactic.new_goals.non_dep_first
 tactic.new_goals.non_dep_only
 tactic.new_goals.all
+stream.drop_zip
 lt_add_of_pos_of_lt'
 is_lub.supr_eq
 finset.prod_range_div'
@@ -7093,6 +7135,7 @@ add_hom.map_add
 list.map_of_fn
 rat.linear_order
 set.finite
+stream.drop
 rsimp.config.inhabited
 omega.clause.holds_append
 rat.cast_inv
@@ -7223,6 +7266,7 @@ list.singleton_disjoint
 option.comp_map
 fin.univ_cast_succ
 expr.has_meta_var
+stream.nth_const
 tactic.closure.with_new_closure
 multiset.union_le_union_right
 is_add_monoid_hom
@@ -7357,6 +7401,7 @@ is_irrefl.irrefl
 is_irrefl.mk
 enat.find_dom
 option.map_comp_map
+stream.map_cons
 le_of_abs_le
 nat.to_pexpr
 list.prod_take_mul_prod_drop
@@ -7424,6 +7469,7 @@ prod.swap_surjective
 omega.nat.preterm.val_sub_subst
 set.prod_eq_seq
 list.last_cons_cons
+stream.even_tail
 nat.has_to_string
 set.preimage
 monad_io_terminal
@@ -7440,7 +7486,9 @@ set.Ioc
 smt_tactic.interactive.trace
 fixed_points.prev_fixed
 ring.inverse_unit
+stream.ext
 unsigned.has_repr
+stream.approx
 inf_assoc
 tactic.get_proof_state
 infi_inf
@@ -7531,6 +7579,7 @@ expr.has_to_format
 order_embedding.lt_embedding_apply
 add_equiv.to_equiv_apply
 bdd_above_Iic
+stream.map_map
 add_comm_group.to_add_group
 order_iso.trans
 set.Ici_subset_Icc_union_Ioi
@@ -7870,6 +7919,7 @@ tactic.suggest.head_symbol_match.to_string
 push_neg.not_and_eq
 finset.filter_mem_eq_inter
 le_inv_of_le_inv
+stream.any
 set.Union_eq_univ_iff
 neg_add
 quotient.sound'
@@ -7972,6 +8022,7 @@ cc_state.is_cg_root
 add_commute.neg_neg_iff
 nat.prime.dvd_mul
 int.le_div_iff_mul_le
+sentences_model
 int.coe_int_dvd
 list.mem_cons_iff
 imp_eq_true_of_eq
@@ -8665,6 +8716,7 @@ opposite.unop_one
 linarith.ineq.cmp
 eq_inv_mul_iff_mul_eq
 le_antisymm'
+stream.cycle
 fin.nat_find_mem_find
 int.nonneg.elim
 tactic.simp_arg_type.has_reflect
@@ -8730,6 +8782,7 @@ set.Union_subset_iff
 set.Iic_union_Ioc'
 int.to_nat_eq_max
 multiset.is_lawful_singleton
+stream.drop_append_stream
 ring_hom.has_coe_to_fun
 galois_coinsertion.strict_mono_l
 linarith.get_comps
@@ -8849,6 +8902,7 @@ smt_tactic.add_ematch_lhs_lemma
 tactic.interactive.obtain_parse
 set.bij_on.image_eq
 tactic.op_induction
+stream.nth_of_bisim
 set.inter_subset_inter_right
 division_ring.to_domain
 tactic.add_local_consts_as_local_hyps
@@ -8864,6 +8918,7 @@ plift.fintype
 tactic.interactive.lawful_traversable_derive_handler
 mul_equiv.injective
 expr.list_local_const_unique_names
+stream.mem_append_stream_right
 dvd.elim
 multiset.mem_cons_of_mem
 set.mem_powerset_iff
@@ -8900,6 +8955,7 @@ add_units.add_neg_eq_iff_eq_add
 nat.bit1_le
 cau_seq.lt_total
 add_comm_semigroup.to_add_semigroup
+stream.nil_append_stream
 vector.scanl_singleton
 set.mem_Ioo_or_eq_right_of_mem_Ioc
 list.sublists_aux_cons_eq_sublists_aux₁
@@ -8963,6 +9019,7 @@ finset.card_le_one
 pi.boolean_algebra
 ring_equiv.ext
 tactic.lift
+stream.tail_drop
 list.inits_append
 set.fintype_pure
 tactic.interactive.parse_assoc_chain
@@ -9241,13 +9298,13 @@ tactic.fail_if_success
 ring_hom.coe_mul
 list.as_string_inj
 real.le_Inf
-nat_to_prime
 cSup_insert
 abs_add
 buffer.has_to_tactic_format
 nat.sqrt_aux_1
 set.piecewise_insert_of_ne
 tactic_state.pp_tagged
+stream.mem_append_stream_left
 directed
 pow.is_monoid_hom
 nat.distrib_lattice
@@ -9362,6 +9419,7 @@ monoid_with_zero_hom.map_inv'
 add_commute.add_left
 multiplicative.group
 nat.eq_zero_of_mul_eq_zero
+stream.nth_interleave_right
 quotient.induction_on₂'
 add_units.coe_mk_of_add_eq_zero
 list.nth_pmap
@@ -9739,6 +9797,7 @@ add_left_inj
 set.union_neg
 nat.has_dvd
 equiv.psigma_equiv_sigma_symm_apply
+stream.iterate_eq
 enat.coe_lt_coe
 add_units.coe_lift_right
 with_top.conditionally_complete_lattice
@@ -10540,6 +10599,7 @@ set.Icc_union_Ici'
 tactic.simp_intros_aux
 nat.sub_lt_of_pos_le
 supr_exists
+stream.interleave_tail_tail
 set.inter_self
 cau_seq.has_neg
 equiv.equiv_congr_refl_right
@@ -10612,6 +10672,7 @@ tactic.rcases_parse
 io.deserialize
 native.float.remainder
 opposite.op_add_equiv_to_equiv
+stream.nth_approx
 smt_tactic.interactive.add_simp_lemmas
 list.unzip_cons
 format_linter_results
@@ -11225,6 +11286,7 @@ comm_ring.right_distrib
 comm_ring.mul_comm
 comm_ring.mk
 add_submonoid.closure
+stream.corec_on
 real.neg_cauchy
 multiset.join_cons
 monotone.add_strict_mono
@@ -11440,6 +11502,7 @@ tactic.unsafe.type_context.is_stuck
 add_monoid_hom.mul_left
 mk_hinst_lemma_attrs_core
 norm_cast.prove_eq_using_down
+stream.odd
 monoid_hom.to_additive''
 compl_le_compl_iff_le
 set.empty_def
@@ -11515,6 +11578,7 @@ int.of_nat_mul_sub_nat_nat
 list.mfoldr_nil
 equiv.equiv_pempty
 conv.interactive.change
+stream.nth_zero_iterate
 add_units.has_repr
 set.image_mul_left_Icc
 exists_pair_ne
@@ -11793,6 +11857,7 @@ quotient.congr
 le_iff_exists_mul
 order_dual.to_dual
 set.compl_Union
+stream.even_interleave
 function.commute.iterate_self
 declaration.update_value
 bit0
@@ -11860,6 +11925,7 @@ encodable.order.preimage.is_antisymm
 finset.card_eq_zero
 znum.cmp
 list.mem_map_of_injective
+stream.const
 nat.lt_size
 mul_pos_of_neg_of_neg
 tactic.simp_arg_type.replace_subexprs
@@ -11972,6 +12038,7 @@ int.mul_div_cancel_left
 forall_eq
 two_ne_zero'
 set.mem_to_finset
+stream.any_def
 cau_seq.exists_gt
 equiv.injective
 multiset.nodup_cons
@@ -12031,7 +12098,9 @@ equiv.mul_swap_involutive
 multiset.has_mem
 norm_num.int_cast_ne
 subtype.semilattice_inf
+stream.inits_eq
 set.mem_of_mem_inter_left
+stream.mem_const
 inv_mul_le_iff_le_mul'
 pos_num
 pos_num.one
@@ -12061,6 +12130,7 @@ function.update_comm
 tactic.retrieve'
 smul_one_smul
 submonoid.nontrivial
+stream.pure
 relation.comp_iff
 tactic.nontriviality_by_elim
 equiv.nat_equiv_nat_sum_punit
@@ -12420,6 +12490,7 @@ multiset.coe_le
 function.comp_right
 multiplicative.fintype
 vm_decl.override_idx
+stream.append_stream_head_tail
 list.forall_mem_append
 sub_sub_sub_cancel_left
 prod.fst_swap
@@ -12490,6 +12561,7 @@ multiset.rel_eq_refl
 smul_comm_class.symm
 simp_attr.functor_norm
 is_compl_top_bot
+stream.map_const
 set.empty_not_nonempty
 list.filter_map_cons
 rel_hom.comp
@@ -12691,6 +12763,7 @@ norm_num.le_neg_pos
 list.subperm.exists_of_length_lt
 lean.parser.emit_code_here
 ordering.swap_swap
+stream.unfolds_head_eq
 multiset.filter_map_le_filter_map
 prod.lex.is_well_order
 tactic.interactive.bin_op_left
@@ -12806,6 +12879,7 @@ int.sub_nat_nat_add
 set.nonempty_def
 finset.inter_val_nd
 int.archimedean
+stream.append_approx_drop
 finset.coe_singleton
 derive_fintype.finset_above.nil
 vm_obj.to_format
@@ -12848,6 +12922,7 @@ set.singleton_smul
 cc_state.roots_core
 euclidean_domain.gcd_mul_lcm
 classical.inhabited_of_nonempty
+stream.nth_drop
 int.sub_nat_nat
 vector.map₂
 category_theory.mono_of_mono_fac
@@ -13051,6 +13126,7 @@ nat.le_add_of_sub_le_right
 order_dual.has_inf
 nat.prime.pow_not_prime
 cardinal.mk_subset_ge_of_subset_image_lift
+stream.nats
 is_mul_hom.inv
 inv_image.wf
 list.map₂_left_eq_map₂
@@ -13365,6 +13441,7 @@ semilattice_inf.le_inf
 semilattice_inf.mk
 neg_of_mul_neg_right
 omega.clause.holds
+stream.mem
 num.psub
 div_pow
 has_Sup_to_nonempty
@@ -13539,6 +13616,7 @@ multiset.cons_inj_left
 add_monoid_hom.of_map_add_neg
 expr.reflect
 tactic.context_upto_hyp_has_local_def
+stream.zip
 tactic.interactive.mono_selection.has_to_format
 list.append_concat
 finset.comp_sup_eq_sup_comp_of_is_total
@@ -13557,6 +13635,7 @@ ex_of_psig
 finset.card_le_of_subset
 tactic.hyp_depends_on_local_set_inclusive
 set.inter_compl_self
+stream.mem_cycle
 finset.order_emb_of_fin_unique
 list.erase_cons_subperm_cons_erase
 int.decidable_lt_lt
@@ -13657,6 +13736,7 @@ le_of_lt
 lt_mul_iff_one_lt_right'
 rat.mk_pnat_num
 int.neg_succ_of_nat_add_of_nat
+stream.take_theorem
 list.pairwise_lt_range'
 nonempty_quotient_iff
 rel.mem_image
@@ -13823,6 +13903,7 @@ list.qsort
 function.involutive
 nat.le_rec_on_succ'
 additive.ordered_add_comm_group
+stream.map
 eq_sub_of_add_eq
 set.preimage_mul_const_Ioo_of_neg
 ring_equiv.to_fun_eq_coe_fun
@@ -13859,6 +13940,7 @@ tactic.name.to_simp_args
 prod.semilattice_sup_bot
 set.bUnion_mono
 multiset.mem_nsmul
+stream.mem_cons_of_mem
 bool.cond_tt
 and_eq_of_eq_false_left
 tactic.abel.zero_term
@@ -14207,6 +14289,7 @@ iff
 iff.mp
 iff.mpr
 iff.mk
+stream.corec_id_f_eq_iterate
 set.image2_empty_right
 array.read_foreach
 rel_embedding.inhabited
@@ -14224,6 +14307,7 @@ int.to_nat_coe_nat
 set.preimage_const_mul_Icc
 multiset.erase_dup_subset
 pfun.core_restrict
+stream.head_even
 exceptional
 exceptional.success
 exceptional.exception
@@ -14367,6 +14451,7 @@ finset.mem_of_min
 add_submonoid.mem_inf
 bool.to_bool_coe
 int.ne_of_nat_abs_ne_nat_abs_of_nonneg
+stream.drop_map
 complete_lattice.independent
 set.sUnion_subset_iff
 buffer.rev_iterate
@@ -14548,6 +14633,7 @@ conv
 multiset.filter_le
 string.iterator.has_prev
 is_antisymm.swap
+stream.drop_const
 cau_seq.completion.of_rat_mul
 list.relation_refl_trans_gen_of_exists_chain
 lint_hole_cmd
@@ -14696,9 +14782,11 @@ opposite.unop_add
 eq_top_of_is_compl_bot
 set.preimage_const_mul_Ici
 nat.gcd_pos_of_pos_left
+stream.even
 disjoint_bot_left
 decidable.lt_trichotomy
 int.sub_nonneg_of_le
+stream.inits_core_eq
 multiset.powerset_aux_perm_powerset_aux'
 finset.sum_eq_zero_iff_of_nonneg
 set.ball_insert_iff
@@ -15861,6 +15949,7 @@ function.update_comp_eq_of_injective'
 nat.bit0_ne_bit1
 smt_tactic.get_lemmas
 tactic.ring_exp.pow_pf_zero
+stream.cons_nth_inits_core
 random_gen
 random_gen.range
 random_gen.next
@@ -16001,6 +16090,7 @@ set.subsingleton_univ
 tactic.assertv
 fin.coe_succ_embedding
 list.subperm.erase
+stream.mem_map
 pi.comp_one
 pfun.bind
 semimodule.subsingleton
@@ -16035,6 +16125,7 @@ submonoid.coe_bot
 galois_coinsertion.u_infi_of_lu_eq_self
 tactic.interactive.nth_rewrite_rhs
 set.preimage_mul_const_Icc
+stream.drop_drop
 exists_prop_of_true
 list.inter_eq_nil_iff_disjoint
 finset.prod_insert_of_eq_one_if_not_mem
@@ -16390,6 +16481,7 @@ eq_mp_rfl
 infinite.nat_embedding
 recursion.go
 buffer.read
+stream.exists_of_mem_map
 tactic.interactive.guard_expr_strict
 add_monoid_hom.map_add_neg
 has_le.le.is_total
@@ -16427,6 +16519,7 @@ units.mul_inv_cancel_left
 rat.cast_min
 norm_num.pow_bit1
 order_dual.semilattice_inf_bot
+stream.cycle_singleton
 list.enum_from_map_fst
 list.perm_comp_forall₂
 nat.le_sqrt
@@ -16510,6 +16603,7 @@ set.Ioo_union_Ioo'
 tactic.interactive.trace_state
 eq_iff_iff
 equiv.conj_refl
+stream.nth_tails
 subrelation
 equiv.prod_congr_apply
 cardinal.power_mul
@@ -16851,6 +16945,7 @@ norm_cast.add_elim
 int.coe_nat_lt
 norm_cast.derive
 vm.get_decl
+stream.interchange
 zorn.chain_succ
 fin.mk_eq_subtype_mk
 list.perm.pairwise_iff
@@ -16891,6 +16986,7 @@ semimodule.core.one_smul
 semimodule.core.mk
 finset.add_card_le
 list.remove_nth_insert_nth
+stream.interleave_even_odd
 nat.coprime_self
 omega.nat.preterm.val
 well_founded.succ
@@ -16901,6 +16997,7 @@ cinfi_le
 set.eq_on.surj_on_iff
 add_neg_of_nonpos_of_neg'
 multiset.singleton_add
+stream.inits_core
 punit
 punit.star
 expr.lt_prop.decidable_rel
@@ -17501,6 +17598,7 @@ subtype.coe_le_coe
 function.is_fixed_pt.to_left_inverse
 cc_state.has_to_tactic_format
 rat.subsingleton_ring_hom
+stream.tail_eq_drop
 name.is_prefix_of
 finset.surj_on_of_inj_on_of_card_le
 bor
@@ -17651,6 +17749,7 @@ nat.lt_succ_of_le
 encodable.encodek2
 recursion.max'
 infinite.exists_subset_card_eq
+stream.corec_def
 with_bot.decidable_le
 set.surj_on.comap_nonempty
 is_glb
@@ -17827,7 +17926,6 @@ string.starts_with
 tactic.add_edge
 widget.textbox
 set.mem_bInter
-example_terms.ψ₄
 iff_models_relation_of_identical_var_assign
 option.lift_or_get_some_some
 neg_inv
@@ -18825,6 +18923,7 @@ set.fintype_sep
 list.subperm.countp_le
 list.lookmap_of_forall_not
 list.pairwise_filter_map_of_pairwise
+stream.mem_of_nth_eq
 set.inj_on.congr
 list.modify_nth_tail
 neg_pow_bit1
@@ -19028,6 +19127,8 @@ parser.nat
 parser.failure
 submonoid.mem_top
 dvd_mul_sub_mul
+stream.homomorphism
+stream.even_cons_cons
 inv_mul_cancel_right'
 heq_of_eq_rec_right
 tactic.interactive.fapply'
@@ -19213,6 +19314,7 @@ list.Ico.self_empty
 fintype.card_pi
 function.is_partial_inv_left
 nsmul_zero
+stream.apply
 add_monoid_hom.inl_apply
 is_lub_cSup
 vm_monitor
@@ -19268,6 +19370,7 @@ if_true_left_eq_or
 linarith.mk_neg_one_lt_zero_pf
 lean.parser_state
 nat.dvd_of_mul_dvd_mul_left
+stream.tail_even
 tactic.dsimp_target
 name.get_prefix
 multiset.coe_eq_coe
@@ -19694,6 +19797,7 @@ tactic.auto_cases.tac_induction
 equiv.perm.subtype_congr.left_apply_subtype
 set.eq_on_of_left_inv_on_of_right_inv_on
 set.bUnion_empty
+stream.has_mem
 to_bool_congr
 opposite.group
 subsingleton_prod_self_equiv
@@ -19862,6 +19966,7 @@ tactic.iterate_at_most'
 cau_seq.has_mul
 conv.step
 tactic.interactive.mono_cfg.inhabited
+func_number
 le_sub_iff_add_le
 galois_connection.lower_bounds_u_image_subset
 function.injective.sum_map
@@ -19881,6 +19986,7 @@ option.traverse
 mwhen
 expr.ith_arg
 list.infix_iff_prefix_suffix
+stream.corec'
 finset.map_inter
 nonempty_plift
 linarith.cancel_denoms
@@ -20028,6 +20134,7 @@ sub_le_sub
 tactic.add_meta_definition
 list.infix_append'
 nat.zero_shiftl
+stream.map_id
 strict_mono_decr_on.dual_right
 vector.flip.traversable
 nat.pred
@@ -20206,6 +20313,7 @@ set.eq_empty_of_not_nonempty
 finset.min'_subset
 finset.coe_inj
 sdiff_idem_right
+stream.head_iterate
 list.range'_concat
 norm_num.prove_one_le_nat
 nat.choose_le_middle
@@ -20248,6 +20356,7 @@ finset.inter_distrib_right
 list.nodup_iff_nth_le_inj
 function.commute.comp_right
 int.nat_abs
+stream.tail_inits
 order_iso.preimage_Ioc
 tactic.interactive.case_tag.from_tag_hyps
 vector.singleton_tail
@@ -20261,6 +20370,7 @@ multiset.disjoint_ndinsert_right
 function.embedding.swap_comp
 quot.lift_indep_pr1
 prod.swap
+stream.tail_zip
 int.mul_neg_of_pos_of_neg
 multiset.erase_dup_cons_of_not_mem
 list.minimum_cons
@@ -20491,6 +20601,7 @@ submonoid.coe_inf
 finset.prod_sigma'
 native.float.abs
 zero_hom.has_zero
+stream.cons_append_stream
 int.coe_nat_abs
 bool.band_left_comm
 option.mem_def
@@ -20684,6 +20795,7 @@ nat.cast
 disjoint.preimage
 tactic.get_pexpr_arg_arity_with_tgt
 set.inter_eq_self_of_subset_right
+stream.unfolds
 well_founded_tactics.default_rel_tac
 finset.le_iff_subset
 galois_connection.dual
@@ -20715,6 +20827,7 @@ function.app
 cau_seq.const_equiv
 set.surj_on_iff_exists_map_subtype
 ring_is_struc_of_ring_lang
+stream.iterate
 parser
 semiconj_by.sub_left
 mul_action.is_scalar_tower.left
@@ -20753,6 +20866,7 @@ list.length_init
 multiset.erase_dup_eq_self
 add_monoid_hom.eval
 array.iterate
+stream.tail_cons
 inv_le_inv_of_neg
 finset.prod_inv_distrib
 nat.dvd_add_right
@@ -20910,7 +21024,6 @@ declaration.thm
 declaration.cnst
 declaration.ax
 set.has_insert
-example_terms.ψ₁
 tree.has_repr
 mul_equiv.refl_apply
 list.reverse_rec_on
@@ -20990,6 +21103,7 @@ setoid.iseqv
 setoid.mk
 linarith.comp_source.flatten
 cau_seq.completion.Cauchy
+stream.map_eq_apply
 tactic.get_fun_info
 set.Ico_union_Ici
 lift_fn_range
@@ -21042,7 +21156,9 @@ rat.zero_of_num_zero
 or.elim
 tactic.pformat.has_to_tactic_format
 nat.add_semigroup
+stream.all
 tactic.alternative
+stream.nth
 tactic.ring.eval_neg
 native.float.of_nat_coe
 cardinal.cantor'
@@ -21913,6 +22029,7 @@ tactic.interactive.destruct
 finset.image_bUnion_filter_eq
 multiset.inf_eq_inter
 nat.lt_sub_left_of_add_lt
+stream.mem_interleave_right
 set.compl_inter
 set.exists_of_ssubset
 DLO_Model.φ₄
@@ -22183,6 +22300,7 @@ eq_false_of_or_eq_false_left
 nat.bit1_ne
 add_neg_cancel_comm_assoc
 list.argmax_singleton
+string_of_formula
 classical.dec
 mul_right_injective
 inv_le_inv_of_le
@@ -22444,6 +22562,7 @@ decidable_eq_of_subsingleton
 tactic.interactive.mono_selection.inhabited
 mul_zero
 mul_equiv.symm_apply_eq
+stream.drop_succ
 lt_of_lt_of_incomp
 monad_except_adapter_trans
 unique.subsingleton_unique'
@@ -22461,6 +22580,7 @@ prod
 prod.fst
 prod.snd
 prod.mk
+stream.inits
 function.inv_fun_comp
 sub_eq_sub_add_sub
 nat.le_rec_on_surjective
@@ -22671,6 +22791,7 @@ option_t.is_lawful_monad
 int.dvd_of_pow_dvd
 equiv.ulift_apply
 ceil_mono
+stream.nth_odd
 finset.max'_insert
 comm_semiring.to_semiring
 div_lt_one_of_neg
@@ -22687,7 +22808,6 @@ smt_tactic.add_ematch_eqn_lemmas_for_core
 tactic.set_options
 ulift.subsingleton
 io.proc.spawn
-DLO_Model.DLO_axioms
 with_top.coe_add
 tactic.interactive.source_fields
 is_unit.mul_left_eq_zero
@@ -22707,6 +22827,7 @@ norm_num.int_div_neg
 multiset.filter_cons_of_pos
 enat.get_le_get
 with_top.one_le_iff_pos
+stream.map_tail
 local_context.to_format
 list.nodup_inter_of_nodup
 native.rb_map.erase
@@ -23029,6 +23150,7 @@ equiv.unique
 units.neg_inv
 coe_trans_aux
 or.symm
+stream.nth_map
 omega.symmod
 tactic.explode_cmd
 declaration.update_type
@@ -23036,6 +23158,7 @@ notation_class_attr
 eq_of_le_of_forall_le_of_dense
 int.cast_commute
 add_submonoid.closure_eq
+stream.nth_nats
 list.tail_eq_of_cons_eq
 well_founded.min_mem
 int.sub_le_self
@@ -23122,6 +23245,7 @@ nat.sqrt_add_eq
 tactic.simp_target
 nat.decidable_dvd
 neg_nonneg_of_nonpos
+stream.head_map
 nat.galois_connection_mul_div
 has_lt.lt.le
 expr.pi_binders
@@ -23143,6 +23267,7 @@ option_t.monad
 cardinal.order_bot
 add_comm_monoid.to_add_comm_semigroup
 norm_num.prove_le_nat
+stream.zip_inits_tails
 list.take_append_of_le_length
 norm_num.false_intro
 roption.map_none
@@ -23177,6 +23302,7 @@ auto.finish
 galois_insertion.monotone_intro
 omega.nat.val_canonize
 id.traversable
+stream.append_append_stream
 finset.prod_subset
 pi.complete_lattice
 add_commute.add_neg_cancel_assoc
@@ -23382,6 +23508,7 @@ relation.eqv_gen_mono
 list.func.get_eq_default_of_le
 multiset.sub_le_sub_right
 is_unit_of_pow_eq_one
+stream.const_eq
 where.compile_variable_list
 list.diff_cons
 enat.has_one
@@ -23661,6 +23788,7 @@ roption.of_option_dom
 fintype.card_sum
 lower_bounds_union
 has_le.le.ge
+stream.corec'_eq
 units
 units.val
 units.inv
@@ -23759,6 +23887,7 @@ rsimp.config.max_rounds
 rsimp.config.mk
 preorder.small_category
 nat.dvd_add_iff_left
+stream.map_append_stream
 tactic.ring_exp.pow_p
 tactic.ring.ic_lift'
 ring_equiv.map_mul
@@ -23821,6 +23950,7 @@ rat.coe_int_eq_of_int
 omega.head_eq
 int.add_neg_cancel_right
 equiv.subtype_preimage
+stream.nats_eq
 int.le_neg_add_of_add_le
 list.all_cons
 rat.has_le
@@ -24045,11 +24175,11 @@ ordered_comm_monoid.mk
 set.preimage_const_sub_Ico
 norm_num.prove_rat_uncast_nonneg
 rat.add_le_add_left
+stream.inits_tail
 nat.gcd_add_mul_self
 set.inv_on.symm
 inf_of_le_left
 subtype.range_coe
-example_terms.ψ₃
 multiset.erase_comm
 set.preimage_sub_const_Iic
 sum.map_comp_map
@@ -24521,6 +24651,7 @@ cardinal.lift_mk_le
 psigma.lex_ndep
 tactic.interactive.collect_struct
 function.eq_update_iff
+stream.cycle_eq
 multiset.mem_bind
 nat.mul_sub_div
 omega.nat.univ_close
@@ -24563,11 +24694,13 @@ function.commute.symm
 has_le.le.lt_iff_ne
 infi_insert
 decidable.to_bool
+stream.corec_eq
 nat.min_fac_dvd
 int.range
 finset.mem_union_right
 tactic.interactive.fold_assoc1
 task
+stream.identity
 pow_mul_pow_sub
 tactic.contradiction_symm
 linarith.mk_coe_nat_nonneg_prf
@@ -24771,6 +24904,7 @@ monoid_with_zero_hom.map_zero
 pfun
 tactic.finally
 omega.fun_mono_2
+stream.nth_succ_iterate
 mt
 tactic.apply_iff_congr_core
 list.subperm.perm_of_length_le
@@ -24881,6 +25015,7 @@ doc_category.has_reflect
 list.head_add_tail_sum'
 level.nonzero
 set.Inter_eq_Inter_finset
+stream.mem_of_mem_odd
 nat.coprime.coprime_dvd_right
 trunc_sigma_of_exists
 finset.image_image
@@ -24914,6 +25049,7 @@ list.sum_take_map_length_lt2
 functor.comp.inhabited
 psigma.has_sizeof
 bit0_lt_bit0
+stream.tail_iterate
 expr.of_nat
 set.image_sInter_subset
 tactic.dependency_set_of_hyp'
@@ -25139,6 +25275,7 @@ set.Ioo_self
 has_sub
 has_sub.sub
 has_sub.mk
+stream.tails_eq
 max_eq_left_of_lt
 neg_neg_of_pos
 monotone.le_cSup_image
@@ -25672,6 +25809,7 @@ occurrences.inhabited
 left_comm
 tactic.note_anon
 tactic.fail
+stream.mem_cons
 nat.le_antisymm
 pi.semigroup
 archimedean_iff_rat_le

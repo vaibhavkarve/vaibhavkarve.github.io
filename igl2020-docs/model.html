@@ -38,12 +38,15 @@
 <nav class="internal_nav">
 <h3><a class="break_within" href="#top"><span class="name">igl2020</span> / <span class="name">model</span></a></h3>
 
-<p class="gh_nav_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean">source</a></p>
+<p class="gh_nav_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean">source</a></p>
 
 <div class="imports">
     <details>
         <summary>Imports</summary>
         <ul>
+            <li><a href="https://vaibhavkarve.github.io/igl2020-docs/data/stream.html">
+                data.stream</a></li>
+        
             <li><a href="https://vaibhavkarve.github.io/igl2020-docs/init/default.html">
                 init.default</a></li>
         
@@ -109,6 +112,8 @@
 
     <div class="nav_link"><a class="break_within" href="#formula"><span class="name">formula</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#func_number"><span class="name">func_number</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#godel_encoding"><span class="name">godel_encoding</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#iff_models_of_identical_var_assign"><span class="name">iff_models_of_identical_var_assign</span></a></div>
@@ -143,15 +148,17 @@
 
     <div class="nav_link"><a class="break_within" href="#models_all_or_none_sentences"><span class="name">models_all_or_none_sentences</span></a></div>
 
-    <div class="nav_link"><a class="break_within" href="#nat_to_prime"><span class="name">nat_to_prime</span></a></div>
-
     <div class="nav_link"><a class="break_within" href="#number_of_vars"><span class="name">number_of_vars</span></a></div>
-
-    <div class="nav_link"><a class="break_within" href="#primes"><span class="name">primes</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#sentence"><span class="name">sentence</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#sentence_to_formula"><span class="name">sentence_to_formula</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#sentences_model"><span class="name">sentences_model</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#stream.primes"><span class="name">stream</span>.<span class="name">primes</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#string_of_formula"><span class="name">string_of_formula</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#struc"><span class="name">struc</span></a></div>
 
@@ -164,6 +171,8 @@
     <div class="nav_link"><a class="break_within" href="#term.inhabited"><span class="name">term</span>.<span class="name">inhabited</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#term_interpretation"><span class="name">term_interpretation</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#term_number"><span class="name">term_number</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#term_sub"><span class="name">term_sub</span></a></div>
 
@@ -203,14 +212,14 @@
 <li>formulas.</li>
 </ul>
 <h2 id="tags" class="markdown-heading">Tags <a class="hover-link" href="#tags">#</a></h2>
-<p>model-theory, o-minimality</p>
+<p>model theory, o-minimality</p>
 
         </div>
     
 
     
         <div class="mod_doc">
-            <p>Arity n Functions and their API</p>
+            <h2 id="arity-n-functions-and-their-api" class="markdown-heading">Arity n Functions and their API <a class="hover-link" href="#arity-n-functions-and-their-api">#</a></h2>
 
         </div>
     
@@ -221,7 +230,7 @@
 <div class="decl" id="Func">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L29">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L29">source</a></div>
 
 
 
@@ -268,7 +277,7 @@ terms of type α.</p>
 <div class="decl" id="Funcs">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L36">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L37">source</a></div>
 
 
 
@@ -313,7 +322,7 @@ sum up the types. Sum for types corresponds to union for sets.</p>
 <div class="decl" id="Funcs.inhabited">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L49">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L50">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -371,7 +380,7 @@ that returns an arbitrary α.</p>
 <div class="decl" id="mk_Func_of_total">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L58">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L59">source</a></div>
 
 
 
@@ -423,7 +432,7 @@ it into a partial function of the same arity.</p>
 <div class="decl" id="app_elem">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L67">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L68">source</a></div>
 
 
 
@@ -472,7 +481,7 @@ function.</p>
 <div class="decl" id="app_vec">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L76">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L77">source</a></div>
 
 
 
@@ -526,7 +535,7 @@ remaining (n+1)-sized tail.</li>
 <div class="decl" id="app_fin">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L82">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L88">source</a></div>
 
 
 
@@ -573,7 +582,7 @@ remaining (n+1)-sized tail.</li>
 <div class="decl" id="app_vec_partial">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L89">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L95">source</a></div>
 
 
 
@@ -622,7 +631,7 @@ TODO: Turn this into patter-matched term-style definition.</p>
 <div class="decl" id="app_vec_partial'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L101">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L107">source</a></div>
 
 
 
@@ -668,7 +677,7 @@ TODO: Turn this into patter-matched term-style definition.</p>
 
     
         <div class="mod_doc">
-            <p>Languages</p>
+            <h2 id="languages" class="markdown-heading">Languages <a class="hover-link" href="#languages">#</a></h2>
 
         </div>
     
@@ -679,7 +688,7 @@ TODO: Turn this into patter-matched term-style definition.</p>
 <div class="decl" id="lang">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L113">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L119">source</a></div>
 
 
 
@@ -724,7 +733,7 @@ along with the arity of each function and each relation.</p>
 <div class="decl" id="lang.C">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L118">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L124">source</a></div>
 
 
 
@@ -768,7 +777,7 @@ along with the arity of each function and each relation.</p>
 <div class="decl" id="DLO_lang">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L132">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L137">source</a></div>
 
 
 
@@ -819,7 +828,7 @@ single binary relation symbol ≤ satisfying the following sentences:
 <div class="decl" id="lang.inhabited">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L138">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L143">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -861,7 +870,7 @@ inhabited type.</p>
 
     
         <div class="mod_doc">
-            <p>Structures</p>
+            <h2 id="structures" class="markdown-heading">Structures <a class="hover-link" href="#structures">#</a></h2>
 
         </div>
     
@@ -872,7 +881,7 @@ inhabited type.</p>
 <div class="decl" id="struc">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L150">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L151">source</a></div>
 
 
 
@@ -893,10 +902,10 @@ inhabited type.</p>
             <li class="structure_field" id="struc.univ">univ : <span class="fn">Type</span></li>
         
             
-            <li class="structure_field" id="struc.F">F : <span class="fn">Π (n : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a>), <span class="fn"><span class="fn">L.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.F" title="lang.F">F</a> n</span> → <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#Func">Func</a> c.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.univ" title="struc.univ">univ</a></span> n</span></span></span></li>
+            <li class="structure_field" id="struc.F">F : <span class="fn">Π {n : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a>}, <span class="fn"><span class="fn">L.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.F" title="lang.F">F</a> n</span> → <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#Func">Func</a> c.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.univ" title="struc.univ">univ</a></span> n</span></span></span></li>
         
             
-            <li class="structure_field" id="struc.R">R : <span class="fn">Π (n : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a>), <span class="fn"><span class="fn">L.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.R" title="lang.R">R</a> n</span> → <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/set.html#set">set</a> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/data/vector.html#vector">vector</a> c.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.univ" title="struc.univ">univ</a></span> n)</span></span></span></span></li>
+            <li class="structure_field" id="struc.R">R : <span class="fn">Π {n : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a>}, <span class="fn"><span class="fn">L.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.R" title="lang.R">R</a> n</span> → <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/set.html#set">set</a> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/data/vector.html#vector">vector</a> c.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.univ" title="struc.univ">univ</a></span> n)</span></span></span></span></li>
         
     </ul>
 
@@ -905,8 +914,6 @@ inhabited type.</p>
 
 <p>We now define an L-structure to be mapping of functions, relations and
 constants to appropriate elements of a domain/universe type.</p>
-<p>TODO: For now, we add in explicit interpretation of the constants as well
-as (L.F 0). But in fact we should keep one or the other, not both.</p>
 
 
 
@@ -923,7 +930,7 @@ as (L.F 0). But in fact we should keep one or the other, not both.</p>
 <div class="decl" id="struc.C">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L155">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L156">source</a></div>
 
 
 
@@ -949,7 +956,7 @@ as (L.F 0). But in fact we should keep one or the other, not both.</p>
         <summary>Equations</summary>
         <ul class="equations">
             
-                <li class="equation"><span class="fn">M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.C" title="struc.C">C</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn">M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.F" title="struc.F">F</a> 0</span></span></li>
+                <li class="equation"><span class="fn">M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.C" title="struc.C">C</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.F" title="struc.F">F</a></span></li>
             
         </ul>
     </details>
@@ -967,7 +974,7 @@ as (L.F 0). But in fact we should keep one or the other, not both.</p>
 <div class="decl" id="struc.inhabited">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L158">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L159">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -1008,7 +1015,7 @@ as (L.F 0). But in fact we should keep one or the other, not both.</p>
 
     
         <div class="mod_doc">
-            <p>Embeddings between Structures</p>
+            <h2 id="embeddings-between-structures" class="markdown-heading">Embeddings between Structures <a class="hover-link" href="#embeddings-between-structures">#</a></h2>
 
         </div>
     
@@ -1019,7 +1026,7 @@ as (L.F 0). But in fact we should keep one or the other, not both.</p>
 <div class="decl" id="embedding">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L171">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L176">source</a></div>
 
 
 
@@ -1044,10 +1051,10 @@ as (L.F 0). But in fact we should keep one or the other, not both.</p>
             <li class="structure_field" id="embedding.η_inj">η_inj : <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/function.html#function.injective">function.injective</a> c.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#embedding.η" title="embedding.η">η</a></span></li>
         
             
-            <li class="structure_field" id="embedding.η_F">η_F : <span class="fn">∀ (n : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a>) (f : <span class="fn">L.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.F" title="lang.F">F</a> <span class="fn">(n <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_add.add" title="has_add.add">+</a> 1))</span></span> (v : <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/data/vector.html#vector">vector</a> M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.univ" title="struc.univ">univ</a></span> <span class="fn">(n <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_add.add" title="has_add.add">+</a> 1))</span></span>, <span class="fn"><span class="fn">c.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#embedding.η" title="embedding.η">η</a> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#app_vec">app_vec</a> <span class="fn"><span class="fn">(M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.F" title="struc.F">F</a> <span class="fn">(n <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_add.add" title="has_add.add">+</a> 1)</span></span> f)</span></span> v)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#app_vec">app_vec</a> <span class="fn"><span class="fn">(N.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.F" title="struc.F">F</a> <span class="fn">(n <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_add.add" title="has_add.add">+</a> 1)</span></span> f)</span></span> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/data/vector.html#vector.map">vector.map</a> c.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#embedding.η" title="embedding.η">η</a></span> v)</span></span></span></span></li>
+            <li class="structure_field" id="embedding.η_F">η_F : <span class="fn">∀ (n : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a>) (f : <span class="fn">L.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.F" title="lang.F">F</a> <span class="fn">(n <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_add.add" title="has_add.add">+</a> 1))</span></span> (v : <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/data/vector.html#vector">vector</a> M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.univ" title="struc.univ">univ</a></span> <span class="fn">(n <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_add.add" title="has_add.add">+</a> 1))</span></span>, <span class="fn"><span class="fn">c.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#embedding.η" title="embedding.η">η</a> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#app_vec">app_vec</a> <span class="fn">(M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.F" title="struc.F">F</a> f)</span></span> v)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#app_vec">app_vec</a> <span class="fn">(N.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.F" title="struc.F">F</a> f)</span></span> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/data/vector.html#vector.map">vector.map</a> c.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#embedding.η" title="embedding.η">η</a></span> v)</span></span></span></span></li>
         
             
-            <li class="structure_field" id="embedding.η_R">η_R : <span class="fn">∀ (n : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a>) (r : <span class="fn">L.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.R" title="lang.R">R</a> n)</span> (v : <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/data/vector.html#vector">vector</a> M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.univ" title="struc.univ">univ</a></span> n)</span>, <span class="fn"><span class="fn">v <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn"><span class="fn">M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.R" title="struc.R">R</a> n</span> r</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#iff" title="iff">↔</a> <span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/data/vector.html#vector.map">vector.map</a> c.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#embedding.η" title="embedding.η">η</a></span> v</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn"><span class="fn">N.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.R" title="struc.R">R</a> n</span> r</span></span></span></span></li>
+            <li class="structure_field" id="embedding.η_R">η_R : <span class="fn">∀ (n : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a>) (r : <span class="fn">L.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.R" title="lang.R">R</a> <span class="fn">(n <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_add.add" title="has_add.add">+</a> 1))</span></span> (v : <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/data/vector.html#vector">vector</a> M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.univ" title="struc.univ">univ</a></span> <span class="fn">(n <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_add.add" title="has_add.add">+</a> 1))</span></span>, <span class="fn"><span class="fn">v <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn">M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.R" title="struc.R">R</a> r</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#iff" title="iff">↔</a> <span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/data/vector.html#vector.map">vector.map</a> c.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#embedding.η" title="embedding.η">η</a></span> v</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn">N.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.R" title="struc.R">R</a> r</span></span></span></span></li>
         
             
             <li class="structure_field" id="embedding.η_C">η_C : <span class="fn">∀ (c_1 : L.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.C" title="lang.C">C</a>), <span class="fn"><span class="fn">c.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#embedding.η" title="embedding.η">η</a> <span class="fn">(M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.C" title="struc.C">C</a> c_1)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn">N.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.C" title="struc.C">C</a> c_1</span></span></span></li>
@@ -1075,7 +1082,7 @@ on the domain and preserves the interpretation of all the symbols of L.</p>
 <div class="decl" id="vec_map_id">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L181">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L186">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1113,7 +1120,7 @@ on the domain and preserves the interpretation of all the symbols of L.</p>
 <div class="decl" id="embedding.inhabited">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L190">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L195">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -1161,7 +1168,7 @@ to itself via the identity map.</p>
 <div class="decl" id="isomorphism">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L199">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L204">source</a></div>
 
 
 
@@ -1207,7 +1214,7 @@ to itself via the identity map.</p>
 <div class="decl" id="isomorphism.inhabited">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L205">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L210">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -1255,7 +1262,7 @@ to itself.</p>
 <div class="decl" id="card">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L211">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L216">source</a></div>
 
 
 
@@ -1300,7 +1307,7 @@ to itself.</p>
 <div class="decl" id="le_card_of_embedding">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L216">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L221">source</a></div>
 
 
 
@@ -1334,7 +1341,7 @@ the cardinality of M.</p>
 
     
         <div class="mod_doc">
-            <p>Terms</p>
+            <h2 id="terms" class="markdown-heading">Terms <a class="hover-link" href="#terms">#</a></h2>
 
         </div>
     
@@ -1345,7 +1352,7 @@ the cardinality of M.</p>
 <div class="decl" id="term">
 <div class="inductive">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L227">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L232">source</a></div>
 
 
 
@@ -1399,7 +1406,7 @@ of type L.F 0.</p>
 <div class="decl" id="term.inhabited">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L239">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L244">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -1447,7 +1454,7 @@ language has countably infinite terms of level 0.</p>
 <div class="decl" id="vars_in_term">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L249">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L254">source</a></div>
 
 
 
@@ -1502,7 +1509,7 @@ language has countably infinite terms of level 0.</p>
 <div class="decl" id="number_of_vars">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L258">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L263">source</a></div>
 
 
 
@@ -1558,7 +1565,7 @@ the finset given by vars_in_term.</p>
 <div class="decl" id="term_interpretation">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L265">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L270">source</a></div>
 
 
 
@@ -1588,11 +1595,11 @@ the finset given by vars_in_term.</p>
             
                 <li class="equation"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_interpretation">term_interpretation</a> M</span> var_assign</span> <span class="fn">(t.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term.app" title="term.app">app</a> t₀)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_interpretation">term_interpretation</a> M</span> var_assign</span> t</span> <span class="fn"><span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_interpretation">term_interpretation</a> M</span> var_assign</span> t₀)</span></span></span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_interpretation">term_interpretation</a> M</span> var_assign</span> <span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term.func">term.func</a> f)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.F" title="struc.F">F</a> n.<a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat.succ" title="nat.succ">succ</a></span> f</span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_interpretation">term_interpretation</a> M</span> var_assign</span> <span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term.func">term.func</a> f)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn">M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.F" title="struc.F">F</a> f</span></span></li>
             
                 <li class="equation"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_interpretation">term_interpretation</a> M</span> var_assign</span> <span class="fn">(t.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term.app" title="term.app">app</a> t₀)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_interpretation">term_interpretation</a> M</span> var_assign</span> t</span> <span class="fn"><span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_interpretation">term_interpretation</a> M</span> var_assign</span> t₀)</span></span></span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_interpretation">term_interpretation</a> M</span> var_assign</span> <span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term.func">term.func</a> f)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.F" title="struc.F">F</a> 0</span> f</span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_interpretation">term_interpretation</a> M</span> var_assign</span> <span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term.func">term.func</a> f)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn">M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.F" title="struc.F">F</a> f</span></span></li>
             
                 <li class="equation"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_interpretation">term_interpretation</a> M</span> var_assign</span> <span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term.var">term.var</a> v)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn">var_assign v</span></span></li>
             
@@ -1611,6 +1618,7 @@ the finset given by vars_in_term.</p>
     
         <div class="mod_doc">
             <h2 id="42-terms-substitution" class="markdown-heading">4.2 Terms Substitution <a class="hover-link" href="#42-terms-substitution">#</a></h2>
+<hr />
 
         </div>
     
@@ -1621,7 +1629,7 @@ the finset given by vars_in_term.</p>
 <div class="decl" id="term_sub">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L282">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L287">source</a></div>
 
 
 
@@ -1680,7 +1688,7 @@ generalized to subsitute each variable with its own term.</p>
 <div class="decl" id="term_sub_for_var">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L291">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L296">source</a></div>
 
 
 
@@ -1733,7 +1741,7 @@ occur over only one variable.</p>
 
     
         <div class="mod_doc">
-            <p>Formulas and Sentences</p>
+            <h2 id="formulas-and-sentences" class="markdown-heading">Formulas and Sentences <a class="hover-link" href="#formulas-and-sentences">#</a></h2>
 
         </div>
     
@@ -1744,7 +1752,7 @@ occur over only one variable.</p>
 <div class="decl" id="formula">
 <div class="inductive">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L302">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L307">source</a></div>
 
 
 
@@ -1809,7 +1817,7 @@ occur over only one variable.</p>
 <div class="decl" id="impl">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L323">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L328">source</a></div>
 
 
 
@@ -1835,7 +1843,7 @@ occur over only one variable.</p>
         <summary>Equations</summary>
         <ul class="equations">
             
-                <li class="equation"><span class="fn">φ₁<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#impl" title="impl">→'</a>φ₂ <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.neg" title="formula.neg">¬'</a>φ₁<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.or" title="formula.or">∨'</a>φ₂</span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#impl">impl</a> φ₁</span> φ₂</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">(φ₁.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.or" title="formula.or">or</a> φ₂)</span>.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.neg" title="formula.neg">neg</a></span></span></li>
             
         </ul>
     </details>
@@ -1853,7 +1861,7 @@ occur over only one variable.</p>
 <div class="decl" id="bicond">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L326">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L331">source</a></div>
 
 
 
@@ -1879,7 +1887,7 @@ occur over only one variable.</p>
         <summary>Equations</summary>
         <ul class="equations">
             
-                <li class="equation"><span class="fn">φ₁<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#bicond" title="bicond">↔'</a>φ₂ <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> φ₁<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#impl" title="impl">→'</a>φ₂<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.and" title="formula.and">∧'</a>φ₂<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#impl" title="impl">→'</a>φ₁</span></li>
+                <li class="equation"><span class="fn">φ₁<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#bicond" title="bicond">↔'</a>φ₂ <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#impl">impl</a> φ₁</span> φ₂)</span>.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.and" title="formula.and">and</a></span> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#impl">impl</a> φ₂</span> φ₁)</span></span></span></li>
             
         </ul>
     </details>
@@ -1897,7 +1905,7 @@ occur over only one variable.</p>
 <div class="decl" id="vars_in_list">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L333">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L338">source</a></div>
 
 
 
@@ -1943,7 +1951,7 @@ occur over only one variable.</p>
 <div class="decl" id="vars_in_formula">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L339">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L344">source</a></div>
 
 
 
@@ -1969,23 +1977,23 @@ occur over only one variable.</p>
         <summary>Equations</summary>
         <ul class="equations">
             
-                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.all" title="formula.all">∀'</a> v</span> ϕ)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> ϕ</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_union.union" title="has_union.union">∪</a> {v}</span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.all">formula.all</a> v</span> ϕ)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> ϕ</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_union.union" title="has_union.union">∪</a> {v}</span></span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.exi" title="formula.exi">∃'</a> v</span> ϕ)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> ϕ</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_union.union" title="has_union.union">∪</a> {v}</span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.exi">formula.exi</a> v</span> ϕ)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> ϕ</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_union.union" title="has_union.union">∪</a> {v}</span></span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> (ϕ₁<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.or" title="formula.or">∨'</a>ϕ₂)</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> ϕ₁</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_union.union" title="has_union.union">∪</a> <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> ϕ₂</span></span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> <span class="fn">(ϕ₁.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.or" title="formula.or">or</a> ϕ₂)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> ϕ₁</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_union.union" title="has_union.union">∪</a> <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> ϕ₂</span></span></span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> (ϕ₁<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.and" title="formula.and">∧'</a>ϕ₂)</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> ϕ₁</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_union.union" title="has_union.union">∪</a> <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> ϕ₂</span></span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> <span class="fn">(ϕ₁.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.and" title="formula.and">and</a> ϕ₂)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> ϕ₁</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_union.union" title="has_union.union">∪</a> <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> ϕ₂</span></span></span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> (<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.neg" title="formula.neg">¬'</a>ϕ)</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> ϕ</span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> ϕ.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.neg" title="formula.neg">neg</a></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> ϕ</span></span></li>
             
                 <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.rel">formula.rel</a> _x</span> r</span> ts)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_list">vars_in_list</a> ts.<a href="https://vaibhavkarve.github.io/igl2020-docs/data/vector.html#vector.to_list" title="vector.to_list">to_list</a></span></span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> (t₁<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.eq" title="formula.eq">='</a>t₂)</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_term">vars_in_term</a> t₁</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_union.union" title="has_union.union">∪</a> <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_term">vars_in_term</a> t₂</span></span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.eq">formula.eq</a> t₁</span> t₂)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_term">vars_in_term</a> t₁</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_union.union" title="has_union.union">∪</a> <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_term">vars_in_term</a> t₂</span></span></span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.ff" title="formula.ff">⊥'</a></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_emptyc.emptyc" title="has_emptyc.emptyc">∅</a></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.ff">formula.ff</a></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_emptyc.emptyc" title="has_emptyc.emptyc">∅</a></span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.tt" title="formula.tt">⊤'</a></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_emptyc.emptyc" title="has_emptyc.emptyc">∅</a></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#vars_in_formula">vars_in_formula</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.tt">formula.tt</a></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_emptyc.emptyc" title="has_emptyc.emptyc">∅</a></span></li>
             
         </ul>
     </details>
@@ -2003,7 +2011,7 @@ occur over only one variable.</p>
 <div class="decl" id="is_var_free">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L353">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L358">source</a></div>
 
 
 
@@ -2031,23 +2039,23 @@ over.</p>
         <summary>Equations</summary>
         <ul class="equations">
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.all" title="formula.all">∀'</a> v</span> ϕ)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">(v <a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#ne" title="ne">≠</a> n</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#and" title="and">∧</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> ϕ)</span></span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.all">formula.all</a> v</span> ϕ)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">(v <a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#ne" title="ne">≠</a> n</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#and" title="and">∧</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> ϕ)</span></span></span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.exi" title="formula.exi">∃'</a> v</span> ϕ)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">(v <a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#ne" title="ne">≠</a> n</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#and" title="and">∧</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> ϕ)</span></span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.exi">formula.exi</a> v</span> ϕ)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">(v <a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#ne" title="ne">≠</a> n</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#and" title="and">∧</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> ϕ)</span></span></span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> (ϕ₁<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.or" title="formula.or">∨'</a>ϕ₂)</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> ϕ₁</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#and" title="and">∧</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> ϕ₂)</span></span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> <span class="fn">(ϕ₁.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.or" title="formula.or">or</a> ϕ₂)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> ϕ₁</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#and" title="and">∧</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> ϕ₂)</span></span></span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> (ϕ₁<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.and" title="formula.and">∧'</a>ϕ₂)</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> ϕ₁</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#and" title="and">∧</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> ϕ₂)</span></span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> <span class="fn">(ϕ₁.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.and" title="formula.and">and</a> ϕ₂)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> ϕ₁</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#and" title="and">∧</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> ϕ₂)</span></span></span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> (<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.neg" title="formula.neg">¬'</a>ϕ)</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> ϕ</span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> ϕ.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.neg" title="formula.neg">neg</a></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> ϕ</span></span></li>
             
                 <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> <span class="fn"><span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.rel">formula.rel</a> _x</span> r</span> ts)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#true">true</a></span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> (t₁<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.eq" title="formula.eq">='</a>t₂)</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#true">true</a></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.eq">formula.eq</a> t₁</span> t₂)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#true">true</a></span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.ff" title="formula.ff">⊥'</a></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#true">true</a></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.ff">formula.ff</a></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#true">true</a></span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.tt" title="formula.tt">⊤'</a></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#true">true</a></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#is_var_free">is_var_free</a> n</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.tt">formula.tt</a></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#true">true</a></span></li>
             
         </ul>
     </details>
@@ -2065,7 +2073,7 @@ over.</p>
 <div class="decl" id="var_is_bound">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L366">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L371">source</a></div>
 
 
 
@@ -2111,7 +2119,7 @@ over.</p>
 <div class="decl" id="is_sentence">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L370">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L375">source</a></div>
 
 
 
@@ -2156,7 +2164,7 @@ over.</p>
 <div class="decl" id="sentence">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L373">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L378">source</a></div>
 
 
 
@@ -2195,14 +2203,14 @@ over.</p>
 
     
         <div class="mod_doc">
-            <p>Examples of formulas and sentences.</p>
+            <h2 id="examples-of-formulas-and-sentences" class="markdown-heading">Examples of formulas and sentences. <a class="hover-link" href="#examples-of-formulas-and-sentences">#</a></h2>
 
         </div>
     
 
     
         <div class="mod_doc">
-            <p>Satisfiability and Models</p>
+            <h2 id="satisfiability-and-models" class="markdown-heading">Satisfiability and Models <a class="hover-link" href="#satisfiability-and-models">#</a></h2>
 
         </div>
     
@@ -2213,7 +2221,7 @@ over.</p>
 <div class="decl" id="expanded_lang">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L387">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L392">source</a></div>
 
 
 
@@ -2239,7 +2247,7 @@ over.</p>
         <summary>Equations</summary>
         <ul class="equations">
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#expanded_lang">expanded_lang</a> L</span> M</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.mk" title="lang.mk">{</a><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.F" title="lang.F">F</a> := <span class="fn">λ (n : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a>), <span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#ite">ite</a> <span class="fn">(n <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> 0)</span></span> <span class="fn">(M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.univ" title="struc.univ">univ</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#sum" title="sum">⊕</a> <span class="fn">L.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.F" title="lang.F">F</a> 0)</span></span></span> <span class="fn">(L.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.F" title="lang.F">F</a> n)</span></span></span>, <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.R" title="lang.R">R</a> := L.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.R" title="lang.R">R</a>}</span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#expanded_lang">expanded_lang</a> L</span> M</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.mk" title="lang.mk">{</a><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.F" title="lang.F">F</a> := <span class="fn">λ (n : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a>), <span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#ite">ite</a> <span class="fn">(n <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> 0)</span></span> <span class="fn">(M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.univ" title="struc.univ">univ</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#sum" title="sum">⊕</a> L.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.C" title="lang.C">C</a>)</span></span> <span class="fn">(L.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.F" title="lang.F">F</a> n)</span></span></span>, <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.R" title="lang.R">R</a> := L.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.R" title="lang.R">R</a>}</span></span></li>
             
         </ul>
     </details>
@@ -2257,7 +2265,7 @@ over.</p>
 <div class="decl" id="expanded_struc">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L393">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L398">source</a></div>
 
 
 
@@ -2284,7 +2292,7 @@ over.</p>
         <summary>Equations</summary>
         <ul class="equations">
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#expanded_struc">expanded_struc</a> L</span> M</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.mk" title="struc.mk">{</a><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.univ" title="struc.univ">univ</a> := M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.univ" title="struc.univ">univ</a>, <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.F" title="struc.F">F</a> := <span class="fn">λ (n : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a>) (f : <span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#expanded_lang">expanded_lang</a> L</span> M)</span>.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.F" title="lang.F">F</a></span> n)</span>, <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#id">id</a> <span class="fn">(λ (f : <span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#ite">ite</a> <span class="fn">(n <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> 0)</span></span> <span class="fn">(M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.univ" title="struc.univ">univ</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#sum" title="sum">⊕</a> <span class="fn">L.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.F" title="lang.F">F</a> 0)</span></span></span> <span class="fn">(L.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.F" title="lang.F">F</a> n))</span></span>, <span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#dite">dite</a> <span class="fn">(n <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> 0)</span></span> <span class="fn">(λ (h₁ : <span class="fn">n <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> 0)</span>, <span class="fn">_.<a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#eq.mpr" title="eq.mpr">mpr</a> <span class="fn"><span class="fn"><span class="fn"><span class="fn">((_.<a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#eq.mp" title="eq.mp">mp</a> f)</span>.<span title="sum.cases_on">cases_on</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#id">id</a></span> <span class="fn">(M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.F" title="struc.F">F</a> 0)))</span></span></span></span></span> <span class="fn">(λ (h₁ : <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#not" title="not">¬</a><span class="fn">n <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> 0)</span></span>, <span class="fn"><span class="fn">M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.F" title="struc.F">F</a> n</span> <span class="fn">(_.<a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#eq.mp" title="eq.mp">mp</a> f)))</span></span></span></span></span></span> f</span></span>, <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.R" title="struc.R">R</a> := M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.R" title="struc.R">R</a>}</span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#expanded_struc">expanded_struc</a> L</span> M</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.mk" title="struc.mk">{</a><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.univ" title="struc.univ">univ</a> := M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.univ" title="struc.univ">univ</a>, <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.F" title="struc.F">F</a> := <span class="fn">λ (n : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a>) (f : <span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#expanded_lang">expanded_lang</a> L</span> M)</span>.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.F" title="lang.F">F</a></span> n)</span>, <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#id">id</a> <span class="fn">(λ (f : <span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#ite">ite</a> <span class="fn">(n <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> 0)</span></span> <span class="fn">(M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.univ" title="struc.univ">univ</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#sum" title="sum">⊕</a> L.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.C" title="lang.C">C</a>)</span></span> <span class="fn">(L.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.F" title="lang.F">F</a> n))</span></span>, <span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#dite">dite</a> <span class="fn">(n <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> 0)</span></span> <span class="fn">(λ (h : <span class="fn">n <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> 0)</span>, <span class="fn">_.<a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#eq.mpr" title="eq.mpr">mpr</a> <span class="fn"><span class="fn"><span class="fn"><span class="fn">((_.<a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#eq.mp" title="eq.mp">mp</a> f)</span>.<span title="sum.cases_on">cases_on</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#id">id</a></span> M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.C" title="struc.C">C</a>))</span></span></span></span> <span class="fn">(λ (h : <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#not" title="not">¬</a><span class="fn">n <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> 0)</span></span>, <span class="fn">M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.F" title="struc.F">F</a> <span class="fn">(_.<a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#eq.mp" title="eq.mp">mp</a> f)))</span></span></span></span></span></span> f</span></span>, <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.R" title="struc.R">R</a> := M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.R" title="struc.R">R</a>}</span></span></li>
             
         </ul>
     </details>
@@ -2302,7 +2310,7 @@ over.</p>
 <div class="decl" id="models">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L405">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L409">source</a></div>
 
 
 
@@ -2330,23 +2338,23 @@ an L-structure.</p>
         <summary>Equations</summary>
         <ul class="equations">
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.all" title="formula.all">∀'</a> v</span> ϕ)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn">∀ (x : M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.univ" title="struc.univ">univ</a>), <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> <span class="fn">(λ (n : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a>), <span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#ite">ite</a> <span class="fn">(n <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> v)</span></span> x</span> <span class="fn">(va n))</span></span></span></span> ϕ</span></span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.all">formula.all</a> v</span> ϕ)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn">∀ (x : M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.univ" title="struc.univ">univ</a>), <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> <span class="fn">(λ (n : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a>), <span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#ite">ite</a> <span class="fn">(n <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> v)</span></span> x</span> <span class="fn">(va n))</span></span></span></span> ϕ</span></span></span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.exi" title="formula.exi">∃'</a> v</span> ϕ)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn">∃ (x : M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.univ" title="struc.univ">univ</a>), <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> <span class="fn">(λ (n : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a>), <span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#ite">ite</a> <span class="fn">(n <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> v)</span></span> x</span> <span class="fn">(va n))</span></span></span></span> ϕ</span></span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.exi">formula.exi</a> v</span> ϕ)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn">∃ (x : M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.univ" title="struc.univ">univ</a>), <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> <span class="fn">(λ (n : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a>), <span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/logic.html#ite">ite</a> <span class="fn">(n <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> v)</span></span> x</span> <span class="fn">(va n))</span></span></span></span> ϕ</span></span></span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> (ϕ₁<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.or" title="formula.or">∨'</a>ϕ₂)</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> ϕ₁</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#or" title="or">∨</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> ϕ₂)</span></span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> <span class="fn">(ϕ₁.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.or" title="formula.or">or</a> ϕ₂)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> ϕ₁</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#or" title="or">∨</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> ϕ₂)</span></span></span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> (ϕ₁<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.and" title="formula.and">∧'</a>ϕ₂)</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> ϕ₁</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#and" title="and">∧</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> ϕ₂)</span></span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> <span class="fn">(ϕ₁.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.and" title="formula.and">and</a> ϕ₂)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> ϕ₁</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#and" title="and">∧</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> ϕ₂)</span></span></span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> (<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.neg" title="formula.neg">¬'</a>ϕ)</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#not" title="not">¬</a><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> ϕ</span></span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> ϕ.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.neg" title="formula.neg">neg</a></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#not" title="not">¬</a><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> ϕ</span></span></span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> <span class="fn"><span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.rel">formula.rel</a> _x</span> r</span> ts)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/data/vector.html#vector.map">vector.map</a> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_interpretation">term_interpretation</a> M</span> va)</span></span> ts</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn"><span class="fn">M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.R" title="struc.R">R</a> ts.<a href="https://vaibhavkarve.github.io/igl2020-docs/data/vector.html#vector.length" title="vector.length">length</a></span> r)</span></span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> <span class="fn"><span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.rel">formula.rel</a> _x</span> r</span> ts)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/data/vector.html#vector.map">vector.map</a> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_interpretation">term_interpretation</a> M</span> va)</span></span> ts</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn">M.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#struc.R" title="struc.R">R</a> r)</span></span></span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> (t₁<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.eq" title="formula.eq">='</a>t₂)</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_interpretation">term_interpretation</a> M</span> va</span> t₁</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_interpretation">term_interpretation</a> M</span> va</span> t₂)</span></span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.eq">formula.eq</a> t₁</span> t₂)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_interpretation">term_interpretation</a> M</span> va</span> t₁</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_interpretation">term_interpretation</a> M</span> va</span> t₂)</span></span></span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.ff" title="formula.ff">⊥'</a></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#false">false</a></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.ff">formula.ff</a></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#false">false</a></span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.tt" title="formula.tt">⊤'</a></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#true">true</a></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#models">models</a> va</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.tt">formula.tt</a></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#true">true</a></span></li>
             
         </ul>
     </details>
@@ -2364,7 +2372,7 @@ an L-structure.</p>
 <div class="decl" id="eq_term_interpretation_of_identical_var_assign">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L420">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L424">source</a></div>
 
 
 
@@ -2405,7 +2413,7 @@ Then t is interpreted to the same element under both s₁ and s₂.</p>
 <div class="decl" id="iff_models_relation_of_identical_var_assign">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L464">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L468">source</a></div>
 
 
 
@@ -2448,7 +2456,7 @@ satisfied in M under s₁ iff it is also satisfied under s₂.</p>
 <div class="decl" id="iff_models_of_identical_var_assign">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L495">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L499">source</a></div>
 
 
 
@@ -2489,7 +2497,7 @@ Then M ⊨ ϕ[s₁] iff M ⊨ ϕ[s₂].</p>
 <div class="decl" id="models_all_or_none_sentences">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L572">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L576">source</a></div>
 
 
 
@@ -2528,7 +2536,7 @@ for all assignment functions s, of M ⊨ σ[s] for no assignment function s.</p>
 <div class="decl" id="Model">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L595">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L599">source</a></div>
 
 
 
@@ -2578,7 +2586,7 @@ of sentences and show (ℚ, &lt;) models the axioms for DLO.</p>
 <div class="decl" id="godel_encoding">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L635">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L639">source</a></div>
 
 
 
@@ -2606,23 +2614,23 @@ of sentences and show (ℚ, &lt;) models the axioms for DLO.</p>
         <summary>Equations</summary>
         <ul class="equations">
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#godel_encoding">godel_encoding</a> L</span> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.all" title="formula.all">∀'</a> ᾰ</span> ᾰ_1)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> sorry</span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#godel_encoding">godel_encoding</a> L</span> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.all">formula.all</a> ᾰ</span> ᾰ_1)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> sorry</span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#godel_encoding">godel_encoding</a> L</span> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.exi" title="formula.exi">∃'</a> ᾰ</span> ᾰ_1)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> sorry</span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#godel_encoding">godel_encoding</a> L</span> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.exi">formula.exi</a> ᾰ</span> ᾰ_1)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> sorry</span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#godel_encoding">godel_encoding</a> L</span> (ᾰ<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.or" title="formula.or">∨'</a>ᾰ_1)</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> sorry</span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#godel_encoding">godel_encoding</a> L</span> <span class="fn">(ᾰ.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.or" title="formula.or">or</a> ᾰ_1)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> sorry</span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#godel_encoding">godel_encoding</a> L</span> (ᾰ<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.and" title="formula.and">∧'</a>ᾰ_1)</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> sorry</span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#godel_encoding">godel_encoding</a> L</span> <span class="fn">(ᾰ.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.and" title="formula.and">and</a> ᾰ_1)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> sorry</span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#godel_encoding">godel_encoding</a> L</span> (<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.neg" title="formula.neg">¬'</a>ᾰ)</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> sorry</span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#godel_encoding">godel_encoding</a> L</span> ᾰ.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.neg" title="formula.neg">neg</a></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> sorry</span></li>
             
                 <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#godel_encoding">godel_encoding</a> L</span> <span class="fn"><span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.rel">formula.rel</a> n</span> ᾰ</span> ᾰ_1)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> sorry</span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#godel_encoding">godel_encoding</a> L</span> (ᾰ<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.eq" title="formula.eq">='</a>ᾰ_1)</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> sorry</span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#godel_encoding">godel_encoding</a> L</span> <span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.eq">formula.eq</a> ᾰ</span> ᾰ_1)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> sorry</span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#godel_encoding">godel_encoding</a> L</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.ff" title="formula.ff">⊥'</a></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> sorry</span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#godel_encoding">godel_encoding</a> L</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.ff">formula.ff</a></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> sorry</span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#godel_encoding">godel_encoding</a> L</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.tt" title="formula.tt">⊤'</a></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> sorry</span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#godel_encoding">godel_encoding</a> L</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula.tt">formula.tt</a></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> sorry</span></li>
             
         </ul>
     </details>
@@ -2637,20 +2645,20 @@ of sentences and show (ℚ, &lt;) models the axioms for DLO.</p>
     
         
         
-<div class="decl" id="nat_to_prime">
-<div class="axiom">
+<div class="decl" id="stream.primes">
+<div class="constant">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L650">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L653">source</a></div>
 
 
 
 <div class="decl_header">
     
 
-<span class="decl_kind">axiom</span>
-<span class="decl_name"><a class="break_within" href="https://vaibhavkarve.github.io/igl2020-docs/model.html#nat_to_prime"><span class="name">nat_to_prime</span></a></span>
+<span class="decl_kind">constant</span>
+<span class="decl_name"><a class="break_within" href="https://vaibhavkarve.github.io/igl2020-docs/model.html#stream.primes"><span class="name">stream</span>.<span class="name">primes</span></a></span>
 &nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a> → <a href="https://vaibhavkarve.github.io/igl2020-docs/data/nat/prime.html#nat.primes">nat.primes</a></span></div>
+<div class="decl_type"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/data/stream.html#stream">stream</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/data/nat/prime.html#nat.primes">nat.primes</a></span></div>
 </div>
 
 
@@ -2673,7 +2681,7 @@ of sentences and show (ℚ, &lt;) models the axioms for DLO.</p>
 <div class="decl" id="encoding1">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L654">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L659">source</a></div>
 
 
 
@@ -2698,9 +2706,9 @@ of sentences and show (ℚ, &lt;) models the axioms for DLO.</p>
         <summary>Equations</summary>
         <ul class="equations">
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#encoding1">encoding1</a> <span class="fn">(n.<a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat.succ" title="nat.succ">succ</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_add.add" title="has_add.add">+</a> 1)</span></span> v</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/init/coe.html#coe" title="coe">↑</a><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#nat_to_prime">nat_to_prime</a> n.<a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat.succ" title="nat.succ">succ</a>)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_pow.pow" title="has_pow.pow">^</a> <span class="fn">(v.<a href="https://vaibhavkarve.github.io/igl2020-docs/data/vector.html#vector.head" title="vector.head">head</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_add.add" title="has_add.add">+</a> 1))</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#encoding1">encoding1</a> n.<a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat.succ" title="nat.succ">succ</a></span> v.<a href="https://vaibhavkarve.github.io/igl2020-docs/data/vector.html#vector.tail" title="vector.tail">tail</a></span></span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#encoding1">encoding1</a> <span class="fn">(n.<a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat.succ" title="nat.succ">succ</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_add.add" title="has_add.add">+</a> 1)</span></span> v</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn">sorry <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#encoding1">encoding1</a> n.<a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat.succ" title="nat.succ">succ</a></span> v.<a href="https://vaibhavkarve.github.io/igl2020-docs/data/vector.html#vector.tail" title="vector.tail">tail</a></span></span></span></li>
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#encoding1">encoding1</a> 1</span> v</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/coe.html#coe" title="coe">↑</a><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#nat_to_prime">nat_to_prime</a> 0)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_pow.pow" title="has_pow.pow">^</a> <span class="fn"><span class="fn">(v.<a href="https://vaibhavkarve.github.io/igl2020-docs/data/vector.html#vector.nth" title="vector.nth">nth</a> 0</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_add.add" title="has_add.add">+</a> 1)</span></span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#encoding1">encoding1</a> 1</span> v</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> sorry</span></li>
             
                 <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#encoding1">encoding1</a> 0</span> v</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> 1</span></li>
             
@@ -2717,10 +2725,10 @@ of sentences and show (ℚ, &lt;) models the axioms for DLO.</p>
     
         
         
-<div class="decl" id="primes">
+<div class="decl" id="string_of_formula">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L661">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L665">source</a></div>
 
 
 
@@ -2728,9 +2736,10 @@ of sentences and show (ℚ, &lt;) models the axioms for DLO.</p>
     
 
 <span class="decl_kind">def</span>
-<span class="decl_name"><a class="break_within" href="https://vaibhavkarve.github.io/igl2020-docs/model.html#primes"><span class="name">primes</span></a></span>
-&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#list">list</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a></span></div>
+<span class="decl_name"><a class="break_within" href="https://vaibhavkarve.github.io/igl2020-docs/model.html#string_of_formula"><span class="name">string_of_formula</span></a></span>
+
+    <span class="decl_args"><span class="fn">(L : <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang">lang</a>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#formula">formula</a> L</span> → <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/string/basic.html#string">string</a></span></div>
 </div>
 
 
@@ -2744,7 +2753,153 @@ of sentences and show (ℚ, &lt;) models the axioms for DLO.</p>
         <summary>Equations</summary>
         <ul class="equations">
             
-                <li class="equation"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#primes">primes</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/list/basic.html#list.filter">list.filter</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/data/nat/prime.html#nat.prime">nat.prime</a></span> [1]</span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#string_of_formula">string_of_formula</a> L</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> sorry</span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="func_number">
+<div class="def">
+
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L670">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://vaibhavkarve.github.io/igl2020-docs/model.html#func_number"><span class="name">func_number</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{L : <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang">lang</a>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">L.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang.F" title="lang.F">F</a> n</span> → <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a></span></div>
+</div>
+
+
+
+
+
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#func_number">func_number</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> sorry</span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="term_number">
+<div class="def">
+
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L672">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_number"><span class="name">term_number</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{L : <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang">lang</a>}</span></span></span>
+    <span class="decl_args"><span class="fn">(n : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term">term</a> L</span> n</span> → <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat" title="nat">ℕ</a></span></div>
+</div>
+
+
+
+
+
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_number">term_number</a> n.<a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat.succ" title="nat.succ">succ</a></span> <span class="fn">(t.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term.app" title="term.app">app</a> t₀)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_number">term_number</a> <span class="fn">(n.<a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat.succ" title="nat.succ">succ</a> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_add.add" title="has_add.add">+</a> 1)</span></span> t)</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_number">term_number</a> 0</span> t₀</span></span></span></li>
+            
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_number">term_number</a> n.<a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#nat.succ" title="nat.succ">succ</a></span> <span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term.func">term.func</a> f)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#func_number">func_number</a> f</span></span></li>
+            
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_number">term_number</a> 0</span> <span class="fn">(t.<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term.app" title="term.app">app</a> t₀)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_number">term_number</a> <span class="fn">(0 <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_add.add" title="has_add.add">+</a> 1)</span></span> t)</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_number">term_number</a> 0</span> t₀</span></span></span></li>
+            
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_number">term_number</a> 0</span> <span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term.func">term.func</a> f)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#func_number">func_number</a> f</span></span></li>
+            
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_number">term_number</a> 0</span> <span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term.var">term.var</a> v)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn">2 <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#has_mul.mul" title="has_mul.mul">*</a> v</span></span></li>
+            
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term_number">term_number</a> 0</span> <span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#term.con">term.con</a> c)</span></span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#func_number">func_number</a> c</span></span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="sentences_model">
+<div class="def">
+
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L689">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://vaibhavkarve.github.io/igl2020-docs/model.html#sentences_model"><span class="name">sentences_model</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{L : <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#lang">lang</a>}</span></span></span>
+    <span class="decl_args"><span class="fn">(S : <a href="https://vaibhavkarve.github.io/igl2020-docs/init/data/set.html#set">set</a> <span class="fn">(<a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#sentence">sentence</a> L)</span>)</span></span>
+    <span class="decl_args"><span class="fn">(s : <a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#sentence">sentence</a> L)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">Prop</span></div>
+</div>
+
+
+
+
+
+<p>Completeness of Language
+========================</p>
+<p>All sentences are formulas.</p>
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://vaibhavkarve.github.io/igl2020-docs/model.html#sentences_model">sentences_model</a> S</span> s</span> <a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#eq" title="eq">=</a> sorry</span></li>
             
         </ul>
     </details>
@@ -2762,7 +2917,7 @@ of sentences and show (ℚ, &lt;) models the axioms for DLO.</p>
 <div class="decl" id="is_complete">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L669">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L693">source</a></div>
 
 
 
@@ -2806,7 +2961,7 @@ of sentences and show (ℚ, &lt;) models the axioms for DLO.</p>
 <div class="decl" id="is_countable">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L670">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L696">source</a></div>
 
 
 
@@ -2849,7 +3004,7 @@ of sentences and show (ℚ, &lt;) models the axioms for DLO.</p>
 <div class="decl" id="sentence_to_formula">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L671">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L698">source</a></div>
 
 
 
@@ -2892,7 +3047,7 @@ of sentences and show (ℚ, &lt;) models the axioms for DLO.</p>
 <div class="decl" id="all_models_are_iso_as_structures">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L672">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L702">source</a></div>
 
 
 
@@ -2936,7 +3091,7 @@ of sentences and show (ℚ, &lt;) models the axioms for DLO.</p>
 <div class="decl" id="Vaught">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/2ce4d2fb7823187190c014f1006fef929ca4e1af/src/model.lean#L674">source</a></div>
+<div class="gh_link"><a href="https://github.com/vaibhavkarve/igl2020/blob/19767ae6bed4701e10fc91828086a2a7c1e8b1e0/src/model.lean#L705">source</a></div>
 
 
 
@@ -2999,6 +3154,9 @@ of sentences and show (ℚ, &lt;) models the axioms for DLO.</p>
         </div>
         <div class="nav_link ">
             <a href="https://vaibhavkarve.github.io/igl2020-docs/data/dlist.html">dlist</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/stream.html">stream</a>
         </div>
         <div class="nav_link ">
             <a href="https://vaibhavkarve.github.io/igl2020-docs/data/vector.html">vector</a>

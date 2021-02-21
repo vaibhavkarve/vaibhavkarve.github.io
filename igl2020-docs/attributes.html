@@ -163,20 +163,20 @@ this list can be accessed by a metaprogram.</p>
 objects (i.e. <code>my_collection</code>) which it gets from the statement of
 the lemma.  In some cases, the same lemma can be used to state the
 extensionality of multiple types that are definitionally equivalent.</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">attribute</span> <span class="o">[</span><span class="n">ext</span> <span class="o">[(</span><span class="bp">→</span><span class="o">),</span><span class="n"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#thunk">thunk</a></span><span class="o">,</span><span class="n">stream</span><span class="o">]]</span> <span class="n"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/funext.html#funext">funext</a></span>
+<div class="codehilite"><pre><span></span><code><span class="kn">attribute</span> <span class="o">[</span><span class="n">ext</span> <span class="o">[(</span><span class="bp">→</span><span class="o">),</span><span class="n"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#thunk">thunk</a></span><span class="o">,</span><span class="n"><a href="https://vaibhavkarve.github.io/igl2020-docs/data/stream.html#stream">stream</a></span><span class="o">]]</span> <span class="n"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/funext.html#funext">funext</a></span>
 </code></pre></div>
 
 <p>Those parameters are cumulative. The following are equivalent:</p>
 <div class="codehilite"><pre><span></span><code><span class="kn">attribute</span> <span class="o">[</span><span class="n">ext</span> <span class="o">[(</span><span class="bp">→</span><span class="o">),</span><span class="n"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#thunk">thunk</a></span><span class="o">]]</span> <span class="n"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/funext.html#funext">funext</a></span>
-<span class="kn">attribute</span> <span class="o">[</span><span class="n">ext</span> <span class="o">[</span><span class="n">stream</span><span class="o">]]</span> <span class="n"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/funext.html#funext">funext</a></span>
+<span class="kn">attribute</span> <span class="o">[</span><span class="n">ext</span> <span class="o">[</span><span class="n"><a href="https://vaibhavkarve.github.io/igl2020-docs/data/stream.html#stream">stream</a></span><span class="o">]]</span> <span class="n"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/funext.html#funext">funext</a></span>
 </code></pre></div>
 
 <p>and</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">attribute</span> <span class="o">[</span><span class="n">ext</span> <span class="o">[(</span><span class="bp">→</span><span class="o">),</span><span class="n"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#thunk">thunk</a></span><span class="o">,</span><span class="n">stream</span><span class="o">]]</span> <span class="n"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/funext.html#funext">funext</a></span>
+<div class="codehilite"><pre><span></span><code><span class="kn">attribute</span> <span class="o">[</span><span class="n">ext</span> <span class="o">[(</span><span class="bp">→</span><span class="o">),</span><span class="n"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#thunk">thunk</a></span><span class="o">,</span><span class="n"><a href="https://vaibhavkarve.github.io/igl2020-docs/data/stream.html#stream">stream</a></span><span class="o">]]</span> <span class="n"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/funext.html#funext">funext</a></span>
 </code></pre></div>
 
 <p>One removes type names from the list for one lemma with:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">attribute</span> <span class="o">[</span><span class="n">ext</span> <span class="o">[</span><span class="bp">-</span><span class="n">stream</span><span class="o">,</span><span class="bp">-</span><span class="n"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#thunk">thunk</a></span><span class="o">]]</span> <span class="n"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/funext.html#funext">funext</a></span>
+<div class="codehilite"><pre><span></span><code><span class="kn">attribute</span> <span class="o">[</span><span class="n">ext</span> <span class="o">[</span><span class="bp">-</span><span class="n"><a href="https://vaibhavkarve.github.io/igl2020-docs/data/stream.html#stream">stream</a></span><span class="o">,</span><span class="bp">-</span><span class="n"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/core.html#thunk">thunk</a></span><span class="o">]]</span> <span class="n"><a href="https://vaibhavkarve.github.io/igl2020-docs/init/funext.html#funext">funext</a></span>
 </code></pre></div>
 
 <p>Also, the following:</p>
@@ -1062,6 +1062,9 @@ For example, <code><a href="https://vaibhavkarve.github.io/igl2020-docs/init/dat
         </div>
         <div class="nav_link ">
             <a href="https://vaibhavkarve.github.io/igl2020-docs/data/dlist.html">dlist</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://vaibhavkarve.github.io/igl2020-docs/data/stream.html">stream</a>
         </div>
         <div class="nav_link ">
             <a href="https://vaibhavkarve.github.io/igl2020-docs/data/vector.html">vector</a>
