@@ -6,9 +6,9 @@
 <!-- 2021-02-28 Sun 15:29 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Manhattan Traffic</title>
+<title>Python's Data Model</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="[[file:../index.html][Vaibhav Karve]]Vaibhav Karve" />
+<meta name="author" content="Vaibhav Karve" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -180,7 +180,7 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -230,54 +230,47 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Manhattan Traffic
+<h1 class="title">Python's Data Model
 <br />
-<span class="subtitle"><a href="../index.html">Home</a></span>
+<span class="subtitle"><a href="index.html">Home</a></span>
 </h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge91465e">1. Collaborators</a></li>
+<li><a href="#orgf3150b9">1. Objects</a></li>
 </ul>
 </div>
 </div>
-<p>
-In this project, we analyze Manhattan taxi-traffic using a constrained
-nonnegative matrix factorization algorithm that promotes sparsity and
-allows us to decompose traffic into a linear combination of 50
-distinct <i>traffic signatures</i>.
-</p>
-
 <dl class="org-dl">
-<dt>GitLab code repository</dt><dd><a href="https://gitlab-beta.engr.illinois.edu/TrafficPatterns/CSNMF">gitlab-beta.engr.illinois.edu/TrafficPatterns/CSNMF</a></dd>
-<dt>Original data files</dt><dd><a href="https://doi.org/10.13012/B2IDB-4900670_V1">doi.org/10.13012/B2IDB-4900670<sub>V1</sub></a></dd>
-<dt>to appear in the Journal of Big Data Analytics in Transportation</dt><dd>Seasonal Disorder in Urban Traffic Patterns: a low rank analysis</dd>
+<dt>Python documentation and reference on which these notes are based</dt><dd>→ <a href="https://docs.python.org/3/reference/datamodel.html">Data model</a></dd>
 </dl>
 
-<p>
-A manuscript for this project is set to be published been submitted for publication and
-is pending review.
-</p>
-
-<p>
-The <a href="congestion_barcodes.html">congestion barcodes project</a> was an offshoot of this work.
-</p>
-
-<div id="outline-container-orge91465e" class="outline-2">
-<h2 id="orge91465e"><span class="section-number-2">1</span> Collaborators</h2>
+<div id="outline-container-orgf3150b9" class="outline-2">
+<h2 id="orgf3150b9"><span class="section-number-2">1</span> Objects</h2>
 <div class="outline-text-2" id="text-1">
-<ul class="org-ul">
-<li>Richard Sowers</li>
-<li>Daniel B.&nbsp; Work</li>
-<li>Derrek Yager</li>
-<li>Marzieh Abolhelm</li>
-</ul>
+<p>
+<i>Objects</i> are python's abstraction of data. All data is stored as objects. All
+code is also represented by objects.
+</p>
+
+<div class="org-center">
+<p>
+<code>Object = (Identity, Type, Value)</code>
+</p>
+</div>
+<ol class="org-ol">
+<li>The identity can be though of as an object's location in memory. <code>id()</code> gives
+the identity (or memory address) of an object as an integer, while <code>is</code>
+operator compares identities of two objects.</li>
+<li>The type determines the operations supported by an object, as well possible
+values for that object.</li>
+</ol>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: <a href="../index.html">Vaibhav Karve</a></p>
+<p class="author">Author: Vaibhav Karve</p>
 <p class="date">Created: 2021-02-28 Sun 15:29</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>

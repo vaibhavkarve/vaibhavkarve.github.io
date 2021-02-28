@@ -13,6 +13,7 @@
 - [[file:igl2020.org][Model Theory in Lean]]
 - [[file:model_theory.org][Model theory]]
 - [[file:python_multiprocessing.org][Multiprocessing in Python]]
+- [[file:python_data_model.org][Python's Data Model]]
 - [[file:pytype.org][Python's Type theory]]
 - [[file:theory_of_computation.org][Theory of Computation]]
 - [[file:type_theory.org][Type theory]]

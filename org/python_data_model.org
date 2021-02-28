@@ -1,0 +1,19 @@
+#+title: Python's Data Model
+#+options: toc:4 H:4
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+#+subtitle: [[file:index.org][Home]]
+
+- Python documentation and reference on which these notes are based :: → [[https://docs.python.org/3/reference/datamodel.html][Data model]]
+
+* Objects
+/Objects/ are python's abstraction of data. All data is stored as objects. All
+code is also represented by objects.
+
+#+begin_center
+=Object = (Identity, Type, Value)=
+#+end_center
+1. The identity can be though of as an object's location in memory. =id()= gives
+   the identity (or memory address) of an object as an integer, while =is=
+   operator compares identities of two objects.
+2. The type determines the operations supported by an object, as well possible
+   values for that object.
