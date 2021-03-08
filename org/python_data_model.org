@@ -3,7 +3,11 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 #+subtitle: [[file:index.org][Home]]
 
+Since this note concerns a programming language, it is important to keep
+track of when this note was last updated.
+- Python version :: These notes use v3.9.2 and were last updated in March 2021.
 - Python documentation and reference on which these notes are based :: → [[https://docs.python.org/3/reference/datamodel.html][Data model]]
+
 
 * Objects
 /Objects/ are python's abstraction of data. All data is stored as objects. All
@@ -17,3 +21,26 @@ code is also represented by objects.
    operator compares identities of two objects.
 2. The type determines the operations supported by an object, as well possible
    values for that object.
+3. The value is the data stored-in/referenced-by an object.
+   - an object is immutable if it value cannot be changed. E.g. numbers,
+     strings, tuples.
+   - an object is mutable if it can be. E.g. dicts, lists.
+
+** Containers
+A /container/ is an object that contains references to another object.
+
+*Note:* an immutable container of mutable objects is still considered
+immutable! E.g. =frozenset[list[int]]=
+
+* NEXT The standard type hierarchy
+| Python's standard type | Values                | Isomorphic Lean type | Comments                                   |
+|------------------------+-----------------------+----------------------+--------------------------------------------|
+| None                   | {None}                | unit                 | the truthiness of the None value is False. |
+| NotImplemented         | {NotImplemented}      | unit                 | there is no truthiness to this value.      |
+| Ellipsis               | {=...=} or {Ellipsis} | unit                 | the value of truthiness of True.           |
+| ??? (to be continued)  |                       |                      |                                            |
+
+
+
+* Buffer local settings                                            :noexport:
+#  LocalWords:  dicts
