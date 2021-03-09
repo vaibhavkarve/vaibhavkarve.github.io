@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-03-08 Mon 07:47 -->
+<!-- 2021-03-09 Tue 07:37 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Python's Data Model</title>
@@ -238,12 +238,12 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgde94d79">1. Objects</a>
+<li><a href="#orgdcb4970">1. Objects</a>
 <ul>
-<li><a href="#orgd9c3813">1.1. Containers</a></li>
+<li><a href="#org6eb0939">1.1. Containers</a></li>
 </ul>
 </li>
-<li><a href="#org470c5a3">2. <span class="todo NEXT">NEXT</span> The standard type hierarchy</a></li>
+<li><a href="#orge888602">2. <span class="todo NEXT">NEXT</span> The standard type hierarchy</a></li>
 </ul>
 </div>
 </div>
@@ -257,8 +257,8 @@ track of when this note was last updated.
 </dl>
 
 
-<div id="outline-container-orgde94d79" class="outline-2">
-<h2 id="orgde94d79"><span class="section-number-2">1</span> Objects</h2>
+<div id="outline-container-orgdcb4970" class="outline-2">
+<h2 id="orgdcb4970"><span class="section-number-2">1</span> Objects</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <i>Objects</i> are python's abstraction of data. All data is stored as objects. All
@@ -285,8 +285,8 @@ strings, tuples.</li>
 </ol>
 </div>
 
-<div id="outline-container-orgd9c3813" class="outline-3">
-<h3 id="orgd9c3813"><span class="section-number-3">1.1</span> Containers</h3>
+<div id="outline-container-org6eb0939" class="outline-3">
+<h3 id="org6eb0939"><span class="section-number-3">1.1</span> Containers</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 A <i>container</i> is an object that contains references to another object.
@@ -300,8 +300,8 @@ immutable! E.g. <code>frozenset[list[int]]</code>
 </div>
 </div>
 
-<div id="outline-container-org470c5a3" class="outline-2">
-<h2 id="org470c5a3"><span class="section-number-2">2</span> <span class="todo NEXT">NEXT</span> The standard type hierarchy</h2>
+<div id="outline-container-orge888602" class="outline-2">
+<h2 id="orge888602"><span class="section-number-2">2</span> <span class="todo NEXT">NEXT</span> The standard type hierarchy</h2>
 <div class="outline-text-2" id="text-2">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -328,14 +328,14 @@ immutable! E.g. <code>frozenset[list[int]]</code>
 <td class="org-left">None</td>
 <td class="org-left">{None}</td>
 <td class="org-left">unit</td>
-<td class="org-left">the truthiness of the None value is False.</td>
+<td class="org-left">truthiness of None value is False.</td>
 </tr>
 
 <tr>
 <td class="org-left">NotImplemented</td>
 <td class="org-left">{NotImplemented}</td>
 <td class="org-left">unit</td>
-<td class="org-left">there is no truthiness to this value.</td>
+<td class="org-left">value has no truthiness defined</td>
 </tr>
 
 <tr>
@@ -346,7 +346,56 @@ immutable! E.g. <code>frozenset[list[int]]</code>
 </tr>
 
 <tr>
-<td class="org-left">???</td>
+<td class="org-left">numbers.Number</td>
+<td class="org-left">depends on subtype</td>
+<td class="org-left">typeclass</td>
+<td class="org-left">always immutable</td>
+</tr>
+
+<tr>
+<td class="org-left">⊐ numbers.Integral</td>
+<td class="org-left">depends on subtype</td>
+<td class="org-left">ℤ</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">⊐⊐ int</td>
+<td class="org-left">{&#x2026;, -1, 0, 1, 2, &#x2026;}</td>
+<td class="org-left">ℤ (restricted by virtual memory)</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">⊐⊐ bool</td>
+<td class="org-left">{False, True}</td>
+<td class="org-left">bool (but subtype of ℤ)</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">⊐ numbers.Real (float)</td>
+<td class="org-left">floating points</td>
+<td class="org-left">ℝ (restricted)</td>
+<td class="org-left">depends on computer architecture</td>
+</tr>
+
+<tr>
+<td class="org-left">⊐ numbers.Complex (complex)</td>
+<td class="org-left">complex floating points</td>
+<td class="org-left">ℂ (restricted)</td>
+<td class="org-left">depends on computer architecture</td>
+</tr>
+
+<tr>
+<td class="org-left">Sequences</td>
+<td class="org-left">depends on subtype</td>
+<td class="org-left">array</td>
+<td class="org-left">finite ordered sets indexed by ℕ</td>
+</tr>
+
+<tr>
+<td class="org-left">??? (to be continued&#x2026;)</td>
 <td class="org-left">&#xa0;</td>
 <td class="org-left">&#xa0;</td>
 <td class="org-left">&#xa0;</td>
@@ -358,7 +407,7 @@ immutable! E.g. <code>frozenset[list[int]]</code>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2021-03-08 Mon 07:47</p>
+<p class="date">Created: 2021-03-09 Tue 07:37</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

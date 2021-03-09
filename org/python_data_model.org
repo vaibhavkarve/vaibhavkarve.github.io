@@ -33,12 +33,19 @@ A /container/ is an object that contains references to another object.
 immutable! E.g. =frozenset[list[int]]=
 
 * NEXT The standard type hierarchy
-| Python's standard type | Values                | Isomorphic Lean type | Comments                                   |
-|------------------------+-----------------------+----------------------+--------------------------------------------|
-| None                   | {None}                | unit                 | the truthiness of the None value is False. |
-| NotImplemented         | {NotImplemented}      | unit                 | there is no truthiness to this value.      |
-| Ellipsis               | {=...=} or {Ellipsis} | unit                 | the value of truthiness of True.           |
-| ??? (to be continued)  |                       |                      |                                            |
+| Python's standard type      | Values                  | Isomorphic Lean type             | Comments                           |
+|-----------------------------+-------------------------+----------------------------------+------------------------------------|
+| None                        | {None}                  | unit                             | truthiness of None value is False. |
+| NotImplemented              | {NotImplemented}        | unit                             | value has no truthiness defined    |
+| Ellipsis                    | {=...=} or {Ellipsis}   | unit                             | the value of truthiness of True.   |
+| numbers.Number              | depends on subtype      | typeclass                        | always immutable                   |
+| ⊐ numbers.Integral          | depends on subtype      | ℤ                                |                                    |
+| ⊐⊐ int                      | {..., -1, 0, 1, 2, ...} | ℤ (restricted by virtual memory) |                                    |
+| ⊐⊐ bool                     | {False, True}           | bool (but subtype of ℤ)          |                                    |
+| ⊐ numbers.Real (float)      | floating points         | ℝ (restricted)                   | depends on computer architecture   |
+| ⊐ numbers.Complex (complex) | complex floating points | ℂ (restricted)                   | depends on computer architecture   |
+| Sequences                   | depends on subtype      | array                            | finite ordered sets indexed by ℕ   |
+| ??? (to be continued...)    |                         |                                  |                                    |
 
 
 
