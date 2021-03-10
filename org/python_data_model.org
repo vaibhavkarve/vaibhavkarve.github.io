@@ -32,20 +32,36 @@ A /container/ is an object that contains references to another object.
 *Note:* an immutable container of mutable objects is still considered
 immutable! E.g. =frozenset[list[int]]=
 
+The following lines are quoted directly from the documentation and are
+useful, but somewhat hard to understand.
+#+begin_example
+An object of an immutable sequence type cannot change once it is created. (If the object contains references to other objects, these other objects may be mutable and may be changed; however, the collection of objects directly referenced by an immutable object cannot change.)
+#+end_example
+
 * NEXT The standard type hierarchy
-| Python's standard type      | Values                  | Isomorphic Lean type             | Comments                           |
-|-----------------------------+-------------------------+----------------------------------+------------------------------------|
-| None                        | {None}                  | unit                             | truthiness of None value is False. |
-| NotImplemented              | {NotImplemented}        | unit                             | value has no truthiness defined    |
-| Ellipsis                    | {=...=} or {Ellipsis}   | unit                             | the value of truthiness of True.   |
-| numbers.Number              | depends on subtype      | typeclass                        | always immutable                   |
-| ⊐ numbers.Integral          | depends on subtype      | ℤ                                |                                    |
-| ⊐⊐ int                      | {..., -1, 0, 1, 2, ...} | ℤ (restricted by virtual memory) |                                    |
-| ⊐⊐ bool                     | {False, True}           | bool (but subtype of ℤ)          |                                    |
-| ⊐ numbers.Real (float)      | floating points         | ℝ (restricted)                   | depends on computer architecture   |
-| ⊐ numbers.Complex (complex) | complex floating points | ℂ (restricted)                   | depends on computer architecture   |
-| Sequences                   | depends on subtype      | array                            | finite ordered sets indexed by ℕ   |
-| ??? (to be continued...)    |                         |                                  |                                    |
+| Python's standard type      | Values                                                        | Isomorphic (or approximate) Lean type  | Comments                           |
+|-----------------------------+---------------------------------------------------------------+----------------------------------------+------------------------------------|
+| *None*                      | {None}                                                        | unit                                   | truthiness of None value is False. |
+| *NotImplemented*            | {NotImplemented}                                              | unit                                   | value has no truthiness defined    |
+| *Ellipsis*                  | {=...=} or {Ellipsis}                                         | unit                                   | the value of truthiness of True.   |
+| *numbers.Number*            | depends on subtype                                            | typeclass                              | always immutable                   |
+| ⊐ numbers.Integral          | depends on subtype                                            | ℤ                                      | --                                 |
+| ⊐⊐ int                      | {..., -1, 0, 1, 2, ...}                                       | ℤ (restricted by virtual memory)       | --                                 |
+| ⊐⊐ bool                     | {False, True}                                                 | bool (but subtype of ℤ)                | --                                 |
+| ⊐ numbers.Real (float)      | floating points                                               | restricted version of ℝ                | depends on computer architecture   |
+| ⊐ numbers.Complex (complex) | complex floating points                                       | restricted version of ℂ                | depends on computer architecture   |
+| *Sequences*                 | finite collection of ordered values indexed by ℕ              | array                                  | finite ordered sets indexed by ℕ   |
+| ⊐ str                       | seq. of Unicode code points in range U+0000 to U+10FFFF       | string                                 | immutable                          |
+| ⊐ tuple                     | seq. of any Python objects                                    | list (but nonhomogeneous)              | immutable version of list          |
+| ⊐ bytes                     | seq. of bytes formed from ASCII ints (0 to 255)               | --                                     | immutable version of bytearray     |
+| ⊐ list                      | seq. of any Python objects                                    | Lean does not have mutable containers  | mutable version of tuple           |
+| ⊐ bytearray                 | seq. of bytes formed from ASCII ints (0 to 255)               | --                                     | mutable version of bytes           |
+| *Set types*                 | finite collection of unordered, unique values                 | --                                     | --                                 |
+| ⊐ set                       | finite set of any immutable Python objects                    | Lean does not have mutable containers  | mutable version of frozenset       |
+| ⊐ frozenset                 | finite set of any immutable Python objects                    | finset (but nonhomogeneous)            | immutable version of set           |
+| *Mappings*                  | finite collections of objects indexed by arbitrary index sets | --                                     | --                                 |
+| ⊐ dict                      | mappings with immutable keys                                  | alist (but nonhomogeneous and mutable) | mutable                            |
+| *Callable types*            | things that can be "called" using ()                          | ??? (to be continued ...)              |                                    |
 
 
 
