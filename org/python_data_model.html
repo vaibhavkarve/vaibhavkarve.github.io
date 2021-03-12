@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-03-11 Thu 07:29 -->
+<!-- 2021-03-12 Fri 11:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Python's Data Model</title>
@@ -238,27 +238,26 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgde6908f">1. Objects</a>
+<li><a href="#org96af463">1. Objects</a>
 <ul>
-<li><a href="#org46462d3">1.1. Containers</a></li>
+<li><a href="#orgf492d0a">1.1. Containers</a></li>
 </ul>
 </li>
-<li><a href="#orgbd9079e">2. <span class="todo NEXT">NEXT</span> The standard type hierarchy</a></li>
+<li><a href="#org08dbb2d">2. The standard type hierarchy</a></li>
 </ul>
 </div>
 </div>
-<p>
-Since this note concerns a programming language, it is important to keep
-track of when this note was last updated.
-</p>
 <dl class="org-dl">
-<dt>Python version</dt><dd>These notes use v3.9.2 and were last updated in March 2021.</dd>
 <dt>Python documentation and reference on which these notes are based</dt><dd>→ <a href="https://docs.python.org/3/reference/datamodel.html">Data model</a></dd>
+<dt>Python version</dt><dd>Since this note concerns a programming language, it is
+important to keep track of when this note was last
+updated.  These notes use v3.9.2 and were last updated
+in March 2021.</dd>
 </dl>
 
 
-<div id="outline-container-orgde6908f" class="outline-2">
-<h2 id="orgde6908f"><span class="section-number-2">1</span> Objects</h2>
+<div id="outline-container-org96af463" class="outline-2">
+<h2 id="org96af463"><span class="section-number-2">1</span> Objects</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <i>Objects</i> are python's abstraction of data. All data is stored as objects. All
@@ -285,8 +284,8 @@ strings, tuples.</li>
 </ol>
 </div>
 
-<div id="outline-container-org46462d3" class="outline-3">
-<h3 id="org46462d3"><span class="section-number-3">1.1</span> Containers</h3>
+<div id="outline-container-orgf492d0a" class="outline-3">
+<h3 id="orgf492d0a"><span class="section-number-3">1.1</span> Containers</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 A <i>container</i> is an object that contains references to another object.
@@ -308,8 +307,8 @@ An object of an immutable sequence type cannot change once it is created. (If th
 </div>
 </div>
 
-<div id="outline-container-orgbd9079e" class="outline-2">
-<h2 id="orgbd9079e"><span class="section-number-2">2</span> <span class="todo NEXT">NEXT</span> The standard type hierarchy</h2>
+<div id="outline-container-org08dbb2d" class="outline-2">
+<h2 id="org08dbb2d"><span class="section-number-2">2</span> The standard type hierarchy</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 In the following table, we use (⊐ A) to denote that the type A is a subtype
@@ -549,10 +548,38 @@ says that <b>Sequences</b> ⊐ list, i.e. that lists are a subtype of Sequences.
 </tr>
 
 <tr>
-<td class="org-left"><b>Modules ??? (to be continued&#x2026;)</b></td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>Modules</b></td>
+<td class="org-left">basic organizational unit of Python code</td>
+<td class="org-left">--</td>
+<td class="org-left">usually created by the import system using the import statement</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>Custom classes</b></td>
+<td class="org-left">user-defined class definitions</td>
+<td class="org-left">structure</td>
+<td class="org-left">--</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>Class instances</b></td>
+<td class="org-left">instance of a user-defined class</td>
+<td class="org-left">term of type structure</td>
+<td class="org-left">created by calling a class object</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>I/O objects</b> (file objects)</td>
+<td class="org-left">an open file</td>
+<td class="org-left">(I think this is <code>io.mode</code>)</td>
+<td class="org-left">usually created by the <code>open()</code> function</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>Internal types</b></td>
+<td class="org-left">--</td>
+<td class="org-left">--</td>
+<td class="org-left">this includes code objects, frame objects, traceback objects, slice objects, static method objects, and class method objects</td>
 </tr>
 </tbody>
 </table>
@@ -561,7 +588,7 @@ says that <b>Sequences</b> ⊐ list, i.e. that lists are a subtype of Sequences.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2021-03-11 Thu 07:29</p>
+<p class="date">Created: 2021-03-12 Fri 11:07</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
