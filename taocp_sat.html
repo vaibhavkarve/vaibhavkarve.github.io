@@ -6,7 +6,7 @@
 <!-- 2021-03-28 Sun 21:33 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Boolean Satisfiability notes</title>
+<title>Satisfiability ala Knuth (the art of computer programming)</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="Vaibhav Karve" />
 <style type="text/css">
@@ -252,7 +252,7 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Boolean Satisfiability notes
+<h1 class="title">Satisfiability ala Knuth (the art of computer programming)
 <br />
 <span class="subtitle"><a href="index.html">Home</a></span>
 </h1>
@@ -260,49 +260,37 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org20435c9">1. Introduction</a></li>
+<li><a href="#orgb9e8f47">1. Introduction</a></li>
 </ul>
 </div>
 </div>
-<p>
-These are my notes from Donald Knuth's The Art of Computer Programming:
-Satisfiability, Volume 4, Fascicle 6.
-</p>
+<dl class="org-dl">
+<dt>These notes are based on</dt><dd>The Art of Computer Programming: Satisfiability, Volume 4, Fascicle 6, Chapter 7, by Donald E. Knuth</dd>
+<dt>Link to e-book</dt><dd><a href="https://i-share-uiu.primo.exlibrisgroup.com/discovery/fulldisplay?docid=alma99947576812205899&amp;context=L&amp;vid=01CARLI_UIU:CARLI_UIU&amp;tab=LibraryCatalog&amp;lang=en">ebook behind paywall</a></dd>
+</dl>
 
-
-<div id="outline-container-org20435c9" class="outline-2">
-<h2 id="org20435c9"><span class="section-number-2">1</span> Introduction</h2>
+<div id="outline-container-orgb9e8f47" class="outline-2">
+<h2 id="orgb9e8f47"><span class="section-number-2">1</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-A efficient algorithm for SAT would involve deciding a CNF on \(N\)
-variables in \(N^{O(1)}\) steps. It is possible (and D.K. believes so)
-that SAT is in \(P\) but the algorithm is "unknowable", meaning we might
-get an existence proof of such an algorithm.
+SAT asks if any given formula of size \(N\) can be decided in \(N^{O(1)}\) steps.
 </p>
 
 <p>
-D.K. defines a literal to be either a variable or its complement.  Two
-literals are <i>distinct</i> if \(l_1 \neq l_2\). They are <i>strictly
-distinct</i> if \(|l_1| \neq |l_2|\).
+Definitions:
 </p>
-</div>
+<ul class="org-ul">
+<li><i>Variables</i> are elements from a convenient set</li>
+<li>A <i>literal</i> is either a variable or the complement of a variable.</li>
+</ul>
 
-<div id="outline-container-orgdb38522" class="outline-3">
-<h3 id="orgdb38522"><span class="section-number-3">1.1</span> SAT is equivalent to a covering problem</h3>
-<div class="outline-text-3" id="text-1-1">
-<pre class="example">
-def Tₙ (n : ℕ) : CNF := {{1, ¬1}, {2, ¬ 2}, ..., {n, ¬n}}
-variable (S : Cnf)
-
-def is_sat S : Prop :=
-  let n := number_of_variables S in
-  ∃ L : set (Literals),
-  -- (1) L has size n
-  L.size = n
-  -- (2) every clause had a literal that is in L.
-  ∧ ∀ (c : Clause) ∈ S, ∃ l ∈ L, l ∈ c
-</pre>
-</div>
+<p>
+SAT is equivalent to a covering problem &#x2013; we are looking for a cover (a
+set of \(n\) literals) that covers the all the clauses in the Cnf as well
+as the sentence \(T_n = \{x_1\overline{x_1}, \ldots, x_n\overline{x_n}\}\).
+Then, a family of clauses is satisfiable if and only if it can be covered
+by a set of strictly distinct literals.
+</p>
 </div>
 </div>
 </div>

@@ -1,0 +1,23 @@
+#+title: Satisfiability ala Knuth (the art of computer programming)
+#+options: toc:4 H:4
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+#+subtitle: [[file:index.org][Home]]
+
+- These notes are based on :: The Art of Computer Programming: Satisfiability, Volume 4, Fascicle 6, Chapter 7, by Donald E. Knuth
+- Link to e-book :: [[https://i-share-uiu.primo.exlibrisgroup.com/discovery/fulldisplay?docid=alma99947576812205899&context=L&vid=01CARLI_UIU:CARLI_UIU&tab=LibraryCatalog&lang=en][ebook behind paywall]]
+
+* Introduction
+SAT asks if any given formula of size \(N\) can be decided in \(N^{O(1)}\) steps.
+
+Definitions:
+- /Variables/ are elements from a convenient set
+- A /literal/ is either a variable or the complement of a variable.
+
+SAT is equivalent to a covering problem -- we are looking for a cover (a
+set of \(n\) literals) that covers the all the clauses in the Cnf as well
+as the sentence \(T_n = \{x_1\overline{x_1}, \ldots, x_n\overline{x_n}\}\).
+Then, a family of clauses is satisfiable if and only if it can be covered
+by a set of strictly distinct literals.
+
+
+* Buffer local settings                                            :noexport:

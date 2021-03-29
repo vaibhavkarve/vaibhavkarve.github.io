@@ -15,6 +15,7 @@
 - [[file:python_multiprocessing.org][Multiprocessing in Python]]
 - [[file:python_data_model.org][Python's Data Model]]
 - [[file:pytype.org][Python's Type theory]]
+- [[file:taocp_sat.org][Satisfiability ala Knuth (the art of computer programming)]]
 - [[file:theory_of_computation.org][Theory of Computation]]
 - [[file:type_theory.org][Type theory]]
 - [[file:index.org][Vaibhav Karve]]

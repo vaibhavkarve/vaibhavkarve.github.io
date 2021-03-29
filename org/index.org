@@ -85,6 +85,7 @@ things I found interesting at different times and wished to keep a record of.
 - [[file:python_multiprocessing.org][Python multiprocessing]]
 - [[file:python_sqlite.html][Python sqlite3]]
 - [[file:pytype.org][Python's type theory]]
+- [[file:taocp_sat.org][Satisfiability ala Knuth]]
 - [[file:theory_of_computation.org][Theory of computation]]
 - [[file:type_theory.org][Type theory]]
 
