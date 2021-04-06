@@ -9,8 +9,12 @@ website : htmls
 	git commit -m "auto-update webpages"
 	git push origin master
 
-org/CV.pdf : ~/org/ref/cv_jan_2021/CV.pdf
-	cp $< $@
+
+pdfs-docs : ~/org/ref/cv_jan_2021/CV.pdf
+	cp ~/org/ref/cv_jan_2021/CV.pdf org/CV.pdf
+	cp ~/talks/2021_04_08_phd/main.pdf org/satisfiability/slides.pdf
+	cp ~/hirani_group/home/papers/theses/vaibhav/main.pdf org/satisfiability/thesis.pdf
+
 
 org/Teaching_Philosophy_Statement.pdf : ~/org/ref/teaching_statement_jan_2021/teaching_statement_jan_2021.pdf
 	cp $< $@
