@@ -4,13 +4,13 @@ htmls : org/index.org
 	touch org/*.org
 	emacs -l org_publish.el --batch $< --eval="(org-publish-all (symbol-name 'org))" --kill
 
-website : htmls
+website : htmls pdf-docs
 	git add .
 	git commit -m "auto-update webpages"
 	git push origin master
 
 
-pdfs-docs : ~/org/ref/cv_jan_2021/CV.pdf
+pdf-docs : ~/org/ref/cv_jan_2021/CV.pdf
 	cp ~/org/ref/cv_jan_2021/CV.pdf org/CV.pdf
 	cp ~/talks/2021_04_08_phd/main.pdf org/satisfiability/slides.pdf
 	cp ~/hirani_group/home/papers/theses/vaibhav/main.pdf org/satisfiability/thesis.pdf
