@@ -5,8 +5,8 @@
 #+subtitle: [[file:index.org][Home]]
 
 - Instagram post :: https://www.instagram.com/p/BvAT8ayH74L/
+- UIUC Ideals :: https://www.ideals.illinois.edu/handle/2142/103709
 - GitHub :: https://github.com/vaibhavkarve/kaprekar
-
 
 
 #+CAPTION: A visual graph of the Kaprekar process. Every four-digit number is a point on one of the circles. Every iteration outlined by Kaprekar is a path. At the center is the number =6174= (indicated by the red dot).
@@ -18,8 +18,8 @@
 1. Pick a 4-digit number, using at least two different digits.
 2. Arrange the digits in descending and then in ascending order to get
    two four-digit numbers, adding leading zeros if
-   necessary. 
-3. Subtract the smaller #number from the bigger number. 
+   necessary.
+3. Subtract the smaller #number from the bigger number.
 4. Go back to
    step 2. and repeat.
 
