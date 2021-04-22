@@ -75,6 +75,7 @@ things I found interesting at different times and wished to keep a record of.
   - followed the steps [[https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html][here]],
   - also set up the sitemap.
 - [[file:lambda_calculus.pdf][Lambda calculus]]
+- [[file:linear_programming.org][Linear programming]]
 - Logic
 - [[file:lua.pdf][Lua]]
 - [[file:tidbits.org][Mathematical tidbits]]

@@ -284,7 +284,7 @@ The partition function counts the number of partitions of an integer n
      &= \textbf{1}+\textbf{1}+\textbf{1}+\textbf{1}+\textbf{1}
  \end{align*}
 
- ∴ \()spt(5) = 14\).
+ ∴ \(spt(5) = 14\).
 
 *** Asymptotics
  It is surprising that the small parts function has "nice"

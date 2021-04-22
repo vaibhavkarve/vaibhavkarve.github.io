@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-04-21 Wed 20:44 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Linear and Mixed Integer Programming</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Vaibhav Karve" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Linear and Mixed Integer Programming
+<br />
+<span class="subtitle"><a href="index.html">Home</a></span>
+</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgb858535">1. Linear Programs</a>
+<ul>
+<li><a href="#orge588530">1.1. Solution to a linear program</a></li>
+<li><a href="#org330587c">1.2. Optimality of linear programming</a></li>
+<li><a href="#org9bbc7c6">1.3. List of linear program solving softwares</a></li>
+<li><a href="#org6f03a4d">1.4. Vector form of linear program</a></li>
+<li><a href="#orgfb5f6c6">1.5. Characteristics of a linear program</a></li>
+<li><a href="#orgdc13287">1.6. Core idea behind simplex method</a></li>
+<li><a href="#org022033d">1.7. Alternative to simplex method</a></li>
+<li><a href="#org5cdb31e">1.8. Every linear program has a dual</a></li>
+<li><a href="#org5916f64">1.9. Weak duality</a></li>
+<li><a href="#org6564558">1.10. Strong duality</a></li>
+<li><a href="#org9a59fae">1.11. Implications of duality</a></li>
+<li><a href="#org49058e8">1.12. Duality in optimization problems</a></li>
+</ul>
+</li>
+<li><a href="#org37bf9f9">2. Mixed Integer Linear Programs</a>
+<ul>
+<li><a href="#org966a981">2.1. Characteristics</a></li>
+<li><a href="#org744a97f">2.2. Enforcing logical conditions on binary variables</a></li>
+<li><a href="#orgbbfd82a">2.3. Linear program relaxation</a></li>
+<li><a href="#org512dd71">2.4. Turning LP-relaxation solution into an IP solution</a></li>
+<li><a href="#org4c850c5">2.5. Strong vs. weak formulations of integer programs</a></li>
+<li><a href="#orgaeb200d">2.6. Constraint generation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+These notes are based on notes from <a href="https://asestes1.github.io/">Alexander S. Estes</a>'s INMAS 2021
+workshop on <a href="https://asestes1.github.io/inmas2021/">Modeling and Optimization</a>.
+</p>
+
+<div id="outline-container-orgb858535" class="outline-2">
+<h2 id="orgb858535"><span class="section-number-2">1</span> Linear Programs</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+\[\min_{x\in\mathbb{R}^n} f(x)\] subject to the constraints \[g_1(x)\le
+0,\; g_2(x)\le 0,\; \ldots,\; g_k(x)\le 0.\]
+</p>
+</div>
+
+<div id="outline-container-orge588530" class="outline-3">
+<h3 id="orge588530"><span class="section-number-3">1.1</span> Solution to a linear program</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>\(x\) is <i>feasible</i> if it satisfies all constraints.</li>
+<li><i>Feasible region</i> is the set of all feasible points.</li>
+<li>\(x\) is <i>optimal</i> if it satisfies all constraints and \(f(x) \le f(y)\)
+for any other feasible solution \(y\).</li>
+<li><b>Goal:</b> find an optimal solution.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org330587c" class="outline-3">
+<h3 id="org330587c"><span class="section-number-3">1.2</span> Optimality of linear programming</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+There are 3 possibilities &#x2013;
+</p>
+<ol class="org-ol">
+<li>LP has an optimal solution.</li>
+<li>LP is infeasible &#x2013; i.e. we have too many constraints.
+For example,
+\[\min x\]
+subject to
+<ul class="org-ul">
+<li>\(x\le 1\)</li>
+<li>\(x\ge 2\)</li>
+<li>\(x\ge 0\)</li>
+</ul></li>
+<li>LP is unbounded &#x2013; i.e. we have too few constraints.
+For example,
+\[\max x\]
+subject to \(x\ge 0\).</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org9bbc7c6" class="outline-3">
+<h3 id="org9bbc7c6"><span class="section-number-3">1.3</span> List of linear program solving softwares</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+CPLEX, COIN-OR, FICO Xpress, GLPK, <a href="https://www.gurobi.com/">Gurobi</a>, \(\ldots\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6f03a4d" class="outline-3">
+<h3 id="org6f03a4d"><span class="section-number-3">1.4</span> Vector form of linear program</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Maximize \(c^\top x\) subject to
+</p>
+<ul class="org-ul">
+<li>\(Ax\le b\)</li>
+<li>\(x\ge 0\)</li>
+</ul>
+
+<p>
+Here, \(c\) is the vector of coefficients in the objective. \(A\) is the
+matrix of constraint coefficients. \(b\) is a vector of constants.
+</p>
+</div>
+</div>
+<div id="outline-container-orgfb5f6c6" class="outline-3">
+<h3 id="orgfb5f6c6"><span class="section-number-3">1.5</span> Characteristics of a linear program</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>Affine constraints</li>
+<li>Linear objective function</li>
+<li>Can be solved efficiently</li>
+<li>The feasible region is always a polyhedron</li>
+<li>The optimal solution (if it exists) is always a vertex of the polyhedron.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgdc13287" class="outline-3">
+<h3 id="orgdc13287"><span class="section-number-3">1.6</span> Core idea behind simplex method</h3>
+<div class="outline-text-3" id="text-1-6">
+<ul class="org-ul">
+<li>The optimal solution must occur at a vertex of the polyhedron created by
+all the constraints.</li>
+<li>Start at a vertex. Move to neighboring vertex with lower function value.</li>
+<li>This movement can be done in \(\mathcal{O}(mn)\) time, where \(m\) is the
+number of constraints and \(n\) is the number of vertices of the
+polyhedron (or perhaps it is the dimension of \(x\)? I am not really
+sure).</li>
+<li>In theory, the number of vertices in the polyhedron can depend
+exponentially on \(m\).</li>
+<li>But in practice, the Simplex method is very efficient and tractable.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org022033d" class="outline-3">
+<h3 id="org022033d"><span class="section-number-3">1.7</span> Alternative to simplex method</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+The interior point algorithm.
+</p>
+<ul class="org-ul">
+<li>Runs in polynomial time.</li>
+<li>Sometimes faster than the simplex method.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5cdb31e" class="outline-3">
+<h3 id="org5cdb31e"><span class="section-number-3">1.8</span> Every linear program has a dual</h3>
+<div class="outline-text-3" id="text-1-8">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Primal</th>
+<th scope="col" class="org-left">Dual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">\(\max_x c^\top x\qquad\)</td>
+<td class="org-left">\(\min_\lambda b^\top \lambda\)</td>
+</tr>
+
+<tr>
+<td class="org-left">subject to</td>
+<td class="org-left">subject to</td>
+</tr>
+
+<tr>
+<td class="org-left">\(Ax \le b\)</td>
+<td class="org-left">\(\lambda^\top A \ge c\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(x\ge 0\)</td>
+<td class="org-left">\(\lambda \ge 0\)</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-org4eee5f0" class="outline-4">
+<h4 id="org4eee5f0"><span class="section-number-4">1.8.1</span> Example of dual problem</h4>
+<div class="outline-text-4" id="text-1-8-1">
+<p>
+<b>Primal:</b> maximize \(4x+5y+z\) subject to
+</p>
+<ul class="org-ul">
+<li>\(2x + 3y \le 60\)</li>
+<li>\(x + 2y \le 20\)</li>
+<li>\(y + z \le 10\)</li>
+<li>\(x + y + z \le 15\)</li>
+<li>\(x, y, z \ge 0\)</li>
+</ul>
+
+<p>
+<b>Dual:</b> minimize \(60\lambda_1 + 20\lambda_2 + 10\lambda_3 + 15\lambda_4\)
+</p>
+<ul class="org-ul">
+<li>\(2\lambda_1 + \lambda_2 + \lambda_4 \ge 4\)</li>
+<li>\(3\lambda_1 + 2\lambda_2 + \lambda_3 + \lambda_4 \ge 5\)</li>
+<li>\(\lambda_3 + \lambda_4 \ge 1\)</li>
+<li>\(\lambda\ge 0\)</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5916f64" class="outline-3">
+<h3 id="org5916f64"><span class="section-number-3">1.9</span> Weak duality</h3>
+<div class="outline-text-3" id="text-1-9">
+<p>
+Let \(x\) be a feasible solution to primal. Let \(\lambda\) be a feasible
+solution to dual. Then, \[c^\top x \le b^\top \lambda\]
+</p>
+
+<p>
+<b>Proof</b>
+</p>
+\begin{align*}
+  \lambda^\top A &\ge c \\
+  (\lambda^\top A)x &\ge c^\top x, \text{ since }x\ge 0 \\
+  \lambda^\top (Ax) &\ge c^\top x \\
+  \lambda^\top b &\ge c^\top x, \text{ since }b\ge Ax
+\end{align*}
+</div>
+</div>
+
+<div id="outline-container-org6564558" class="outline-3">
+<h3 id="org6564558"><span class="section-number-3">1.10</span> Strong duality</h3>
+<div class="outline-text-3" id="text-1-10">
+<p>
+If either the primal or the dual has an optimal solution, then both
+problems do, and moreover, the objective values are equal, i.e. \[c^\top x
+= b^\top \lambda.\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9a59fae" class="outline-3">
+<h3 id="org9a59fae"><span class="section-number-3">1.11</span> Implications of duality</h3>
+<div class="outline-text-3" id="text-1-11">
+<ol class="org-ol">
+<li>If objectives of primal and dual solutions are close in value, then
+solution is close to optimal.</li>
+<li>If objectives are equal, then solutions are optimal.</li>
+<li>Simplex and interior point methods are guaranteed to produce optimal
+solutions to both primal and dual.</li>
+<li>Intermediate solutions from interior point methods are always feasible
+for both primal and dual in each iteration.</li>
+<li>Intermediate solutions from simplex method might not be feasible for
+dual solution in each iteration (until optimal solution is found in the
+last iteration).</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org49058e8" class="outline-3">
+<h3 id="org49058e8"><span class="section-number-3">1.12</span> Duality in optimization problems</h3>
+<div class="outline-text-3" id="text-1-12">
+<ul class="org-ul">
+<li>Linear programs have both strong and weak duality.</li>
+<li>Many convex optimization problems have strong duality.</li>
+<li>Integer linear programs have weak duality.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org37bf9f9" class="outline-2">
+<h2 id="org37bf9f9"><span class="section-number-2">2</span> Mixed Integer Linear Programs</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Linear programs can have fractional solutions. Rounding solutions can make
+them infeasible or sub-optimal. Instead, use mixed integer linear
+programming.
+</p>
+</div>
+
+<div id="outline-container-org966a981" class="outline-3">
+<h3 id="org966a981"><span class="section-number-3">2.1</span> Characteristics</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Affine constraints</li>
+<li>Linear objective functions</li>
+<li>Restriction that some/all variables are in \(\mathbb{Z}\)</li>
+<li>NP-Hard in general</li>
+<li>Current algorithms require EXP time in worst case.</li>
+<li>In practice, however, it is tractable.</li>
+<li>Yes/No problems can be modeled as binary variables in the set \(\{0, 1\}\).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org744a97f" class="outline-3">
+<h3 id="org744a97f"><span class="section-number-3">2.2</span> Enforcing logical conditions on binary variables</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Suppose \(x,y \in \{0, 1\}\) are binary variables.
+</p>
+<ul class="org-ul">
+<li>\(x\le y\) enforces \(x\rightarrow y\).</li>
+<li>\((1-x)\) is the same as \(\neg x\).</li>
+<li>Therefore, \(1-x \le y\) enforces \(\neg x \rightarrow y\). Said
+differently, \(x+y\ge 1\) enforces \(x\vee y\).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgbbfd82a" class="outline-3">
+<h3 id="orgbbfd82a"><span class="section-number-3">2.3</span> Linear program relaxation</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Given an Integer Program (IP), if we relax the integrality conditions on
+the variables, we get a Linear Program (LP).
+</p>
+
+<p>
+Here are some key facts about such a relaxation &#x2013;
+</p>
+<ol class="org-ol">
+<li>For minimization problem, the optimal value of LP-relaxation of IP
+serves as a lower bound of IP.</li>
+<li>For maximization problem, optimal value of LP-relaxation of IP serves as
+an upper bound of IP.</li>
+<li>If optimal solution of LP-relaxation is integral, then it is also the
+optimal solution to the IP.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org512dd71" class="outline-3">
+<h3 id="org512dd71"><span class="section-number-3">2.4</span> Turning LP-relaxation solution into an IP solution</h3>
+<div class="outline-text-3" id="text-2-4">
+<dl class="org-dl">
+<dt>Method 1: Branching on a variable \(x\)</dt><dd>Divide feasible region into two
+smaller regions \(x \le \lfloor v \rfloor\) and \(x\ge \lceil v
+     \rceil\), where \(v\) is the optimal decimal solution to \(x\).</dd>
+<dt>Method 2: Cut generation</dt><dd>Add a new constraint that cuts away some of
+the floating-point solutions while not removing the integer solutions.</dd>
+</dl>
+
+<p>
+In practice, both methods are used in conjunction.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4c850c5" class="outline-3">
+<h3 id="org4c850c5"><span class="section-number-3">2.5</span> Strong vs. weak formulations of integer programs</h3>
+<div class="outline-text-3" id="text-2-5">
+<ul class="org-ul">
+<li>Strong formulations have constraints close to the integral points in the
+feasible region, i.e. they have no gaps between integer points and
+constraints.</li>
+<li>Strong formulations have less possibility of yielding floating-point
+solutions and are more likely to yield integer solutions.</li>
+<li>Strong formulations require less branching and cut-generation.</li>
+<li>Simplex method produces optimal solutions for strong formulations.</li>
+</ul>
+
+<p>
+<b>Trade-off:</b> However, strengthening a formulation can require us to
+ introduce lots of new constraints, which can slow down the solver. See
+ <a href="#orgaeb200d">2.6</a>.
+</p>
+
+<p>
+In practice, aim for maximizing the strength of the formulation.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgaeb200d" class="outline-3">
+<h3 id="orgaeb200d"><span class="section-number-3">2.6</span> Constraint generation</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+The classic example to keep in mind is Traveling Salesman Problem.
+</p>
+
+<p>
+Here are the steps &#x2013;
+</p>
+<ol class="org-ol">
+<li>Start with a weak formulation</li>
+<li>Solve IP without subtour elimination (in case of TSP, this is when
+smaller cycles occur, which we wish to eliminate).</li>
+<li>Check for subtours in resulting solution.</li>
+<li>Add subtour elimination constraint.</li>
+<li>Repeat until no subtours appear.</li>
+<li>This solution is optimal.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Vaibhav Karve</p>
+<p class="date">Created: 2021-04-21 Wed 20:44</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

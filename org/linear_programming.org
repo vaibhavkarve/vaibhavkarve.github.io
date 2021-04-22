@@ -1,0 +1,196 @@
+#+title: Linear and Mixed Integer Programming
+#+options: toc:2 H:4
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+#+subtitle: [[file:index.org][Home]]
+
+
+These notes are based on notes from [[https://asestes1.github.io/][Alexander S. Estes]]'s INMAS 2021
+workshop on [[https://asestes1.github.io/inmas2021/][Modeling and Optimization]].
+
+* Linear Programs
+\[\min_{x\in\mathbb{R}^n} f(x)\] subject to the constraints \[g_1(x)\le
+0,\; g_2(x)\le 0,\; \ldots,\; g_k(x)\le 0.\]
+
+** Solution to a linear program
+- \(x\) is /feasible/ if it satisfies all constraints.
+- /Feasible region/ is the set of all feasible points.
+- \(x\) is /optimal/ if it satisfies all constraints and \(f(x) \le f(y)\)
+  for any other feasible solution \(y\).
+- *Goal:* find an optimal solution.
+
+** Optimality of linear programming
+There are 3 possibilities --
+1. LP has an optimal solution.
+2. LP is infeasible -- i.e. we have too many constraints.
+   For example,
+   \[\min x\]
+   subject to
+   - \(x\le 1\)
+   - \(x\ge 2\)
+   - \(x\ge 0\)
+3. LP is unbounded -- i.e. we have too few constraints.
+   For example,
+   \[\max x\]
+   subject to \(x\ge 0\).
+
+** List of linear program solving softwares
+CPLEX, COIN-OR, FICO Xpress, GLPK, [[https://www.gurobi.com/][Gurobi]], \(\ldots\)
+
+** Vector form of linear program
+Maximize \(c^\top x\) subject to
+- \(Ax\le b\)
+- \(x\ge 0\)
+
+Here, \(c\) is the vector of coefficients in the objective. \(A\) is the
+matrix of constraint coefficients. \(b\) is a vector of constants.
+** Characteristics of a linear program
+- Affine constraints
+- Linear objective function
+- Can be solved efficiently
+- The feasible region is always a polyhedron
+- The optimal solution (if it exists) is always a vertex of the polyhedron.
+
+** Core idea behind simplex method
+- The optimal solution must occur at a vertex of the polyhedron created by
+  all the constraints.
+- Start at a vertex. Move to neighboring vertex with lower function value.
+- This movement can be done in \(\mathcal{O}(mn)\) time, where \(m\) is the
+  number of constraints and \(n\) is the number of vertices of the
+  polyhedron (or perhaps it is the dimension of \(x\)? I am not really
+  sure).
+- In theory, the number of vertices in the polyhedron can depend
+  exponentially on \(m\).
+- But in practice, the Simplex method is very efficient and tractable.
+** Alternative to simplex method
+The interior point algorithm.
+- Runs in polynomial time.
+- Sometimes faster than the simplex method.
+
+** Every linear program has a dual
+
+| Primal                    | Dual                            |
+|---------------------------+---------------------------------|
+| \(\max_x c^\top x\qquad\) | \(\min_\lambda b^\top \lambda\) |
+| subject to                | subject to                      |
+| \(Ax \le b\)              | \(\lambda^\top A \ge c\)        |
+| \(x\ge 0\)                | \(\lambda \ge 0\)               |
+
+*** Example of dual problem
+*Primal:* maximize \(4x+5y+z\) subject to
+- \(2x + 3y \le 60\)
+- \(x + 2y \le 20\)
+- \(y + z \le 10\)
+- \(x + y + z \le 15\)
+- \(x, y, z \ge 0\)
+
+*Dual:* minimize \(60\lambda_1 + 20\lambda_2 + 10\lambda_3 + 15\lambda_4\)
+- \(2\lambda_1 + \lambda_2 + \lambda_4 \ge 4\)
+- \(3\lambda_1 + 2\lambda_2 + \lambda_3 + \lambda_4 \ge 5\)
+- \(\lambda_3 + \lambda_4 \ge 1\)
+- \(\lambda\ge 0\)
+
+** Weak duality
+Let \(x\) be a feasible solution to primal. Let \(\lambda\) be a feasible
+solution to dual. Then, \[c^\top x \le b^\top \lambda\]
+
+*Proof*
+\begin{align*}
+  \lambda^\top A &\ge c \\
+  (\lambda^\top A)x &\ge c^\top x, \text{ since }x\ge 0 \\
+  \lambda^\top (Ax) &\ge c^\top x \\
+  \lambda^\top b &\ge c^\top x, \text{ since }b\ge Ax
+\end{align*}
+
+** Strong duality
+If either the primal or the dual has an optimal solution, then both
+problems do, and moreover, the objective values are equal, i.e. \[c^\top x
+= b^\top \lambda.\]
+
+** Implications of duality
+1. If objectives of primal and dual solutions are close in value, then
+   solution is close to optimal.
+2. If objectives are equal, then solutions are optimal.
+3. Simplex and interior point methods are guaranteed to produce optimal
+   solutions to both primal and dual.
+4. Intermediate solutions from interior point methods are always feasible
+   for both primal and dual in each iteration.
+5. Intermediate solutions from simplex method might not be feasible for
+   dual solution in each iteration (until optimal solution is found in the
+   last iteration).
+
+** Duality in optimization problems
+- Linear programs have both strong and weak duality.
+- Many convex optimization problems have strong duality.
+- Integer linear programs have weak duality.
+
+* Mixed Integer Linear Programs
+Linear programs can have fractional solutions. Rounding solutions can make
+them infeasible or sub-optimal. Instead, use mixed integer linear
+programming.
+
+** Characteristics
+- Affine constraints
+- Linear objective functions
+- Restriction that some/all variables are in \(\mathbb{Z}\)
+- NP-Hard in general
+- Current algorithms require EXP time in worst case.
+- In practice, however, it is tractable.
+- Yes/No problems can be modeled as binary variables in the set \(\{0, 1\}\).
+
+** Enforcing logical conditions on binary variables
+Suppose \(x,y \in \{0, 1\}\) are binary variables.
+- \(x\le y\) enforces \(x\rightarrow y\).
+- \((1-x)\) is the same as \(\neg x\).
+- Therefore, \(1-x \le y\) enforces \(\neg x \rightarrow y\). Said
+  differently, \(x+y\ge 1\) enforces \(x\vee y\).
+
+** Linear program relaxation
+Given an Integer Program (IP), if we relax the integrality conditions on
+the variables, we get a Linear Program (LP).
+
+Here are some key facts about such a relaxation --
+1. For minimization problem, the optimal value of LP-relaxation of IP
+   serves as a lower bound of IP.
+2. For maximization problem, optimal value of LP-relaxation of IP serves as
+   an upper bound of IP.
+3. If optimal solution of LP-relaxation is integral, then it is also the
+   optimal solution to the IP.
+
+** Turning LP-relaxation solution into an IP solution
+- Method 1: Branching on a variable \(x\) :: Divide feasible region into two
+     smaller regions \(x \le \lfloor v \rfloor\) and \(x\ge \lceil v
+     \rceil\), where \(v\) is the optimal decimal solution to \(x\).
+- Method 2: Cut generation :: Add a new constraint that cuts away some of
+     the floating-point solutions while not removing the integer solutions.
+
+In practice, both methods are used in conjunction.
+
+** Strong vs. weak formulations of integer programs
+- Strong formulations have constraints close to the integral points in the
+  feasible region, i.e. they have no gaps between integer points and
+  constraints.
+- Strong formulations have less possibility of yielding floating-point
+  solutions and are more likely to yield integer solutions.
+- Strong formulations require less branching and cut-generation.
+- Simplex method produces optimal solutions for strong formulations.
+
+*Trade-off:* However, strengthening a formulation can require us to
+ introduce lots of new constraints, which can slow down the solver. See
+ [[Constraint generation]].
+
+In practice, aim for maximizing the strength of the formulation.
+
+** Constraint generation
+The classic example to keep in mind is Traveling Salesman Problem.
+
+Here are the steps --
+1. Start with a weak formulation
+2. Solve IP without subtour elimination (in case of TSP, this is when
+   smaller cycles occur, which we wish to eliminate).
+3. Check for subtours in resulting solution.
+4. Add subtour elimination constraint.
+5. Repeat until no subtours appear.
+6. This solution is optimal.
+
+
+#  LocalWords:  subtours
