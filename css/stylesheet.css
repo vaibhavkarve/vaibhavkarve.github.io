@@ -295,7 +295,7 @@ h3,
 h4,
 h5,
 h6 {
-    padding-top: 0.2em;
+    padding-top: 0.7em;
     font-family: 'Quicksand', sans-serif;
     font-weight: normal;
 }
@@ -493,4 +493,3 @@ h1, h3, h4, h5, h6, ul  {
     border-radius: 0.2em;
     background-color: #859900;
 }
-
