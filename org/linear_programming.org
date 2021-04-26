@@ -143,7 +143,6 @@ Suppose \(x,y \in \{0, 1\}\) are binary variables.
 - \((1-x)\) is the same as \(\neg x\).
 - Therefore, \(1-x \le y\) enforces \(\neg x \rightarrow y\). Said
   differently, \(x+y\ge 1\) enforces \(x\vee y\).
-
 ** Linear program relaxation
 Given an Integer Program (IP), if we relax the integrality conditions on
 the variables, we get a Linear Program (LP).
@@ -157,15 +156,20 @@ Here are some key facts about such a relaxation --
    optimal solution to the IP.
 
 ** Turning LP-relaxation solution into an IP solution
-- Method 1: Branching on a variable \(x\) :: Divide feasible region into two
-     smaller regions \(x \le \lfloor v \rfloor\) and \(x\ge \lceil v
-     \rceil\), where \(v\) is the optimal decimal solution to \(x\).
+- Method 1: Branching on a variable \(x\) :: Divide feasible region into
+     two smaller regions \(x \le \lfloor v \rfloor\) and \(x\ge \lceil v
+     \rceil\), where \(v\) is the optimal decimal solution to \(x\). This
+     is part of a popular method for MILP called "branch and bound method".
 - Method 2: Cut generation :: Add a new constraint that cuts away some of
      the floating-point solutions while not removing the integer solutions.
 
 In practice, both methods are used in conjunction.
 
 ** Strong vs. weak formulations of integer programs
+If polyhedron associated with formulation \(A\) strictly contains the
+polyhedron associated with formulation \(B\), then we say that formulation
+\(A\) is stronger and \(B\) is weaker.
+
 - Strong formulations have constraints close to the integral points in the
   feasible region, i.e. they have no gaps between integer points and
   constraints.
@@ -179,6 +183,9 @@ In practice, both methods are used in conjunction.
  [[Constraint generation]].
 
 In practice, aim for maximizing the strength of the formulation.
+
+The convex hull of integral solutions is the strongest possible formulation
+of an LP. However, in practice, the convex hull is hard to find.
 
 ** Constraint generation
 The classic example to keep in mind is Traveling Salesman Problem.
@@ -194,3 +201,15 @@ Here are the steps --
 
 
 #  LocalWords:  subtours
+** Separation problem
+Separation problem is the problem of identifying a constraint that has been
+violated.
+
+If constraint generation is applied to integer solutions only, then we can
+identify violated constraints efficiently.
+** Heuristic initial solution → Solution
+- Tabu search :: Make a list of recent solutions already checked in the
+                 neighborhood of current solutions.
+- Simulated annealing :: Pick a neighborhood solution based on a
+     probability \(e^{-\Delta/T}\), where \(T\) is a steadily decreasing
+     temperature.

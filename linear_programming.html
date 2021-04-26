@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-04-21 Wed 21:09 -->
+<!-- 2021-04-26 Mon 07:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Linear and Mixed Integer Programming</title>
@@ -260,30 +260,32 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0025a0d">1. Linear Programs</a>
+<li><a href="#org235b5d2">1. Linear Programs</a>
 <ul>
-<li><a href="#orgcf9c0a6">1.1. Solution to a linear program</a></li>
-<li><a href="#org19c9dab">1.2. Optimality of linear programming</a></li>
-<li><a href="#org46ecea4">1.3. List of linear program solving softwares</a></li>
-<li><a href="#org558da69">1.4. Vector form of linear program</a></li>
-<li><a href="#org277c8ed">1.5. Characteristics of a linear program</a></li>
-<li><a href="#orgfffb12a">1.6. Core idea behind simplex method</a></li>
-<li><a href="#org7f42639">1.7. Alternative to simplex method</a></li>
-<li><a href="#orgc0f116f">1.8. Every linear program has a dual</a></li>
-<li><a href="#orge26c926">1.9. Weak duality</a></li>
-<li><a href="#orgb5c2947">1.10. Strong duality</a></li>
-<li><a href="#org5290d9f">1.11. Implications of duality</a></li>
-<li><a href="#orge7ff33e">1.12. Duality in optimization problems</a></li>
+<li><a href="#org8d166df">1.1. Solution to a linear program</a></li>
+<li><a href="#org0f19bc1">1.2. Optimality of linear programming</a></li>
+<li><a href="#org15e43f4">1.3. List of linear program solving softwares</a></li>
+<li><a href="#orgc1ac8f9">1.4. Vector form of linear program</a></li>
+<li><a href="#org946e2d6">1.5. Characteristics of a linear program</a></li>
+<li><a href="#org7b69021">1.6. Core idea behind simplex method</a></li>
+<li><a href="#org1482096">1.7. Alternative to simplex method</a></li>
+<li><a href="#orga20344a">1.8. Every linear program has a dual</a></li>
+<li><a href="#org81a465e">1.9. Weak duality</a></li>
+<li><a href="#org283a968">1.10. Strong duality</a></li>
+<li><a href="#orgcbbf9cf">1.11. Implications of duality</a></li>
+<li><a href="#org46f6930">1.12. Duality in optimization problems</a></li>
 </ul>
 </li>
-<li><a href="#orgf013a15">2. Mixed Integer Linear Programs</a>
+<li><a href="#orgb17cb12">2. Mixed Integer Linear Programs</a>
 <ul>
-<li><a href="#orge7bcedb">2.1. Characteristics</a></li>
-<li><a href="#org3670a0f">2.2. Enforcing logical conditions on binary variables</a></li>
-<li><a href="#orgbdaa07e">2.3. Linear program relaxation</a></li>
-<li><a href="#orgbb8f133">2.4. Turning LP-relaxation solution into an IP solution</a></li>
-<li><a href="#org18ba4fc">2.5. Strong vs. weak formulations of integer programs</a></li>
-<li><a href="#orga713aad">2.6. Constraint generation</a></li>
+<li><a href="#orgcedeba1">2.1. Characteristics</a></li>
+<li><a href="#org483dc2e">2.2. Enforcing logical conditions on binary variables</a></li>
+<li><a href="#orgf84af11">2.3. Linear program relaxation</a></li>
+<li><a href="#org2ce1e7b">2.4. Turning LP-relaxation solution into an IP solution</a></li>
+<li><a href="#orgf443d6d">2.5. Strong vs. weak formulations of integer programs</a></li>
+<li><a href="#org573684b">2.6. Constraint generation</a></li>
+<li><a href="#org7c9e0c5">2.7. Separation problem</a></li>
+<li><a href="#org1b5fdeb">2.8. Heuristic initial solution → Solution</a></li>
 </ul>
 </li>
 </ul>
@@ -294,8 +296,8 @@ These notes are based on notes from <a href="https://asestes1.github.io/">Alexan
 workshop on <a href="https://asestes1.github.io/inmas2021/">Modeling and Optimization</a>.
 </p>
 
-<div id="outline-container-org0025a0d" class="outline-2">
-<h2 id="org0025a0d"><span class="section-number-2">1</span> Linear Programs</h2>
+<div id="outline-container-org235b5d2" class="outline-2">
+<h2 id="org235b5d2"><span class="section-number-2">1</span> Linear Programs</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 \[\min_{x\in\mathbb{R}^n} f(x)\] subject to the constraints \[g_1(x)\le
@@ -303,8 +305,8 @@ workshop on <a href="https://asestes1.github.io/inmas2021/">Modeling and Optimiz
 </p>
 </div>
 
-<div id="outline-container-orgcf9c0a6" class="outline-3">
-<h3 id="orgcf9c0a6"><span class="section-number-3">1.1</span> Solution to a linear program</h3>
+<div id="outline-container-org8d166df" class="outline-3">
+<h3 id="org8d166df"><span class="section-number-3">1.1</span> Solution to a linear program</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>\(x\) is <i>feasible</i> if it satisfies all constraints.</li>
@@ -316,8 +318,8 @@ for any other feasible solution \(y\).</li>
 </div>
 </div>
 
-<div id="outline-container-org19c9dab" class="outline-3">
-<h3 id="org19c9dab"><span class="section-number-3">1.2</span> Optimality of linear programming</h3>
+<div id="outline-container-org0f19bc1" class="outline-3">
+<h3 id="org0f19bc1"><span class="section-number-3">1.2</span> Optimality of linear programming</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 There are 3 possibilities &#x2013;
@@ -341,8 +343,8 @@ subject to \(x\ge 0\).</li>
 </div>
 </div>
 
-<div id="outline-container-org46ecea4" class="outline-3">
-<h3 id="org46ecea4"><span class="section-number-3">1.3</span> List of linear program solving softwares</h3>
+<div id="outline-container-org15e43f4" class="outline-3">
+<h3 id="org15e43f4"><span class="section-number-3">1.3</span> List of linear program solving softwares</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 CPLEX, COIN-OR, FICO Xpress, GLPK, <a href="https://www.gurobi.com/">Gurobi</a>, \(\ldots\)
@@ -350,8 +352,8 @@ CPLEX, COIN-OR, FICO Xpress, GLPK, <a href="https://www.gurobi.com/">Gurobi</a>,
 </div>
 </div>
 
-<div id="outline-container-org558da69" class="outline-3">
-<h3 id="org558da69"><span class="section-number-3">1.4</span> Vector form of linear program</h3>
+<div id="outline-container-orgc1ac8f9" class="outline-3">
+<h3 id="orgc1ac8f9"><span class="section-number-3">1.4</span> Vector form of linear program</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 Maximize \(c^\top x\) subject to
@@ -367,8 +369,8 @@ matrix of constraint coefficients. \(b\) is a vector of constants.
 </p>
 </div>
 </div>
-<div id="outline-container-org277c8ed" class="outline-3">
-<h3 id="org277c8ed"><span class="section-number-3">1.5</span> Characteristics of a linear program</h3>
+<div id="outline-container-org946e2d6" class="outline-3">
+<h3 id="org946e2d6"><span class="section-number-3">1.5</span> Characteristics of a linear program</h3>
 <div class="outline-text-3" id="text-1-5">
 <ul class="org-ul">
 <li>Affine constraints</li>
@@ -380,8 +382,8 @@ matrix of constraint coefficients. \(b\) is a vector of constants.
 </div>
 </div>
 
-<div id="outline-container-orgfffb12a" class="outline-3">
-<h3 id="orgfffb12a"><span class="section-number-3">1.6</span> Core idea behind simplex method</h3>
+<div id="outline-container-org7b69021" class="outline-3">
+<h3 id="org7b69021"><span class="section-number-3">1.6</span> Core idea behind simplex method</h3>
 <div class="outline-text-3" id="text-1-6">
 <ul class="org-ul">
 <li>The optimal solution must occur at a vertex of the polyhedron created by
@@ -397,8 +399,8 @@ exponentially on \(m\).</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org7f42639" class="outline-3">
-<h3 id="org7f42639"><span class="section-number-3">1.7</span> Alternative to simplex method</h3>
+<div id="outline-container-org1482096" class="outline-3">
+<h3 id="org1482096"><span class="section-number-3">1.7</span> Alternative to simplex method</h3>
 <div class="outline-text-3" id="text-1-7">
 <p>
 The interior point algorithm.
@@ -410,8 +412,8 @@ The interior point algorithm.
 </div>
 </div>
 
-<div id="outline-container-orgc0f116f" class="outline-3">
-<h3 id="orgc0f116f"><span class="section-number-3">1.8</span> Every linear program has a dual</h3>
+<div id="outline-container-orga20344a" class="outline-3">
+<h3 id="orga20344a"><span class="section-number-3">1.8</span> Every linear program has a dual</h3>
 <div class="outline-text-3" id="text-1-8">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -451,8 +453,8 @@ The interior point algorithm.
 </table>
 </div>
 
-<div id="outline-container-orge10ceee" class="outline-4">
-<h4 id="orge10ceee"><span class="section-number-4">1.8.1</span> Example of dual problem</h4>
+<div id="outline-container-org7536a2b" class="outline-4">
+<h4 id="org7536a2b"><span class="section-number-4">1.8.1</span> Example of dual problem</h4>
 <div class="outline-text-4" id="text-1-8-1">
 <p>
 <b>Primal:</b> maximize \(4x+5y+z\) subject to
@@ -478,8 +480,8 @@ The interior point algorithm.
 </div>
 </div>
 
-<div id="outline-container-orge26c926" class="outline-3">
-<h3 id="orge26c926"><span class="section-number-3">1.9</span> Weak duality</h3>
+<div id="outline-container-org81a465e" class="outline-3">
+<h3 id="org81a465e"><span class="section-number-3">1.9</span> Weak duality</h3>
 <div class="outline-text-3" id="text-1-9">
 <p>
 Let \(x\) be a feasible solution to primal. Let \(\lambda\) be a feasible
@@ -498,8 +500,8 @@ solution to dual. Then, \[c^\top x \le b^\top \lambda\]
 </div>
 </div>
 
-<div id="outline-container-orgb5c2947" class="outline-3">
-<h3 id="orgb5c2947"><span class="section-number-3">1.10</span> Strong duality</h3>
+<div id="outline-container-org283a968" class="outline-3">
+<h3 id="org283a968"><span class="section-number-3">1.10</span> Strong duality</h3>
 <div class="outline-text-3" id="text-1-10">
 <p>
 If either the primal or the dual has an optimal solution, then both
@@ -509,8 +511,8 @@ problems do, and moreover, the objective values are equal, i.e. \[c^\top x
 </div>
 </div>
 
-<div id="outline-container-org5290d9f" class="outline-3">
-<h3 id="org5290d9f"><span class="section-number-3">1.11</span> Implications of duality</h3>
+<div id="outline-container-orgcbbf9cf" class="outline-3">
+<h3 id="orgcbbf9cf"><span class="section-number-3">1.11</span> Implications of duality</h3>
 <div class="outline-text-3" id="text-1-11">
 <ol class="org-ol">
 <li>If objectives of primal and dual solutions are close in value, then
@@ -527,8 +529,8 @@ last iteration).</li>
 </div>
 </div>
 
-<div id="outline-container-orge7ff33e" class="outline-3">
-<h3 id="orge7ff33e"><span class="section-number-3">1.12</span> Duality in optimization problems</h3>
+<div id="outline-container-org46f6930" class="outline-3">
+<h3 id="org46f6930"><span class="section-number-3">1.12</span> Duality in optimization problems</h3>
 <div class="outline-text-3" id="text-1-12">
 <ul class="org-ul">
 <li>Linear programs have both strong and weak duality.</li>
@@ -539,8 +541,8 @@ last iteration).</li>
 </div>
 </div>
 
-<div id="outline-container-orgf013a15" class="outline-2">
-<h2 id="orgf013a15"><span class="section-number-2">2</span> Mixed Integer Linear Programs</h2>
+<div id="outline-container-orgb17cb12" class="outline-2">
+<h2 id="orgb17cb12"><span class="section-number-2">2</span> Mixed Integer Linear Programs</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Linear programs can have fractional solutions. Rounding solutions can make
@@ -549,8 +551,8 @@ programming.
 </p>
 </div>
 
-<div id="outline-container-orge7bcedb" class="outline-3">
-<h3 id="orge7bcedb"><span class="section-number-3">2.1</span> Characteristics</h3>
+<div id="outline-container-orgcedeba1" class="outline-3">
+<h3 id="orgcedeba1"><span class="section-number-3">2.1</span> Characteristics</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>Affine constraints</li>
@@ -564,8 +566,8 @@ programming.
 </div>
 </div>
 
-<div id="outline-container-org3670a0f" class="outline-3">
-<h3 id="org3670a0f"><span class="section-number-3">2.2</span> Enforcing logical conditions on binary variables</h3>
+<div id="outline-container-org483dc2e" class="outline-3">
+<h3 id="org483dc2e"><span class="section-number-3">2.2</span> Enforcing logical conditions on binary variables</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Suppose \(x,y \in \{0, 1\}\) are binary variables.
@@ -578,9 +580,8 @@ differently, \(x+y\ge 1\) enforces \(x\vee y\).</li>
 </ul>
 </div>
 </div>
-
-<div id="outline-container-orgbdaa07e" class="outline-3">
-<h3 id="orgbdaa07e"><span class="section-number-3">2.3</span> Linear program relaxation</h3>
+<div id="outline-container-orgf84af11" class="outline-3">
+<h3 id="orgf84af11"><span class="section-number-3">2.3</span> Linear program relaxation</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 Given an Integer Program (IP), if we relax the integrality conditions on
@@ -601,13 +602,14 @@ optimal solution to the IP.</li>
 </div>
 </div>
 
-<div id="outline-container-orgbb8f133" class="outline-3">
-<h3 id="orgbb8f133"><span class="section-number-3">2.4</span> Turning LP-relaxation solution into an IP solution</h3>
+<div id="outline-container-org2ce1e7b" class="outline-3">
+<h3 id="org2ce1e7b"><span class="section-number-3">2.4</span> Turning LP-relaxation solution into an IP solution</h3>
 <div class="outline-text-3" id="text-2-4">
 <dl class="org-dl">
-<dt>Method 1: Branching on a variable \(x\)</dt><dd>Divide feasible region into two
-smaller regions \(x \le \lfloor v \rfloor\) and \(x\ge \lceil v
-     \rceil\), where \(v\) is the optimal decimal solution to \(x\).</dd>
+<dt>Method 1: Branching on a variable \(x\)</dt><dd>Divide feasible region into
+two smaller regions \(x \le \lfloor v \rfloor\) and \(x\ge \lceil v
+     \rceil\), where \(v\) is the optimal decimal solution to \(x\). This
+is part of a popular method for MILP called "branch and bound method".</dd>
 <dt>Method 2: Cut generation</dt><dd>Add a new constraint that cuts away some of
 the floating-point solutions while not removing the integer solutions.</dd>
 </dl>
@@ -618,9 +620,15 @@ In practice, both methods are used in conjunction.
 </div>
 </div>
 
-<div id="outline-container-org18ba4fc" class="outline-3">
-<h3 id="org18ba4fc"><span class="section-number-3">2.5</span> Strong vs. weak formulations of integer programs</h3>
+<div id="outline-container-orgf443d6d" class="outline-3">
+<h3 id="orgf443d6d"><span class="section-number-3">2.5</span> Strong vs. weak formulations of integer programs</h3>
 <div class="outline-text-3" id="text-2-5">
+<p>
+If polyhedron associated with formulation \(A\) strictly contains the
+polyhedron associated with formulation \(B\), then we say that formulation
+\(A\) is stronger and \(B\) is weaker.
+</p>
+
 <ul class="org-ul">
 <li>Strong formulations have constraints close to the integral points in the
 feasible region, i.e. they have no gaps between integer points and
@@ -634,17 +642,22 @@ solutions and are more likely to yield integer solutions.</li>
 <p>
 <b>Trade-off:</b> However, strengthening a formulation can require us to
  introduce lots of new constraints, which can slow down the solver. See
- <a href="#orga713aad">2.6</a>.
+ <a href="#org573684b">2.6</a>.
 </p>
 
 <p>
 In practice, aim for maximizing the strength of the formulation.
 </p>
+
+<p>
+The convex hull of integral solutions is the strongest possible formulation
+of an LP. However, in practice, the convex hull is hard to find.
+</p>
 </div>
 </div>
 
-<div id="outline-container-orga713aad" class="outline-3">
-<h3 id="orga713aad"><span class="section-number-3">2.6</span> Constraint generation</h3>
+<div id="outline-container-org573684b" class="outline-3">
+<h3 id="org573684b"><span class="section-number-3">2.6</span> Constraint generation</h3>
 <div class="outline-text-3" id="text-2-6">
 <p>
 The classic example to keep in mind is Traveling Salesman Problem.
@@ -664,11 +677,37 @@ smaller cycles occur, which we wish to eliminate).</li>
 </ol>
 </div>
 </div>
+<div id="outline-container-org7c9e0c5" class="outline-3">
+<h3 id="org7c9e0c5"><span class="section-number-3">2.7</span> Separation problem</h3>
+<div class="outline-text-3" id="text-2-7">
+<p>
+Separation problem is the problem of identifying a constraint that has been
+violated.
+</p>
+
+<p>
+If constraint generation is applied to integer solutions only, then we can
+identify violated constraints efficiently.
+</p>
+</div>
+</div>
+<div id="outline-container-org1b5fdeb" class="outline-3">
+<h3 id="org1b5fdeb"><span class="section-number-3">2.8</span> Heuristic initial solution → Solution</h3>
+<div class="outline-text-3" id="text-2-8">
+<dl class="org-dl">
+<dt>Tabu search</dt><dd>Make a list of recent solutions already checked in the
+neighborhood of current solutions.</dd>
+<dt>Simulated annealing</dt><dd>Pick a neighborhood solution based on a
+probability \(e^{-\Delta/T}\), where \(T\) is a steadily decreasing
+temperature.</dd>
+</dl>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2021-04-21 Wed 21:09</p>
+<p class="date">Created: 2021-04-26 Mon 07:25</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
