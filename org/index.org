@@ -5,14 +5,15 @@
 
 Name in Devanagari: वैभव कर्वे \nbsp{}\nbsp{} Name in IPA: ʋəibʱəʋə kərʋeː
 
-I am a PhD candidate at the [[https://math.illinois.edu][Department of Mathematics]] at the University of
-Illinois at Urbana-Champaign.  My PhD advisor is [[https://faculty.math.illinois.edu/~hirani/][Anil Hirani]].
+I am a Data Scientist at [[https://simspace.com/][SimSpace]]. In 2021 I received my PhD from the
+[[https://math.illinois.edu][Department of Mathematics]] at the University of Illinois at Urbana-Champaign
+under the advisement of [[https://faculty.math.illinois.edu/~hirani/][Anil N. Hirani]].
 
-My research interests lie in graph theory, logic, algorithms and computational
-topology.  I am currently writing my doctoral thesis, titled /Graphical
-structure of unsatisfiable boolean formulae/ which combines the tools of graph
-theory and topology to analyze boolean satisfiability -- a classic problem in
-logic and computer science.
+My research interests lie in data science, graph theory, logic, algorithms
+and computational topology. I am currently writing my doctoral thesis,
+titled /Graphical structure of unsatisfiable boolean formulae/ which
+combines the tools of graph theory and topology to analyze boolean
+satisfiability -- a classic problem in logic and computer science.
 
 I am also looking to extend my doctoral work towards the upcoming and adjacent
 field of computer-assisted formalized mathematics and interactive theorem
@@ -20,9 +21,10 @@ proving (in particular, with the Lean theorem prover).
 
 * Research
 - List of journal publications
-  | 2021 | *Karve*, Yager, Abolhelm, Work, Sowers                  | [[https://link.springer.com/article/10.1007/s42421-021-00033-4][Seasonal Disorder in Urban Traffic Patterns: A Low Rank Analysis]]                          |   |
-  | 2020 | *Karve*, Hirani                                         | [[https://doi.org/10.1016/j.dam.2019.12.017][The complete set of minimal simple graphs that support unsatisfiable 2-CNFs]]               |   |
-  | 2017 | Wu, Shindnes, *Karve*, Yager, Work, Chakraborty, Sowers | [[https://arxiv.org/abs/1707.08557][Congestion Barcodes: Exploring the Topology of Urban Congestion Using Persistent Homology]] |   |
+| 2021 | *Karve*, Hirani                                         | [[https://arxiv.org/abs/2105.11390][GraphSAT -- a decision problem connecting satisfiability and graph theory]]                 |
+| 2021 | *Karve*, Yager, Abolhelm, Work, Sowers                  | [[https://link.springer.com/article/10.1007/s42421-021-00033-4][Seasonal Disorder in Urban Traffic Patterns: A Low Rank Analysis]]                          |
+| 2020 | *Karve*, Hirani                                         | [[https://doi.org/10.1016/j.dam.2019.12.017][The complete set of minimal simple graphs that support unsatisfiable 2-CNFs]]               |
+| 2017 | Wu, Shindnes, *Karve*, Yager, Work, Chakraborty, Sowers | [[https://arxiv.org/abs/1707.08557][Congestion Barcodes: Exploring the Topology of Urban Congestion Using Persistent Homology]] |
   These publications are also listed at [[https://math.illinois.edu/graduate-papers][UIUC math]] and [[https://scholar.google.com/citations?hl=en&user=_JqNTooAAAAJ][Google scholar]].
 - [[file:satisfiability/index.org][Graph satisfiability]] [fn:1]
 - [[file:igl2020.org][Model theory in Lean]]
@@ -32,10 +34,8 @@ proving (in particular, with the Lean theorem prover).
   - On the pullback of real exterior forms
   - [[file:congestion_barcodes.org][Congestion barcodes]]
 
-
 * Teaching
 My ever-evolving [[file:Teaching_Philosophy_Statement.pdf][teaching philosophy]].
-- *Currently teaching:* Spring 2021 Math 241 (Calculus III)
 - Math490: Computational mathematics
 - Merit program @ Math UIUC
 - [[file:igl2020.org][Model theory in Lean @ Illinois Geometry Lab]]
