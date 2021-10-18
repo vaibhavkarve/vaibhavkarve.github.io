@@ -10,8 +10,8 @@ website : htmls pdf-docs
 	git push origin master
 
 
-pdf-docs : ~/org/ref/cv_may_2021/CV.pdf
-	cp ~/org/ref/cv_may_2021/CV.pdf org/CV.pdf
+pdf-docs : ~/org/ref/cv_oct_2021/CV.pdf
+	cp ~/org/ref/cv_oct_2021/CV.pdf org/CV.pdf
 #cp ~/talks/2021_04_08_phd/main.pdf org/satisfiability/slides.pdf
 #cp ~/hirani_group/home/papers/theses/vaibhav/main.pdf org/satisfiability/thesis.pdf || true
 
