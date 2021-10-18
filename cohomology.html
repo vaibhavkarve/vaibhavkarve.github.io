@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-07-29 Thu 15:10 -->
+<!-- 2021-10-18 Mon 07:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Cohomology</title>
@@ -40,7 +40,7 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
+    overflow: auto;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -52,7 +52,7 @@
     padding: 3px;
     border: 1px solid black;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
@@ -161,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -181,50 +194,26 @@
   /*]]>*/-->
 </style>
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -256,10 +245,10 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org79c63b9">1. Categories</a>
+<li><a href="#org311c7f3">1. Categories</a>
 <ul>
-<li><a href="#org6a3e4f8">1.1. Tensor and exterior algebras</a></li>
-<li><a href="#org23e2f79">1.2. Topological manifold</a></li>
+<li><a href="#orgda5be09">1.1. Tensor and exterior algebras</a></li>
+<li><a href="#orgcefce59">1.2. Topological manifold</a></li>
 </ul>
 </li>
 </ul>
@@ -271,8 +260,8 @@ for the JavaScript code in this tag.
 Fall 2020.</dd>
 </dl>
 
-<div id="outline-container-org79c63b9" class="outline-2">
-<h2 id="org79c63b9"><span class="section-number-2">1</span> Categories</h2>
+<div id="outline-container-org311c7f3" class="outline-2">
+<h2 id="org311c7f3"><span class="section-number-2">1</span> Categories</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Let \(A\) be a ring. Category \(Mod_A\) is the catergory with objects being
@@ -341,8 +330,8 @@ If this is an exact sequence then, we can conclude the following:
 </ul>
 </div>
 
-<div id="outline-container-org6a3e4f8" class="outline-3">
-<h3 id="org6a3e4f8"><span class="section-number-3">1.1</span> Tensor and exterior algebras</h3>
+<div id="outline-container-orgda5be09" class="outline-3">
+<h3 id="orgda5be09"><span class="section-number-3">1.1</span> Tensor and exterior algebras</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Let M be an A-module. (M is free : e₁, &#x2026;, eₙ).
@@ -360,8 +349,8 @@ T*(M) := the universal graded associative A-algebra with a map M → T*(M).
 </div>
 </div>
 
-<div id="outline-container-org23e2f79" class="outline-3">
-<h3 id="org23e2f79"><span class="section-number-3">1.2</span> Topological manifold</h3>
+<div id="outline-container-orgcefce59" class="outline-3">
+<h3 id="orgcefce59"><span class="section-number-3">1.2</span> Topological manifold</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 A topological space X is
@@ -394,8 +383,8 @@ Smooth manifold is a topological manifold together with a smooth atlas.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2021-07-29 Thu 15:10</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2021-10-18 Mon 07:25</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>

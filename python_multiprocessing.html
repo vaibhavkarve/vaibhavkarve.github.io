@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-07-29 Thu 15:10 -->
+<!-- 2021-10-18 Mon 07:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Multiprocessing in Python</title>
@@ -40,7 +40,7 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
+    overflow: auto;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -52,7 +52,7 @@
     padding: 3px;
     border: 1px solid black;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
@@ -161,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -182,50 +195,26 @@
 </style>
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 </head>
 <body>
@@ -238,23 +227,23 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9dced07">1. Introduction</a></li>
-<li><a href="#org4ce03bb">2. Start methods</a>
+<li><a href="#org8d68fc1">1. Introduction</a></li>
+<li><a href="#orge11d378">2. Start methods</a>
 <ul>
-<li><a href="#org95c6816">2.1. <code>spawn</code></a></li>
-<li><a href="#orgb39c469">2.2. <code>fork</code></a></li>
-<li><a href="#orgf930fc7">2.3. <code>forkserver</code></a></li>
-<li><a href="#org8eb8fc9">2.4. Verdict</a></li>
+<li><a href="#org6257b0d">2.1. <code>spawn</code></a></li>
+<li><a href="#orga6b4872">2.2. <code>fork</code></a></li>
+<li><a href="#orga34612e">2.3. <code>forkserver</code></a></li>
+<li><a href="#org2cc601e">2.4. Verdict</a></li>
 </ul>
 </li>
-<li><a href="#orge12494a">3. Communication between processes</a>
+<li><a href="#org1108489">3. Communication between processes</a>
 <ul>
-<li><a href="#org405668b">3.1. Queue</a>
+<li><a href="#org6a8da88">3.1. Queue</a>
 <ul>
-<li><a href="#orga3f7901">3.1.1. Putting many queues inside(?) a single process</a></li>
+<li><a href="#org003762c">3.1.1. Putting many queues inside(?) a single process</a></li>
 </ul>
 </li>
-<li><a href="#org48f7e79">3.2. Pipe</a></li>
+<li><a href="#org109d2cb">3.2. Pipe</a></li>
 </ul>
 </li>
 </ul>
@@ -264,8 +253,8 @@ for the JavaScript code in this tag.
 <dt>Python documentation</dt><dd><a href="https://docs.python.org/3/library/multiprocessing.html">multiprocessing module</a></dd>
 </dl>
 
-<div id="outline-container-org9dced07" class="outline-2">
-<h2 id="org9dced07"><span class="section-number-2">1</span> Introduction</h2>
+<div id="outline-container-org8d68fc1" class="outline-2">
+<h2 id="org8d68fc1"><span class="section-number-2">1</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 The <code>multiprocessing</code> module (MP) spawns sub-processes insteads of threads.  Can be
@@ -276,24 +265,24 @@ processes.
 </div>
 </div>
 
-<div id="outline-container-org4ce03bb" class="outline-2">
-<h2 id="org4ce03bb"><span class="section-number-2">2</span> Start methods</h2>
+<div id="outline-container-orge11d378" class="outline-2">
+<h2 id="orge11d378"><span class="section-number-2">2</span> Start methods</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Can be set as follows.
 </p>
 <div class="org-src-container">
-<pre class="src src-python" id="orgf418133"><span class="org-keyword">import</span> multiprocessing <span class="org-keyword">as</span> mp
+<pre class="src src-python" id="orgfc1f4d7">import multiprocessing as mp
 
-<span class="org-keyword">def</span> <span class="org-function-name">foo</span>(q):
-    <span class="org-keyword">pass</span>
+def foo(q):
+    pass
 
-<span class="org-keyword">if</span> <span class="org-builtin">__name__</span> == <span class="org-string">'__main__'</span>:
-    <span class="org-comment-delimiter"># </span><span class="org-comment">using get_context() is preferred over set_start_method().</span>
-    <span class="org-variable-name">ctx</span> = mp.get_context(<span class="org-string">'spawn'</span>)  <span class="org-comment-delimiter"># </span><span class="org-comment">mp has custom Context object</span>
-                                   <span class="org-comment-delimiter"># </span><span class="org-comment">types.</span>
-    <span class="org-variable-name">q</span> = ctx.Queue()
-    <span class="org-variable-name">p</span> = ctx.Process(target=foo, args=(q,))
+if __name__ == '__main__':
+    # using get_context() is preferred over set_start_method().
+    ctx = mp.get_context('spawn')  # mp has custom Context object
+				   # types.
+    q = ctx.Queue()
+    p = ctx.Process(target=foo, args=(q,))
 </pre>
 </div>
 
@@ -304,8 +293,8 @@ Can be set as follows.
 </p>
 </div>
 
-<div id="outline-container-org95c6816" class="outline-3">
-<h3 id="org95c6816"><span class="section-number-3">2.1</span> <code>spawn</code></h3>
+<div id="outline-container-org6257b0d" class="outline-3">
+<h3 id="org6257b0d"><span class="section-number-3">2.1</span> <code>spawn</code></h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Parent process starts a fresh python interpreter each time. This is
@@ -315,8 +304,8 @@ the <code>multiprocessing.Process.run</code> method.
 </div>
 </div>
 
-<div id="outline-container-orgb39c469" class="outline-3">
-<h3 id="orgb39c469"><span class="section-number-3">2.2</span> <code>fork</code></h3>
+<div id="outline-container-orga6b4872" class="outline-3">
+<h3 id="orga6b4872"><span class="section-number-3">2.2</span> <code>fork</code></h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Parent process forks the python interpreter using <code>os.fork()</code>. All
@@ -337,8 +326,8 @@ This is available on Unix only.
 </div>
 </div>
 
-<div id="outline-container-orgf930fc7" class="outline-3">
-<h3 id="orgf930fc7"><span class="section-number-3">2.3</span> <code>forkserver</code></h3>
+<div id="outline-container-orga34612e" class="outline-3">
+<h3 id="orga34612e"><span class="section-number-3">2.3</span> <code>forkserver</code></h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 When the program starts, using this method, a server process is
@@ -354,8 +343,8 @@ Similar to <code>fork</code>, this is available on Unix only.
 </div>
 </div>
 
-<div id="outline-container-org8eb8fc9" class="outline-3">
-<h3 id="org8eb8fc9"><span class="section-number-3">2.4</span> Verdict</h3>
+<div id="outline-container-org2cc601e" class="outline-3">
+<h3 id="org2cc601e"><span class="section-number-3">2.4</span> Verdict</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 I will be using <code>forkserver</code> for my programs.
@@ -364,15 +353,15 @@ I will be using <code>forkserver</code> for my programs.
 </div>
 </div>
 
-<div id="outline-container-orge12494a" class="outline-2">
-<h2 id="orge12494a"><span class="section-number-2">3</span> Communication between processes</h2>
+<div id="outline-container-org1108489" class="outline-2">
+<h2 id="org1108489"><span class="section-number-2">3</span> Communication between processes</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 MP allows exchange of objects between processes.
 </p>
 </div>
-<div id="outline-container-org405668b" class="outline-3">
-<h3 id="org405668b"><span class="section-number-3">3.1</span> Queue</h3>
+<div id="outline-container-org6a8da88" class="outline-3">
+<h3 id="org6a8da88"><span class="section-number-3">3.1</span> Queue</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Use <code>mp.Queue</code> instead of <code>queue.Queue</code>.
@@ -390,19 +379,19 @@ another function as in <code>len(q.get())</code> to get the length of our
 list.</li>
 </ol>
 <div class="org-src-container">
-<pre class="src src-python" id="org4848719"><span class="org-keyword">import</span> multiprocessing <span class="org-keyword">as</span> mp
+<pre class="src src-python" id="orgc1e009c">import multiprocessing as mp
 
-<span class="org-variable-name">q</span> = mp.Queue()
-<span class="org-keyword">print</span>(q)
-q.put([1, <span class="org-string">'a'</span>, 2])
-<span class="org-keyword">print</span>(<span class="org-builtin">len</span>(q.get()))
+q = mp.Queue()
+print(q)
+q.put([1, 'a', 2])
+print(len(q.get()))
 </pre>
 </div>
 </div>
 
 
-<div id="outline-container-orga3f7901" class="outline-4">
-<h4 id="orga3f7901"><span class="section-number-4">3.1.1</span> Putting many queues inside(?) a single process</h4>
+<div id="outline-container-org003762c" class="outline-4">
+<h4 id="org003762c"><span class="section-number-4">3.1.1</span> Putting many queues inside(?) a single process</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <ol class="org-ol">
 <li>Start a process using <code>p = mp.Process(target=putter, arg=q)</code>, where
@@ -413,17 +402,17 @@ q.put([1, <span class="org-string">'a'</span>, 2])
 </ol>
 
 <div class="org-src-container">
-<pre class="src src-python" id="org0ab16e2"><span class="org-keyword">def</span> <span class="org-function-name">putter</span>(q: mp.queues.Queue, value):
+<pre class="src src-python" id="org5fe531a">def putter(q: mp.queues.Queue, value):
     q.put(value)
 
-<span class="org-keyword">if</span> <span class="org-builtin">__name__</span> == <span class="org-string">'__main__'</span>:
-    q: <span class="org-variable-name">mp.queues.Queue</span> = mp.Queue()
+if __name__ == '__main__':
+    q: mp.queues.Queue = mp.Queue()
 
-    p: <span class="org-variable-name">mp.Process</span> = mp.Process(target=putter, args=(q, [42, <span class="org-constant">None</span>, <span class="org-string">'hello'</span>]))
+    p: mp.Process = mp.Process(target=putter, args=(q, [42, None, 'hello']))
 
     p.start()
-    <span class="org-keyword">print</span>(q.get())    <span class="org-comment-delimiter"># </span><span class="org-comment">prints "[42, None, 'hello']"</span>
-    <span class="org-comment-delimiter"># </span><span class="org-comment">print(q.get)    # Running it again blocks the process for some reason.</span>
+    print(q.get())    # prints "[42, None, 'hello']"
+    # print(q.get)    # Running it again blocks the process for some reason.
     p.join()
 </pre>
 </div>
@@ -431,8 +420,8 @@ q.put([1, <span class="org-string">'a'</span>, 2])
 </div>
 </div>
 
-<div id="outline-container-org48f7e79" class="outline-3">
-<h3 id="org48f7e79"><span class="section-number-3">3.2</span> Pipe</h3>
+<div id="outline-container-org109d2cb" class="outline-3">
+<h3 id="org109d2cb"><span class="section-number-3">3.2</span> Pipe</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 The <code>Pipe()</code> function returns a two-way connection by returning a pair
@@ -448,8 +437,8 @@ Each connection object has a <code>send()</code> and <code>recv()</code> method.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2021-07-29 Thu 15:10</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2021-10-18 Mon 07:25</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>

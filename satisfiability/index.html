@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-07-29 Thu 15:10 -->
+<!-- 2021-10-18 Mon 07:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Graph Satisfiability</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="[[file:../index.html][Vaibhav Karve]]Vaibhav Karve" />
+<meta name="author" content="[[file:../index.html][Vaibhav Karve]]" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -40,7 +40,7 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
+    overflow: auto;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -52,7 +52,7 @@
     padding: 3px;
     border: 1px solid black;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
@@ -161,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -182,50 +195,26 @@
 </style>
 <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -260,11 +249,11 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org41af80d">1. Definitions</a></li>
-<li><a href="#orgb4fb3da">2. Forbidden Graph Characterization</a></li>
-<li><a href="#orge2ab3db">3. In Python</a></li>
-<li><a href="#org15c83ef">4. In Lean</a></li>
-<li><a href="#org3327e6b">5. In Haskell</a></li>
+<li><a href="#orgdf5fcbc">1. Definitions</a></li>
+<li><a href="#orgb8aeb41">2. Forbidden Graph Characterization</a></li>
+<li><a href="#org5d64750">3. In Python</a></li>
+<li><a href="#orgffa9735">4. In Lean</a></li>
+<li><a href="#org2796a6c">5. In Haskell</a></li>
 </ul>
 </div>
 </div>
@@ -282,12 +271,12 @@ This is the subject of my PhD research &#x2014; a novel graph decision problem.
 <dt>PhD thesis</dt><dd><a href="thesis.pdf">pdf</a></dd>
 </dl>
 
-<div id="outline-container-org41af80d" class="outline-2">
-<h2 id="org41af80d"><span class="section-number-2">1</span> Definitions</h2>
+<div id="outline-container-orgdf5fcbc" class="outline-2">
+<h2 id="orgdf5fcbc"><span class="section-number-2">1</span> Definitions</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org3fcfd3b" class="outline-3">
-<h3 id="org3fcfd3b"><span class="section-number-3">1.1</span> SAT</h3>
+<div id="outline-container-org72bfee4" class="outline-3">
+<h3 id="org72bfee4"><span class="section-number-3">1.1</span> SAT</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Pick a countable set and call it our set of <i>variables</i>.  A boolean <i>literal</i> is
@@ -304,8 +293,8 @@ there exists a truth assignment that satisfies it.  Otherwise it is
 </div>
 </div>
 
-<div id="outline-container-orgad6a1c4" class="outline-3">
-<h3 id="orgad6a1c4"><span class="section-number-3">1.2</span> \(\pi: CNFs \rightarrow Graphs\)</h3>
+<div id="outline-container-orgec1626a" class="outline-3">
+<h3 id="orgec1626a"><span class="section-number-3">1.2</span> \(\pi: CNFs \rightarrow Graphs\)</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 For every CNF we define a multi-hypergraph by erasing all negations and then
@@ -379,8 +368,8 @@ Table summarizing the effect of \(\pi\):
 </div>
 </div>
 
-<div id="outline-container-org1ab5133" class="outline-3">
-<h3 id="org1ab5133"><span class="section-number-3">1.3</span> GraphSAT</h3>
+<div id="outline-container-org72709cf" class="outline-3">
+<h3 id="org72709cf"><span class="section-number-3">1.3</span> GraphSAT</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 A multi-hypergraph \(G\) is <i>satisfiable</i> if the set \(\pi^{-1}(G)\)
@@ -396,8 +385,8 @@ all satisfiable multi-hypergraphs.
 </div>
 </div>
 
-<div id="outline-container-orgb4fb3da" class="outline-2">
-<h2 id="orgb4fb3da"><span class="section-number-2">2</span> Forbidden Graph Characterization</h2>
+<div id="outline-container-orgb8aeb41" class="outline-2">
+<h2 id="orgb8aeb41"><span class="section-number-2">2</span> Forbidden Graph Characterization</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Our big result (published in the 2sat paper linked above) is the forbidden graph
@@ -419,8 +408,8 @@ multi-hypergraphs as well as infinite graphs.
 </div>
 </div>
 
-<div id="outline-container-orge2ab3db" class="outline-2">
-<h2 id="orge2ab3db"><span class="section-number-2">3</span> In Python</h2>
+<div id="outline-container-org5d64750" class="outline-2">
+<h2 id="org5d64750"><span class="section-number-2">3</span> In Python</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 I have created a Python package called <a href="https://github.com/vaibhavkarve/graphsat"><code>graphsat</code></a>. It recognizes clauses,
@@ -440,8 +429,8 @@ computations are repeatable and the code is reusable.
 </p>
 </div>
 
-<div id="outline-container-org287c121" class="outline-3">
-<h3 id="org287c121"><span class="section-number-3">3.1</span> Algorithms</h3>
+<div id="outline-container-org1378150" class="outline-3">
+<h3 id="org1378150"><span class="section-number-3">3.1</span> Algorithms</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Currently, graphsat implements the following algorithms &#x2013;
@@ -472,8 +461,8 @@ satisfiability invariance of proposed reduction rules.</li>
 </div>
 </div>
 
-<div id="outline-container-org7e967b0" class="outline-3">
-<h3 id="org7e967b0"><span class="section-number-3">3.2</span> Principles</h3>
+<div id="outline-container-org2b2b676" class="outline-3">
+<h3 id="org2b2b676"><span class="section-number-3">3.2</span> Principles</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 <code>graphsat</code> has been written in the functional-programming style with the
@@ -497,8 +486,8 @@ type-checker).</li>
 </div>
 </div>
 
-<div id="outline-container-org0296f4d" class="outline-3">
-<h3 id="org0296f4d"><span class="section-number-3">3.3</span> Overview of the package</h3>
+<div id="outline-container-orgfd3420b" class="outline-3">
+<h3 id="orgfd3420b"><span class="section-number-3">3.3</span> Overview of the package</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 The package consists of several different modules.
@@ -624,8 +613,8 @@ folder.</li>
 </div>
 </div>
 
-<div id="outline-container-org15c83ef" class="outline-2">
-<h2 id="org15c83ef"><span class="section-number-2">4</span> In Lean</h2>
+<div id="outline-container-orgffa9735" class="outline-2">
+<h2 id="orgffa9735"><span class="section-number-2">4</span> In Lean</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 I have formalized the definition of graph satisfiability in Lean.  I
@@ -634,7 +623,7 @@ results in Lean.
 </p>
 
 
-<div id="org954e2ef" class="figure">
+<div id="org48ce4fa" class="figure">
 <p><img src="../img/graphsat_in_lean.png" alt="graphsat_in_lean.png" />
 </p>
 <p><span class="figure-number">Figure 1: </span>The definition of a satisfiable graph in Lean.</p>
@@ -642,8 +631,8 @@ results in Lean.
 </div>
 </div>
 
-<div id="outline-container-org3327e6b" class="outline-2">
-<h2 id="org3327e6b"><span class="section-number-2">5</span> In Haskell</h2>
+<div id="outline-container-org2796a6c" class="outline-2">
+<h2 id="org2796a6c"><span class="section-number-2">5</span> In Haskell</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 I am attempting to translate <code>graphsat</code> in Haskell as well. This is still a work
@@ -654,8 +643,8 @@ in progress.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: <a href="../index.html">Vaibhav Karve</a></p>
-<p class="date">Created: 2021-07-29 Thu 15:10</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2021-10-18 Mon 07:25</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>

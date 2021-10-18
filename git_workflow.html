@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-07-29 Thu 15:10 -->
+<!-- 2021-10-18 Mon 07:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Git workflow</title>
@@ -40,7 +40,7 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
+    overflow: auto;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -52,7 +52,7 @@
     padding: 3px;
     border: 1px solid black;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
@@ -161,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -182,50 +195,26 @@
 </style>
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 </head>
 <body>
@@ -238,19 +227,19 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd3c34b0">1. Requirements</a></li>
-<li><a href="#org7723cd1">2. For setting up the repository on your local machine</a></li>
-<li><a href="#org56eb09f">3. Helpful commands that you can run at any time without it messing up your files</a></li>
-<li><a href="#orgdd85ce8">4. If now you wish to change some part of the code</a>
+<li><a href="#org5f1b870">1. Requirements</a></li>
+<li><a href="#orge3776e2">2. For setting up the repository on your local machine</a></li>
+<li><a href="#org34efd2c">3. Helpful commands that you can run at any time without it messing up your files</a></li>
+<li><a href="#org2aafe74">4. If now you wish to change some part of the code</a>
 <ul>
-<li><a href="#org3110417">4.1. Fetch first</a></li>
-<li><a href="#org235e082">4.2. Create a branch</a></li>
-<li><a href="#org5180818">4.3. Make changes</a></li>
-<li><a href="#orgfafe753">4.4. Stage and commit</a></li>
-<li><a href="#org2bf5e6a">4.5. Push</a></li>
-<li><a href="#org0c8e073">4.6. Repeat</a></li>
-<li><a href="#org3c2f4df">4.7. Merge</a></li>
-<li><a href="#org4f868cd">4.8. Cleanup</a></li>
+<li><a href="#orgcd3f9fc">4.1. Fetch first</a></li>
+<li><a href="#org4ca60d4">4.2. Create a branch</a></li>
+<li><a href="#orgf63a68e">4.3. Make changes</a></li>
+<li><a href="#org53a731c">4.4. Stage and commit</a></li>
+<li><a href="#org394b2e5">4.5. Push</a></li>
+<li><a href="#org0866762">4.6. Repeat</a></li>
+<li><a href="#org0bef856">4.7. Merge</a></li>
+<li><a href="#orgf618423">4.8. Cleanup</a></li>
 </ul>
 </li>
 </ul>
@@ -263,8 +252,8 @@ works. Let me know if you have any questions, or if
 things don't work out the way I say they would.</dd>
 </dl>
 
-<div id="outline-container-orgd3c34b0" class="outline-2">
-<h2 id="orgd3c34b0"><span class="section-number-2">1</span> Requirements</h2>
+<div id="outline-container-org5f1b870" class="outline-2">
+<h2 id="org5f1b870"><span class="section-number-2">1</span> Requirements</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>Terminal or Command-Prompt</li>
@@ -273,8 +262,8 @@ things don't work out the way I say they would.</dd>
 </div>
 </div>
 
-<div id="outline-container-org7723cd1" class="outline-2">
-<h2 id="org7723cd1"><span class="section-number-2">2</span> For setting up the repository on your local machine</h2>
+<div id="outline-container-orge3776e2" class="outline-2">
+<h2 id="orge3776e2"><span class="section-number-2">2</span> For setting up the repository on your local machine</h2>
 <div class="outline-text-2" id="text-2">
 <dl class="org-dl">
 <dt>Note</dt><dd><p>
@@ -308,8 +297,8 @@ machine.)</li>
 </div>
 </div>
 
-<div id="outline-container-org56eb09f" class="outline-2">
-<h2 id="org56eb09f"><span class="section-number-2">3</span> Helpful commands that you can run at any time without it messing up your files</h2>
+<div id="outline-container-org34efd2c" class="outline-2">
+<h2 id="org34efd2c"><span class="section-number-2">3</span> Helpful commands that you can run at any time without it messing up your files</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li><code>git fetch</code></li>
@@ -320,8 +309,8 @@ machine.)</li>
 </div>
 </div>
 
-<div id="outline-container-orgdd85ce8" class="outline-2">
-<h2 id="orgdd85ce8"><span class="section-number-2">4</span> If now you wish to change some part of the code</h2>
+<div id="outline-container-org2aafe74" class="outline-2">
+<h2 id="org2aafe74"><span class="section-number-2">4</span> If now you wish to change some part of the code</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 (You need to repeat these steps every time you start working on the code.)
@@ -329,8 +318,8 @@ machine.)</li>
 </div>
 
 
-<div id="outline-container-org3110417" class="outline-3">
-<h3 id="org3110417"><span class="section-number-3">4.1</span> Fetch first</h3>
+<div id="outline-container-orgcd3f9fc" class="outline-3">
+<h3 id="orgcd3f9fc"><span class="section-number-3">4.1</span> Fetch first</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 Always start by running the command <code>git fetch</code>.
@@ -349,8 +338,8 @@ working on something. The more the better.</li>
 </div>
 
 
-<div id="outline-container-org235e082" class="outline-3">
-<h3 id="org235e082"><span class="section-number-3">4.2</span> Create a branch</h3>
+<div id="outline-container-org4ca60d4" class="outline-3">
+<h3 id="org4ca60d4"><span class="section-number-3">4.2</span> Create a branch</h3>
 <div class="outline-text-3" id="text-4-2">
 <ol class="org-ol">
 <li>Before you start editing anything, create a new branch. This keeps
@@ -382,8 +371,8 @@ that particular branch.</li>
 </div>
 </div>
 
-<div id="outline-container-org5180818" class="outline-3">
-<h3 id="org5180818"><span class="section-number-3">4.3</span> Make changes</h3>
+<div id="outline-container-orgf63a68e" class="outline-3">
+<h3 id="orgf63a68e"><span class="section-number-3">4.3</span> Make changes</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 Make the changes you wish to make to any files you want. Say you
@@ -409,8 +398,8 @@ discard any changes you made.)</li>
 </div>
 </div>
 
-<div id="outline-container-orgfafe753" class="outline-3">
-<h3 id="orgfafe753"><span class="section-number-3">4.4</span> Stage and commit</h3>
+<div id="outline-container-org53a731c" class="outline-3">
+<h3 id="org53a731c"><span class="section-number-3">4.4</span> Stage and commit</h3>
 <div class="outline-text-3" id="text-4-4">
 <ol class="org-ol">
 <li>Stage the changes you do wish to keep. This is done by running
@@ -474,8 +463,8 @@ before doing a hard reset.)</li>
 </div>
 
 
-<div id="outline-container-org2bf5e6a" class="outline-3">
-<h3 id="org2bf5e6a"><span class="section-number-3">4.5</span> Push</h3>
+<div id="outline-container-org394b2e5" class="outline-3">
+<h3 id="org394b2e5"><span class="section-number-3">4.5</span> Push</h3>
 <div class="outline-text-3" id="text-4-5">
 <p>
 We are now happy with our commit and now we would like everyone to be able
@@ -494,8 +483,8 @@ ways to undo the <code>git push</code> commands.)</li>
 </div>
 </div>
 
-<div id="outline-container-org0c8e073" class="outline-3">
-<h3 id="org0c8e073"><span class="section-number-3">4.6</span> Repeat</h3>
+<div id="outline-container-org0866762" class="outline-3">
+<h3 id="org0866762"><span class="section-number-3">4.6</span> Repeat</h3>
 <div class="outline-text-3" id="text-4-6">
 <p>
 Now you can repeat the pull-edit-add-commit-push loop as many times
@@ -509,8 +498,8 @@ Now you can repeat the pull-edit-add-commit-push loop as many times
 </div>
 </div>
 
-<div id="outline-container-org3c2f4df" class="outline-3">
-<h3 id="org3c2f4df"><span class="section-number-3">4.7</span> Merge</h3>
+<div id="outline-container-org0bef856" class="outline-3">
+<h3 id="org0bef856"><span class="section-number-3">4.7</span> Merge</h3>
 <div class="outline-text-3" id="text-4-7">
 <ol class="org-ol">
 <li>Once you are completely confident that <code>dumbidea</code> is actually
@@ -565,8 +554,8 @@ lines.</li>
 </div>
 </div>
 
-<div id="outline-container-org4f868cd" class="outline-3">
-<h3 id="org4f868cd"><span class="section-number-3">4.8</span> Cleanup</h3>
+<div id="outline-container-orgf618423" class="outline-3">
+<h3 id="orgf618423"><span class="section-number-3">4.8</span> Cleanup</h3>
 <div class="outline-text-3" id="text-4-8">
 <ol class="org-ol">
 <li>Cleaning up after you are done using your branch.
@@ -589,8 +578,8 @@ new branch.</li>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2021-07-29 Thu 15:10</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2021-10-18 Mon 07:25</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-07-29 Thu 15:10 -->
+<!-- 2021-10-18 Mon 07:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Vaibhav Karve</title>
@@ -40,7 +40,7 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
+    overflow: auto;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -52,7 +52,7 @@
     padding: 3px;
     border: 1px solid black;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
@@ -161,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -182,50 +195,26 @@
 </style>
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 </head>
 <body>
@@ -258,9 +247,9 @@ field of computer-assisted formalized mathematics and interactive theorem
 proving (in particular, with the Lean theorem prover).
 </p>
 
-<div id="outline-container-org67ecac1" class="outline-2">
-<h2 id="org67ecac1">Research</h2>
-<div class="outline-text-2" id="text-org67ecac1">
+<div id="outline-container-org7d999e8" class="outline-2">
+<h2 id="org7d999e8">Research</h2>
+<div class="outline-text-2" id="text-org7d999e8">
 <ul class="org-ul">
 <li>List of journal publications</li>
 </ul>
@@ -317,9 +306,9 @@ These publications are also listed at <a href="https://math.illinois.edu/graduat
 </div>
 </div>
 
-<div id="outline-container-org10664b2" class="outline-2">
-<h2 id="org10664b2">Teaching</h2>
-<div class="outline-text-2" id="text-org10664b2">
+<div id="outline-container-orgbb230ad" class="outline-2">
+<h2 id="orgbb230ad">Teaching</h2>
+<div class="outline-text-2" id="text-orgbb230ad">
 <p>
 My ever-evolving <a href="Teaching_Philosophy_Statement.pdf">teaching philosophy</a>.
 </p>
@@ -431,9 +420,9 @@ Past courses
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd3cc680" class="outline-2">
-<h2 id="orgd3cc680">Notes</h2>
-<div class="outline-text-2" id="text-orgd3cc680">
+<div id="outline-container-org50b8171" class="outline-2">
+<h2 id="org50b8171">Notes</h2>
+<div class="outline-text-2" id="text-org50b8171">
 <p>
 These are mostly notes I have taken as part of self-studying various
 things. They are not meant to be comprehensive notes &#x2013; just a collection of
@@ -475,9 +464,9 @@ things I found interesting at different times and wished to keep a record of.
 </div>
 </div>
 
-<div id="outline-container-org74dd13a" class="outline-2">
-<h2 id="org74dd13a">Everything else</h2>
-<div class="outline-text-2" id="text-org74dd13a">
+<div id="outline-container-org5cbd9ae" class="outline-2">
+<h2 id="org5cbd9ae">Everything else</h2>
+<div class="outline-text-2" id="text-org5cbd9ae">
 <ul class="org-ul">
 <li><a href="6174.html">6174 : Kaprekar's constant visualized</a></li>
 <li><a href="msc.html">My areas of interest according to the Mathematics Subject Classification</a></li>
@@ -505,8 +494,8 @@ this work was funded in Fall 2020 by the <a href="https://math.illinois.edu/acad
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2021-07-29 Thu 15:10</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2021-10-18 Mon 07:25</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>
