@@ -10,10 +10,10 @@ website : htmls pdf-docs
 	git push origin master
 
 
-pdf-docs : ~/org/ref/cv_oct_2021/CV.pdf
-	cp ~/org/ref/cv_oct_2021/CV.pdf org/CV.pdf
-#cp ~/talks/2021_04_08_phd/main.pdf org/satisfiability/slides.pdf
-#cp ~/hirani_group/home/papers/theses/vaibhav/main.pdf org/satisfiability/thesis.pdf || true
+pdf-docs : ~/org/ref/cv_march_2022/CV.pdf
+	cp ~/org/ref/cv_march_2022/CV.pdf org/CV.pdf
+	cp ~/talks/2021_04_08_phd/main.pdf org/satisfiability/slides.pdf
+	cp ~/hirani_group/home/papers/theses/vaibhav/main.pdf org/satisfiability/thesis.pdf || true
 
 
 org/Teaching_Philosophy_Statement.pdf : ~/org/ref/teaching_statement_jan_2021/teaching_statement_jan_2021.pdf

@@ -3,14 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-10-18 Mon 07:33 -->
+<!-- 2022-03-27 Sun 09:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Model theory</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="Vaibhav Karve" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -31,8 +31,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -41,21 +42,21 @@
   pre.src {
     position: relative;
     overflow: auto;
-    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
   pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -191,31 +192,8 @@
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
-  /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         displayAlign: "center",
@@ -236,22 +214,21 @@
              }
 });
 </script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <h1 class="title">Model theory
 <br />
 <span class="subtitle"><a href="index.html">Home</a></span>
 </h1>
-<div id="table-of-contents">
+<div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org58627ff">1. Basic concepts</a></li>
-<li><a href="#org2aa56a4">2. First-order languages</a></li>
-<li><a href="#orga8b4b43">3. Structures and theories</a></li>
+<li><a href="#org9d0e0da">1. Basic concepts</a></li>
+<li><a href="#org2acab31">2. First-order languages</a></li>
+<li><a href="#org0472a92">3. Structures and theories</a></li>
 </ul>
 </div>
 </div>
@@ -262,8 +239,8 @@
 </dl>
 
 
-<div id="outline-container-org58627ff" class="outline-2">
-<h2 id="org58627ff"><span class="section-number-2">1</span> Basic concepts</h2>
+<div id="outline-container-org9d0e0da" class="outline-2">
+<h2 id="org9d0e0da"><span class="section-number-2">1.</span> Basic concepts</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Syntax and semantics of expressions → first-order logic (FOL) → theory and
@@ -290,13 +267,13 @@ satisfiability, it then defines other notions like validity and entailment.
 </div>
 </div>
 
-<div id="outline-container-org2aa56a4" class="outline-2">
-<h2 id="org2aa56a4"><span class="section-number-2">2</span> First-order languages</h2>
+<div id="outline-container-org2acab31" class="outline-2">
+<h2 id="org2acab31"><span class="section-number-2">2.</span> First-order languages</h2>
 </div>
 
 
-<div id="outline-container-orga8b4b43" class="outline-2">
-<h2 id="orga8b4b43"><span class="section-number-2">3</span> Structures and theories</h2>
+<div id="outline-container-org0472a92" class="outline-2">
+<h2 id="org0472a92"><span class="section-number-2">3.</span> Structures and theories</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 A <i>structure</i> is a set that we wish to study equipped with collection
@@ -343,7 +320,7 @@ set of \(\mathcal{M}\).</li>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2021-10-18 Mon 07:33</p>
+<p class="date">Created: 2022-03-27 Sun 09:54</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
