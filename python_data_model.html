@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-03-27 Sun 11:04 -->
+<!-- 2022-03-27 Sun 17:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Python's Data Model</title>
@@ -205,12 +205,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orga0bcd67">1. Objects</a>
+<li><a href="#org3367c1f">1. Objects</a>
 <ul>
-<li><a href="#orgb0b60d7">1.1. Containers</a></li>
+<li><a href="#org14ddafc">1.1. Containers</a></li>
 </ul>
 </li>
-<li><a href="#org4d00020">2. The standard type hierarchy</a></li>
+<li><a href="#org96f7237">2. The standard type hierarchy</a></li>
 </ul>
 </div>
 </div>
@@ -223,8 +223,8 @@ in March 2021.</dd>
 </dl>
 
 
-<div id="outline-container-orga0bcd67" class="outline-2">
-<h2 id="orga0bcd67"><span class="section-number-2">1.</span> Objects</h2>
+<div id="outline-container-org3367c1f" class="outline-2">
+<h2 id="org3367c1f"><span class="section-number-2">1.</span> Objects</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <i>Objects</i> are python's abstraction of data. All data is stored as objects. All
@@ -251,8 +251,8 @@ strings, tuples.</li>
 </ol>
 </div>
 
-<div id="outline-container-orgb0b60d7" class="outline-3">
-<h3 id="orgb0b60d7"><span class="section-number-3">1.1.</span> Containers</h3>
+<div id="outline-container-org14ddafc" class="outline-3">
+<h3 id="org14ddafc"><span class="section-number-3">1.1.</span> Containers</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 A <i>container</i> is an object that contains references to another object.
@@ -267,15 +267,15 @@ immutable! E.g. <code>frozenset[list[int]]</code>
 The following lines are quoted directly from the documentation and are
 useful, but somewhat hard to understand.
 </p>
-<pre class="example" id="orgb690f7a">
+<pre class="example" id="orgac934f2">
 An object of an immutable sequence type cannot change once it is created. (If the object contains references to other objects, these other objects may be mutable and may be changed; however, the collection of objects directly referenced by an immutable object cannot change.)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org4d00020" class="outline-2">
-<h2 id="org4d00020"><span class="section-number-2">2.</span> The standard type hierarchy</h2>
+<div id="outline-container-org96f7237" class="outline-2">
+<h2 id="org96f7237"><span class="section-number-2">2.</span> The standard type hierarchy</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 In the following table, we use (⊐ A) to denote that the type A is a subtype
@@ -555,7 +555,7 @@ says that <b>Sequences</b> ⊐ list, i.e. that lists are a subtype of Sequences.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2022-03-27 Sun 11:04</p>
+<p class="date">Created: 2022-03-27 Sun 17:17</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

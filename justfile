@@ -22,7 +22,8 @@ htmls:
 
 # Locally update and publish the website
 website: htmls pdfs
-	# To update the website, please git add and push manually.
+	git add *.pdf *.html
+	# To update the website, please git commit and push manually.
 
 # Locally update all the pdf documents linked on the website.
 pdfs:
