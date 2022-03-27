@@ -22,14 +22,9 @@ htmls:
 
 # Locally update and publish the website
 website: htmls pdfs
+	# To update the website, please git add and push manually.
 
 # Locally update all the pdf documents linked on the website.
 pdfs:
 	cp {{cv_source}} {{cv_sink}}
 	cp {{teaching_statement_source}} {{teaching_statement_sink}}
-
-# Update website on remote.
-push: website
-	git add .
-	git commit -m "auto-update webpages"
-	git push origin master
