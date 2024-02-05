@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-02-04 Sun 20:56 -->
+<!-- 2024-02-04 Sun 21:01 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Graph Satisfiability</title>
@@ -237,11 +237,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org65f73d2">1. Definitions</a></li>
-<li><a href="#orgab33d10">2. Forbidden Graph Characterization</a></li>
-<li><a href="#org255d561">3. In Python</a></li>
-<li><a href="#org1a71373">4. In Lean</a></li>
-<li><a href="#org9654174">5. In Haskell</a></li>
+<li><a href="#org9faf2cb">1. Definitions</a></li>
+<li><a href="#org4c04c77">2. Forbidden Graph Characterization</a></li>
+<li><a href="#org0d5a976">3. In Python</a></li>
+<li><a href="#orgb5dd1b4">4. In Lean</a></li>
+<li><a href="#org6681675">5. In Haskell</a></li>
 </ul>
 </div>
 </div>
@@ -259,12 +259,12 @@ This is the subject of my PhD research &#x2014; a novel graph decision problem.
 <dt>PhD thesis</dt><dd><a href="thesis.pdf">pdf</a></dd>
 </dl>
 
-<div id="outline-container-org65f73d2" class="outline-2">
-<h2 id="org65f73d2"><span class="section-number-2">1.</span> Definitions</h2>
+<div id="outline-container-org9faf2cb" class="outline-2">
+<h2 id="org9faf2cb"><span class="section-number-2">1.</span> Definitions</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orga24dba1" class="outline-3">
-<h3 id="orga24dba1"><span class="section-number-3">1.1.</span> SAT</h3>
+<div id="outline-container-org1a147b5" class="outline-3">
+<h3 id="org1a147b5"><span class="section-number-3">1.1.</span> SAT</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Pick a countable set and call it our set of <i>variables</i>.  A boolean <i>literal</i> is
@@ -281,8 +281,8 @@ there exists a truth assignment that satisfies it.  Otherwise it is
 </div>
 </div>
 
-<div id="outline-container-org6c42562" class="outline-3">
-<h3 id="org6c42562"><span class="section-number-3">1.2.</span> \(\pi: CNFs \rightarrow Graphs\)</h3>
+<div id="outline-container-org1edbe8f" class="outline-3">
+<h3 id="org1edbe8f"><span class="section-number-3">1.2.</span> \(\pi: CNFs \rightarrow Graphs\)</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 For every CNF we define a multi-hypergraph by erasing all negations and then
@@ -356,8 +356,8 @@ Table summarizing the effect of \(\pi\):
 </div>
 </div>
 
-<div id="outline-container-orgac8730c" class="outline-3">
-<h3 id="orgac8730c"><span class="section-number-3">1.3.</span> GraphSAT</h3>
+<div id="outline-container-org5dd658d" class="outline-3">
+<h3 id="org5dd658d"><span class="section-number-3">1.3.</span> GraphSAT</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 A multi-hypergraph \(G\) is <i>satisfiable</i> if the set \(\pi^{-1}(G)\)
@@ -373,8 +373,8 @@ all satisfiable multi-hypergraphs.
 </div>
 </div>
 
-<div id="outline-container-orgab33d10" class="outline-2">
-<h2 id="orgab33d10"><span class="section-number-2">2.</span> Forbidden Graph Characterization</h2>
+<div id="outline-container-org4c04c77" class="outline-2">
+<h2 id="org4c04c77"><span class="section-number-2">2.</span> Forbidden Graph Characterization</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Our big result (published in the 2sat paper linked above) is the forbidden graph
@@ -396,8 +396,8 @@ multi-hypergraphs as well as infinite graphs.
 </div>
 </div>
 
-<div id="outline-container-org255d561" class="outline-2">
-<h2 id="org255d561"><span class="section-number-2">3.</span> In Python</h2>
+<div id="outline-container-org0d5a976" class="outline-2">
+<h2 id="org0d5a976"><span class="section-number-2">3.</span> In Python</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 I have created a Python package called <a href="https://github.com/vaibhavkarve/graphsat"><code>graphsat</code></a>. It recognizes clauses,
@@ -417,8 +417,8 @@ computations are repeatable and the code is reusable.
 </p>
 </div>
 
-<div id="outline-container-org722c4e5" class="outline-3">
-<h3 id="org722c4e5"><span class="section-number-3">3.1.</span> Algorithms</h3>
+<div id="outline-container-org7dea569" class="outline-3">
+<h3 id="org7dea569"><span class="section-number-3">3.1.</span> Algorithms</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Currently, graphsat implements the following algorithms &#x2013;
@@ -449,8 +449,8 @@ satisfiability invariance of proposed reduction rules.</li>
 </div>
 </div>
 
-<div id="outline-container-org1f022f3" class="outline-3">
-<h3 id="org1f022f3"><span class="section-number-3">3.2.</span> Principles</h3>
+<div id="outline-container-orgcbad978" class="outline-3">
+<h3 id="orgcbad978"><span class="section-number-3">3.2.</span> Principles</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 <code>graphsat</code> has been written in the functional-programming style with the
@@ -474,8 +474,8 @@ type-checker).</li>
 </div>
 </div>
 
-<div id="outline-container-orga5475ab" class="outline-3">
-<h3 id="orga5475ab"><span class="section-number-3">3.3.</span> Overview of the package</h3>
+<div id="outline-container-org506a01e" class="outline-3">
+<h3 id="org506a01e"><span class="section-number-3">3.3.</span> Overview of the package</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 The package consists of several different modules.
@@ -601,8 +601,8 @@ folder.</li>
 </div>
 </div>
 
-<div id="outline-container-org1a71373" class="outline-2">
-<h2 id="org1a71373"><span class="section-number-2">4.</span> In Lean</h2>
+<div id="outline-container-orgb5dd1b4" class="outline-2">
+<h2 id="orgb5dd1b4"><span class="section-number-2">4.</span> In Lean</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 I have formalized the definition of graph satisfiability in Lean.  I
@@ -611,7 +611,7 @@ results in Lean.
 </p>
 
 
-<div id="org293a260" class="figure">
+<div id="org5196355" class="figure">
 <p><img src="../img/graphsat_in_lean.png" alt="graphsat_in_lean.png" />
 </p>
 <p><span class="figure-number">Figure 1: </span>The definition of a satisfiable graph in Lean.</p>
@@ -619,8 +619,8 @@ results in Lean.
 </div>
 </div>
 
-<div id="outline-container-org9654174" class="outline-2">
-<h2 id="org9654174"><span class="section-number-2">5.</span> In Haskell</h2>
+<div id="outline-container-org6681675" class="outline-2">
+<h2 id="org6681675"><span class="section-number-2">5.</span> In Haskell</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 I am attempting to translate <code>graphsat</code> in Haskell as well. This is still a work
@@ -631,7 +631,7 @@ in progress.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: <a href="../index.html">Vaibhav Karve</a></p>
-<p class="date">Created: 2024-02-04 Sun 20:56</p>
+<p class="date">Created: 2024-02-04 Sun 21:01</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

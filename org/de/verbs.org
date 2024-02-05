@@ -59,7 +59,7 @@ This verb is also irregular. Commonly used, so just memorize it.
 Below are verb tables for regular verbs. Each table is very similar, with
 only slight differences due to last letter of root verb.
 
-1. /gehen/ = to go
+*** /gehen/ = to go
 | Person       | Eng (Sing.)   | Eng (Plu.) | German (Sing.) | German (Plu.) |
 |--------------+---------------+------------+----------------+---------------|
 | 1st          | I ...         | We ...     | /ich gehe/       | /wir gehen/     |
@@ -67,7 +67,7 @@ only slight differences due to last letter of root verb.
 | 3rd          | He/She/It ... | They ...   | /er/sie/es geht/ | /sie gehen/     |
 | 3rd & Polite | He/She/It ... | They ...   | /Sie gehen/      | /Sie gehen/     |
 
-2. /sitzen/ = to sit
+*** /sitzen/ = to sit
 | Person       | Eng (Sing.)   | Eng (Plu.) | German (Sing.)  | German (Plu.) |
 |--------------+---------------+------------+-----------------+---------------|
 | 1st          | I ...         | We ...     | /ich sitze/       | /wir sitzen/    |
@@ -78,11 +78,11 @@ only slight differences due to last letter of root verb.
  * = if the infinitive stem ends in *-s*, *-ß*, *-x*, or *-z*, then the *-s* in
  *du*-ending is omitted.
 
- Other exaples of this:
- - /du faxt/ = you are faxing (still? Really?)
- - /du gießt/ = you are pouring (🍺?)
+Other exaples of this:
+- /du faxt/ = you are faxing (still? Really?)
+- /du gießt/ = you are pouring (🍺?)
 
-3. /finden/ = to find
+*** /finden/ = to find
 | Person       | Eng (Sing.)   | Eng (Plu.) | German (Sing.)   | German (Plu.) |
 |--------------+---------------+------------+------------------+---------------|
 | 1st          | I ...         | We ...     | /ich finde/        | /wir finden/    |
@@ -101,7 +101,7 @@ Other examples of this:
 - /er öffnet/ = he opens
 - /ihr öffnet/ = you (all) open
 
-4. /handeln/ = to act
+*** /handeln/ = to act
 | Person       | Eng (Sing.)   | Eng (Plu.) | German (Sing.)    | German (Plu.) |
 |--------------+---------------+------------+-------------------+---------------|
 | 1st          | I ...         | We ...     | /ich handele/       | /wir handeln*/  |
@@ -111,3 +111,7 @@ Other examples of this:
 
  * = infinitive root ends in just *-n* instead of *-en*. Therefore, the
    wir/sie/Sie forms end in *-n*.
+
+Other examples of this:
+- /wir ändern/ = we change
+- /Sie ändern/ = they change
