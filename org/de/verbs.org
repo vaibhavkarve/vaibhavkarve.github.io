@@ -1,0 +1,56 @@
+#+title: German Verbs
+#+author: [[file:../index.html][Vaibhav Karve]]
+#+options: toc:2
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+#+subtitle: [[file:index.org][Home]]
+
+* In emacs
+to input German, use
+#+begin_src emacs-lisp
+  (set-input-method "german-postfix")
+#+end_src
+Results in the following key sequences:
+#+begin_quote
+ae  -> ä
+aee -> ae
+oe  -> ö
+oee -> oe
+ue  -> ü (not after a/e/q)
+uee -> ue
+sz  -> ß
+szz -> sz
+E= -> €
+#+end_quote
+
+
+* German has 6 verb tenses
+1. Present -- most commonly used.
+2. Present perfect
+3. Simple past
+4. Past perfect
+5. Future
+6. Future perfect
+
+Perfect tenses more common in spoken German.
+Simple tenses are more common in written German.
+
+* Present tense
+** To be = sein (irregular verb)
+The verb sein's table is irregular. Commonly used, so just memorize it.
+
+| Person                | English (Singular) | English (Plural) | German (Singular) | German (Plural) |
+| ---                   | ---                | ---              | ---               | ---             |
+| First person          | I am               | We are           | ich bin           | wir sind        |
+| Second person         | You are            | You are          | du bist           | ihr seid        |
+| Third person          | He/She/It is       | They are         | er/sie/es ist     | sie sind        |
+| Third person & Polite | He/She/It is       | They are         | Sie sind          | Sir sind        |
+
+** To have = haben (irregular verb)
+This verb is also irregular. Commonly used, so just memorize it.
+
+| Person                | English (Singular) | English (Plural) | German (Singular) | German (Plural) |
+| ---                   | ---                | ---              | ---               | ---             |
+| First person          | I have             | We have          | ich habe          | wir haben       |
+| Second person         | You have           | You have         | du hast           | ihr habt        |
+| Third person          | He/She/It have     | They have        | er/sie/es hat     | sie haben       |
+| Third person & Polite | He/She/It have     | They have        | Sie haben         | Sir haben       |

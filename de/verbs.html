@@ -6,7 +6,7 @@
 <!-- 2024-02-04 Sun 19:37 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Axiomatic Geometry in Lean</title>
+<title>German Verbs</title>
 <meta name="author" content="[[file:../index.html][Vaibhav Karve]]" />
 <meta name="generator" content="Org Mode" />
 <style>
@@ -193,151 +193,229 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
 </style>
-<link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">Axiomatic Geometry in Lean
+<h1 class="title">German Verbs
 <br />
-<span class="subtitle"><a href="../index.html">Home</a></span>
+<span class="subtitle"><a href="index.html">Home</a></span>
 </h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org16e27b0">1. The team</a></li>
-<li><a href="#orgbac82c0">2. Project Goals</a></li>
-<li><a href="#orgdbb00e5">3. Outcomes and links</a></li>
+<li><a href="#org859b531">1. In emacs</a></li>
+<li><a href="#orga947b79">2. German has 6 verb tenses</a></li>
+<li><a href="#orgbb8a8f4">3. Present tense</a>
+<ul>
+<li><a href="#orga66d12b">3.1. To be = sein (irregular verb)</a></li>
+<li><a href="#orgc882824">3.2. To have = haben (irregular verb)</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
-<p>
-This project was titled <b>Interactive theorem proving in Lean: teaching
-mathematics to a computer</b> and ran as part of the Illinois Geometry
-Lab in Summer 2020. I was involved in running the project with 4
-high-school students.
-</p>
 
-<p>
-All the code generated during this project can be found at the GitHub
-code repository <a href="https://github.com/vaibhavkarve/leanteach2020">vaibhavkarve/leanteach2020</a>.  The project outcomes are
-summarized in the following <a href="leanteach_poster.pdf">final poster</a>, <a href="leanteach_report.pdf">project report</a> and
-<a href="leanteach_slides.pdf">presentation slides</a>.
-</p>
-
-
-<div id="outline-container-org16e27b0" class="outline-2">
-<h2 id="org16e27b0"><span class="section-number-2">1.</span> The team</h2>
+<div id="outline-container-org859b531" class="outline-2">
+<h2 id="org859b531"><span class="section-number-2">1.</span> In emacs</h2>
 <div class="outline-text-2" id="text-1">
-<ul class="org-ul">
-<li><b>Me</b> (Principal Investigator)</li>
-<li>Lawrence Zhao (Frankel scholar)</li>
-<li>Edward Kong (Frankel scholar)</li>
-<li>Alex Dolcos (Frankel scholar)</li>
-<li>Nicholas Phillips (Frankel scholar)</li>
-</ul>
-
-<div id="org7847f81" class="figure">
-<p><img src="img/leanteach2020_team.png" alt="leanteach2020_team.png" />
+<p>
+to input German, use
 </p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(set-input-method "german-postfix")
+</pre>
 </div>
+<p>
+Results in the following key sequences:
+</p>
+<blockquote>
+<p>
+ae  -&gt; ä
+aee -&gt; ae
+oe  -&gt; ö
+oee -&gt; oe
+ue  -&gt; ü (not after a/e/q)
+uee -&gt; ue
+sz  -&gt; ß
+szz -&gt; sz
+E= -&gt; €
+</p>
+</blockquote>
 </div>
 </div>
 
 
-<div id="outline-container-orgbac82c0" class="outline-2">
-<h2 id="orgbac82c0"><span class="section-number-2">2.</span> Project Goals</h2>
+<div id="outline-container-orga947b79" class="outline-2">
+<h2 id="orga947b79"><span class="section-number-2">2.</span> German has 6 verb tenses</h2>
 <div class="outline-text-2" id="text-2">
-<p>
-This project was code-named <code>LeanTeach 2020</code>.
-</p>
-</div>
-
-<div id="outline-container-org3f15079" class="outline-3">
-<h3 id="org3f15079"><span class="section-number-3">2.1.</span> Goal 0: Teach Lean to Humans</h3>
-<div class="outline-text-3" id="text-2-1">
-<p>
-We met 9 hours per week to discuss math, philosophy and programming as
-it relates to formalizing mathematics in a theorem prover. We used
-Microsoft Research's <b>Lean Theorem Prover</b> and its Mathematical
-Library (<b>mathlib</b>) as our proof assistant for this. We all had
-experience programming in Python before this. We explored how things
-work differently in a purely functional language. We also learned
-about tactics in Lean. We used Slack for text-based communication,
-Zoom for video meetings and CoCalc for sharing and collaboratively
-editing code.
-</p>
-</div>
-</div>
-
-<div id="outline-container-orge1c9427" class="outline-3">
-<h3 id="orge1c9427"><span class="section-number-3">2.2.</span> Goal 1: Teach Math to a Computer</h3>
-<div class="outline-text-3" id="text-2-2">
-<p>
-The idea was that we can take a piece of familiar mathematics and translate it
-into code that is acceptable to Lean. Lean already understands basic logic and
-does not accept incorrect mathematics as input. We wanted to choose a topic in
-mathematics that,
-</p>
 <ol class="org-ol">
-<li>is known to us with a high degree of familiarity &#x2013; because intuition comes
-in handy when we are stuck in a Math → Lean translation,</li>
-<li>is preferably already in an axiomatic form &#x2013; we wanted to follow the
-workflow of Definitions → Axioms/Postulates → Propositions/Theorems,</li>
-<li>is not already in mathlib &#x2013; this ruled out group theory, number theory,
-category theory&#x2026;</li>
+<li>Present &#x2013; most commonly used.</li>
+<li>Present perfect</li>
+<li>Simple past</li>
+<li>Past perfect</li>
+<li>Future</li>
+<li>Future perfect</li>
 </ol>
 
 <p>
-We settled on formalizing Axiomatic Geometry of three types:
+Perfect tenses more common in spoken German.
+Simple tenses are more common in written German.
 </p>
-<ul class="org-ul">
-<li>Euclid's axioms</li>
-<li>Hilbert's axioms</li>
-<li>Tarski's axioms</li>
-</ul>
-</div>
 </div>
 </div>
 
-
-<div id="outline-container-orgdbb00e5" class="outline-2">
-<h2 id="orgdbb00e5"><span class="section-number-2">3.</span> Outcomes and links</h2>
+<div id="outline-container-orgbb8a8f4" class="outline-2">
+<h2 id="orgbb8a8f4"><span class="section-number-2">3.</span> Present tense</h2>
 <div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orga66d12b" class="outline-3">
+<h3 id="orga66d12b"><span class="section-number-3">3.1.</span> To be = sein (irregular verb)</h3>
+<div class="outline-text-3" id="text-3-1">
 <p>
-Throughout the duration of the project, we create extensive notes on everything
-we learned, any problems we encountered and all the approaches we tried when
-attempting to solve those problems. These notes were collected in the form of a
-project wiki that is hosted at <a href="https://wiki.illinois.edu/wiki/display/LT2020">IllinoisWiki LeanTeach 2020</a>. This wiki serves as
-a lab-notebook + documentation.
+The verb sein's table is irregular. Commonly used, so just memorize it.
 </p>
 
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Person</td>
+<td class="org-left">English (Singular)</td>
+<td class="org-left">English (Plural)</td>
+<td class="org-left">German (Singular)</td>
+<td class="org-left">German (Plural)</td>
+</tr>
+
+<tr>
+<td class="org-left">---</td>
+<td class="org-left">---</td>
+<td class="org-left">---</td>
+<td class="org-left">---</td>
+<td class="org-left">---</td>
+</tr>
+
+<tr>
+<td class="org-left">First person</td>
+<td class="org-left">I am</td>
+<td class="org-left">We are</td>
+<td class="org-left">ich bin</td>
+<td class="org-left">wir sind</td>
+</tr>
+
+<tr>
+<td class="org-left">Second person</td>
+<td class="org-left">You are</td>
+<td class="org-left">You are</td>
+<td class="org-left">du bist</td>
+<td class="org-left">ihr seid</td>
+</tr>
+
+<tr>
+<td class="org-left">Third person</td>
+<td class="org-left">He/She/It is</td>
+<td class="org-left">They are</td>
+<td class="org-left">er/sie/es ist</td>
+<td class="org-left">sie sind</td>
+</tr>
+
+<tr>
+<td class="org-left">Third person &amp; Polite</td>
+<td class="org-left">He/She/It is</td>
+<td class="org-left">They are</td>
+<td class="org-left">Sie sind</td>
+<td class="org-left">Sir sind</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgc882824" class="outline-3">
+<h3 id="orgc882824"><span class="section-number-3">3.2.</span> To have = haben (irregular verb)</h3>
+<div class="outline-text-3" id="text-3-2">
 <p>
-I-STEM education initiative featured a news article that mentioned our project
-&#x2013; <a href="https://www.istem.illinois.edu/news/uni.high.igl.research.20.html">Uni high students experience math research during IGL’s summer program</a>.
+This verb is also irregular. Commonly used, so just memorize it.
 </p>
 
-<p>
-Below is a video recording of the project being presented as part of the IGL
-open house.
-</p>
-<iframe id="kmsembed-1_mxgjcfr4" width="640" height="394"
-src="https://mediaspace.illinois.edu/embed/secure/iframe/entryId/1_mxgjcfr4/uiConfId/26883701"
-class="kmsembed" allowfullscreen webkitallowfullscreen
-mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *"
-referrerPolicy="no-referrer-when-downgrade" sandbox="allow-forms
-allow-same-origin allow-scripts allow-top-navigation
-allow-pointer-lock allow-popups allow-modals allow-orientation-lock
-allow-popups-to-escape-sandbox allow-presentation
-allow-top-navigation-by-user-activation" frameborder="0"
-title="Kaltura Player"></iframe>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
-<p>
-Below is a talk I gave at the LeanTogether 2021 conference.
-</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/K-kLck8BvDM"
-frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Person</td>
+<td class="org-left">English (Singular)</td>
+<td class="org-left">English (Plural)</td>
+<td class="org-left">German (Singular)</td>
+<td class="org-left">German (Plural)</td>
+</tr>
+
+<tr>
+<td class="org-left">---</td>
+<td class="org-left">---</td>
+<td class="org-left">---</td>
+<td class="org-left">---</td>
+<td class="org-left">---</td>
+</tr>
+
+<tr>
+<td class="org-left">First person</td>
+<td class="org-left">I have</td>
+<td class="org-left">We have</td>
+<td class="org-left">ich habe</td>
+<td class="org-left">wir haben</td>
+</tr>
+
+<tr>
+<td class="org-left">Second person</td>
+<td class="org-left">You have</td>
+<td class="org-left">You have</td>
+<td class="org-left">du hast</td>
+<td class="org-left">ihr habt</td>
+</tr>
+
+<tr>
+<td class="org-left">Third person</td>
+<td class="org-left">He/She/It have</td>
+<td class="org-left">They have</td>
+<td class="org-left">er/sie/es hat</td>
+<td class="org-left">sie haben</td>
+</tr>
+
+<tr>
+<td class="org-left">Third person &amp; Polite</td>
+<td class="org-left">He/She/It have</td>
+<td class="org-left">They have</td>
+<td class="org-left">Sie haben</td>
+<td class="org-left">Sir haben</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </div>

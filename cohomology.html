@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-10-16 Sun 15:11 -->
+<!-- 2024-02-04 Sun 19:37 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Cohomology</title>
@@ -191,29 +191,40 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
+  .org-svg { }
 </style>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 </head>
 <body>
 <div id="content" class="content">
@@ -222,10 +233,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org7dfd58d">1. Categories</a>
+<li><a href="#org7d05647">1. Categories</a>
 <ul>
-<li><a href="#orgc313a86">1.1. Tensor and exterior algebras</a></li>
-<li><a href="#org37e00cc">1.2. Topological manifold</a></li>
+<li><a href="#orgb3a2ae4">1.1. Tensor and exterior algebras</a></li>
+<li><a href="#orgf88a893">1.2. Topological manifold</a></li>
 </ul>
 </li>
 </ul>
@@ -237,8 +248,8 @@
 Fall 2020.</dd>
 </dl>
 
-<div id="outline-container-org7dfd58d" class="outline-2">
-<h2 id="org7dfd58d"><span class="section-number-2">1.</span> Categories</h2>
+<div id="outline-container-org7d05647" class="outline-2">
+<h2 id="org7d05647"><span class="section-number-2">1.</span> Categories</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Let \(A\) be a ring. Category \(Mod_A\) is the catergory with objects being
@@ -307,8 +318,8 @@ If this is an exact sequence then, we can conclude the following:
 </ul>
 </div>
 
-<div id="outline-container-orgc313a86" class="outline-3">
-<h3 id="orgc313a86"><span class="section-number-3">1.1.</span> Tensor and exterior algebras</h3>
+<div id="outline-container-orgb3a2ae4" class="outline-3">
+<h3 id="orgb3a2ae4"><span class="section-number-3">1.1.</span> Tensor and exterior algebras</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Let M be an A-module. (M is free : e₁, &#x2026;, eₙ).
@@ -326,8 +337,8 @@ T*(M) := the universal graded associative A-algebra with a map M → T*(M).
 </div>
 </div>
 
-<div id="outline-container-org37e00cc" class="outline-3">
-<h3 id="org37e00cc"><span class="section-number-3">1.2.</span> Topological manifold</h3>
+<div id="outline-container-orgf88a893" class="outline-3">
+<h3 id="orgf88a893"><span class="section-number-3">1.2.</span> Topological manifold</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 A topological space X is
@@ -360,7 +371,7 @@ Smooth manifold is a topological manifold together with a smooth atlas.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2022-10-16 Sun 15:11</p>
+<p class="date">Created: 2024-02-04 Sun 19:37</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

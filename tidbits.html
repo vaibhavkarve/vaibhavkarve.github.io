@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-10-16 Sun 15:11 -->
+<!-- 2024-02-04 Sun 19:37 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mathematical tidbits</title>
@@ -191,30 +191,41 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
+  .org-svg { }
 </style>
 <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 </head>
 <body>
 <div id="content" class="content">
@@ -226,15 +237,15 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org846851e">1. Homotopy</a></li>
-<li><a href="#org8774e5f">2. Graph theory</a></li>
-<li><a href="#org412e5dc">3. Quantum computing</a></li>
-<li><a href="#orge166694">4. Stern sequence</a></li>
-<li><a href="#orge592415">5. Hypertrees</a></li>
-<li><a href="#org0f4a35e">6. Circle packings</a></li>
-<li><a href="#orgef4de2c">7. Presburger arithmetic</a></li>
-<li><a href="#orge100e0c">8. Complexity</a></li>
-<li><a href="#org4618aa9">9. Partition function and related functions</a></li>
+<li><a href="#org4934663">1. Homotopy</a></li>
+<li><a href="#orgad5fd41">2. Graph theory</a></li>
+<li><a href="#org1ae0997">3. Quantum computing</a></li>
+<li><a href="#orgc2c9bf9">4. Stern sequence</a></li>
+<li><a href="#orgcd625d6">5. Hypertrees</a></li>
+<li><a href="#orgdd8dc86">6. Circle packings</a></li>
+<li><a href="#org7b1b5e7">7. Presburger arithmetic</a></li>
+<li><a href="#org67cf793">8. Complexity</a></li>
+<li><a href="#orgc7c65bc">9. Partition function and related functions</a></li>
 </ul>
 </div>
 </div>
@@ -243,12 +254,12 @@ This is just a list of facts/definitions that didn't fit elsewhere.
 </p>
 
 
-<div id="outline-container-org846851e" class="outline-2">
-<h2 id="org846851e"><span class="section-number-2">1.</span> Homotopy</h2>
+<div id="outline-container-org4934663" class="outline-2">
+<h2 id="org4934663"><span class="section-number-2">1.</span> Homotopy</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org8f1d458" class="outline-3">
-<h3 id="org8f1d458"><span class="section-number-3">1.1.</span> Massey triple product</h3>
+<div id="outline-container-org7d86312" class="outline-3">
+<h3 id="org7d86312"><span class="section-number-3">1.1.</span> Massey triple product</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 If [α]⬝[β] = 0 ⇒ α⬝β = dσ.
@@ -265,16 +276,16 @@ rings. More commutative than commutative rings."</dd>
 </div>
 </div>
 
-<div id="outline-container-org8774e5f" class="outline-2">
-<h2 id="org8774e5f"><span class="section-number-2">2.</span> Graph theory</h2>
+<div id="outline-container-orgad5fd41" class="outline-2">
+<h2 id="orgad5fd41"><span class="section-number-2">2.</span> Graph theory</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Plabic graphs := planar bicolorable graphs.
 </p>
 </div>
 
-<div id="outline-container-org386ccb8" class="outline-3">
-<h3 id="org386ccb8"><span class="section-number-3">2.1.</span> Hadwiger's conjecture (1942)</h3>
+<div id="outline-container-orged8dd9c" class="outline-3">
+<h3 id="orged8dd9c"><span class="section-number-3">2.1.</span> Hadwiger's conjecture (1942)</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 The conjecture states that ∀ t≥1, every graph with no \(K_t\) minor is
@@ -294,8 +305,8 @@ four-color theorem.
 </div>
 </div>
 
-<div id="outline-container-org2fb0377" class="outline-3">
-<h3 id="org2fb0377"><span class="section-number-3">2.2.</span> Minors and Models</h3>
+<div id="outline-container-orgc9f5c2d" class="outline-3">
+<h3 id="orgc9f5c2d"><span class="section-number-3">2.2.</span> Minors and Models</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 These are inverse ideas.
@@ -320,8 +331,8 @@ G has an H minor iff there exists a model of H in G.
 </div>
 </div>
 
-<div id="outline-container-orgf4fce81" class="outline-3">
-<h3 id="orgf4fce81"><span class="section-number-3">2.3.</span> Graph isomorphism</h3>
+<div id="outline-container-orgc8bb774" class="outline-3">
+<h3 id="orgc8bb774"><span class="section-number-3">2.3.</span> Graph isomorphism</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 The graph isomorphism problem is known to be in NP but is one of
@@ -330,8 +341,8 @@ NP-complete.
 </p>
 </div>
 </div>
-<div id="outline-container-org88bce05" class="outline-3">
-<h3 id="org88bce05"><span class="section-number-3">2.4.</span> Prague dimension of graphs</h3>
+<div id="outline-container-org075e82f" class="outline-3">
+<h3 id="org075e82f"><span class="section-number-3">2.4.</span> Prague dimension of graphs</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 Is NP-hard to determine
@@ -352,12 +363,12 @@ where \(cc^1\) is the clieque chromatic index of \(G\).
 
 <p>
 Note how it is easier to define the Prague dimension for the
-<a href="#orgace0ae2">complement graph</a> than for the graph directly.
+<a href="#org120ecb8">complement graph</a> than for the graph directly.
 </p>
 </div>
 </div>
-<div id="outline-container-orgace0ae2" class="outline-3">
-<h3 id="orgace0ae2"><span class="section-number-3">2.5.</span> Complement graph</h3>
+<div id="outline-container-org120ecb8" class="outline-3">
+<h3 id="org120ecb8"><span class="section-number-3">2.5.</span> Complement graph</h3>
 <div class="outline-text-3" id="text-2-5">
 <p>
 Let \(G_{n,p}\) denote the binomial random graph i.e. pick from
@@ -371,12 +382,12 @@ The complement graph of \(G_{n,p}\) is \(G_{n,1-p}\).
 </div>
 </div>
 
-<div id="outline-container-org412e5dc" class="outline-2">
-<h2 id="org412e5dc"><span class="section-number-2">3.</span> Quantum computing</h2>
+<div id="outline-container-org1ae0997" class="outline-2">
+<h2 id="org1ae0997"><span class="section-number-2">3.</span> Quantum computing</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org77b312a" class="outline-3">
-<h3 id="org77b312a"><span class="section-number-3">3.1.</span> PAC learning model</h3>
+<div id="outline-container-orgdc5a448" class="outline-3">
+<h3 id="orgdc5a448"><span class="section-number-3">3.1.</span> PAC learning model</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li>concept ≡ feature; c : X → {0, 1}</li>
@@ -399,8 +410,8 @@ where \(\alpha_x = \sqrt{D(x)}\).
 </div>
 </div>
 
-<div id="outline-container-orge166694" class="outline-2">
-<h2 id="orge166694"><span class="section-number-2">4.</span> Stern sequence</h2>
+<div id="outline-container-orgc2c9bf9" class="outline-2">
+<h2 id="orgc2c9bf9"><span class="section-number-2">4.</span> Stern sequence</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Bruce Reznick has some notes on these at <a href="https://faculty.math.illinois.edu/~reznick/595-ch1.pdf">link</a>.
@@ -415,8 +426,8 @@ Bruce Reznick has some notes on these at <a href="https://faculty.math.illinois.
 </div>
 </div>
 </div>
-<div id="outline-container-orge592415" class="outline-2">
-<h2 id="orge592415"><span class="section-number-2">5.</span> Hypertrees</h2>
+<div id="outline-container-orgcd625d6" class="outline-2">
+<h2 id="orgcd625d6"><span class="section-number-2">5.</span> Hypertrees</h2>
 <div class="outline-text-2" id="text-5">
 <dl class="org-dl">
 <dt>wiki</dt><dd><a href="https://en.wikipedia.org/wiki/Hypertree">https://en.wikipedia.org/wiki/Hypertree</a></dd>
@@ -441,12 +452,12 @@ are faster to check.
 </p>
 </div>
 </div>
-<div id="outline-container-org0f4a35e" class="outline-2">
-<h2 id="org0f4a35e"><span class="section-number-2">6.</span> Circle packings</h2>
+<div id="outline-container-orgdd8dc86" class="outline-2">
+<h2 id="orgdd8dc86"><span class="section-number-2">6.</span> Circle packings</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org5566e7a" class="outline-3">
-<h3 id="org5566e7a"><span class="section-number-3">6.1.</span> Circle packing &#x2013; a mathematical tale by Kenneth Stephenson</h3>
+<div id="outline-container-org429542c" class="outline-3">
+<h3 id="org429542c"><span class="section-number-3">6.1.</span> Circle packing &#x2013; a mathematical tale by Kenneth Stephenson</h3>
 <div class="outline-text-3" id="text-6-1">
 <dl class="org-dl">
 <dt>Type</dt><dd>article</dd>
@@ -456,8 +467,8 @@ metric → geometry</dd>
 <dt>Source</dt><dd>This was communicated to Hirani by Nathan.</dd>
 </dl>
 </div>
-<div id="outline-container-org318349a" class="outline-4">
-<h4 id="org318349a"><span class="section-number-4">6.1.1.</span> Triangulations → Circle packing</h4>
+<div id="outline-container-org4dd21df" class="outline-4">
+<h4 id="org4dd21df"><span class="section-number-4">6.1.1.</span> Triangulations → Circle packing</h4>
 <div class="outline-text-4" id="text-6-1-1">
 <dl class="org-dl">
 <dt>Original idea</dt><dd>from Thurston's "Note"</dd>
@@ -475,8 +486,8 @@ inversions of the sphere.
 </div>
 </div>
 
-<div id="outline-container-orgaac155e" class="outline-4">
-<h4 id="orgaac155e"><span class="section-number-4">6.1.2.</span> Circle packing (combinatorial data) → Conformal mapping (geometric data)</h4>
+<div id="outline-container-org8a7e658" class="outline-4">
+<h4 id="org8a7e658"><span class="section-number-4">6.1.2.</span> Circle packing (combinatorial data) → Conformal mapping (geometric data)</h4>
 <div class="outline-text-4" id="text-6-1-2">
 <dl class="org-dl">
 <dt>Original idea</dt><dd>"A finite Riemann mapping theorem", a talk by
@@ -485,8 +496,8 @@ Thurston</dd>
 </div>
 </div>
 
-<div id="outline-container-org5fe8102" class="outline-4">
-<h4 id="org5fe8102"><span class="section-number-4">6.1.3.</span> Setup</h4>
+<div id="outline-container-org3832df4" class="outline-4">
+<h4 id="org3832df4"><span class="section-number-4">6.1.3.</span> Setup</h4>
 <div class="outline-text-4" id="text-6-1-3">
 <dl class="org-dl">
 <dt>Notation</dt><dd><dl class="org-dl">
@@ -527,8 +538,8 @@ needs to be computed.
 </div>
 </div>
 
-<div id="outline-container-orgab4cfff" class="outline-4">
-<h4 id="orgab4cfff"><span class="section-number-4">6.1.4.</span> Computing the labels</h4>
+<div id="outline-container-orgd06a49b" class="outline-4">
+<h4 id="orgd06a49b"><span class="section-number-4">6.1.4.</span> Computing the labels</h4>
 <div class="outline-text-4" id="text-6-1-4">
 <ol class="org-ol">
 <li><span class="underline">Flower:</span> a circle surrounding by its tangent circles. The "petals"
@@ -553,8 +564,8 @@ vs. global. ??</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org182973b" class="outline-4">
-<h4 id="org182973b"><span class="section-number-4">6.1.5.</span> Note</h4>
+<div id="outline-container-org6e9ac57" class="outline-4">
+<h4 id="org6e9ac57"><span class="section-number-4">6.1.5.</span> Note</h4>
 <div class="outline-text-4" id="text-6-1-5">
 <p>
 I did not understand the rest of the article. 🤷
@@ -562,8 +573,8 @@ I did not understand the rest of the article. 🤷
 </div>
 </div>
 </div>
-<div id="outline-container-orgdd43f24" class="outline-3">
-<h3 id="orgdd43f24"><span class="section-number-3">6.2.</span> Circle Packing theorem</h3>
+<div id="outline-container-org289e908" class="outline-3">
+<h3 id="org289e908"><span class="section-number-3">6.2.</span> Circle Packing theorem</h3>
 <div class="outline-text-3" id="text-6-2">
 <dl class="org-dl">
 <dt>wiki</dt><dd><a href="https://en.wikipedia.org/wiki/Circle_packing_theorem">https://en.wikipedia.org/wiki/Circle_packing_theorem</a></dd>
@@ -605,8 +616,8 @@ the inverse of the map from B to a circle.
 </p>
 </div>
 </div>
-<div id="outline-container-org28bbfe0" class="outline-3">
-<h3 id="org28bbfe0"><span class="section-number-3">6.3.</span> Enumeration of triangulations of the disc by William G. Brown</h3>
+<div id="outline-container-org5fe8594" class="outline-3">
+<h3 id="org5fe8594"><span class="section-number-3">6.3.</span> Enumeration of triangulations of the disc by William G. Brown</h3>
 <div class="outline-text-3" id="text-6-3">
 <dl class="org-dl">
 <dt>ref</dt><dd>Enumeration of triangulations of the disk by William G. Brown (paper)</dd>
@@ -625,8 +636,8 @@ They are always satisfiable for n ≤ 4.
 </div>
 </div>
 </div>
-<div id="outline-container-orgef4de2c" class="outline-2">
-<h2 id="orgef4de2c"><span class="section-number-2">7.</span> Presburger arithmetic</h2>
+<div id="outline-container-org7b1b5e7" class="outline-2">
+<h2 id="org7b1b5e7"><span class="section-number-2">7.</span> Presburger arithmetic</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 Peano's axioms are not decidable.
@@ -645,8 +656,8 @@ PA := ⟨ℤ, +, ≤⟩ is a first order theory for natural numbers.
 </p>
 </div>
 </div>
-<div id="outline-container-orge100e0c" class="outline-2">
-<h2 id="orge100e0c"><span class="section-number-2">8.</span> Complexity</h2>
+<div id="outline-container-org67cf793" class="outline-2">
+<h2 id="org67cf793"><span class="section-number-2">8.</span> Complexity</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 General classification of problems in complexity theory &#x2013;
@@ -658,8 +669,8 @@ General classification of problems in complexity theory &#x2013;
 </dl>
 </div>
 </div>
-<div id="outline-container-org4618aa9" class="outline-2">
-<h2 id="org4618aa9"><span class="section-number-2">9.</span> Partition function and related functions</h2>
+<div id="outline-container-orgc7c65bc" class="outline-2">
+<h2 id="orgc7c65bc"><span class="section-number-2">9.</span> Partition function and related functions</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 The partition function counts the number of partitions of an integer n
@@ -680,8 +691,8 @@ The partition function counts the number of partitions of an integer n
 </p>
 </div>
 
-<div id="outline-container-org2c3c8df" class="outline-3">
-<h3 id="org2c3c8df"><span class="section-number-3">9.1.</span> Asymptotic formula for p(n)</h3>
+<div id="outline-container-orgd7490ea" class="outline-3">
+<h3 id="orgd7490ea"><span class="section-number-3">9.1.</span> Asymptotic formula for p(n)</h3>
 <div class="outline-text-3" id="text-9-1">
 <p>
 This is due to Hardy-Ramanujan asymptotic.
@@ -690,8 +701,8 @@ This is due to Hardy-Ramanujan asymptotic.
 </div>
 </div>
 
-<div id="outline-container-org8568f69" class="outline-3">
-<h3 id="org8568f69"><span class="section-number-3">9.2.</span> Congruences due to Ramanujan</h3>
+<div id="outline-container-org42f70b2" class="outline-3">
+<h3 id="org42f70b2"><span class="section-number-3">9.2.</span> Congruences due to Ramanujan</h3>
 <div class="outline-text-3" id="text-9-2">
 <ol class="org-ol">
 <li>p(5k+4) ≡ 0 mod 5</li>
@@ -701,8 +712,8 @@ This is due to Hardy-Ramanujan asymptotic.
 </div>
 </div>
 
-<div id="outline-container-org04444d0" class="outline-3">
-<h3 id="org04444d0"><span class="section-number-3">9.3.</span> Recurrence relation for p(n)</h3>
+<div id="outline-container-org93f2e31" class="outline-3">
+<h3 id="org93f2e31"><span class="section-number-3">9.3.</span> Recurrence relation for p(n)</h3>
 <div class="outline-text-3" id="text-9-3">
 <p>
 \[p(n) = \frac{1}{n}\sum_{k=0}^{n-1}\sigma(n-k)p(k),\]
@@ -711,8 +722,8 @@ where \(\sigma\) is the sum of divisors.
 </div>
 </div>
 
-<div id="outline-container-org579abde" class="outline-3">
-<h3 id="org579abde"><span class="section-number-3">9.4.</span> Rademacher's formula</h3>
+<div id="outline-container-org12c034c" class="outline-3">
+<h3 id="org12c034c"><span class="section-number-3">9.4.</span> Rademacher's formula</h3>
 <div class="outline-text-3" id="text-9-4">
 <p>
 \[p(n) =
@@ -726,16 +737,16 @@ the \(3/2\)-I-Bessel function.
 </div>
 </div>
 
-<div id="outline-container-org26d48f2" class="outline-3">
-<h3 id="org26d48f2"><span class="section-number-3">9.5.</span> k-colored partition function</h3>
+<div id="outline-container-orgcf671e7" class="outline-3">
+<h3 id="orgcf671e7"><span class="section-number-3">9.5.</span> k-colored partition function</h3>
 <div class="outline-text-3" id="text-9-5">
 <p>
 \(p_k(n) := k\)-colored partition function.
 </p>
 </div>
 
-<div id="outline-container-orgb6ed91f" class="outline-4">
-<h4 id="orgb6ed91f"><span class="section-number-4">9.5.1.</span> Example</h4>
+<div id="outline-container-org6a215ea" class="outline-4">
+<h4 id="org6a215ea"><span class="section-number-4">9.5.1.</span> Example</h4>
 <div class="outline-text-4" id="text-9-5-1">
 \begin{align*}
   2 &= 2_r \\
@@ -752,8 +763,8 @@ the \(3/2\)-I-Bessel function.
 </div>
 </div>
 
-<div id="outline-container-orgf83b75e" class="outline-3">
-<h3 id="orgf83b75e"><span class="section-number-3">9.6.</span> Smallest parts function</h3>
+<div id="outline-container-org71da2d9" class="outline-3">
+<h3 id="org71da2d9"><span class="section-number-3">9.6.</span> Smallest parts function</h3>
 <div class="outline-text-3" id="text-9-6">
 <p>
 \(spt(n)\) counts the number of smallest parts among the partitions of n.
@@ -774,8 +785,8 @@ the \(3/2\)-I-Bessel function.
 </p>
 </div>
 
-<div id="outline-container-org08e49af" class="outline-4">
-<h4 id="org08e49af"><span class="section-number-4">9.6.1.</span> Asymptotics</h4>
+<div id="outline-container-orgc09524c" class="outline-4">
+<h4 id="orgc09524c"><span class="section-number-4">9.6.1.</span> Asymptotics</h4>
 <div class="outline-text-4" id="text-9-6-1">
 <p>
 It is surprising that the small parts function has "nice"
@@ -792,7 +803,7 @@ assymptotics/recurrence etc.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: <a href="../index.html">Vaibhav Karve</a></p>
-<p class="date">Created: 2022-10-16 Sun 15:11</p>
+<p class="date">Created: 2024-02-04 Sun 19:37</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

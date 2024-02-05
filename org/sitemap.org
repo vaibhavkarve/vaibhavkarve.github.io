@@ -20,5 +20,7 @@
 - [[file:theory_of_computation.org][Theory of Computation]]
 - [[file:type_theory.org][Type theory]]
 - [[file:index.org][Vaibhav Karve]]
+- de
+  - [[file:de/verbs.org][German Verbs]]
 - satisfiability
   - [[file:satisfiability/index.org][Graph Satisfiability]]

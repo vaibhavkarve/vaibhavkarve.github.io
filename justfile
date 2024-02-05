@@ -1,7 +1,7 @@
 # Files and Constants
 # ===================
 
-cv_source := "~/org/ref/cv_march_2022/CV.pdf"
+cv_source := "~/org/ref/cv/cv.pdf"
 cv_sink := "org/CV.pdf"
 teaching_statement_source := "~/org/ref/teaching_statement_jan_2021/teaching_statement_jan_2021.pdf"
 teaching_statement_sink := "org/Teaching_Philosophy_Statement.pdf"

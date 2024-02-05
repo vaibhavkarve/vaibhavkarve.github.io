@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-10-16 Sun 15:11 -->
+<!-- 2024-02-04 Sun 19:37 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Boolean Satisfiability notes</title>
@@ -191,30 +191,41 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
+  .org-svg { }
 </style>
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 </head>
 <body>
 <div id="content" class="content">
@@ -226,7 +237,7 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orga4d813e">1. Introduction</a></li>
+<li><a href="#orgd08c0ea">1. Introduction</a></li>
 </ul>
 </div>
 </div>
@@ -236,8 +247,8 @@ Satisfiability, Volume 4, Fascicle 6.
 </p>
 
 
-<div id="outline-container-orga4d813e" class="outline-2">
-<h2 id="orga4d813e"><span class="section-number-2">1.</span> Introduction</h2>
+<div id="outline-container-orgd08c0ea" class="outline-2">
+<h2 id="orgd08c0ea"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 A efficient algorithm for SAT would involve deciding a CNF on \(N\)
@@ -253,8 +264,8 @@ distinct</i> if \(|l_1| \neq |l_2|\).
 </p>
 </div>
 
-<div id="outline-container-orgb46e5a0" class="outline-3">
-<h3 id="orgb46e5a0"><span class="section-number-3">1.1.</span> SAT is equivalent to a covering problem</h3>
+<div id="outline-container-org7836200" class="outline-3">
+<h3 id="org7836200"><span class="section-number-3">1.1.</span> SAT is equivalent to a covering problem</h3>
 <div class="outline-text-3" id="text-1-1">
 <pre class="example">
 def Tₙ (n : ℕ) : CNF := {{1, ¬1}, {2, ¬ 2}, ..., {n, ¬n}}
@@ -274,7 +285,7 @@ def is_sat S : Prop :=
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2022-10-16 Sun 15:11</p>
+<p class="date">Created: 2024-02-04 Sun 19:37</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
