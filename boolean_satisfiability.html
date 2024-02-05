@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-02-04 Sun 19:37 -->
+<!-- 2024-02-04 Sun 19:47 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Boolean Satisfiability notes</title>
@@ -237,7 +237,7 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgd08c0ea">1. Introduction</a></li>
+<li><a href="#org1775024">1. Introduction</a></li>
 </ul>
 </div>
 </div>
@@ -247,8 +247,8 @@ Satisfiability, Volume 4, Fascicle 6.
 </p>
 
 
-<div id="outline-container-orgd08c0ea" class="outline-2">
-<h2 id="orgd08c0ea"><span class="section-number-2">1.</span> Introduction</h2>
+<div id="outline-container-org1775024" class="outline-2">
+<h2 id="org1775024"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 A efficient algorithm for SAT would involve deciding a CNF on \(N\)
@@ -264,8 +264,8 @@ distinct</i> if \(|l_1| \neq |l_2|\).
 </p>
 </div>
 
-<div id="outline-container-org7836200" class="outline-3">
-<h3 id="org7836200"><span class="section-number-3">1.1.</span> SAT is equivalent to a covering problem</h3>
+<div id="outline-container-org79b629c" class="outline-3">
+<h3 id="org79b629c"><span class="section-number-3">1.1.</span> SAT is equivalent to a covering problem</h3>
 <div class="outline-text-3" id="text-1-1">
 <pre class="example">
 def Tₙ (n : ℕ) : CNF := {{1, ¬1}, {2, ¬ 2}, ..., {n, ¬n}}
@@ -285,7 +285,7 @@ def is_sat S : Prop :=
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vaibhav Karve</p>
-<p class="date">Created: 2024-02-04 Sun 19:37</p>
+<p class="date">Created: 2024-02-04 Sun 19:47</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -23,34 +23,40 @@ E= -> €
 #+end_quote
 
 
-* German has 6 verb tenses
-1. Present -- most commonly used.
-2. Present perfect
-3. Simple past
-4. Past perfect
-5. Future
-6. Future perfect
-
-Perfect tenses more common in spoken German.
-Simple tenses are more common in written German.
+* German has only 1 present tense
+/ich sage/ is equivalent to all 3 of these English forms --
+- I say
+- I am saying
+- I do say
 
 * Present tense
-** To be = sein (irregular verb)
-The verb sein's table is irregular. Commonly used, so just memorize it.
+** Usually
+- Drop the *-en* or *-n* from the infinitive (root verb)
+- Then add the personal endings *-e*, *-(e)st*, *(e)t*, *–en*, *-(e)t*, *–en*) to the
+  remaining infinitive stem.
+
+** TODO Regular verb examples (create their tables)
+1. gehen
+2. sitzen
+3. finden
+4. handeln
+
+** To be = /sein/ (irregular verb)
+The verb /sein/'s table is irregular. Commonly used, so just memorize it.
 
 | Person                | English (Singular) | English (Plural) | German (Singular) | German (Plural) |
 | ---                   | ---                | ---              | ---               | ---             |
-| First person          | I am               | We are           | ich bin           | wir sind        |
-| Second person         | You are            | You are          | du bist           | ihr seid        |
-| Third person          | He/She/It is       | They are         | er/sie/es ist     | sie sind        |
-| Third person & Polite | He/She/It is       | They are         | Sie sind          | Sir sind        |
+| First person          | I am               | We are           | /ich bin/           | /wir sind/        |
+| Second person         | You are            | You are          | /du bist/           | /ihr seid/        |
+| Third person          | He/She/It is       | They are         | /er/sie/es ist/     | /sie sind/        |
+| Third person & Polite | He/She/It is       | They are         | /Sie sind/          | /Sie sind/        |
 
-** To have = haben (irregular verb)
+** To have = /haben/ (irregular verb)
 This verb is also irregular. Commonly used, so just memorize it.
 
 | Person                | English (Singular) | English (Plural) | German (Singular) | German (Plural) |
 | ---                   | ---                | ---              | ---               | ---             |
-| First person          | I have             | We have          | ich habe          | wir haben       |
-| Second person         | You have           | You have         | du hast           | ihr habt        |
-| Third person          | He/She/It have     | They have        | er/sie/es hat     | sie haben       |
-| Third person & Polite | He/She/It have     | They have        | Sie haben         | Sir haben       |
+| First person          | I have             | We have          | /ich habe/          | /wir haben/       |
+| Second person         | You have           | You have         | /du hast/           | /ihr habt/        |
+| Third person          | He/She/It have     | They have        | /er/sie/es hat/     | /sie haben/       |
+| Third person & Polite | He/She/It have     | They have        | /Sie haben/         | /Sie haben/       |
