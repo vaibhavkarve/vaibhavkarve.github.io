@@ -1,7 +1,7 @@
 #+title: German Verbs
 #+author: [[file:../index.html][Vaibhav Karve]]
 #+options: toc:2
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
 #+subtitle: [[file:index.org][Home]]
 
 * In emacs
