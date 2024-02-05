@@ -35,28 +35,79 @@ Results in the following key sequences:
 - Then add the personal endings *-e*, *-(e)st*, *(e)t*, *–en*, *-(e)t*, *–en*) to the
   remaining infinitive stem.
 
-** TODO Regular verb examples (create their tables)
-1. gehen
-2. sitzen
-3. finden
-4. handeln
-
 ** To be = /sein/ (irregular verb)
 The verb /sein/'s table is irregular. Commonly used, so just memorize it.
 
-| Person                | English (Singular) | English (Plural) | German (Singular) | German (Plural) |
-|-----------------------+--------------------+------------------+-------------------+-----------------|
-| First person          | I am               | We are           | /ich bin/           | /wir sind/        |
-| Second person         | You are            | You are          | /du bist/           | /ihr seid/        |
-| Third person          | He/She/It is       | They are         | /er/sie/es ist/     | /sie sind/        |
-| Third person & Polite | He/She/It is       | They are         | /Sie sind/          | /Sie sind/        |
+| Person              | English (Singular) | English (Plural) | German (Singular) | German (Plural) |
+|---------------------+--------------------+------------------+-------------------+-----------------|
+| 1st person          | I am               | We are           | /ich bin/           | /wir sind/        |
+| 2nd person          | You are            | You are          | /du bist/           | /ihr seid/        |
+| 3rd person          | He/She/It is       | They are         | /er/sie/es ist/     | /sie sind/        |
+| 3rd person & Polite | He/She/It is       | They are         | /Sie sind/          | /Sie sind/        |
 
 ** To have = /haben/ (irregular verb)
 This verb is also irregular. Commonly used, so just memorize it.
 
-| Person                | English (Singular) | English (Plural) | German (Singular) | German (Plural) |
-|-----------------------+--------------------+------------------+-------------------+-----------------|
-| First person          | I have             | We have          | /ich habe/          | /wir haben/       |
-| Second person         | You have           | You have         | /du hast/           | /ihr habt/        |
-| Third person          | He/She/It have     | They have        | /er/sie/es hat/     | /sie haben/       |
-| Third person & Polite | He/She/It have     | They have        | /Sie haben/         | /Sie haben/       |
+| Person              | English (Singular) | English (Plural) | German (Singular) | German (Plural) |
+|---------------------+--------------------+------------------+-------------------+-----------------|
+| 1st person          | I have             | We have          | /ich habe/          | /wir haben/       |
+| 2nd person          | You have           | You have         | /du hast/           | /ihr habt/        |
+| 3rd person          | He/She/It have     | They have        | /er/sie/es hat/     | /sie haben/       |
+| 3rd person & Polite | He/She/It have     | They have        | /Sie haben/         | /Sie haben/       |
+
+** Regular verb examples
+Below are verb tables for regular verbs. Each table is very similar, with
+only slight differences due to last letter of root verb.
+
+1. /gehen/ = to go
+| Person       | Eng (Sing.)   | Eng (Plu.) | German (Sing.) | German (Plu.) |
+|--------------+---------------+------------+----------------+---------------|
+| 1st          | I ...         | We ...     | /ich gehe/       | /wir gehen/     |
+| 2nd          | You ...       | You ...    | /du gehst/       | /ihr geht/      |
+| 3rd          | He/She/It ... | They ...   | /er/sie/es geht/ | /sie gehen/     |
+| 3rd & Polite | He/She/It ... | They ...   | /Sie gehen/      | /Sie gehen/     |
+
+2. /sitzen/ = to sit
+| Person       | Eng (Sing.)   | Eng (Plu.) | German (Sing.)  | German (Plu.) |
+|--------------+---------------+------------+-----------------+---------------|
+| 1st          | I ...         | We ...     | /ich sitze/       | /wir sitzen/    |
+| 2nd          | You ...       | You ...    | /du sitzt*/       | /ihr sitzt/     |
+| 3rd          | He/She/It ... | They ...   | /er/sie/es sitzt/ | /sie sitzen/    |
+| 3rd & Polite | He/She/It ... | They ...   | /Sie sitzen/      | /Sie sitzen/    |
+
+ * = if the infinitive stem ends in *-s*, *-ß*, *-x*, or *-z*, then the *-s* in
+ *du*-ending is omitted.
+
+ Other exaples of this:
+ - /du faxt/ = you are faxing (still? Really?)
+ - /du gießt/ = you are pouring (🍺?)
+
+3. /finden/ = to find
+| Person       | Eng (Sing.)   | Eng (Plu.) | German (Sing.)   | German (Plu.) |
+|--------------+---------------+------------+------------------+---------------|
+| 1st          | I ...         | We ...     | /ich finde/        | /wir finden/    |
+| 2nd          | You ...       | You ...    | /du findest/       | /ihr findet/    |
+| 3rd          | He/She/It ... | They ...   | /er/sie/es findet/ | /sie finden/    |
+| 3rd & Polite | He/She/It ... | They ...   | /Sie finden/       | /Sie finden/    |
+
+A bunch of extra "e"s are inserted in the table above since the verb ends
+in /d/t/, making the words easier to pronounce.
+
+Other examples of this:
+- /du arbeitest/ = you work
+- /er arbeitet/ = he works
+- /ihr arbeitet/ = you (all) work
+- /du öffnest/ = you open
+- /er öffnet/ = he opens
+- /ihr öffnet/ = you (all) open
+
+4. /handeln/ = to act
+| Person       | Eng (Sing.)   | Eng (Plu.) | German (Sing.)    | German (Plu.) |
+|--------------+---------------+------------+-------------------+---------------|
+| 1st          | I ...         | We ...     | /ich handele/       | /wir handeln*/  |
+| 2nd          | You ...       | You ...    | /du handelst/       | /ihr handelt/   |
+| 3rd          | He/She/It ... | They ...   | /er/sie/es handelt/ | /sie handeln*/  |
+| 3rd & Polite | He/She/It ... | They ...   | /Sie handeln*/      | /Sie handeln*/  |
+
+ * = infinitive root ends in just *-n* instead of *-en*. Therefore, the
+   wir/sie/Sie forms end in *-n*.
